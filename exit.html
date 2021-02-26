@@ -1,105 +1,131 @@
 <!DOCTYPE html>
 <html>
+<!--WHEN CHANGING SIZE (MID GAME) CLICK DOESN'T WORK
+  is it important? is it necessary?
+ -->
+    <head>
+        <title>Exit Room</title>
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        <style type="text/css">
+          * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+          }
 
-<head>
-  <title>Exit</title>
-  <link rel="stylesheet" href="css/style.css" type="text/css" />
-  <script type="text/jsExitRoom" src ="java.js"></script>
-  <style type="text/css">
-    * {
-      box-sizing: border-box;
-      margin: 0px;
-      padding: 0px;
-    }
+          #wrapper {
+            width: 95%;
+            /* This sets the wrapper to take 95% of the browser window width */
+            margin: 3% auto;
+            /* the ‘auto’ part positions the #wrapper in the middle of the browser window */
+            overflow: auto;
+            background-color: #1A1A1D;
+          }
 
-    #wrapper {
-      width: 95%;
-      /* This sets the wrapper to take 95% of the browser window width */
-      margin: 3% auto;
-      /* the ‘auto’ part positions the #wrapper in the middle of the browser window */
-      overflow: auto;
-      background-color: #1A1A1D;
-    }
+          body {
+            font-family: verdana, sans-serif;
+            background-color: #171717;
+          }
 
-    body {
-      font-family: verdana, sans-serif;
-      background-color: #171717;
-    }
+          .row {
+            display: flex;
+            align-items: center;
+          }
 
-    .row {
-      display: flex;
-      align-items: center;
-    }
+          .leftCol {
+            width: 30%;
+            float: left;
+            padding: 2%;
+            margin: auto;
+            color: white;
+            border-right: 3px solid #6f2232;
+          }
 
-    .leftCol {
-      width: 30%;
-      float: left;
-      padding: 2%;
-      margin: auto;
-      color: white;
-      border-right: 3px solid #6f2232;
-    }
+          .rightCol img {
+            width: 100%;
+            margin-left: 1%;
+          }
 
-    .rightCol img {
-      width: 100%;
-      margin-left: 1%;
-    }
+          .rightCol {
+            width: 70%;
+            float: left;
+            padding: 2%;
+            text-align: center;
+          }
 
-    .rightCol {
-      width: 70%;
-      float: left;
-      padding: 2%;
-      text-align: center;
-    }
 
-    a {
-      clear: both;
-    }
+          a {
+            clear: both;
+          }
 
-    img {
-      border-radius: 10%;
-      margin 1%;
-    }
 
-    #head {
-      height: 150px;
-      font-size: 1.5em;
-      text-align: left;
-      padding: 50px 50px 0px 0px;
-      text-align: center;
-      background-repeat: no-repeat;
-      color: #C3073F;
-      border-bottom: 3px solid #6f2232;
-    }
 
-    #roomName {
-      color: white;
-      padding-bottom: 2%;
-      text-align: center;
-      font-size: 2em;
+          #head {
+            height: 150px;
+            font-size: 1.5em;
+            text-align: left;
+            padding: 50px 50px 0px 0px;
+            text-align: center;
+            background-repeat: no-repeat;
+            color: #C3073F;
+            border-bottom: 3px solid #6f2232;
+          }
 
-    }
+          #roomName {
+            color: white;
+            padding-bottom: 2%;
+            text-align: center;
+            font-size: 2em;
 
-    #door:hover {
-     cursor:pointer;
-     /* border:10px solid black;*/
-     /* position:absolute;*/
-    border:1px, solid, black;
-    display:block;
-   }
+          }
 
-  </style>
+        </style>
+        <script>
+            //THIS IS COPIED CODE BUT I WILL CHECK THIS AND UNDERSTAND IT THEN EDIT IT MYSELF! - Olivia
+            window.onload = function () {
+            var ImageMap = function (map, img) {
+            var n,
+                areas = map.getElementsByTagName('area'),
+                len = areas.length,
+                coords = [],
+                previousWidth = 1280;
+            for (n = 0; n < len; n++) {
+                coords[n] = areas[n].coords.split(',');
+            }
+            this.resize = function () {
+                var n, m, clen,
+                    x = img.offsetWidth / previousWidth;
+                for (n = 0; n < len; n++) {
+                    clen = coords[n].length;
+                    for (m = 0; m < clen; m++) {
+                        coords[n][m] *= x;
+                    }
+                    areas[n].coords = coords[n].join(',');
+                }
+                previousWidth = document.body.clientWidth;
+                return true;
+            };
+            window.onresize = this.resize;
+        },
+        imageMap = new ImageMap(document.getElementById('map_ID'), document.getElementById('img_ID'));
+        imageMap.resize();
+        return;
 
-</head>
+        function changeText(){
+            document.getElementsById('change').color='red';
+        }
 
-<body>
-  <div id="wrapper">
+
+}
+        </script>
+
+    </head>
+    <body>
+      <div id="wrapper">
     <div id="head">
-      <h1>Escape room name</h1>
+      <h1>Exit Room</h1>
     </div>
     <div class="row">
-
-
       <div class="leftCol">
         <h2 id="change">Game Text Section</h2>
         <p></p>
@@ -107,21 +133,15 @@
       <div class="rightCol">
         <h2 id="roomName">Final Room</h2>
 
-        <img src="img/exitRoom.jpg" alt="ExitRoom" usemap="#roomImg" onclick="changeText();"/>
-        <map name="tea">
-          <area id="door" title="Exit Room" shape="rect" coords="530,418,778,795" alt="door" onclick="changeText"  />
-        </map>
+        <div style="width:100%;">
+              <img id="img_ID" src="img/exitRoom.jpg" usemap="#map" border="0" width="100%" alt="" />
+        </div>
+          <map id="map_ID" name="map">
+               <area id="door" title="Exit Room" shape="rect" coords="530,418,778,795" alt="door" href="#" onclick="javascript:alert('event has been trigeered');"  />
 
+          </map>
       </div>
 
     </div>
   </div>
-
-  <img src="img/exitRoom.jpg" alt="ExitRoom" usemap="#roomImg" onclick="changeText();"/>
-  <map name="roomImg">
-    <area id="door" title="Exit Room" shape="rect" coords="530,418,778,795" alt="door" onclick="changeText"  />
-  </map>
-
-</body>
-
 </html>
