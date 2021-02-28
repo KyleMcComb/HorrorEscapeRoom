@@ -2,20 +2,90 @@
 <html>
 
 <head>
-  <title>Hallway</title>
+  <title>Laboratory</title>
   <link rel="stylesheet" href="css/style.css" type="text/css" />
-
   <style type="text/css">
+    * {
+      box-sizing: border-box;
+      margin: 0px;
+      padding: 0px;
+    }
 
+    #wrapper {
+      width: 95%;
+      /* This sets the wrapper to take 95% of the browser window width */
+      margin: 3% auto;
+      /* the ‘auto’ part positions the #wrapper in the middle of the browser window */
+      overflow: auto;
+      background-color: #1A1A1D;
+    }
+
+    body {
+      font-family: verdana, sans-serif;
+      background-color: #171717;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+    }
+
+    .leftCol {
+      width: 30%;
+      float: left;
+      padding: 2%;
+      margin: auto;
+      color: white;
+      border-right: 3px solid #6f2232;
+    }
+
+    .rightCol img {
+      width: 100%;
+      margin-left: 1%;
+    }
+
+    .rightCol {
+      width: 70%;
+      float: left;
+      padding: 2%;
+      text-align: center;
+    }
+
+    a {
+      clear: both;
+    }
+
+    img {
+      border-radius: 10%;
+      margin 1%;
+    }
+
+    #head {
+      height: 150px;
+      font-size: 1.5em;
+      text-align: left;
+      padding: 50px 50px 0px 0px;
+      text-align: center;
+      background-repeat: no-repeat;
+      color: #C3073F;
+      border-bottom: 3px solid #6f2232;
+    }
+
+    #roomName {
+      color: white;
+      padding-bottom: 2%;
+      text-align: center;
+      font-size: 2em;
+
+    }
   </style>
 
-  <script src="hallway.js" type="text/javascript"></script>
 </head>
 
 <body>
   <div id="wrapper">
     <div id="head">
-      <h1>Escape room name</h1>
+      <h1>Laboratory</h1>
     </div>
     <div class="row">
 
@@ -47,20 +117,12 @@
           Excepteur sint occaecat cupidatat non proident,</p>
       </div>
       <div class="rightCol">
-        <h2 id="roomName">Hallway</h2>
-        <div style="width:100%;">
-          <div style="width:100%;">
-            <img id="img_ID" src="img/Hall/hallway.png" usemap="#map" border="0" width="1280" height="856" alt="" />
-          </div>
-          <map id="map_ID" name="map">
-            <area id="door" title="Exit Room" shape="rect" coords="608,315,728,488" alt="door" href="#" onclick="javascript:alert('event has been trigeered');" />
-
-          </map>
-
-        </div>
-
+        <h2 id="roomName">Second Room</h2>
+        <img class="background" src="img/Lab/lab1.jpg" alt="Laboratory">
       </div>
+
     </div>
+  </div>
 </body>
 
 </html>
