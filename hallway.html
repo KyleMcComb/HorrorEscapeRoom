@@ -81,7 +81,6 @@
 
         </style>
         <script>
-            //THIS IS COPIED CODE BUT I WILL CHECK THIS AND UNDERSTAND IT THEN EDIT IT MYSELF! - Olivia
             window.onload = function () {
             var ImageMap = function (map, img) {
             var n,
@@ -112,7 +111,7 @@
         return;
 
         function changeText(){
-            document.getElementsById('change').innerHTML='red';
+            document.getElementsById('change').color='red';
         }
 
 
@@ -123,7 +122,7 @@
     <body>
       <div id="wrapper">
     <div id="head">
-      <h1>Exit Room</h1>
+      <h1>Hallway</h1>
     </div>
     <div class="row">
       <div class="leftCol">
@@ -131,13 +130,14 @@
         <p></p>
       </div>
       <div class="rightCol">
-        <h2 id="roomName">Final Room</h2>
+        <h2 id="roomName">Hallway</h2>
 
         <div style="width:100%;">
-              <img id="img_ID" src="img/Exit/exitRoom.jpg" usemap="#map" border="0" width="100%" alt="" />
+              <img id="img_ID" src="img/Hall/hallway.png" usemap="#map" border="0" width="100%" alt="" />
         </div>
           <map id="map_ID" name="map">
-               <area id="door" title="Exit Room" shape="rect" coords="530,418,778,795" alt="door" href="#" onclick="changeText();"  />
+               <area id="door" title="Exit Room" shape="rect" coords="618,317,723,479" alt="door" href="#" onclick="javascript:alert('event has been triggered');"  />
+
           </map>
       </div>
 
