@@ -12,6 +12,38 @@
 
   <style type="text/css">
 
+  #windowbutton {
+    display: block;
+    width: 4%;
+    top: 5%;
+    right: 22%;
+    height: 32%;
+    position: absolute;
+    cursor: pointer;
+    background: none;
+  }
+
+  #exitDoorbutton {
+    display: block;
+    width: 10%;
+    top: 38%;
+    right: 42%;
+    height: 19%;
+    position: absolute;
+    cursor: pointer;
+    background: none;
+  }
+
+  #sideRoomButton {
+    display: block;
+    width: 6%;
+    top: 15%;
+    left: 22%;
+    height: 62%;
+    position: absolute;
+    cursor: pointer;
+    background: none;
+  }
   </style>
 
   <script>
@@ -62,9 +94,9 @@
       <div id="col-right">
         <h2 id="roomName">Hallway</h2>
         <div id="imageDiv">
-          <button id="windowbutton" onclick="windowClick();">Click Me</button>
-          <button id="exitDoorbutton">Click Me</button>
-          <button id="sideRoomButton">Click Me</button>
+          <button id="windowbutton" title="Barred window" onclick="windowClick();">Click Me</button>
+          <button id="exitDoorbutton" title="A chain and steel door">Click Me</button>
+          <button id="sideRoomButton" title="Entrance to a side room">Click Me</button>
           <img id="img" src="img/Hall/hallway.png" alt="A dark hallway with one exit and a side room" width="100%" />
         </div>
       </div>
