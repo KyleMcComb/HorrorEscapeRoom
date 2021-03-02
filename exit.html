@@ -6,108 +6,45 @@
     <head>
         <title>Exit Room</title>
         <link rel="stylesheet" href="css/style.css" type="text/css" />
-        <style type="text/css">
-          * {
-            box-sizing: border-box;
-            margin: 0px;
-            padding: 0px;
-          }
-
-          #wrapper {
-            width: 95%;
-            /* This sets the wrapper to take 95% of the browser window width */
-            margin: 3% auto;
-            /* the ‘auto’ part positions the #wrapper in the middle of the browser window */
-            overflow: auto;
-            background-color: #1A1A1D;
-          }
-
-          body {
-            font-family: verdana, sans-serif;
-            background-color: #171717;
-          }
-
-          .row {
-            display: flex;
-          }
-
-          .leftCol {
-            width: 30%;
-            float: left;
-            padding: 2%;
-
-            color: white;
-            border-right: 3px solid #6f2232;
-          }
-
-          .rightCol img {
-            width: 100%;
-            margin-left: 1%;
-          }
-
-          .rightCol {
-            width: 70%;
-            float: left;
-            padding: 2%;
-            text-align: center;
-          }
-
-
-          a {
-            clear: both;
-          }
-
-
-
-          #head {
-            height: 150px;
-            font-size: 1.5em;
-            text-align: left;
-            padding: 50px 50px 0px 0px;
-            text-align: center;
-            background-repeat: no-repeat;
-            color: #C3073F;
-            border-bottom: 3px solid #6f2232;
-          }
-
-          #roomName {
-            color: white;
-            padding-bottom: 2%;
-            text-align: center;
-            font-size: 2em;
-
-          }
-
-        </style>
+        <link rel="stylesheet" href="css/rooms.css" type ="text/css" />
         <script>
         function changeText(){
           var element = document.getElementById("change");
           element.innerHTML="EXIT ROOM";
         }
 
-        var person;
+        var code;
         function displayCode(){
           var txt;
-          person = prompt("Please enter your name:", "Harry Potter");
-          if (person == null || person == "") {
+          code = prompt("Enter the code to escape!:");
+          if (code == null || code == "") {
             txt = "User cancelled the prompt.";
-          } else {
-            txt = person + ", you have entered the final level.";
+          } else if(code=="1030"){
+            window.location.href = 'endScreen.html';
+          }
+          else {
+            txt = "That code is incorrect";
           }
           document.getElementById("demo").innerHTML = txt;
-        }
+
+          }
+
+
+
+
+
             //THIS IS COPIED CODE BUT I WILL CHECK THIS AND UNDERSTAND IT THEN EDIT IT MYSELF! - Olivia
             window.onload = function () {
-            var ImageMap = function (map, img) {
-            var n,
+              var ImageMap = function (map, img) {
+                var n,
                 areas = map.getElementsByTagName('area'),
                 len = areas.length,
                 coords = [],
                 previousWidth = 1280;
-            for (n = 0; n < len; n++) {
-                coords[n] = areas[n].coords.split(',');
-            }
-            this.resize = function () {
+                for (n = 0; n < len; n++) {
+                  coords[n] = areas[n].coords.split(',');
+                }
+                this.resize = function () {
                 var n, m, clen,
                     x = img.offsetWidth / previousWidth;
                 for (n = 0; n < len; n++) {
@@ -159,4 +96,5 @@
 
     </div>
   </div>
+</body>
 </html>
