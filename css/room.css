@@ -28,7 +28,6 @@ body {
   padding: 2%;
   color: white;
   border-right: 3px solid #6f2232;
-
 }
 
 #col-right img {
@@ -43,11 +42,9 @@ body {
   text-align: center;
 }
 
-
 a {
   clear: both;
 }
-
 
 #imageDiv {
   position: relative;
@@ -69,12 +66,10 @@ a {
   padding-bottom: 2%;
   text-align: center;
   font-size: 2em;
-
 }
 
 #img {
   display: block;
-
 }
 
 #windowbutton {
@@ -111,9 +106,12 @@ a {
 }
 
 @media only screen and (max-width: 768px) {
+  #col-left {
+    width: 100%;
+    font-size: 12px;
+  }
 
-  /* For mobile phones: */
-  [class*="col-"] {
+  #col-right {
     width: 100%;
     font-size: 12px;
   }
