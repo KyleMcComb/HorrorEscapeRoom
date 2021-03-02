@@ -72,39 +72,6 @@ a {
   display: block;
 }
 
-#windowbutton {
-  display: block;
-  width: 4%;
-  top: 5%;
-  right: 22%;
-  height: 32%;
-  position: absolute;
-  cursor: pointer;
-  background: none;
-}
-
-#exitDoorbutton {
-  display: block;
-  width: 10%;
-  top: 38%;
-  right: 42%;
-  height: 19%;
-  position: absolute;
-  cursor: pointer;
-  background: none;
-}
-
-#sideRoomButton {
-  display: block;
-  width: 6%;
-  top: 15%;
-  left: 22%;
-  height: 62%;
-  position: absolute;
-  cursor: pointer;
-  background: none;
-}
-
 @media only screen and (max-width: 768px) {
   #col-left {
     width: 100%;

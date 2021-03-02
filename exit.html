@@ -6,12 +6,24 @@
     <head>
         <title>Exit Room</title>
         <link rel="stylesheet" href="css/style.css" type="text/css" />
-        <link rel="stylesheet" href="css/rooms.css" type ="text/css" />
+        <link rel="stylesheet" href="css/room.css" type ="text/css" />
 
         <style type="text/css">
-        map:hover {
-          cursor:pointer;
+
+
+
+        #exitButton {
+          border:none;
+          display: block;
+          width: 24%;
+          top: 47%;
+          right: 36%;
+          height: 48%;
+          position: absolute;
+          cursor: pointer;
+          background: none;
         }
+
         </style>
         <script>
         function changeText(){
@@ -35,46 +47,6 @@
 
           }
 
-
-
-
-
-            //THIS IS COPIED CODE BUT I WILL CHECK THIS AND UNDERSTAND IT THEN EDIT IT MYSELF! - Olivia
-            window.onload = function () {
-              var ImageMap = function (map, img) {
-                var n,
-                areas = map.getElementsByTagName('area'),
-                len = areas.length,
-                coords = [],
-                previousWidth = 1280;
-                for (n = 0; n < len; n++) {
-                  coords[n] = areas[n].coords.split(',');
-                }
-                this.resize = function () {
-                var n, m, clen,
-                    x = img.offsetWidth / previousWidth;
-                for (n = 0; n < len; n++) {
-                    clen = coords[n].length;
-                    for (m = 0; m < clen; m++) {
-                        coords[n][m] *= x;
-                    }
-                    areas[n].coords = coords[n].join(',');
-                }
-                previousWidth = document.body.clientWidth;
-                return true;
-            };
-            window.onresize = this.resize;
-        },
-        imageMap = new ImageMap(document.getElementById('map_ID'), document.getElementById('img_ID'));
-        imageMap.resize();
-        return;
-
-        function changeText(){
-            document.getElementsById('change').innerHTML='red';
-        }
-
-
-}
         </script>
 
     </head>
@@ -84,20 +56,22 @@
       <h1>Exit Room</h1>
     </div>
     <div class="row">
-      <div class="leftCol">
+      <div id="col-left">
         <h2 id="change">Game Text Section</h2>
         <p id="demo"></p>
         <p id="demo"></p>
       </div>
-      <div class="rightCol">
+      <div id="col-right">
         <h2 id="roomName">Final Room</h2>
 
-        <div style="width:100%;">
-              <img id="img_ID" src="img/Exit/exitRoom.jpg" usemap="#map" border="0" width="100%" alt="" />
+
+
+        <div id="imageDiv">
+          <button id="exitButton" onclick="displayCode();"></button>
+          <img id="img_ID" src="img/Exit/exitRoom.jpg" usemap="#map" border="0" width="100%" alt="" />
         </div>
-          <map id="map_ID" name="map">
-               <area id="door" title="Exit Room" shape="rect" coords="530,418,778,795" alt="door" onclick="displayCode();"  />
-          </map>
+
+
       </div>
 
     </div>
