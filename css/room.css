@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+#wrapper {
+  width: 95%;
+  /* This sets the wrapper to take 95% of the browser window width */
+  margin: 3% auto;
+  /* the ‘auto’ part positions the #wrapper in the middle of the browser window */
+  overflow: auto;
+  background-color: #1A1A1D;
+}
+
+body {
+  font-family: verdana, sans-serif;
+  background-color: #171717;
+}
+
+.row {
+  display: flex;
+}
+
+#col-left {
+  width: 30%;
+  float: left;
+  padding: 2%;
+  color: white;
+  border-right: 3px solid #6f2232;
+
+}
+
+#col-right img {
+  width: 100%;
+  margin-left: 1%;
+}
+
+#col-right {
+  width: 70%;
+  float: left;
+  padding: 2%;
+  text-align: center;
+}
+
+
+a {
+  clear: both;
+}
+
+
+#imageDiv {
+  position: relative;
+}
+
+#head {
+  height: 150px;
+  font-size: 1.5em;
+  text-align: left;
+  padding: 50px 50px 0px 0px;
+  text-align: center;
+  background-repeat: no-repeat;
+  color: #C3073F;
+  border-bottom: 3px solid #6f2232;
+}
+
+#roomName {
+  color: white;
+  padding-bottom: 2%;
+  text-align: center;
+  font-size: 2em;
+
+}
+
+#img {
+  display: block;
+
+}
+
+#windowbutton {
+  display: block;
+  width: 4%;
+  top: 5%;
+  right: 22%;
+  height: 32%;
+  position: absolute;
+  cursor: pointer;
+  background: none;
+}
+
+#exitDoorbutton {
+  display: block;
+  width: 10%;
+  top: 38%;
+  right: 42%;
+  height: 19%;
+  position: absolute;
+  cursor: pointer;
+  background: none;
+}
+
+#sideRoomButton {
+  display: block;
+  width: 6%;
+  top: 15%;
+  left: 22%;
+  height: 62%;
+  position: absolute;
+  cursor: pointer;
+  background: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+    font-size: 12px;
+  }
+}
