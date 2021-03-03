@@ -24,6 +24,35 @@
           background: none;
         }
 
+        #goldKey{
+          width: 6%;
+          top: 90%;
+          right: 90%;
+          height: 6%;
+          background:url('img/Exit/goldKey.png') no-repeat;
+          background-size:100%;
+        }
+
+        #blueKey{
+          width: 6%;
+          top: 90%;
+          right: 2%;
+          height: 6%;
+          background:url('img/Exit/blueKey.png') no-repeat;
+          background-size:100%;
+        }
+
+        .key {
+          border:none;
+          display: block;
+          position: absolute;
+          cursor: pointer;
+          background-size:100%;
+        }
+
+
+
+
         </style>
         <script>
         function changeText(){
@@ -49,7 +78,7 @@
           } else{
             if (code == null || code == "") {
               txt = "User cancelled the prompt.";
-            } else if(code=="1030"){
+            } else if(code=="420"){
               window.location.href = 'endScreen.html';
             } else {
               txt = "<p>That code is incorrect</p>";
@@ -87,14 +116,13 @@
                 } else{
                     stopTimer();
                     document.getElementById('gameText').innerHTML='<p>Stop Game!</p>';
-
                 }
-
             }
 
+            function keyFound(keyType){
+              window.open('img/Exit/goldKey.png');
 
-
-
+            }
         </script>
 
     </head>
@@ -116,17 +144,19 @@
       <div id="col-right">
         <h2 id="roomName">Final Room</h2>
 
-
-
         <div id="imageDiv">
           <button id="exitButton" onclick="displayCode();"></button>
+          <button class="key" id="goldKey" onclick="keyFound(gold);"></button>
+          <button class="key" id="blueKey" onclick="window.open('img/Exit/blueKey.png');"></button>
           <img id="img_ID" src="img/Exit/exitRoom.jpg" usemap="#map" border="0" width="100%" alt="" />
         </div>
+
 
 
       </div>
 
     </div>
   </div>
+
 </body>
 </html>
