@@ -32,25 +32,73 @@
         }
 
         var code;
+
         function displayCode(){
           var txt;
-          code = prompt("Enter the code to escape!:");
-          if (code == null || code == "") {
-            txt = "User cancelled the prompt.";
-          } else if(code=="1030"){
-            window.location.href = 'endScreen.html';
+          var startTime = new Date();
+
+          code = prompt("Enter the code to escape!: ");
+
+          var endTime = new Date();
+          var timeSpent = endTime-startTime;
+          duration-=timeSpent;
+
+
+          if(duration<=0){
+            window.location.href = 'hallway.html';   //END SCREEN - YOU LOSE (time out)
+          } else{
+            if (code == null || code == "") {
+              txt = "User cancelled the prompt.";
+            } else if(code=="1030"){
+              window.location.href = 'endScreen.html';
+            } else {
+              txt = "<p>That code is incorrect</p>";
+            }
           }
-          else {
-            txt = "That code is incorrect";
-          }
-          document.getElementById("demo").innerHTML = txt;
+          document.getElementById("gameText").innerHTML = txt + ' ' + timeSpent;
 
           }
+
+            var myTimer2;
+            var timePassed=0;
+            var myTimer;
+            var duration =(10*1000);
+
+            function startTimer(){
+              myTimer = setInterval('countdown()',1000);
+              timePassed+=1000;
+              //myTimer2  = setTimeout('countdown()',5000);
+            }
+
+            function stopTimer(){
+                clearInterval(myTimer2);
+            }
+
+            function countdown(){
+                timePassed+=1000;
+                duration-=1000;
+
+                if(duration==5000){
+                  document.getElementById('gameText').innerHTML='<p>5 seconds left</p>';
+
+                }
+                if(duration>=0){
+                    document.getElementById('timer').innerHTML = duration;
+                } else{
+                    stopTimer();
+                    document.getElementById('gameText').innerHTML='<p>Stop Game!</p>';
+
+                }
+
+            }
+
+
+
 
         </script>
 
     </head>
-    <body>
+    <body onload="startTimer();">
       <div id="wrapper">
     <div id="head">
       <h1>Exit Room</h1>
@@ -58,8 +106,12 @@
     <div class="row">
       <div id="col-left">
         <h2 id="change">Game Text Section</h2>
+
+        <div id="gameText">
+        </div>
+
         <p id="demo"></p>
-        <p id="demo"></p>
+        <p id="timer"></p>
       </div>
       <div id="col-right">
         <h2 id="roomName">Final Room</h2>
