@@ -7,6 +7,53 @@
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <link rel="stylesheet" href="css/room.css" type="text/css" />
 
+  <script>
+
+    var gameDialog = "<p> Seems like this is the room Dr Friedrich used this room to monitor his subjects </p>";
+    var cluesFound = 0;
+    var cluesText = " <br> -Clues found(" + cluesFound + "/3) Part of the door unlocks-";
+
+    //When the wires are clicked
+    function wiresClick(){
+      var wiresButton = document.getElementById("wiresbutton");
+      wiresButton.style.display = "none";
+      cluesFound++;
+
+      if(cluesText != 3){
+        cluesText = " <br> -Clues found(" + cluesFound + "/3) 1 of the door's locks have been disabled-";
+        writeText('You have found broken wires',cluesText);
+      }
+      else {
+        cluesText = " <br> -Clues found(" + cluesFound + "/3) The last lock has been disabled-";
+        writeText('You have found broken wires',cluesText);
+      }
+    }
+
+    //Function to output text in the game speech part
+    function writeText(text,cluesText){
+      gameDialog += "<p> <br>"+ text + cluesText + "</p>";
+      document.getElementById('gameText').innerHTML = (gameDialog);
+    }
+
+    //When the exit door is clicked
+    function exit(){
+      if(cluesFound == 3){
+        writeText("You have escaped the security room!","");
+      }
+      else if(cluesFound == 2){
+        writeText("Door still seems to be locked <br> 2/3 Locks are disabled","");
+      }
+      else if(cluesFound == 1){
+        writeText("Door still seems to be locked <br> 1/3 Locks are disabled","");
+      }
+      else if(cluesFound == 0){
+        writeText("The door seems to have a 3 layer lock. <br> 0/3 Locks are disabled","");
+      }
+    }
+
+
+  </script>
+
   <style type="text/css">
     * {
       box-sizing: border-box;
@@ -106,49 +153,7 @@
 
   </style>
 
-  <script>
-    var locks = [1,2,3];
-    var gameDialog = "<p> Seems like this is the room Dr Friedrich used this room to monitor his subjects </p>";
-    var cluesFound = 0;
-    var cluesText = " <br> -Clues found(" + cluesFound + "/3) Part of the door unlocks-";
 
-    function wiresClick(){
-      var wiresButton = document.getElementById("wiresbutton");
-      wiresButton.style.display = "none";
-      cluesFound++;
-
-      if(cluesText != 3){
-        cluesText = " <br> -Clues found(" + cluesFound + "/3) 1 of the door's locks have been disabled-";
-        writeText('You have found broken wires',cluesText);
-      }
-      else {
-        cluesText = " <br> -Clues found(" + cluesFound + "/3) The last lock has been disabled-";
-        writeText('You have found broken wires',cluesText);
-      }
-    }
-
-    function writeText(text,cluesText){
-      gameDialog += "<p> <br>"+ text + cluesText + "</p>";
-      document.getElementById('gameText').innerHTML = (gameDialog);
-      locks = [1,2,x];
-    }
-
-    function exit(){
-      if(cluesFound == 3){
-        writeText("You have escaped the security room!","");
-      }
-      else if(cluesFound == 2){
-        writeText("Door still seems to be locked <br> 2/3 Locks are disabled","");
-      }
-      else if(cluesFound == 1){
-        writeText("Door still seems to be locked <br> 1/3 Locks are disabled","");
-      }
-      else if(cluesFound == 0){
-        writeText("The door seems to have a 3 layer lock. <br> 0/3 Locks are disabled","");
-      }
-    }
-
-  </script>
 
 </head>
 
