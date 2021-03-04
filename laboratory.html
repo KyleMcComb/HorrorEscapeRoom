@@ -2,101 +2,56 @@
 <html>
 
 <head>
-  <title>Laboratory</title>
+  <title>Redacted Lab - Laboratory</title>
   <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="css/room.css" type="text/css" />
+  <script src="js/laboratory.js"></script>
+
   <style type="text/css">
-    * {
-      box-sizing: border-box;
-      margin: 0px;
-      padding: 0px;
+    #drawerButton {
+      border: 2px solid red;
+      display: block;
+      width: 12%;
+      top: 30%;
+      right: -1%;
+      height: 35%;
+      position: absolute;
+      cursor: pointer;
+      background: none;
     }
 
-    #wrapper {
-      width: 95%;
-      /* This sets the wrapper to take 95% of the browser window width */
-      margin: 3% auto;
-      /* the ‘auto’ part positions the #wrapper in the middle of the browser window */
-      overflow: auto;
-      background-color: #1A1A1D;
-    }
-
-    body {
-      font-family: verdana, sans-serif;
-      background-color: #171717;
-    }
-
-    .row {
-      display: flex;
-      align-items: center;
-    }
-
-    .leftCol {
-      width: 30%;
-      float: left;
-      padding: 2%;
-      margin: auto;
-      color: white;
-      border-right: 3px solid #6f2232;
-    }
-
-    .rightCol img {
-      width: 100%;
-      margin-left: 1%;
-    }
-
-    .rightCol {
-      width: 70%;
-      float: left;
-      padding: 2%;
-      text-align: center;
-    }
-
-    a {
-      clear: both;
-    }
-
-    img {
-      border-radius: 10%;
-      margin 1%;
-    }
-
-    #head {
-      height: 150px;
-      font-size: 1.5em;
-      text-align: left;
-      padding: 50px 50px 0px 0px;
-      text-align: center;
-      background-repeat: no-repeat;
-      color: #C3073F;
-      border-bottom: 3px solid #6f2232;
-    }
-
-    #roomName {
-      color: white;
-      padding-bottom: 2%;
-      text-align: center;
-      font-size: 2em;
-
+    #disableButton {
+      border: 2px solid red;
+      display: block;
+      width: 12%;
+      top: 30%;
+      right: 30%;
+      height: 35%;
+      position: absolute;
+      cursor: pointer;
+      background: none;
     }
   </style>
 
 </head>
 
-<body>
+<body onload="onLoad();">
   <div id="wrapper">
     <div id="head">
-      <h1>Laboratory</h1>
+      <h1>The REDACTED Lab</h1>
     </div>
+
     <div class="row">
-
-
-      <div class="leftCol">
-        <h2>Game Text Section</h2>
-        <p></p>
+      <div id="col-left">
       </div>
-      <div class="rightCol">
-        <h2 id="roomName">Second Room</h2>
-        <img class="background" src="img/Lab/lab1.jpg" alt="Laboratory">
+
+      <div id="col-right">
+        <h2 id="roomName">Laboratory</h2>
+        <div id="imageDiv">
+        <button id="drawerButton" title="Takes you to drawer" onclick="drawerClick();"></button>
+
+        <img id="background" src="img/Lab/lab1.jpg" alt="Laboratory" width="100%" />
+        </div>
       </div>
 
     </div>
