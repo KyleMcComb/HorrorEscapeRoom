@@ -5,14 +5,14 @@
  -->
 
 <head>
-  <title>Hallway</title>
+  <title>Redacted Lab - Hallway</title>
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <link rel="stylesheet" href="css/room.css" type="text/css" />
   <script src="js/hallway.js"></script>
 
   <style type="text/css">
 
-  #windowbutton {
+  #windowButton {
     display: block;
     width: 4%;
     top: 5%;
@@ -23,7 +23,7 @@
     background: none;
   }
 
-  #exitDoorbutton {
+  #exitDoorButton {
     display: block;
     width: 10%;
     top: 38%;
@@ -80,23 +80,20 @@
 
 </head>
 
-<body>
+<body onload="onLoad();">
   <div id="wrapper">
     <div id="head">
-      <h1>Hallway</h1>
+      <h1>Redacted Lab</h1>
     </div>
     <div class="row">
       <div id="col-left">
-        <p>You've entered a dark hallway and can see a door at the other end, maybe you should look around for an exit before you are caught and dragged back to your cell</p>
-        <span id="output"></span>
-
       </div>
       <div id="col-right">
         <h2 id="roomName">Hallway</h2>
         <div id="imageDiv">
-          <button id="windowbutton" title="Barred window" onclick="windowClick();">Click Me</button>
-          <button id="exitDoorbutton" title="A chain and steel door">Click Me</button>
-          <button id="sideRoomButton" title="Entrance to a side room">Click Me</button>
+          <button id="windowButton" title="Barred window" onclick="windowClick();">Click Me</button>
+          <button id="exitDoorButton" title="A chain and steel door" onclick="exitClick();">Click Me</button>
+          <button id="sideRoomButton" title="Entrance to a side room" onclick="sideRoomClick();">Click Me</button>
           <img id="img" src="img/Hall/hallway.png" alt="A dark hallway with one exit and a side room" width="100%" />
         </div>
       </div>
