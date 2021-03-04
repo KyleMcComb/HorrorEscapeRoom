@@ -20,9 +20,72 @@ function drawerClick(background) {
   // Removes button after clicked
   var dButton = document.getElementById("drawerButton");
   drawerButton.style.display = "none";
+  // Adds note button after clicked
+  var nButton = document.getElementById("noteButton");
+  noteButton.style.display = "block";
+  // Adds compartmentButton after clicked
+  var cButton = document.getElementById("compartmentButton");
+  compartmentButton.style.display = "block";
+  // Adds compartmentButton2 after clicked
+  var cButton2 = document.getElementById("compartment2Button");
+  compartment2Button.style.display = "block";
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("Doctor Friedrich's drawer, could this contain important files?");
+  var text = document.createTextNode("Doctor Friedrich's drawer, search around for some clues.");
+  para.appendChild(text);
+  var element = document.getElementById("col-left");
+  element.appendChild(para);
+
+  var lineBreak = document.createElement("br");
+  var element = document.getElementById("col-left");
+  element.appendChild(lineBreak);
+}
+
+function noteClick(background) {
+
+  // Changes image on click
+  image = document.getElementById('background');
+  image.src = "img/Lab/lab_note.jpg";
+  // Removes button after clicked
+  var nButton = document.getElementById("noteButton");
+  noteButton.style.display = "none";
+  // Displays text for the user (in left column)
+  var para = document.createElement("p");
+  var text = document.createTextNode("It appears you have found some important documents.");
+  para.appendChild(text);
+  var element = document.getElementById("col-left");
+  element.appendChild(para);
+
+  var lineBreak = document.createElement("br");
+  var element = document.getElementById("col-left");
+  element.appendChild(lineBreak);
+}
+
+function compartmentClick() {
+
+  // Removes button after clicked
+  var cButton = document.getElementById("compartmentButton");
+  compartmentButton.style.display = "none";
+  // Displays text for the user (in left column)
+  var para = document.createElement("p");
+  var text = document.createTextNode("That compartment just contains experiment diagrams.. look elsewhere.");
+  para.appendChild(text);
+  var element = document.getElementById("col-left");
+  element.appendChild(para);
+
+  var lineBreak = document.createElement("br");
+  var element = document.getElementById("col-left");
+  element.appendChild(lineBreak);
+}
+
+function compartment2Click() {
+
+  // Removes button after clicked
+  var cButton2 = document.getElementById("compartment2Button");
+  compartment2Button.style.display = "none";
+  // Displays text for the user (in left column)
+  var para = document.createElement("p");
+  var text = document.createTextNode("That compartment doesn't have anything in it.. look elsewhere.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);

@@ -19,6 +19,42 @@
       cursor: pointer;
       background: none;
     }
+
+    #noteButton {
+      border: 2px solid red;
+      display: none;
+      width: 12%;
+      top: 60%;
+      right: 70%;
+      height: 21%;
+      position: absolute;
+      cursor: pointer;
+      background: none;
+    }
+
+    #compartmentButton {
+      border: 2px solid blue;
+      display: none;
+      width: 12%;
+      top: 45%;
+      right: 57%;
+      height: 21%;
+      position: absolute;
+      cursor: pointer;
+      background: none;
+    }
+
+    #compartment2Button {
+      border: 2px solid green;
+      display: none;
+      width: 30%;
+      top: 72%;
+      right: 14%;
+      height: 28%;
+      position: absolute;
+      cursor: pointer;
+      background: none;
+    }
   </style>
 
 </head>
@@ -26,7 +62,7 @@
 <body onload="onLoad();">
   <div id="wrapper">
     <div id="head">
-      <h1>The REDACTED Lab</h1>
+      <h1 class="content">THE <span class="redact">REDACTED</span> LAB</h1>
     </div>
 
     <div class="row">
@@ -36,7 +72,10 @@
       <div id="col-right">
         <h2 id="roomName">Laboratory</h2>
         <div id="imageDiv">
-        <button id="drawerButton" title="Takes you to drawer" onclick="drawerClick();"></button>
+        <button id="drawerButton" title="drawer" onclick="drawerClick();"></button>
+        <button id="noteButton" title="notes" onclick="noteClick();"></button>
+        <button id="compartmentButton" title="compartment1" onclick="compartmentClick();"></button>
+        <button id="compartment2Button" title="compartment2" onclick="compartment2Click();"></button>
 
         <img id="background" src="img/Lab/lab1.jpg" alt="Laboratory" width="100%" />
         </div>

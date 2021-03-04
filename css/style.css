@@ -3,3 +3,26 @@
 *{
   font-family: 'Lacquer', cursive;
 }
+
+.content {
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+.redact {
+  background-color: #C3073F;
+  min-width: 50%;
+  -webkit-transition: background-color 500ms ease-out;
+  -moz-transition: background-color 500ms ease-out;
+  -o-transition: background-color 500ms ease-out;
+  transition: background-color 500ms ease-out;
+}
+
+.content:hover .redact {
+  background-color: rgba(0,0,0,0);
+}
