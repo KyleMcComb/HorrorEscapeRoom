@@ -14,11 +14,13 @@ function onLoad() {
 
 function drawerClick(background) {
 
+  // Changes image on click
   image = document.getElementById('background');
   image.src = "img/Lab/drawercloseup.jpg";
-
+  // Removes button after clicked
   var dButton = document.getElementById("drawerButton");
   drawerButton.style.display = "none";
+  // Displays text for the user (in left column)
   var para = document.createElement("p");
   var text = document.createTextNode("Doctor Friedrich's drawer, could this contain important files?");
   para.appendChild(text);
