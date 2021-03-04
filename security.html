@@ -53,7 +53,7 @@
 
     //Unlock 3 passcode lock
     var buttonsPressed = 0;
-    var lockCode = "123";
+    var lockCode = "132";
     var enteredCode = "";
     var firstTime = true;
       function unlock(number){
@@ -298,13 +298,6 @@
      background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
    }
 
-   /* Modal Content (image) */
-   .modal-content {
-     margin: auto;
-     display: block;
-     width: 80%;
-     max-width: 700px;
-   }
 
    /* Caption of Modal Image */
    #caption {
@@ -318,7 +311,12 @@
      height: 150px;
    }
 
-
+   #expandedNote{
+     display: flex;
+     width: 80%;
+     justify-content: center;
+     max-width: 700px;
+   }
    /* The Close Button */
    .close {
      position: absolute;
@@ -371,7 +369,7 @@
           <!-- The Modal -->
           <div id="myModal" class="modal">
             <span class="close" onclick = "closeNote()">&times;</span>
-            <img class="modal-content" id="expandedNote">
+            <img id="expandedNote">
             <div id="caption"></div>
           </div>
         </div>
@@ -380,6 +378,7 @@
 
     </div>
   </div>
+
 </body>
 
 </html>
