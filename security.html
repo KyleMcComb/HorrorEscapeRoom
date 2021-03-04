@@ -121,6 +121,7 @@
       function expand(){
         document.getElementById("myModal").style.display = "block";
         document.getElementById("expandedNote").src = "img/Security/ControlRoom (WIP).jpg";
+        document.getElementById("expandedNote").style
         document.getElementById("caption").innerHTML = "Dr Friedlich's Notes";
       }
 
@@ -209,7 +210,7 @@
     }
 
    #wiresbutton {
-     border:1px;
+     border: 0px solid black;
      width: 16%;
      top: 25%;
      right: 25%;
@@ -218,9 +219,12 @@
      cursor: pointer;
      background: none;
    }
+   #wiresbutton:hover{
+    border: 2px solid black;
+   }
 
    #doorbutton {
-     border:1pX;
+     border: 0px solid black;
      width: 4%;
      top: 9%;
      right: 34%;
@@ -229,10 +233,13 @@
      cursor: pointer;
      background: none;
    }
+   #doorbutton:hover{
+    border: 2px solid black;
+   }
 
    /* Buttons to be pressed in a certain order*/
    #firstbutton {
-    border: 1pX;
+    border: 0px solid black;
     width: 3.5%;
     height: 5%;
     top: 10%;
@@ -241,9 +248,12 @@
     cursor: pointer;
     background: none;
    }
+   #firstbutton:hover{
+    border: 2px solid black;
+   }
 
    #secondbutton {
-    border: 1pX;
+    border: 0px solid black;
     width: 3.5%;
     height: 5%;
     top: 10%;
@@ -252,9 +262,12 @@
     cursor: pointer;
     background: none;
    }
+   #secondbutton:hover{
+    border: 2px solid black;
+   }
 
    #thirdbutton {
-    border: 1pX;
+    border: 0px solid black;
     width: 3.5%;
     height: 5%;
     top: 10%;
@@ -263,9 +276,12 @@
     cursor: pointer;
     background: none;
    }
+   #thirdbutton:hover{
+    border: 2px solid black;
+   }
 
    #noteModal {
-     border: 1pX;
+     border: 0px solid black;
      width: 4.5%;
      height: 6%;
      top: 27%;
@@ -274,14 +290,9 @@
      cursor: pointer;
      background: none;
    }
-
-   #myImg {
-     border-radius: 5px;
-     cursor: pointer;
-     transition: 0.3s;
+   #noteModal:hover{
+    border: 2px solid black;
    }
-
-   #myImg:hover {opacity: 0.7;}
 
    /* The expanded note */
    .modal {
