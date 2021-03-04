@@ -42,6 +42,15 @@
           background-size:100%;
         }
 
+        #purpleKey{
+          width: 6%;
+          top: 2%;
+          right: 45%;
+          height: 6%;
+          background:url('img/Exit/purpleKey.png') no-repeat;
+          background-size:100%;
+        }
+
         .key {
           border:none;
           display: block;
@@ -122,6 +131,22 @@
             function keyFound(keyType){
               window.open('img/Exit/goldKey.png');
 
+              var x;
+              switch(keyType){
+                case 'gold':
+                  x = document.getElementById("goldKey");
+                  break;
+                case 'blue':
+                  x = document.getElementById("blueKey");
+                  break;
+                case 'purple':
+                  x = document.getElementById("purpleKey");
+                  break;
+                default:
+                  break;
+              }
+              x.style.display = "none";
+
             }
         </script>
 
@@ -146,8 +171,9 @@
 
         <div id="imageDiv">
           <button id="exitButton" onclick="displayCode();"></button>
-          <button class="key" id="goldKey" onclick="keyFound(gold);"></button>
-          <button class="key" id="blueKey" onclick="window.open('img/Exit/blueKey.png');"></button>
+          <button class="key" id="goldKey" onclick="keyFound('gold');"></button>
+          <button class="key" id="blueKey" onclick="keyFound('blue');"></button>
+          <button class="key" id="purpleKey" onclick="keyFound('purple');"></button>
           <img id="img_ID" src="img/Exit/exitRoom.jpg" usemap="#map" border="0" width="100%" alt="" />
         </div>
 
