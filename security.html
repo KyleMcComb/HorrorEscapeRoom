@@ -54,13 +54,6 @@
       text-align: center;
     }
 
-    .showMe {
-        display:initial;
-    }
-
-    .hideMe {
-        display:none;
-    }
 
     a {
       clear: both;
@@ -89,17 +82,8 @@
       font-size: 2em;
     }
 
-    #wiresbutton:hover {
-     cursor:pointer;
-     /* border:10px solid black;*/
-     /* position:absolute;*/
-    border:1px, solid, black;
-    display:block;
-   }
-
    #wiresbutton {
-     display: block;
-     border:0px;
+     border:1px;
      width: 16%;
      top: 25%;
      right: 25%;
@@ -108,23 +92,60 @@
      cursor: pointer;
      background: none;
    }
+
+   #doorbutton {
+     border:1pX;
+     width: 4%;
+     top: 9%;
+     right: 34%;
+     height: 14%;
+     position: absolute;
+     cursor: pointer;
+     background: none;
+   }
+
   </style>
 
   <script>
     var locks = [1,2,3];
     var gameDialog = "<p> Seems like this is the room Dr Friedrich used this room to monitor his subjects </p>";
+    var cluesFound = 0;
+    var cluesText = " <br> -Clues found(" + cluesFound + "/3) Part of the door unlocks-";
 
     function wiresClick(){
-      writeText('You have found broken wires');
+      var wiresButton = document.getElementById("wiresbutton");
+      wiresButton.style.display = "none";
+      cluesFound++;
 
-      var wiresButton document.getElementById("wiresbutton");
-      wiresButton.className = "hideMe";
+      if(cluesText != 3){
+        cluesText = " <br> -Clues found(" + cluesFound + "/3) 1 of the door's locks have been disabled-";
+        writeText('You have found broken wires',cluesText);
+      }
+      else {
+        cluesText = " <br> -Clues found(" + cluesFound + "/3) The last lock has been disabled-";
+        writeText('You have found broken wires',cluesText);
+      }
     }
 
-    function writeText(text){
-      gameDialog += "<p>"+ text + "</p>";
+    function writeText(text,cluesText){
+      gameDialog += "<p> <br>"+ text + cluesText + "</p>";
       document.getElementById('gameText').innerHTML = (gameDialog);
       locks = [1,2,x];
+    }
+
+    function exit(){
+      if(cluesFound == 3){
+        writeText("You have escaped the security room!","");
+      }
+      else if(cluesFound == 2){
+        writeText("Door still seems to be locked <br> 2/3 Locks are disabled","");
+      }
+      else if(cluesFound == 1){
+        writeText("Door still seems to be locked <br> 1/3 Locks are disabled","");
+      }
+      else if(cluesFound == 0){
+        writeText("The door seems to have a 3 layer lock. <br> 0/3 Locks are disabled","");
+      }
     }
 
   </script>
@@ -147,7 +168,9 @@
         <h2 id="roomName">Security</h2>
 
         <div id="imageDiv">
-          <button id="wiresbutton" className = "showMe" title="Electrical Wires" onclick="wiresClick();"></button>
+          <button id="wiresbutton" title="Electrical Wires" onclick = "wiresClick();"></button>
+          <button id="doorbutton" title="Electrical Wires" onclick = "exit();"></button>
+
           <img class="securityRoom" src="img/Security/ControlRoom (WIP).jpg" alt="ControlRoom" usemap = "#wires" width = 100%>
         </div>
 
