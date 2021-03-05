@@ -1,1 +1,91 @@
+<!DOCTYPE html>
 
+<html>
+
+
+<head>
+  <title>Redacted Lab - Morgue</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css"/>
+  <link rel="stylesheet" href="css/room.css" type="text/css"/>
+  <script src="js/morgue.js"></script>
+  <style type="text/css">
+
+  #toolButton1 {
+    display: block;
+    width: 7%;
+    top: 50%;
+    left: 16%;
+    height: 7%;
+    position: absolute;
+    cursor: pointer;
+    background: none;
+  }
+
+  #toolButton2 {
+    display: block;
+    width: 10%;
+    top: 65%;
+    left: 15%;
+    height: 5%;
+    position: absolute;
+    cursor: pointer;
+    background: none;
+  }
+
+  </style>
+
+  <script>
+    /*
+    window.onload = function() {
+      var ImageMap = function(map, img) {
+          var n,
+            areas = map.getElementsByTagName('area'),
+            len = areas.length,
+            coords = [],
+            previousWidth = 1280;
+          for (n = 0; n < len; n++) {
+            coords[n] = areas[n].coords.split(',');
+          }
+          this.resize = function() {
+            var n, m, clen,
+              x = img.offsetWidth / previousWidth;
+            for (n = 0; n < len; n++) {
+              clen = coords[n].length;
+              for (m = 0; m < clen; m++) {
+                coords[n][m] *= x;
+              }
+              areas[n].coords = coords[n].join(',');
+            }
+            previousWidth = document.body.clientWidth;
+            return true;
+          };
+          window.onresize = this.resize;
+        },
+        imageMap = new ImageMap(document.getElementById('map_ID'), document.getElementById('img_ID'));
+      imageMap.resize();
+      return; */
+  </script>
+
+</head>
+
+<body onload="onLoad();">
+  <div id="wrapper">
+    <div id="head">
+      <h1 class="content">The <span class="redact">Redacted</span> Lab</h1>
+    </div>
+    <div class="row">
+      <div id="col-left">
+      </div>
+      <div id="col-right">
+        <h2 id="roomName">Morgue</h2>
+        <div id="imageDiv">
+          <button id="toolButton1" title="A tray of tools and chemicals">1</button>
+          <button id="toolButton2" title="A tray of tools and chemicals">2</button>
+          <img id="img" src="img/Morgue/Morgue.png" alt="A dirty and damp morgue, used to dispose of the doctors failures" width="100%" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</html>
