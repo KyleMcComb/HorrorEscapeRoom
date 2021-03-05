@@ -230,6 +230,7 @@
      height: 150px;
    }
 
+   /*Expanded Wires modal image*/
    #expandedWires{
      margin: auto;
      display: block;
@@ -256,6 +257,24 @@
      cursor: pointer;
    }
 
+   /*Left wire button to fix it*/
+   #leftWire{
+     border: 0px solid black;
+     width: 3.5%;
+     height: 5%;
+     top: 25%;
+     right: 52%;
+     position: absolute;
+     cursor: pointer;
+  background: none;
+   }
+
+   /*Left wire button to fix it*/
+   #leftWire:hover,
+   #leftWire:focus{
+      border: 2px solid black;
+   }
+
 
 </style>
 
@@ -279,9 +298,9 @@
         <div id="imageDiv">
           <button id="wiresbutton" title="Electrical Wires" onclick = "expandWires();"></button>
           <button id="doorbutton" title="Exit Door" onclick = "exit();"></button>
-          <button id="firstbutton" title="Unlock Button" onclick = "unlock(1);"></button>
-          <button id="secondbutton" title="Unlock Button" onclick = "unlock(2);"></button>
-          <button id="thirdbutton" title="Unlock Button" onclick = "unlock(3);"></button>
+          <button id="firstbutton" title="Press Button 1" onclick = "unlock(1);"></button>
+          <button id="secondbutton" title="Press Button 2" onclick = "unlock(2);"></button>
+          <button id="thirdbutton" title="Press Button 3" onclick = "unlock(3);"></button>
 
           <img class="securityRoom" src="img/Security/ControlRoom (WIP).jpg" alt="ControlRoom" usemap = "#wires" width = 100%>
 

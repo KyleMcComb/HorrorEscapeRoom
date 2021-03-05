@@ -1,32 +1,33 @@
   var gameDialog = "<p> Seems like this is the room Dr Friedrich used this room to monitor his subjects </p>";
   var cluesFound = 0;
   var cluesText = " <br> -Clues found(" + cluesFound + "/3) Part of the door unlocks-";
-
+  var wiresFixed = false;
   //When the wires are clicked
   function wiresClick(){
-    var wiresButton = document.getElementById("wiresbutton");
+    var wiresButton = document.getElementById("leftWire");
     wiresButton.style.display = "none";
     cluesFound++;
 
     //Switch to display diffferent door mechanism unlock message depending on clues found
     switch (cluesFound) {
-      case 0:
-        cluesText = " <br> -Clues found(" + cluesFound + "/3) 1 of the door's locks have been disabled-";
-        writeText('You have reconnected the loose wire',cluesText);
-        break;
+
       case 1:
+        cluesText = " <br> -Clues found(" + cluesFound + "/3) 1 of the door's locks have been disabled-";
+        break;
       case 2:
         cluesText = " <br> -Clues found(" + cluesFound + "/3) You hear another mechanism shifting behind the wall...-";
-        writeText('You have reconnected the loose wire',cluesText);
         break;
       case 3:
         cluesText = " <br> -Clues found(" + cluesFound + "/3) The last lock has been disabled-";
-        writeText('You have reconnected the loose wire',cluesText);
         break;
       default:
         alert("Error in clues found switch JS WiresClick");
         break;
     }
+        wiresFixed = true;
+        document.getElementById("captionWires").innerHTML = "<p> You have reconnected the loose wire " + cluesText + "</p>";
+        document.getElementById("captionWires").innerHTML += "Is there anything else I can do here?... <br> Is that a keypad?";
+        writeText('You have reconnected the loose wire',cluesText);
 
   }
 
@@ -96,14 +97,29 @@
 
           if(enteredCode == lockCode){
             cluesFound++;
-            cluesText = " <br> -Clues found(" + cluesFound + "/3) 1 of the door's locks have been disabled-";
+            //Switch to display diffferent door mechanism unlock message depending on clues found
+            switch (cluesFound) {
+              case 1:
+                cluesText = " <br> -Clues found(" + cluesFound + "/3) 1 of the door's locks have been disabled-";
+                break;
+              case 2:
+                cluesText = " <br> -Clues found(" + cluesFound + "/3) You hear another mechanism shifting behind the wall...-";
+                break;
+              case 3:
+                cluesText = " <br> -Clues found(" + cluesFound + "/3) The last lock has been disabled-";
+                break;
+              default:
+                alert("Error in clues found switch JS WiresClick");
+                break;
+            }
+
 
             //Hide buttons
             document.getElementById("firstbutton").style.display="none";
             document.getElementById("secondbutton").style.display="none";
             document.getElementById("thirdbutton").style.display="none";
 
-            writeText("You hear a mechanism behind the wall shift. ",cluesText)
+            writeText("It seems that the buttons were pressed in the correct order... ",cluesText)
           }
           else{ //Incorrect order of button press
 
@@ -136,5 +152,17 @@
     function expandWires(){
       document.getElementById("wiresModal").style.display = "block";
       document.getElementById("expandedWires").src = "img/Security/Wires.png";
-      document.getElementById("captionWires").innerHTML = "The left wire seems to be loose. Maybe I can reconnect them somehow...";
+      if (wiresFixed){
+        document.getElementById("captionWires").innerHTML = "Is there anything else I can do here?... <br> Is that a keypad?";
+      }
+      else{
+        document.getElementById("captionWires").innerHTML = "The left wire seems to be loose. Maybe I can reconnect them somehow...";
+      }
+
+    }
+
+    // When the user clicks on <span> (x), close the note
+    function closeNote() {
+      document.getElementById("myModal").style.display = "none";
+      document.getElementById("wiresModal").style.display = "none";
     }
