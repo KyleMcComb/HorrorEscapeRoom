@@ -6,56 +6,79 @@ function onLoad() {
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
-
-
-
-  var lineBreak = document.createElement("br");
-  var element = document.getElementById("col-left");
-  element.appendChild(lineBreak);
+  lineBreak();
 }
+
 
 function windowClick() {
 
+
+
+
+
   var para = document.createElement("p");
-  var text = document.createTextNode("[System] A barred window leading to the outside, it was far to small to squeeze though, better keep looking!");
+  var text = document.createTextNode('A small window leading outside, try and escape through the window? y for yes, no for no');
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
+  lineBreak();
 
-  var lineBreak = document.createElement("br");
-  var element = document.getElementById("col-left");
-  element.appendChild(lineBreak);
+  document.body.addEventListener("keydown", function(event) {
+    if (event.keyCode == 89) {
+      var para = document.createElement("p");
+      var text = document.createTextNode("[System] You attempt to escape through the window but find that the gap is too small and the drop to far, better keep looking");
+      para.appendChild(text);
+      var element = document.getElementById("col-left");
+      element.appendChild(para);
+      lineBreak();
+    } else {
+      var para = document.createElement("p");
+      var text = document.createTextNode("[System] Better keep looking for an escape from the doctor");
+      para.appendChild(text);
+      var element = document.getElementById("col-left");
+      element.appendChild(para);
+
+      lineBreak();
+
+    }
+
+
+  });
+  lineBreak();
+
+
 }
-
-
 
 function sideRoomClick() {
 
-if(exitDoorClicked === true){
+  if (exitDoorClicked === true) {
 
-  var para = document.createElement("p");
-  var text = document.createTextNode("[System] A dark hallway that leads somewhere, there may be another exit down there, or a tool to break the lock on the steel door I found earlier");
-  para.appendChild(text);
-  var element = document.getElementById("col-left");
-  element.appendChild(para);
+    var para = document.createElement("p");
+    var text = document.createTextNode("[System] A dark hallway that leads somewhere, there may be another exit down there, or a tool to break the lock on the steel door I found earlier. Enter the hallway? y for yes");
+    para.appendChild(text);
+    var element = document.getElementById("col-left");
+    element.appendChild(para);
+    lineBreak();
 
-  var lineBreak = document.createElement("br");
-  var element = document.getElementById("col-left");
-  element.appendChild(lineBreak);
 
-}
-else{
+    document.addEventListener('keydown', function(e) {
+      if (e.keyCode == 89) //key code for 'a'
+          location = 'morgue.html';
+    })
 
-  var para = document.createElement("p");
-  var text = document.createTextNode("[System] A dark hallway that leads somewhere, maybe there is another exit down here?");
-  para.appendChild(text);
-  var element = document.getElementById("col-left");
-  element.appendChild(para);
+  } else {
+    var para = document.createElement("p");
+    var text = document.createTextNode("[System] A dark hallway that leads somewhere, maybe there is another exit down here? Enter the hallway? y for yes");
+    para.appendChild(text);
+    var element = document.getElementById("col-left");
+    element.appendChild(para);
+    lineBreak();
 
-  var lineBreak = document.createElement("br");
-  var element = document.getElementById("col-left");
-  element.appendChild(lineBreak);
-}
+    document.addEventListener('keydown', function(e) {
+      if (e.keyCode == 89) //key code for 'a'
+        location = 'morgue.html';
+    })
+  }
 
 }
 
@@ -63,12 +86,32 @@ function exitClick() {
 
   exitDoorClicked = true;
   var para = document.createElement("p");
-  var text = document.createTextNode("[System] A exit but it is barred by a locked steel gate, it looks old, i may be able to break the lock with the right tool");
+  var text = document.createTextNode("A exit but it is barred by a locked steel gate, it looks old, i may be able to break the lock with the right tool");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
 
+  lineBreak();
+}
+
+function lineBreak() {
   var lineBreak = document.createElement("br");
   var element = document.getElementById("col-left");
   element.appendChild(lineBreak);
+
 }
+
+
+
+
+
+/*
+function UserInput() {
+  var input = document.createElement("INPUT");
+  input.setAttribute("type", "text");
+  input.setAttribute("value", "Y FOR Yes, N for No");
+  input.setAttribute("id", "Div1");
+  var element = document.getElementById("col-left");
+  element.appendChild(input);
+   lineBreak();
+} */

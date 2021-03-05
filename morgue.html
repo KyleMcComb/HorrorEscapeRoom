@@ -1,51 +1,37 @@
 <!DOCTYPE html>
+
 <html>
-<!--WHEN CHANGING SIZE (MID GAME) CLICK DOESN'T WORK
-  is it important? is it necessary?
- -->
+
 
 <head>
-  <title>Redacted Lab - Hallway</title>
-  <link rel="stylesheet" href="css/style.css" type="text/css" />
-  <link rel="stylesheet" href="css/room.css" type="text/css" />
-  <script src="js/hallway.js"></script>
-
+  <title>Redacted Lab - Morgue</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css"/>
+  <link rel="stylesheet" href="css/room.css" type="text/css"/>
+  <script src="js/morgue.js"></script>
   <style type="text/css">
 
-  #windowButton {
+  #toolButton1 {
     display: block;
-    width: 4%;
-    top: 5%;
-    right: 22%;
-    height: 32%;
+    width: 7%;
+    top: 50%;
+    left: 16%;
+    height: 7%;
     position: absolute;
     cursor: pointer;
     background: none;
   }
 
-  #exitDoorButton {
+  #toolButton2 {
     display: block;
     width: 10%;
-    top: 38%;
-    right: 42%;
-    height: 19%;
+    top: 65%;
+    left: 15%;
+    height: 5%;
     position: absolute;
     cursor: pointer;
     background: none;
   }
 
-  #sideRoomButton {
-    display: block;
-    width: 6%;
-    top: 15%;
-    left: 22%;
-    height: 62%;
-    position: absolute;
-    cursor: pointer;
-    background: none;
-  }
-
-  
   </style>
 
   <script>
@@ -91,12 +77,11 @@
       <div id="col-left">
       </div>
       <div id="col-right">
-        <h2 id="roomName">Hallway</h2>
+        <h2 id="roomName">Morgue</h2>
         <div id="imageDiv">
-          <button id="windowButton" title="Barred window" onclick="windowClick();">Click Me</button>
-          <button id="exitDoorButton" title="A chain and steel door" onclick="exitClick();">Click Me</button>
-          <button id="sideRoomButton" title="Entrance to a side room" onclick="sideRoomClick();">Click Me</button>
-          <img id="img" src="img/Hall/hallway.png" alt="A dark hallway with one exit and a side room" width="100%" />
+          <button id="toolButton1" title="A tray of tools and chemicals">1</button>
+          <button id="toolButton2" title="A tray of tools and chemicals">2</button>
+          <img id="img" src="img/Morgue/Morgue.png" alt="A dirty and damp morgue, used to dispose of the doctors failures" width="100%" />
         </div>
       </div>
 

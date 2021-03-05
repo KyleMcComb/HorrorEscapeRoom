@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
-<!--WHEN CHANGING SIZE (MID GAME) CLICK DOESN'T WORK
-  is it important? is it necessary?
- -->
     <head>
         <title>Exit Room</title>
         <link rel="stylesheet" href="css/style.css" type="text/css" />
         <link rel="stylesheet" href="css/room.css" type ="text/css" />
+        <script src="js/exit.js"></script>
+        <script src="js/global.js"></script>
 
         <style type="text/css">
 
@@ -19,7 +18,7 @@
           height: 48%;
           position: absolute;
           cursor: pointer;
-          background: none;
+          background:none;
         }
 
         #goldKey{
@@ -57,123 +56,97 @@
           background-size:100%;
         }
 
-
-
-
-        </style>
-        <script>
-        function changeText(){
-          var element = document.getElementById("change");
-          element.innerHTML="EXIT ROOM";
+        /* The expanded note */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
         }
 
-        var code;
 
-        function displayCode(){
-          var txt;
-          var startTime = new Date();
+        /* Caption of Modal Image */
+        #caption {
+          margin: auto;
+          display: block;
+          width: 80%;
+          max-width: 700px;
+          text-align: center;
+          color: #ccc;
+          padding: 10px 0;
+          height: 150px;
+        }
 
-          code = prompt("Enter the code to escape!: ");
+        #expandedKey{
+          margin: auto;
+          display: block;
+          width: 80%;
+          right: 50%;
+          justify-content: center;
+          max-width: 700px;
+        }
+        /* The Close Button */
+        .close {
+          position: absolute;
+          top: 15px;
+          right: 35px;
+          color: #f1f1f1;
+          font-size: 40px;
+          font-weight: bold;
+          transition: 0.3s;
+        }
 
-          var endTime = new Date();
-          var timeSpent = endTime-startTime;
-          duration-=timeSpent;
+        .close:hover, .close:focus {
+          color: #bbb;
+          text-decoration: none;
+          cursor: pointer;
+        }
 
-
-          if(duration<=0){
-            window.location.href = 'hallway.html';   //END SCREEN - YOU LOSE (time out)
-          } else{
-            if (code == null || code == "") {
-              txt = "User cancelled the prompt.";
-            } else if(code=="420"){
-              window.location.href = 'endScreen.html';
-            } else {
-              txt = "<p>That code is incorrect</p>";
-            }
-          }
-          document.getElementById("gameText").innerHTML = txt + ' ' + timeSpent;
-
-          }
-
-            var myTimer2;
-            var timePassed=0;
-            var myTimer;
-            var duration =(10*1000);
-
-            function startTimer(){
-              myTimer = setInterval('countdown()',1000);
-              timePassed+=1000;
-              //myTimer2  = setTimeout('countdown()',5000);
-            }
-
-            function stopTimer(){
-                clearInterval(myTimer2);
-            }
-
-            function countdown(){
-                timePassed+=1000;
-                duration-=1000;
-
-                if(duration==5000){
-                  document.getElementById('gameText').innerHTML='<p>5 seconds left</p>';
-
-                }
-                if(duration>=0){
-                    document.getElementById('timer').innerHTML = duration;
-                } else{
-                    stopTimer();
-                    document.getElementById('gameText').innerHTML='<p>Stop Game!</p>';
-                }
-            }
-
-            function keyFound(keyType){
-              window.open('img/Exit/goldKey.png');
-
-              var x;
-              switch(keyType){
-                case 'gold':
-                  x = document.getElementById("goldKey");
-                  break;
-                case 'blue':
-                  x = document.getElementById("blueKey");
-                  break;
-                case 'purple':
-                  x = document.getElementById("purpleKey");
-                  break;
-                default:
-                  break;
-              }
-              x.style.display = "none";
-
-            }
-        </script>
+        </style>
 
     </head>
     <body onload="startTimer();">
       <div id="wrapper">
     <div id="head">
-      <h1>Exit Room</h1>
+      <h1>Redacted Laboratory</h1>
     </div>
     <div class="row">
       <div id="col-left">
-        <h2 id="change">Game Text Section</h2>
-
         <div id="gameText">
         </div>
 
-        <p id="demo"></p>
         <p id="timer"></p>
+
       </div>
       <div id="col-right">
         <h2 id="roomName">Final Room</h2>
 
+
+        <!--Holds the image of the room and buttons/clickable items in room -->
         <div id="imageDiv">
           <button id="exitButton" onclick="displayCode();"></button>
-          <button class="key" id="goldKey" onclick="keyFound('gold');"></button>
+          <button title="goldKey" class="key" id="goldKey" onclick="keyFound('gold');"></button>
           <button class="key" id="blueKey" onclick="keyFound('blue');"></button>
           <button class="key" id="purpleKey" onclick="keyFound('purple');"></button>
           <img id="img_ID" src="img/Exit/exitRoom.jpg" usemap="#map" border="0" width="100%" alt="" />
         </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <span class="close" onclick = "closeKey()">&times;</span>
+          <img id="expandedKey">
+          <div id="caption"></div>
+        </div>
+
+
+
       </div>
     </div>
   </div>

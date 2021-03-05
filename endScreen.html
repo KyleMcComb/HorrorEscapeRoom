@@ -2,12 +2,34 @@
   <html>
 
   <head>
-    <title>Horror Escape Room</title>
+    <title>The Redacted Laboratory</title>
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" href="css/room.css" type ="text/css" />
+    <script src="js/general.js"></script>
+
+    <style type="text/css">
+      img {
+        width:100%;
+      }
+    </style>
+
+    <script type="text/javascript">
+      function gameMode(){
+        var winGame = sessionStorage.getItem("winGame");
+        //var imgItem = document.getElementById('doctor');
+        //prompt(winGame);
+      //  var winGame=false;
+
+        if(winGame=="win"){
+          document.getElementById("doctor").src = "img/EndScreen/Surgeon-Win.jpg";
+        }else{
+          document.getElementById("doctor").src="img/EndScreen/Surgeon-Lose.jpg";
+        }
+      }
+    </script>
   </head>
 
-  <body>
+  <body onload="gameMode();">
     <div id="wrapper">
   <div id="head">
     <h1>Stats/End Page</h1>
@@ -15,11 +37,10 @@
   <div class="row">
     <div class="leftCol">
       <h2 id="change">Game Text Section</h2>
-      <p id="demo"></p>
-      <p id="demo"></p>
     </div>
     <div class="rightCol">
       <h2>Stats</h2>
+      <img id="doctor" />
   </div>
 </div>
 </body>
