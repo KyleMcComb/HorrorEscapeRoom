@@ -69,6 +69,14 @@
           overflow: auto; /* Enable scroll if needed */
           background-color: rgb(0,0,0); /* Fallback color */
           background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+          align-content:center;
+        }
+
+        .modal img {
+          margin: auto;
+          display: block;
+          width: 80%;
+          text-align: center;
         }
 
 
@@ -92,6 +100,7 @@
           justify-content: center;
           max-width: 700px;
         }
+
         /* The Close Button */
         .close {
           position: absolute;
@@ -109,21 +118,23 @@
           cursor: pointer;
         }
 
+        #timer{
+          font-size: large;
+        }
+
         </style>
 
     </head>
-    <body onload="startTimer();">
+    <body >
       <div id="wrapper">
     <div id="head">
       <h1>Redacted Laboratory</h1>
     </div>
     <div class="row">
       <div id="col-left">
+        <p id="timer"></p>
         <div id="gameText">
         </div>
-
-        <p id="timer"></p>
-
       </div>
       <div id="col-right">
         <h2 id="roomName">Final Room</h2>
@@ -133,7 +144,7 @@
         <div id="imageDiv">
           <button id="exitButton" onclick="displayCode();"></button>
           <button title="goldKey" class="key" id="goldKey" onclick="keyFound('gold');"></button>
-          <button class="key" id="blueKey" onclick="keyFound('blue');"></button>
+          <button title ="Gold Key button" class="key" id="blueKey" onclick="keyFound('blue');"></button>
           <button class="key" id="purpleKey" onclick="keyFound('purple');"></button>
           <img id="img_ID" src="img/Exit/exitRoom.jpg" usemap="#map" border="0" width="100%" alt="" />
         </div>

@@ -1,6 +1,4 @@
-var myTimer; //counts time in room
-var timePassed=0; //record how long the user spent in this room
-var duration =(60*1000); //in milliseconds - 1min to escape
+var timePassed=0; //record how long the user spent in this room (seconds)
 var code; //code entered in by user to escape
 
 var noKeys = 0; //used to check user has collected keys before escpaing
@@ -19,7 +17,9 @@ function displayCode(){
   var endTime = new Date();
   //time spent in function
   var timeSpent = endTime-startTime;
-  duration-=timeSpent;
+
+  timeSpent = timeSpent/1000;
+  timer-=timeSpent;
 
   if(duration<=0){
     //If the time is up - brings user to the end screen to show stats
@@ -55,14 +55,10 @@ function displayCode(){
 
   }
 
-
-  //TIMER FOR 60 Seconds escape!
-    function startTimer(){
-      //This is used to count up every 1 second (1000 milliseconds)
-      myTimer = setInterval('countdown()',1000);
-      //adds 1sec to the timePassed variable - used to calc how long spend in room (stats page)
-      timePassed+=1000;
-    }
+//TIMER BUT ANDREW WAY
+var timer=60;
+var timedEvent;
+  window.addEventListener('load', function() { timedEvent = setInterval(countdown, 1000); });
 
     function stopTimer(){
         //used to clear timer.
@@ -70,22 +66,24 @@ function displayCode(){
     }
     //Checks if game over or 30s left of game - output to user/change html
     function countdown(){
-        timePassed+=1000; //used to calc how long a user has spent in room
-        duration-=1000; //takes off 60s
+        timePassed+=1; //used to calc how long a user has spent in room
+        timer--; //takes off 60s
 
         //halfway mark - displayed to user
-        if(duration==30000){
+        if(timer==30){
           document.getElementById('gameText').innerHTML+='<p>[System]: You hear a creek of floor boards, Dr Friedrich is getting closer, better hurry up!</p><br><br>';
+          document.getElementById('timer').innerHTML = timer;
           //EDIT LATER? - used to display timer to gametext area
-        }else if(duration>=0 && duration !=30000){
-            document.getElementById('timer').innerHTML = duration;
-        } else{
+        }else if(timer>0 && timer !=30){
+            document.getElementById('timer').innerHTML = timer;
+        } else {
           //Stops timer, game over - display end screen
-            stopTimer();
             var winGame = "no";
             sessionStorage.setItem("winGame", winGame);
             window.location.href = 'endScreen.html';
         }
+          //Stops timer, game over - display end screen
+        clearInterval(te);
     }
 
 
@@ -158,6 +156,7 @@ function displayCode(){
       document.getElementById("expandedKey").alt = altTxt;
       //hint for users to remember code on key
       document.getElementById("caption").innerHTML = "The Key has a number - make sure to remember it!";
+
     }
 
     // When the user clicks on <span> (x), close the note
