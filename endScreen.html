@@ -5,9 +5,31 @@
     <title>Horror Escape Room</title>
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" href="css/room.css" type ="text/css" />
+    <script src="js/general.js"></script>
+
+    <style type="text/css">
+      img {
+        width:100%;
+      }
+    </style>
+
+    <script type="text/javascript">
+      function gameMode(){
+        var winGame = sessionStorage.getItem("winGame");
+        //var imgItem = document.getElementById('doctor');
+        //prompt(winGame);
+      //  var winGame=false;
+
+        if(winGame=="yes"){
+          document.getElementById("doctor").src = "img/EndScreen/Surgeon-Win.jpg";
+        }else{
+          document.getElementById("doctor").src="img/EndScreen/Surgeon-Lose.jpg";
+        }
+      }
+    </script>
   </head>
 
-  <body>
+  <body onload="gameMode();">
     <div id="wrapper">
   <div id="head">
     <h1>Stats/End Page</h1>
@@ -20,6 +42,7 @@
     </div>
     <div class="rightCol">
       <h2>Stats</h2>
+      <img id="doctor" />
   </div>
 </div>
 </body>
