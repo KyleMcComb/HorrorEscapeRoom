@@ -6,134 +6,7 @@
 
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <link rel="stylesheet" href="css/room.css" type="text/css" />
-
-  <script>
-
-    var gameDialog = "<p> Seems like this is the room Dr Friedrich used this room to monitor his subjects </p>";
-    var cluesFound = 0;
-    var cluesText = " <br> -Clues found(" + cluesFound + "/3) Part of the door unlocks-";
-
-    //When the wires are clicked
-    function wiresClick(){
-      var wiresButton = document.getElementById("wiresbutton");
-      wiresButton.style.display = "none";
-      cluesFound++;
-
-      if(cluesText != 3){
-        cluesText = " <br> -Clues found(" + cluesFound + "/3) 1 of the door's locks have been disabled-";
-        writeText('You have found broken wires',cluesText);
-      }
-      else {
-        cluesText = " <br> -Clues found(" + cluesFound + "/3) The last lock has been disabled-";
-        writeText('You have found broken wires',cluesText);
-      }
-    }
-
-    //Function to output text in the game speech part
-    function writeText(text,cluesText){
-      gameDialog += "<p> <br>"+ text + cluesText + "</p>";
-      document.getElementById('gameText').innerHTML = (gameDialog);
-    }
-
-    //When the exit door is clicked
-    function exit(){
-      if(cluesFound == 3){
-        writeText("You have escaped the security room!","");
-      }
-      else if(cluesFound == 2){
-        writeText("Door still seems to be locked <br> 2/3 Locks are disabled","");
-      }
-      else if(cluesFound == 1){
-        writeText("Door still seems to be locked <br> 1/3 Locks are disabled","");
-      }
-      else if(cluesFound == 0){
-        writeText("The door seems to have a 3 layer lock. <br> 0/3 Locks are disabled","");
-      }
-    }
-
-    //Unlock 3 passcode lock
-    var buttonsPressed = 0;
-    var lockCode = "132";
-    var enteredCode = "";
-    var firstTime = true;
-      function unlock(number){
-
-        //Prompt for buttons to be pressed in an order
-        if((buttonsPressed == 0)&&(firstTime)){
-          writeText("There are 3 buttons here. Maybe I need to press them in a certain order...","")
-        }
-        firstTime = false;
-        //Make buttons disappear when pressed
-        switch(number){
-          case 1:
-            document.getElementById("firstbutton").style.display="none";
-            enteredCode += number;
-            buttonsPressed++;
-            break;
-          case 2:
-            document.getElementById("secondbutton").style.display="none";
-            enteredCode += number;
-            buttonsPressed++;
-            break;
-          case 3:
-            document.getElementById("thirdbutton").style.display="none";
-            enteredCode += number;
-            buttonsPressed++;
-            break;
-          default:
-            alert("Error in switch of button locks");
-            break;
-        }
-
-
-
-
-        writeText("Button " + number + " pressed...","");
-        //Reset if its been pressed 3 times
-        if(buttonsPressed >= 3){
-          //Correct order of button press
-
-            if(enteredCode == lockCode){
-              cluesFound++;
-              cluesText = " <br> -Clues found(" + cluesFound + "/3) 1 of the door's locks have been disabled-";
-
-              //Hide buttons
-              document.getElementById("firstbutton").style.display="none";
-              document.getElementById("secondbutton").style.display="none";
-              document.getElementById("thirdbutton").style.display="none";
-
-              writeText("You hear a mechanism behind the wall shift. ",cluesText)
-            }
-            else{ //Incorrect order of button press
-
-              writeText("Buttons were pressed in the wrong order. No locks were disabled","");
-              document.getElementById("firstbutton").style.display="initial";
-              document.getElementById("secondbutton").style.display="initial";
-              document.getElementById("thirdbutton").style.display="initial";
-            }
-            enteredCode = "";
-            buttonsPressed = 0;
-          }
-
-      }
-
-      //Expand the note image
-      function expand(){
-        document.getElementById("myModal").style.display = "block";
-        document.getElementById("expandedNote").src = "img/Security/BloodNoteForTim.jpg";
-        document.getElementById("expandedNote").style
-        document.getElementById("caption").innerHTML = "Dr Friedlich's Notes";
-      }
-
-
-      // When the user clicks on <span> (x), close the note
-      function closeNote() {
-        document.getElementById("myModal").style.display = "none";
-      }
-
-    </script>
-
-
+  <script src="js/security.js"></script>
 
   <style type="text/css">
     * {
@@ -309,6 +182,20 @@
      background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
    }
 
+   /* The expanded wire image */
+   .wiresClass {
+     display: none; /* Hidden by default */
+     position: fixed; /* Stay in place */
+     z-index: 1; /* Sit on top */
+     padding-top: 100px; /* Location of the box */
+     left: 0;
+     top: 0;
+     width: 100%; /* Full width */
+     height: 100%; /* Full height */
+     overflow: auto; /* Enable scroll if needed */
+     background-color: rgb(0,0,0); /* Fallback color */
+     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+   }
 
    /* Caption of Modal Image */
    #caption {
@@ -323,6 +210,27 @@
    }
 
    #expandedNote{
+     margin: auto;
+     display: block;
+     width: 80%;
+     right: 50%;
+     justify-content: center;
+     max-width: 700px;
+   }
+
+   /* Caption of the Wires Modal Image */
+   #captionWires {
+     margin: auto;
+     display: block;
+     width: 80%;
+     max-width: 700px;
+     text-align: center;
+     color: #ccc;
+     padding: 10px 0;
+     height: 150px;
+   }
+
+   #expandedWires{
      margin: auto;
      display: block;
      width: 80%;
@@ -348,6 +256,7 @@
      cursor: pointer;
    }
 
+
 </style>
 
 </head>
@@ -368,23 +277,32 @@
         <h2 id="roomName">Security</h2>
 
         <div id="imageDiv">
-          <button id="wiresbutton" title="Electrical Wires" onclick = "wiresClick();"></button>
+          <button id="wiresbutton" title="Electrical Wires" onclick = "expandWires();"></button>
           <button id="doorbutton" title="Exit Door" onclick = "exit();"></button>
-
           <button id="firstbutton" title="Unlock Button" onclick = "unlock(1);"></button>
           <button id="secondbutton" title="Unlock Button" onclick = "unlock(2);"></button>
           <button id="thirdbutton" title="Unlock Button" onclick = "unlock(3);"></button>
 
-          <button id="noteModal"title = "Note" onclick = "expand()"></button>
           <img class="securityRoom" src="img/Security/ControlRoom (WIP).jpg" alt="ControlRoom" usemap = "#wires" width = 100%>
 
 
-          <!-- The Modal -->
+          <!-- The Modal for Extra Note-->
+          <button id="noteModal"title = "Note" onclick = "expand()"></button>
           <div id="myModal" class="modal">
             <span class="close" onclick = "closeNote()">&times;</span>
             <img id="expandedNote">
             <div id="caption"></div>
           </div>
+
+          <!-- The Modal for Wires -->
+          <div id="wiresModal" class="wiresClass">
+            <span class="close" onclick = "closeNote()">&times;</span>
+            <button id="leftWire"title = "Loose Wire" onclick = "wiresClick();"></button>
+            <img id="expandedWires">
+            <div id="captionWires"></div>
+          </div>
+
+
         </div>
 
       </div>
