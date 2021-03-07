@@ -1,180 +1,111 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Cells</title>
-        <link rel="stylesheet" href="css/style.css" type="text/css" />
-        <link rel="stylesheet" href="css/room.css" type ="text/css" />
+<head>
+  <title>Redacted Lab - Cells</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="css/room.css" type="text/css" />
+  <script src="js/cell.js"></script>
 
-        <style type="text/css">
+  <style type="text/css">
+    #drawerButton {
+      border: 2px solid red;
+      display: block;
+      width: 12%;
+      top: 70%;
+      right: 68%;
+      height: 17%;
+      position: absolute;
+      cursor: pointer;
+      background: none;
+    }
 
-        #exitButton {
-          border:none;
-          display: block;
-          width: 24%;
-          top: 47%;
-          right: 36%;
-          height: 48%;
-          position: absolute;
-          cursor: pointer;
-          background: none;
-        }
+    #arrowButton {
+      border: 2px solid yellow;
+      display: block;
+      width: 18%;
+      top: 30%;
+      right: 0%;
+      height: 12%;
+      position: absolute;
+      cursor: pointer;
+      background: none;
+    }
 
-        #goldKey{
-          width: 6%;
-          top: 90%;
-          right: 90%;
-          height: 6%;
-          background:url('img/Exit/goldKey.png') no-repeat;
-          background-size:100%;
-        }
+    #cellGateButton {
+      border: 2px solid blue;
+      cursor: pointer;
+      position: absolute;
+      width: 12%;
+      top: 45%;
+      right: 57%;
+      height: 21%;
+      background:url('img/Cell/Jail-bars.png') no-repeat;
+      background-size:100%;
+    }
 
-        #blueKey{
-          width: 6%;
-          top: 90%;
-          right: 2%;
-          height: 6%;
-          background:url('img/Exit/blueKey.png') no-repeat;
-          background-size:100%;
-        }
+    #compartmentButton {
+      border: 2px solid blue;
+      display: none;
+      width: 12%;
+      top: 45%;
+      right: 57%;
+      height: 21%;
+      position: absolute;
+      cursor: pointer;
+      background: none;
+    }
 
-        #purpleKey{
-          width: 6%;
-          top: 2%;
-          right: 45%;
-          height: 6%;
-          background:url('img/Exit/purpleKey.png') no-repeat;
-          background-size:100%;
-        }
+    #compartment2Button {
+      border: 2px solid green;
+      display: none;
+      width: 30%;
+      top: 72%;
+      right: 14%;
+      height: 28%;
+      position: absolute;
+      cursor: pointer;
+      background: none;
+    }
 
-        .key {
-          border:2px solid blue;
-          display: block;
-          position: absolute;
-          cursor: pointer;
-          background-size:100%;
-        }
+    #jailBars{
+      width: 6%;
+      top: 90%;
+      right: 90%;
+      height: 6%;
+      background:url('img/Cell/Jail-bars.png') no-repeat;
+      background-size:100%;
+    }
 
+  </style>
 
+</head>
 
-
-        </style>
-        <script>
-        function changeText(){
-          var element = document.getElementById("change");
-          element.innerHTML="Cells";
-        }
-
-        var code;
-
-        function displayCode(){
-          var txt;
-          var startTime = new Date();
-
-          code = prompt("Enter the code to escape!: ");
-
-          var endTime = new Date();
-          var timeSpent = endTime-startTime;
-          duration-=timeSpent;
-
-
-          if(duration<=0){
-            window.location.href = 'hallway.html';   //END SCREEN - YOU LOSE (time out)
-          } else{
-            if (code == null || code == "") {
-              txt = "User cancelled the prompt.";
-            } else if(code=="420"){
-              window.location.href = 'endScreen.html';
-            } else {
-              txt = "<p>That code is incorrect</p>";
-            }
-          }
-          document.getElementById("gameText").innerHTML = txt + ' ' + timeSpent;
-
-          }
-
-            var myTimer2;
-            var timePassed=0;
-            var myTimer;
-            var duration =(10*1000);
-
-            function startTimer(){
-              myTimer = setInterval('countdown()',1000);
-              timePassed+=1000;
-              //myTimer2  = setTimeout('countdown()',5000);
-            }
-
-            function stopTimer(){
-                clearInterval(myTimer2);
-            }
-
-            function countdown(){
-                timePassed+=1000;
-                duration-=1000;
-
-                if(duration==5000){
-                  document.getElementById('gameText').innerHTML='<p>5 seconds left</p>';
-
-                }
-                if(duration>=0){
-                    document.getElementById('timer').innerHTML = duration;
-                } else{
-                    stopTimer();
-                    document.getElementById('gameText').innerHTML='<p>Stop Game!</p>';
-                }
-            }
-
-            function keyFound(keyType){
-              window.open('img/Exit/goldKey.png');
-
-              var x;
-              switch(keyType){
-                case 'gold':
-                  x = document.getElementById("goldKey");
-                  break;
-                case 'blue':
-                  x = document.getElementById("blueKey");
-                  break;
-                case 'purple':
-                  x = document.getElementById("purpleKey");
-                  break;
-                default:
-                  break;
-              }
-              x.style.display = "none";
-
-            }
-        </script>
-
-    </head>
-    <body onload="startTimer();">
-      <div id="wrapper">
+<body onload="onLoad();">
+  <div id="wrapper">
     <div id="head">
-      <h1>Exit Room</h1>
+      <h1 class="content">THE <span class="redact">REDACTED</span> LAB</h1>
     </div>
+
     <div class="row">
       <div id="col-left">
-        <h2 id="change">Game Text Section</h2>
-
-        <div id="gameText">
-        </div>
-
-        <p id="demo"></p>
-        <p id="timer"></p>
       </div>
+
       <div id="col-right">
-        <h2 id="roomName">Final Room</h2>
-
+        <h2 id="roomName">Cell Room</h2>
         <div id="imageDiv">
-          <button id="exitButton" onclick="displayCode();"></button>
-          <button class="key" id="goldKey" onclick="keyFound('gold');"></button>
-          <button class="key" id="blueKey" onclick="keyFound('blue');"></button>
-          <button class="key" id="purpleKey" onclick="keyFound('purple');"></button>
-          <img id="img_ID" src="img/Cell/CellRoomNum.png" usemap="#map" border="0" width="100%" alt="" />
+        <button id="drawerButton" title="drawer" onclick="drawerClick();"></button>
+        <button id="arrowButton" title="arrow" onclick="arrowClick();"></button>
+        <button id="cellGateButton" title="cellGate" onclick="cellGateClick();"></button>
+        <button id="compartmentButton" title="compartment1" onclick="compartmentClick();"></button>
+        <button id="compartment2Button" title="compartment2" onclick="compartment2Click();"></button>
+
+        <img id="background" src="img/Cell/CellRoomNum.png" alt="CellNum" width="100%" />
         </div>
       </div>
+
     </div>
   </div>
-
 </body>
+
 </html>
