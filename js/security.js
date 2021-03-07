@@ -1,5 +1,5 @@
   var gameDialog = "<p> Seems like this is the room Dr Friedrich used this room to monitor his subjects </p>";
-  var cluesFound = 0;
+  var cluesFound = 1;
   var cluesText = " <br> -Clues found(" + cluesFound + "/3) Part of the door unlocks-";
   var wiresFixed = false;
   //When the wires are clicked
@@ -40,7 +40,10 @@
   //When the exit door is clicked
   function exit(){
     if(cluesFound == 3){
+
       writeText("You have escaped the security room!","");
+      alert("You have escaped the security room");
+      window.location.href = "exit.html";
     }
     else if(cluesFound == 2){
       writeText("Door still seems to be locked <br> 2/3 Locks are disabled","");
