@@ -69,10 +69,6 @@ function noteClick(background) {
   element.appendChild(lineBreak);
 }
 
-function noteBackStoryClick() {
-
-}
-
 //Expand the note image
 function expand(){
   document.getElementById("myModal").style.display = "block";
@@ -84,7 +80,7 @@ function expand(){
 // When the user clicks on <span> (x), close the note
 function closeNote() {
   document.getElementById("myModal").style.display = "none";
-  document.getElementById("wiresModal").style.display = "none";
+
 }
 
 function compartmentClick() {
