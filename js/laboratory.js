@@ -49,6 +49,11 @@ function noteClick(background) {
   // Removes button after clicked
   var nButton = document.getElementById("noteButton");
   noteButton.style.display = "none";
+  // Removes compartment buttons after clicked
+  var cButton = document.getElementById("compartmentButton");
+  compartmentButton.style.display = "none";
+  var cButton2 = document.getElementById("compartment2Button");
+  compartment2Button.style.display = "none";
   // Displays text for the user (in left column)
   var para = document.createElement("p");
   var text = document.createTextNode("It appears you have found some important documents.");
