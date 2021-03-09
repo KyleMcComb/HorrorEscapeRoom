@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <link rel="stylesheet" href="css/room.css" type="text/css" />
   <script src="js/cell.js"></script>
+  <script src="js/global.js"></script>
 
   <style type="text/css">
     #drawerButton {
@@ -81,7 +82,7 @@
 
 </head>
 
-<body onload="onLoad();">
+<body onload="onload();">
   <div id="wrapper">
     <div id="head">
       <h1 class="content">THE <span class="redact">REDACTED</span> LAB</h1>
@@ -89,6 +90,9 @@
 
     <div class="row">
       <div id="col-left">
+        <p id="timer"></p>
+        <div id="gameText">
+        </div>
       </div>
 
       <div id="col-right">

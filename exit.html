@@ -4,132 +4,17 @@
         <title>Exit Room</title>
         <link rel="stylesheet" href="css/style.css" type="text/css" />
         <link rel="stylesheet" href="css/room.css" type ="text/css" />
+        <link rel="stylesheet" href="css/exit.css" type="text/css" />
+
         <script src="js/exit.js"></script>
         <script src="js/global.js"></script>
 
-        <style type="text/css">
-
-        #exitButton {
-          border:none;
-          display: block;
-          width: 24%;
-          top: 47%;
-          right: 36%;
-          height: 48%;
-          position: absolute;
-          cursor: pointer;
-          background:none;
-        }
-
-        #goldKey{
-          width: 6%;
-          top: 90%;
-          right: 90%;
-          height: 6%;
-          background:url('img/Exit/goldKey.png') no-repeat;
-          background-size:100%;
-        }
-
-        #blueKey{
-          width: 6%;
-          top: 90%;
-          right: 2%;
-          height: 6%;
-          background:url('img/Exit/blueKey.png') no-repeat;
-          background-size:100%;
-        }
-
-        #purpleKey{
-          width: 6%;
-          top: 2%;
-          right: 45%;
-          height: 6%;
-          background:url('img/Exit/purpleKey.png') no-repeat;
-          background-size:100%;
-        }
-
-        .key {
-          border:none;
-          display: block;
-          position: absolute;
-          cursor: pointer;
-          background-size:100%;
-        }
-
-        /* The expanded note */
-        .modal {
-          display: none; /* Hidden by default */
-          position: fixed; /* Stay in place */
-          z-index: 1; /* Sit on top */
-          padding-top: 100px; /* Location of the box */
-          left: 0;
-          top: 0;
-          width: 100%; /* Full width */
-          height: 100%; /* Full height */
-          overflow: auto; /* Enable scroll if needed */
-          background-color: rgb(0,0,0); /* Fallback color */
-          background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-          align-content:center;
-        }
-
-        .modal img {
-          margin: auto;
-          display: block;
-          width: 80%;
-          text-align: center;
-        }
-
-
-        /* Caption of Modal Image */
-        #caption {
-          margin: auto;
-          display: block;
-          width: 80%;
-          max-width: 700px;
-          text-align: center;
-          color: #ccc;
-          padding: 10px 0;
-          height: 150px;
-        }
-
-        #expandedKey{
-          margin: auto;
-          display: block;
-          width: 80%;
-          right: 50%;
-          justify-content: center;
-          max-width: 700px;
-        }
-
-        /* The Close Button */
-        .close {
-          position: absolute;
-          top: 15px;
-          right: 35px;
-          color: #f1f1f1;
-          font-size: 40px;
-          font-weight: bold;
-          transition: 0.3s;
-        }
-
-        .close:hover, .close:focus {
-          color: #bbb;
-          text-decoration: none;
-          cursor: pointer;
-        }
-
-        #timer{
-          font-size: large;
-        }
-
-        </style>
-
     </head>
-    <body >
+    <body>
       <div id="wrapper">
-    <div id="head">
-      <h1>Redacted Laboratory</h1>
-    </div>
+        <div id="head">
+          <h1 class="content">THE <span class="redact">REDACTED</span> LAB</h1>
+        </div>
     <div class="row">
       <div id="col-left">
         <p id="timer"></p>
