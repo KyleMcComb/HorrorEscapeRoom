@@ -8,23 +8,21 @@
     <script src="js/general.js"></script>
 
     <style type="text/css">
-      img {
-        width:100%;
-      }
+
     </style>
 
     <script type="text/javascript">
       function gameMode(){
         var winGame = sessionStorage.getItem("winGame");
-        //var imgItem = document.getElementById('doctor');
-        //prompt(winGame);
-      //  var winGame=false;
 
         if(winGame=="win"){
           document.getElementById("doctor").src = "img/EndScreen/Surgeon-Win.jpg";
         }else{
           document.getElementById("doctor").src="img/EndScreen/Surgeon-Lose.jpg";
         }
+
+        var exitTime = sessionStorage.getItem("exitTime");
+        document.getElementById('timeInExit').innerHTML = 'Time in last room: ' + exitTime + ' seconds';
       }
     </script>
   </head>
@@ -35,10 +33,11 @@
     <h1>Stats/End Page</h1>
   </div>
   <div class="row">
-    <div class="leftCol">
+    <div id="col-left">
       <h2 id="change">Game Text Section</h2>
+      <p id="timeInExit">Hello</p>
     </div>
-    <div class="rightCol">
+    <div id="col-right">
       <h2>Stats</h2>
       <img id="doctor" />
   </div>

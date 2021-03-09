@@ -12,7 +12,7 @@ function displayCode(){
   //prompt box stops the java timer, this calculates how long in function and takes it off remaining time
   var startTime = new Date();
   //text to prompt user to enter a code in
-  code = prompt("Enter the code to escape!: ");
+  code = prompt("Enter the code to escape!: " + noKeys);
   //records end time user has been in function - used to calc full time user spent entering in a code before closing prompt box
   var endTime = new Date();
   //time spent in function
@@ -20,8 +20,9 @@ function displayCode(){
 
   timeSpent = timeSpent/1000;
   timer-=timeSpent;
+  sessionStorage.setItem("exitTime", timePassed);
 
-  if(duration<=0){
+  if(timer<=0){
     //If the time is up - brings user to the end screen to show stats
     window.location.href = 'endScreen.html';
     //This variable is use to decide which image of the doctor to display
@@ -55,36 +56,43 @@ function displayCode(){
 
   }
 
-//TIMER BUT ANDREW WAY
-var timer=60;
-var timedEvent;
+
+  //TIMER BUT ANDREW WAY
+  var timer=60;
+  var timedEvent;
+
   window.addEventListener('load', function() { timedEvent = setInterval(countdown, 1000); });
 
-    function stopTimer(){
-        //used to clear timer.
-        clearInterval(myTimer);
-    }
-    //Checks if game over or 30s left of game - output to user/change html
-    function countdown(){
-        timePassed+=1; //used to calc how long a user has spent in room
-        timer--; //takes off 60s
+  function stopTimer(){
+      //used to clear timer.
+      clearInterval(myTimer);
+  }
 
-        //halfway mark - displayed to user
-        if(timer==30){
-          document.getElementById('gameText').innerHTML+='<p>[System]: You hear a creek of floor boards, Dr Friedrich is getting closer, better hurry up!</p><br><br>';
+  function countdown(){
+      timePassed+=1; //used to calc how long a user has spent in room
+      timer--; //takes off 60s
+
+      //halfway mark - displayed to user
+      if(timer==30 || (timer>29 && timer<30)){
+        document.getElementById('gameText').innerHTML+='<p>[System]: You hear a creek of floor boards, Dr Friedrich is getting closer, better hurry up!</p><br><br>';
+        document.getElementById('timer').innerHTML = timer;
+        //EDIT LATER? - used to display timer to gametext area
+      }else if(timer>0 && timer !=30){
           document.getElementById('timer').innerHTML = timer;
-          //EDIT LATER? - used to display timer to gametext area
-        }else if(timer>0 && timer !=30){
-            document.getElementById('timer').innerHTML = timer;
-        } else {
-          //Stops timer, game over - display end screen
-            var winGame = "no";
-            sessionStorage.setItem("winGame", winGame);
-            window.location.href = 'endScreen.html';
-        }
-          //Stops timer, game over - display end screen
-        clearInterval(te);
-    }
+      } else {
+        //Stops timer, game over - display end screen
+          var winGame = "no";
+          sessionStorage.setItem("winGame", winGame);
+
+            var nextRoom = sessionStorage.getItem("winGame");
+          //LINK TO NEXT PAGE - TIME UP - END SCREEN
+          window.location.href = 'endScreen.html';
+      }
+        //Stops timer, game over - display end screen
+      clearInterval(te);
+  }
+
+
 
 
     function keyFound(keyType){
