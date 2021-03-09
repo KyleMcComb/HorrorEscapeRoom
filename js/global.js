@@ -4,6 +4,9 @@ var timer=60;
 var timedEvent;
 var timePassed=0;
 
+timer = 60 + Number(sessionStorage.getItem("timeleft"));
+
+
 window.addEventListener('load', function() { timedEvent = setInterval(countdown, 1000); });
 
 

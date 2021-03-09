@@ -22,7 +22,9 @@
         }
 
         var exitTime = sessionStorage.getItem("exitTime");
-        document.getElementById('timeInExit').innerHTML = 'Time in last room: ' + exitTime + ' seconds';
+        var securityTime =   sessionStorage.getItem("securityTime");
+        document.getElementById('timeInExit').innerHTML = 'Time in exit room: ' + exitTime + ' seconds';
+        document.getElementById('timeInSecurity').innerHTML = 'Time in security room: ' + securityTime + ' seconds';
       }
     </script>
   </head>
@@ -35,7 +37,8 @@
   <div class="row">
     <div id="col-left">
       <h2 id="change">Game Text Section</h2>
-      <p id="timeInExit">Hello</p>
+      <p id="timeInExit"></p>
+      <p id="timeInSecurity"></p>
     </div>
     <div id="col-right">
       <h2>Stats</h2>

@@ -43,6 +43,8 @@
 
       writeText("You have escaped the security room!","");
       alert("You have escaped the security room");
+      sessionStorage.setItem("timeleft", 60-timePassed);
+      sessionStorage.setItem("securityTime", timePassed);
       window.location.href = "exit.html";
     }
     else if(cluesFound == 2){
