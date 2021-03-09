@@ -46,6 +46,9 @@ function noteClick(background) {
   // Changes image on click
   image = document.getElementById('background');
   image.src = "img/Lab/lab_note.jpg";
+  // Adds note modal button after clicked
+  var nModal = document.getElementById("noteModal");
+  noteModal.style.display = "block";
   // Removes button after clicked
   var nButton = document.getElementById("noteButton");
   noteButton.style.display = "none";
@@ -64,6 +67,24 @@ function noteClick(background) {
   var lineBreak = document.createElement("br");
   var element = document.getElementById("col-left");
   element.appendChild(lineBreak);
+}
+
+function noteBackStoryClick() {
+
+}
+
+//Expand the note image
+function expand(){
+  document.getElementById("myModal").style.display = "block";
+  document.getElementById("expandedNote").src = "img/Lab/ClassifiedLore.jpg";
+  document.getElementById("caption").innerHTML = "Dr Friedlich's Lore";
+}
+
+
+// When the user clicks on <span> (x), close the note
+function closeNote() {
+  document.getElementById("myModal").style.display = "none";
+  document.getElementById("wiresModal").style.display = "none";
 }
 
 function compartmentClick() {
