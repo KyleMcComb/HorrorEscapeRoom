@@ -17,6 +17,8 @@ function drawerClick(background) {
   image = document.getElementById('background');
   image.src = "img/Lab/drawercloseup.jpg";
 
+
+
   // Removes button after clicked
   var dButton = document.getElementById("drawerButton");
   drawerButton.style.display = "none";
@@ -33,6 +35,20 @@ function drawerClick(background) {
   element.appendChild(lineBreak);
 }
 
+//Expand the note image
+function expand(){
+  document.getElementById("myModal").style.display = "block";
+  document.getElementById("expandedNote").src = "img/Lab/ClassifiedLore.jpg";
+  document.getElementById("caption").innerHTML = "Dr Friedlich's victims diary";
+}
+
+
+// When the user clicks on <span> (x), close the note
+function closeNote() {
+  document.getElementById("myModal").style.display = "none";
+
+}
+
 function arrowClick(background) {
 
   // Changes image on click
@@ -47,8 +63,8 @@ function arrowClick(background) {
   drawerButton.style.display = "none";
 
   // Adds cell door button after clicked
-  var nButton = document.getElementById("noteButton");
-  noteButton.style.display = "block";
+  var nButton = document.getElementById("cellGateButton");
+  cellGateButton.style.display = "block";
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
@@ -90,3 +106,52 @@ function cellGateClick(background) {
   var element = document.getElementById("col-left");
   element.appendChild(lineBreak);
 }
+
+var code; //code entered in by user to escape
+
+//When the user clicks on the drawer this method will run which asks for a code then displays the diary
+function safeCode(){
+  //records when the user activates this function (when user clicks exit door)
+  //this is being recorded to find out how long the user is in the Function
+  //prompt box stops the java timer, this calculates how long in function and takes it off remaining time
+  var startTime = new Date();
+  //text to prompt user to enter a code in
+  code = prompt("You found a locked safe box - Enter the 4 digit code to open it!: ");
+  //records end time user has been in function - used to calc full time user spent entering in a code before closing prompt box
+  var endTime = new Date();
+  //time spent in function
+  var timeSpent = endTime-startTime;
+
+  timeSpent = timeSpent/1000;
+  timer-=timeSpent;
+  sessionStorage.setItem("exitTime", timePassed);
+
+  if(timer<=0){
+    //If the time is up - brings user to the end screen to show stats
+    window.location.href = 'endScreen.html';
+    //This variable is use to decide which image of the doctor to display
+    var winGame = "lose";
+    //sets gamePlay to lose to display correct doctor picture and Stats
+    //saves the variable as sessionStorage so the exit page can access it
+    sessionStorage.setItem("winGame", winGame);
+  } else{
+    //checks if the user has entered in a code or not
+    if (code == null || code == "") {
+      txt = "[System]:User cancelled the prompt.";
+      //checks for correct entering in of code AND the user has collected all 3 keys before moving on
+    } else if(code=="7412"){
+      // Adds note modal button after clicked
+      var nModal = document.getElementById("noteModal");
+      noteModal.style.display = "block";
+    //else the user is told the code is incorrect
+  }
+  else {
+      txt = "<p>[System]:That code is incorrect - Hint: Look around the room</p>";
+    }
+  }
+  //REMOVE PART OF LATER
+  //Outputs to the user the txt in the 'GameText' area
+  //timeSpent - records how long a person was in the prompt box
+  document.getElementById("gameText").innerHTML += txt + ' <br><br>' + timeSpent;
+
+  }
