@@ -109,15 +109,19 @@ function displayCode(){
       var imageToShow;
       //holds the alt tag for accessibility
       var altTxt;
+      var captionKey="";
       //depends on which key button has been pressed
       if(colour=='blue'){
         imageToShow = "img/Exit/blueKey.png";
+        captionKey = "You search the safe and find a blue key! The Key has a number - make sure to remember it!"
         altTxt = 'Blue Key';
       }else if (colour=='purple'){
         imageToShow = "img/Exit/purpleKey.png";
+        captionKey = "The Key has a number - make sure to remember it!"
         altTxt = 'Purple Key';
       }else if (colour=='gold'){
         imageToShow = "img/Exit/goldKey.png";
+        captionKey = "The Key has a number - make sure to remember it!"
         altTxt = 'Gold Key';
       }
       //displays close up of image to user
@@ -128,7 +132,7 @@ function displayCode(){
       //changes alt of image to correct key
       document.getElementById("expandedKey").alt = altTxt;
       //hint for users to remember code on key
-      document.getElementById("caption").innerHTML = "The Key has a number - make sure to remember it!";
+      document.getElementById("caption").innerHTML = captionKey;
 
     }
 
@@ -148,6 +152,8 @@ function displayCode(){
     function expandKeypad(){
       document.getElementById("lockModal").style.display = "block";
       document.getElementById("expandedKeypad").src = "img/Exit/keypad.jpg";
+      document.getElementById("expandedKeypad").alt = "KeyPad";
+      document.getElementById("expandedKeypad").style.height = '50%';
       document.getElementById("captionKeypad").innerHTML = "Enter the 3 Digit Code!";
     }
 
@@ -171,7 +177,6 @@ function displayCode(){
             }else if (lenCodeEnter==3  && userEnter!=keyPadCode){
               document.getElementById("captionKeypad").innerHTML += "<p>Wrong code! Try again (hint: Look at the walls)</p>";
             }else if (lenCodeEnter==3  && userEnter==keyPadCode){
-              document.getElementById('gameText').innerHTML += '<p>'+ userEnter+'</p>';
              document.getElementById('keyPad').style.display="none";
              closeKey('lockModal');
              keyFound('blue');
