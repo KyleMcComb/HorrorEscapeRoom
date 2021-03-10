@@ -4,6 +4,9 @@ var code; //code entered in by user to escape
 var noKeys = 0; //used to check user has collected keys before escpaing
 var txt; //text to output to user
 
+var keyCode=[];
+var keyPadCode = 420;
+
 
 //Displays the code to unlock the final door (code=420)
 function displayCode(){
@@ -57,7 +60,7 @@ function displayCode(){
   }
 
 
-  
+
     function keyFound(keyType){
       //adds Key - used to check if user has collected keys before entering in a code
       noKeys+=1;
@@ -75,7 +78,6 @@ function displayCode(){
           expand('blue');
           x = document.getElementById('blueKey');
             txt = '<p>[System]: Well done, blue key found!';
-          hasBlueKey = true;
           break;
         case 'purple':
           //shows image of purple key close up
@@ -130,7 +132,49 @@ function displayCode(){
 
     }
 
-    // When the user clicks on <span> (x), close the note
-    function closeKey() {
-      document.getElementById("myModal").style.display = "none";
+
+        // When the user clicks on <span> (x), close the note
+        function closeKey(closeModal) {
+          if(closeModal=='key'){
+            document.getElementById('myModal').style.display = "none";
+          }else if (closeModal=='lockModal'){
+            document.getElementById('lockModal').style.display = "none";
+            keyCode=[];
+          }
+
+        }
+
+    //Expand the note image
+    function expandKeypad(){
+      document.getElementById("lockModal").style.display = "block";
+      document.getElementById("expandedKeypad").src = "img/Exit/keypad.jpg";
+      document.getElementById("captionKeypad").innerHTML = "Enter the 3 Digit Code!";
     }
+
+
+        //keypad entering in the Code
+        function enterKeyCode(btnPressed){
+          if(btnPressed == '0' || btnPressed == '1' || btnPressed == '2' || btnPressed == '3' || btnPressed=='4' || btnPressed== '5' || btnPressed == '6' || btnPressed =='7' || btnPressed =='8' || btnPressed== '9'){
+            keyCode.push(Number(btnPressed));
+          }else if(btnPressed=='submit'){
+            // var keyPadCode = 420; - CORRECT CODE
+            var userEnter="";
+            var lenCodeEnter = keyCode.length;
+            for(i=0;i<lenCodeEnter;i++){
+                  //document.getElementById('gameText').innerHTML += '<p>'+ keyCode[i]+'</p>';
+                  userEnter = (keyCode.pop()).toString() + userEnter;
+            }
+
+            if(lenCodeEnter>3 || lenCodeEnter<3){
+                    document.getElementById("captionKeypad").innerHTML += "<p>the code should be 3 numbers! Try Again!</p>";
+                    keyCode = [];
+            }else if (lenCodeEnter==3  && userEnter!=keyPadCode){
+              document.getElementById("captionKeypad").innerHTML += "<p>Wrong code! Try again (hint: Look at the walls)</p>";
+            }else if (lenCodeEnter==3  && userEnter==keyPadCode){
+              document.getElementById('gameText').innerHTML += '<p>'+ userEnter+'</p>';
+             document.getElementById('keyPad').style.display="none";
+             closeKey('lockModal');
+             keyFound('blue');
+            }
+          }
+        }

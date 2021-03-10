@@ -28,6 +28,20 @@
   background-size:100%;
 }
 
+#keyPad{
+  border:none;
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  background-size:100%;
+  width: 6%;
+  top: 90%;
+  right: 2%;
+  height: 6%;
+  background:url('../img/Exit/keypad.jpg') no-repeat;
+  background-size:100%;
+}
+
 #purpleKey{
   width: 6%;
   top: 2%;
@@ -90,6 +104,18 @@
   max-width: 700px;
 }
 
+#captionKeypad {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+
 /* The Close Button */
 .close {
   position: absolute;
@@ -109,4 +135,87 @@
 
 #timer{
   font-size: large;
+}
+
+/*Left wire button to fix it*/
+.number{
+  border:none;
+  width:16%;
+  height:6%;
+
+  position: absolute;
+  cursor: pointer;
+  background: none;
+}
+
+#nine{
+  top: 33%;
+  right: 20%;
+}
+
+#eight{
+  top: 33%;
+  right: 42%;
+}
+
+#seven {
+  top: 33%;
+  right: 63%;
+}
+
+#six{
+  top: 23%;
+  right: 21%;
+}
+
+#five {
+  top: 23%;
+  right: 42%;
+}
+
+#four {
+  top: 23%;
+  right: 62%;
+}
+
+#three{
+  top: 14%;
+  right: 21%;
+}
+
+#two {
+  top: 14%;
+  right: 42%;
+}
+
+#one {
+  top: 14%;
+  right: 62%;
+}
+
+#zero {
+  top: 43%;
+  right: 42%;
+}
+
+#enterbtn{
+  border: 1px solid black;
+  background-color:white;
+  top: 43%;
+  right: 20%;
+}
+
+#expandedKeypad {
+  margin: auto;
+  display: block;
+  width: 60%;
+  right: 50%;
+  justify-content: center;
+}
+
+#imageDivKeypad{
+  margin:auto;
+  justify-content: center;
+  width:60%;
+  position:relative;
 }
