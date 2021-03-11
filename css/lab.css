@@ -97,6 +97,30 @@
   background: none;
 }
 
+#bookshelfButton {
+  border: 2px solid green;
+  display: none;
+  width: 20%;
+  top: 0%;
+  right: -1%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  background: none;
+}
+
+#openshelfButton {
+  border: 2px solid green;
+  display: none;
+  width: 20%;
+  top: 0%;
+  right: -1%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  background: none;
+}
+
 /* The expanded note */
 .modal {
   display: none;

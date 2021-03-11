@@ -1,3 +1,4 @@
+/*
 function onLoad() {
   var para = document.createElement("p");
   var text = document.createTextNode("You've entered the domain of Doctor Friedrich. You better find an escape soon or meet the same fate as the rest of the subjects.");
@@ -6,11 +7,11 @@ function onLoad() {
   element.appendChild(para);
 
 
-
   var lineBreak = document.createElement("br");
   var element = document.getElementById("col-left");
   element.appendChild(lineBreak);
 }
+*/
 
 function drawerClick(background) {
 
@@ -139,6 +140,9 @@ function forwardClick() {
   // Adds button after clicked
   var nbButton = document.getElementById("noteBackButton");
   noteBackButton.style.display = "block";
+  // Adds button after clicked
+  var bsButton = document.getElementById("bookshelfButton");
+  bookshelfButton.style.display = "block";
   // Displays text for the user (in left column)
   var para = document.createElement("p");
   var text = document.createTextNode("You turn around and see no way out... or so you think.");
@@ -211,4 +215,40 @@ function noteBackClick() {
   var lineBreak = document.createElement("br");
   var element = document.getElementById("col-left");
   element.appendChild(lineBreak);
+}
+
+function bookshelfClick() {
+  // Changes image on click
+  image = document.getElementById('background');
+  image.src = "img/Lab/closeup_bookshelf.jpg";
+  // Removes button when clicked
+  var bsButton = document.getElementById("bookshelfButton");
+  bookshelfButton.style.display = "none";
+
+  // Removes button after clicked
+  var nbButton = document.getElementById("noteBackButton");
+  noteBackButton.style.display = "none";
+
+  // Adds button after clicked
+  var osButton = document.getElementById("openshelfButton");
+  openshelfButton.style.display = "block";
+
+  // Displays text for the user (in left column)
+  var para = document.createElement("p");
+  var text = document.createTextNode("You stumble across the bookshelf.. A book appears to be loose.");
+  para.appendChild(text);
+  var element = document.getElementById("col-left");
+  element.appendChild(para);
+
+  var lineBreak = document.createElement("br");
+  var element = document.getElementById("col-left");
+  element.appendChild(lineBreak);
+}
+
+
+function openshelfClick() {
+    alert("The bookshelf moves.. Leading to the Hallway.");
+    //sessionStorage.setItem("timeleft", 60-timePassed);
+    //sessionStorage.setItem("labTime", timePassed);
+    window.location.href = 'hallway.html';
 }
