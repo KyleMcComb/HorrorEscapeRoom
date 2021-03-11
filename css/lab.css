@@ -1,3 +1,6 @@
+
+/** Buttons **/
+
 #drawerButton {
   border: none;
   display: block;
@@ -53,6 +56,42 @@
   height: 33%;
   top: 40%;
   right: 45%;
+  position: absolute;
+  cursor: pointer;
+  background: none;
+}
+
+#backButton {
+  border: 2px solid green;
+  display: none;
+  width: 20%;
+  top: 0%;
+  right: -1%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  background: none;
+}
+
+#forwardButton {
+  border: 2px solid pink;
+  display: none;
+  width: 20%;
+  top: 0%;
+  right: 79%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  background: none;
+}
+
+#noteBackButton {
+  border: 2px solid red;
+  display: none;
+  width: 10%;
+  top: 82%;
+  right: 63%;
+  height: 15%;
   position: absolute;
   cursor: pointer;
   background: none;

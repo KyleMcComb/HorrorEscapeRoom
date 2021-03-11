@@ -49,6 +49,12 @@ function noteClick(background) {
   // Adds note modal button after clicked
   var nModal = document.getElementById("noteModal");
   noteModal.style.display = "block";
+  // Adds button after clicked
+  var bButton = document.getElementById("backButton");
+  backButton.style.display = "block";
+  // Adds button after clicked
+  var fButton = document.getElementById("forwardButton");
+  forwardButton.style.display = "block";
   // Removes button after clicked
   var nButton = document.getElementById("noteButton");
   noteButton.style.display = "none";
@@ -108,6 +114,96 @@ function compartment2Click() {
   // Displays text for the user (in left column)
   var para = document.createElement("p");
   var text = document.createTextNode("That compartment doesn't have anything in it.. look elsewhere.");
+  para.appendChild(text);
+  var element = document.getElementById("col-left");
+  element.appendChild(para);
+
+  var lineBreak = document.createElement("br");
+  var element = document.getElementById("col-left");
+  element.appendChild(lineBreak);
+}
+
+function forwardClick() {
+  // Changes image on click
+  image = document.getElementById('background');
+  image.src = "img/Lab/lab2.jpg";
+  // Removes button after clicked
+  var bButton = document.getElementById("backButton");
+  backButton.style.display = "none";
+  // Removes note modal button after clicked
+  var nModal = document.getElementById("noteModal");
+  noteModal.style.display = "none";
+  // Removes button after clicked
+  var fButton = document.getElementById("forwardButton");
+  forwardButton.style.display = "none";
+  // Adds button after clicked
+  var nbButton = document.getElementById("noteBackButton");
+  noteBackButton.style.display = "block";
+  // Displays text for the user (in left column)
+  var para = document.createElement("p");
+  var text = document.createTextNode("You turn around and see no way out... or so you think.");
+  para.appendChild(text);
+  var element = document.getElementById("col-left");
+  element.appendChild(para);
+
+  var lineBreak = document.createElement("br");
+  var element = document.getElementById("col-left");
+  element.appendChild(lineBreak);
+}
+
+function backClick() {
+  // Changes image on click
+  image = document.getElementById('background');
+  image.src = "img/Lab/drawercloseup.jpg";
+  // Removes button after clicked
+  var fButton = document.getElementById("forwardButton");
+  forwardButton.style.display = "none";
+  // Removes button after clicked
+  var bButton = document.getElementById("backButton");
+  backButton.style.display = "none";
+  // Removes note modal button after clicked
+  var nModal = document.getElementById("noteModal");
+  noteModal.style.display = "none";
+  // Adds note button after clicked
+  var nButton = document.getElementById("noteButton");
+  noteButton.style.display = "block";
+  // Adds compartmentButton after clicked
+  var cButton = document.getElementById("compartmentButton");
+  compartmentButton.style.display = "block";
+  // Adds compartmentButton2 after clicked
+  var cButton2 = document.getElementById("compartment2Button");
+  compartment2Button.style.display = "block";
+  // Displays text for the user (in left column)
+  var para = document.createElement("p");
+  var text = document.createTextNode("You go back to the drawers incase you missed something.");
+  para.appendChild(text);
+  var element = document.getElementById("col-left");
+  element.appendChild(para);
+
+  var lineBreak = document.createElement("br");
+  var element = document.getElementById("col-left");
+  element.appendChild(lineBreak);
+}
+
+function noteBackClick() {
+  // Changes image on click
+  image = document.getElementById('background');
+  image.src = "img/Lab/lab_note.jpg";
+  // Adds note modal button after clicked
+  var nModal = document.getElementById("noteModal");
+  noteModal.style.display = "block";
+  // Adds button after clicked
+  var bButton = document.getElementById("backButton");
+  backButton.style.display = "block";
+  // Adds button after clicked
+  var fButton = document.getElementById("forwardButton");
+  forwardButton.style.display = "block";
+  // Removes button after clicked
+  var nbButton = document.getElementById("noteBackButton");
+  noteBackButton.style.display = "none";
+  // Displays text for the user (in left column)
+  var para = document.createElement("p");
+  var text = document.createTextNode("You go back to the Notes.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
