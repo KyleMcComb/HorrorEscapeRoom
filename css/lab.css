@@ -112,10 +112,10 @@
 #openshelfButton {
   border: 2px solid green;
   display: none;
-  width: 20%;
-  top: 0%;
-  right: -1%;
-  height: 100%;
+  width: 17%;
+  top: 20%;
+  right: 27%;
+  height: 80%;
   position: absolute;
   cursor: pointer;
   background: none;
