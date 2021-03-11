@@ -10,6 +10,28 @@
   background:none;
 }
 
+#imageDiv .colour{
+  position:absolute;
+  opacity:0.4;
+}
+
+#imageDiv #blueColour{
+  top: 37%;
+  right:45%;
+  height:10%;
+}
+#imageDiv #purpleColour{
+  top: 37%;
+  right:39%;
+  height:10%;
+}
+#imageDiv #goldColour{
+  top: 37%;
+  right:51%;
+  height:10%;
+}
+
+
 #goldKey{
   width: 6%;
   top: 90%;
@@ -212,8 +234,6 @@
   right: 50%;
   justify-content: center;
 }
-
-
 
 #imageDivKeypad{
   margin:auto;
