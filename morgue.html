@@ -117,6 +117,12 @@
     <div id="head">
       <h1 class="content">The <span class="redact">Redacted</span> Lab</h1>
     </div>
+
+       <br>
+       <div id="disp" style=
+           "color:green; font-size:18px; font-weight:bold;">
+       </div>
+
     <div class="row">
       <div id="col-left">
         <p>[System] The hallway lead you to a morgue, this must be where Dr Friedrich disposes of his subjects. Maybe i should look around for anything to help me unlock the gate in the hallway</p>
@@ -124,37 +130,36 @@
         <div id="textDiv">
         </div>
         <br />
-        <form action="" id="chemicalEvent">
+        <form  id="chemicalEvent">
           <p>Select the first compound:</p>
           <input type="radio" id="first1" name="compound1">
-          <label for="male">X</label><br>
-          <input type="radio" id="firs2" name="compound1">
-          <label for="female">H</label><br>
+          <label>X</label><br>
+          <input type="radio" id="first2" name="compound1" onclick="checkRadio(this.id);">
+          <label>H</label><br>
           <input type="radio" id="first3" name="compound1">
-          <label for="other">N</label><br />
+          <label>N</label><br />
 
           <br>
 
           <p>Select the second compound:</p>
           <input type="radio" id="second1" name="compound2">
-          <label for="age1">C</label><br>
+          <label>C</label><br>
           <input type="radio" id="second2" name="compound2">
-          <label for="age2">A</label><br>
-          <input type="radio" id="second3" name="compound2">
-          <label for="age3">M</label><br />
-
+          <label>A</label><br>
+          <input type="radio" id="second3" name="compound2" onclick="checkRadio(this.id);">
+          <label>M</label><br />
 
           <br>
 
           <p>Select the third compound:</p>
           <input type="radio" id="third1" name="compound3">
-          <label for="age1">3</label><br>
-          <input type="radio" id="third2" name="compound3">
-          <label for="age2">6</label><br>
+          <label>3</label><br>
+          <input type="radio" id="third2" name="compound3" onclick="checkRadio(this.id);">
+          <label>6</label><br>
           <input type="radio" id="third3" name="compound3">
-          <label for="age3">7</label><br>
+          <label>7</label><br>
           <br />
-          <button type="button" id="submitButton" onclick="display();">Submit</button>
+          <input type="button" value="Submit" onclick=submitChoice();>
           <br />
         </form>
       </div>
@@ -163,8 +168,6 @@
       <div id="col-right">
         <h2 id="roomName">Morgue</h2>
         <div id="imageDiv">
-
-
           <button id="toolButton1" title="A tray of tools and chemicals" onclick="showSelection();"></button>
           <button id="noteButton" title="Note" onclick="expandNote()"></button>
           <div id="myModalDiv" class="modal">
