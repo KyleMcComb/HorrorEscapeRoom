@@ -10,6 +10,8 @@ function onLoad() {
   var element = document.getElementById("col-left");
   element.appendChild(lineBreak);
 }
+var code; //code entered in by user to escape
+var unlocked = false; //
 
 function drawerClick(background) {
 
@@ -51,6 +53,13 @@ function closeNote() {
 
 function arrowClick(background) {
 
+if (unlocked == false){
+  // Displays text for the user (in left column)
+  var para = document.createElement("p");
+var text = document.createTextNode("Make sure you look around the room fully before turning around.");
+}
+else {
+
   // Changes image on click
   image = document.getElementById('background');
   image.src = "img/Cell/cellDoorOpen.jpg";
@@ -76,6 +85,7 @@ function arrowClick(background) {
   var lineBreak = document.createElement("br");
   var element = document.getElementById("col-left");
   element.appendChild(lineBreak);
+  }
 }
 
 function cellGateClick(background) {
@@ -106,8 +116,6 @@ function cellGateClick(background) {
   var element = document.getElementById("col-left");
   element.appendChild(lineBreak);
 }
-
-var code; //code entered in by user to escape
 
 //When the user clicks on the drawer this method will run which asks for a code then displays the diary
 function safeCode(){
@@ -143,6 +151,12 @@ function safeCode(){
       // Adds note modal button after clicked
       var nModal = document.getElementById("noteModal");
       noteModal.style.display = "block";
+      txt = "<p>You have unlocked the safe and found a sheet of paper and a flash light within it</p>";
+      // Removes button after clicked
+      var nButton = document.getElementById("drawerButton");
+      drawerButton.style.display = "none";
+
+      unlocked = true;
     //else the user is told the code is incorrect
   }
   else {
