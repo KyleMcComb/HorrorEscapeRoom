@@ -35,17 +35,16 @@ img{
 
         const pos = document.documentElement;
 
+        var example = document.getElementById('imageDiv');
+        example.onmousemove = function(e) {
 
-        function moveTorch(){
-          //var widthImg = document.getElementById('imgDiv').width;
-          //widthImg=widthImg/3;
           //var x = event.clientX - $('imageDiv').offset().left;
           //var y = event.clientY - $('imageDiv').offset().top;
 
-          var x = event.clientX;     // Get the horizontal coordinate
-          var y = event.clientY;
-          pos.style.setProperty('--x', (x-480) + 'px')
-          pos.style.setProperty('--y', (y-50) + 'px')
+          var x = e.pageX - this.offsetLeft;
+          var y = e.pageY - this.offsetTop;
+          pos.style.setProperty('--x', (x) + 'px')
+          pos.style.setProperty('--y', (y) + 'px')
         }
 
         </script>
@@ -67,7 +66,7 @@ img{
 
 
         <!--Holds the image of the room and buttons/clickable items in room -->
-        <div id="imageDiv" onmousemove="moveTorch();">
+        <div id="imageDiv">
           <div class="light"></div>
 
           <button id="exitButton" onclick="displayCode();"></button>
@@ -75,8 +74,8 @@ img{
           <button class="key" id="blueKey" onclick="keyFound('blue');"></button>
           <button class="key" id="purpleKey" onclick="keyFound('purple');"></button>
           <img id="img_ID" src="img/Exit/exitRoom.jpg"   width="100%" alt="" />
-        </div>
 
+        </div>
       </div>
     </div>
   </div>
