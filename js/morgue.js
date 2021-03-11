@@ -34,13 +34,9 @@ function checkRadio(id) {
 
   if (id === 'first2') {
     compound1IsValid = true;
-  }
-
-  else if (id === 'second3') {
+  } else if (id === 'second3') {
     compound2IsValid = true;
-  }
-
-  else if (id === 'third2') {
+  } else if (id === 'third2') {
     compound3IsValid = true;
   }
 
@@ -54,13 +50,17 @@ function lineBreak() {
 
 function submitChoice() {
 
-// alert(compound1IsValid);
-//
-// alert(compound2IsValid);
-// alert(compound3IsValid);
+  // alert(compound1IsValid);
+  //
+  // alert(compound2IsValid);
+  // alert(compound3IsValid);
 
-  if (compound1IsValid === true && compound2Isvalid === true && compound3IsValid === true) {
-    alert('bob');
+  if (compound1IsValid) {
+    if (compound2IsValid) {
+      if (compound3IsValid) {
+        alert('bob');
+      }
+    }
   }
 
 
