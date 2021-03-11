@@ -183,3 +183,18 @@ function displayCode(){
             }
           }
         }
+
+
+        //Torch attempt
+        function moveTorch(event){
+          var torch = document.getElementsByClassName("torch")[0];
+          if(event.target.id == "leftWire" ) {
+            torch.style.clipPath = `circle(80px at 270px 160px)`;
+          }
+          else if(event.target.className =="close"){
+
+          }
+          else{
+          torch.style.clipPath = `circle(80px at ${event.offsetX}px ${event.offsetY}px)`;
+        }
+        }
