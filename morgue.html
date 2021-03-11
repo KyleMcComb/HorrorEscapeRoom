@@ -51,6 +51,12 @@
       /* Black w/ opacity */
     }
 
+    #submitButton{
+      width: 12%;
+      height: 5%;
+      font-size:  1.2em;
+    }
+
     #toolButton1 {
       display: block;
       width: 7%;
@@ -113,44 +119,44 @@
     </div>
     <div class="row">
       <div id="col-left">
-        <p>The hallway lead you to a morgue, this must be where Dr Friedrich disposes of his subjects. Maybe i should look around for anything to help me unlock the gate in the hallway</p>
+        <p>[System] The hallway lead you to a morgue, this must be where Dr Friedrich disposes of his subjects. Maybe i should look around for anything to help me unlock the gate in the hallway</p>
         <br />
-        
-        <form action="/action_page.php" id="chemicalEvent">
+        <div id="textDiv">
+        </div>
+        <br />
+        <form action="" id="chemicalEvent">
           <p>Select the first compound:</p>
-          <input type="radio" id="first1" name="gender" value="male">
+          <input type="radio" id="first1" name="compound1">
           <label for="male">X</label><br>
-          <input type="radio" id="firs2" name="gender" value="female">
+          <input type="radio" id="firs2" name="compound1">
           <label for="female">H</label><br>
-          <input type="radio" id="first3" name="gender" value="other">
+          <input type="radio" id="first3" name="compound1">
           <label for="other">N</label><br />
 
           <br>
 
           <p>Select the second compound:</p>
-          <input type="radio" id="second1" name="age" value="30">
+          <input type="radio" id="second1" name="compound2">
           <label for="age1">C</label><br>
-          <input type="radio" id="second2" name="age" value="60">
+          <input type="radio" id="second2" name="compound2">
           <label for="age2">A</label><br>
-          <input type="radio" id="second3" name="age" value="100">
+          <input type="radio" id="second3" name="compound2">
           <label for="age3">M</label><br />
 
 
           <br>
 
           <p>Select the third compound:</p>
-          <input type="radio" id="third1" name="age" value="30">
-          <label for="age1">14</label><br>
-          <input type="radio" id="third2" name="age" value="60">
+          <input type="radio" id="third1" name="compound3">
+          <label for="age1">3</label><br>
+          <input type="radio" id="third2" name="compound3">
           <label for="age2">6</label><br>
-          <input type="radio" id="third3" name="age" value="100">
-          <label for="age3">10</label><br>
+          <input type="radio" id="third3" name="compound3">
+          <label for="age3">7</label><br>
           <br />
-          <input type="submit" value="Submit">
+          <button type="button" id="submitButton" onclick="display();">Submit</button>
+          <br />
         </form>
-
-
-
       </div>
 
 
