@@ -1,6 +1,8 @@
 var expanded = false;
 var noteFound = false;
-
+compound1Isvalid = false;
+compound2Isvalid = false;
+compound3IsValid = false;
 
 function chemicalEvent() {
   showSelection();
@@ -26,6 +28,20 @@ function showSelection() {
   }
 }
 
+
+function checkRadio(id) {
+
+
+  if (id === 'first2') {
+    compound1IsValid = true;
+  } else if (id === 'second3') {
+    compound2IsValid = true;
+  } else if (id === 'third2') {
+    compound3IsValid = true;
+  }
+
+}
+
 function lineBreak() {
   var lineBreak = document.createElement("br");
   var element = document.getElementById("textDiv");
@@ -34,12 +50,27 @@ function lineBreak() {
 
 function submitChoice() {
 
-  if (document.getElementById('first2').checked) {
-    alert('bob');
+  // alert(compound1IsValid);
+  //
+  // alert(compound2IsValid);
+  // alert(compound3IsValid);
+
+  if (compound1IsValid) {
+    if (compound2IsValid) {
+      if (compound3IsValid) {
+        alert('bob');
+      }
+    }
   }
 
 
-    /*
+  /*
+   if (document.getElementById('first2').checked) {
+     alert('bob');
+   }*/
+
+
+  /*
     document.getElementById("disp").innerHTML = document.getElementById("GFG").value +
       " radio button checked";
   } else if (document.getElementById('HTML').checked) {
@@ -55,8 +86,8 @@ function submitChoice() {
 }
 
 function display() {
-            alert('billy');
-       }
+  alert('billy');
+}
 
 
 /*

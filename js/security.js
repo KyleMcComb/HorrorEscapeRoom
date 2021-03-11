@@ -156,7 +156,7 @@
     //Expand the note image
     function expandWires(){
       document.getElementById("wiresModal").style.display = "block";
-      document.getElementById("expandedWires").src = "img/Security/Wires.png";
+      document.getElementById("expandedWires").src = "img/Security/WiresTransparent.png";
       if (wiresFixed){
         document.getElementById("captionWires").innerHTML = "Is there anything else I can do here?... <br> Is that a keypad?";
       }
@@ -170,4 +170,19 @@
     function closeNote() {
       document.getElementById("myModal").style.display = "none";
       document.getElementById("wiresModal").style.display = "none";
+    }
+
+
+    //Torch attempt
+    function moveTorch(event){
+      var torch = document.getElementsByClassName("torch")[0];
+      if(event.target.id == "leftWire" ) {
+        torch.style.clipPath = `circle(80px at 270px 160px)`;
+      }
+      else if(event.target.className =="close"){
+
+      }
+      else{
+      torch.style.clipPath = `circle(80px at ${event.offsetX}px ${event.offsetY}px)`;
+    }
     }
