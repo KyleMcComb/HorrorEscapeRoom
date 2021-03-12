@@ -6,6 +6,22 @@ var txt; //text to output to user
 
 var keyCode=[];
 var keyPadCode = 420;
+const pos = document.documentElement;
+
+        function moveTorch(){
+
+          var test = document.getElementById("imageDiv");
+          var rect = test.getBoundingClientRect();
+
+          var viewportLeft = rect.left;
+          var viewportTop = rect.top;
+
+          var x = event.clientX;     // x co-ord of Window
+          var y = event.clientY;     // y co-ord of Window
+
+          pos.style.setProperty('--x',(x-viewportLeft) + 'px');
+          pos.style.setProperty('--y', (y-viewportTop) + 'px');
+        }
 
 
 //Displays the code to unlock the final door (code=420)
@@ -185,16 +201,20 @@ function displayCode(){
         }
 
 
-        //Torch attempt
-        function moveTorch(event){
-          var torch = document.getElementsByClassName("torch")[0];
-          if(event.target.id == "leftWire" ) {
-            torch.style.clipPath = `circle(80px at 270px 160px)`;
-          }
-          else if(event.target.className =="close"){
 
-          }
-          else{
-          torch.style.clipPath = `circle(80px at ${event.offsetX}px ${event.offsetY}px)`;
-        }
+
+        function moveTorch(){
+          var pos = document.documentElement;
+
+          var test = document.getElementById("imageDiv");
+          var rect = test.getBoundingClientRect();
+
+          var viewportLeft = rect.left;
+          var viewportTop = rect.top;
+
+          var x = event.clientX;     // x co-ord of Window
+          var y = event.clientY;     // y co-ord of Window
+
+          pos.style.setProperty('--x',(x-viewportLeft) + 'px');
+          pos.style.setProperty('--y', (y-viewportTop) + 'px');
         }

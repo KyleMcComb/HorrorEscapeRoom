@@ -23,8 +23,10 @@
 
         var exitTime = sessionStorage.getItem("exitTime");
         var securityTime =   sessionStorage.getItem("securityTime");
+        var labTime = sessionStorage.getItem("labTime");
         document.getElementById('timeInExit').innerHTML = 'Time in exit room: ' + exitTime + ' seconds';
         document.getElementById('timeInSecurity').innerHTML = 'Time in security room: ' + securityTime + ' seconds';
+        document.getElementById('timeInLab').innerHTML = 'Time in laboratory room: ' + labTime + ' seconds';
       }
     </script>
   </head>
@@ -40,6 +42,7 @@
       <h2 id="change">Game Text Section</h2>
       <p id="timeInExit"></p>
       <p id="timeInSecurity"></p>
+      <p id="timeinLab"></p>
     </div>
     <div id="col-right">
       <h2 id="roomName">Stats/End Page</h2>

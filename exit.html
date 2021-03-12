@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="css/exit.css" type="text/css" />
 
         <script src="js/exit.js"></script>
-        <script src="js/global.js"></script>
+
 
     </head>
     <body>
@@ -26,7 +26,10 @@
 
 
         <!--Holds the image of the room and buttons/clickable items in room -->
-        <div id="imageDiv" onmousemove="moveTorch(event)">      
+        <div id="imageDiv" onmousemove="moveTorch();">
+          <div id="light"></div>
+
+
           <img class="colour" id="goldColour" alt= "Gold Window" src="img/Exit/goldColour.jpg" style="width:6%;" />
           <img class="colour"id="blueColour" alt= "Blue Window" src="img/Exit/blueColour.jpg" style="width:6%;" />
           <img class="colour"id="purpleColour" alt= "Purple Window" src="img/Exit/purpleColour.jpg" style="width:6%;" />
@@ -37,7 +40,7 @@
           <button title ="Keypad" class="key" id="keyPad" onclick="expandKeypad();"></button>
 
 
-          <img id="img_ID" src="img/Exit/exitRoom.jpg" usemap="#map" border="0" width="100%" alt="" />
+          <img id="img_ID" src="img/Exit/exitRoom.jpg"  width="100%" alt="" />
         </div>
 
         <!-- The Modal for Keys -->

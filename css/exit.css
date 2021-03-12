@@ -38,8 +38,10 @@
   right: 90%;
   height: 6%;
   background:url('../img/Exit/goldKey.png') no-repeat;
+  background-color:transparent;
   background-size:100%;
 }
+
 
 #blueKey{
   width: 6%;
@@ -76,6 +78,7 @@
 .key {
   border:none;
   display: block;
+
   position: absolute;
   cursor: pointer;
   background-size:100%;
@@ -240,4 +243,18 @@
   justify-content: center;
   width:30%;
   position:relative;
+}
+
+
+#light {
+  position: absolute;
+  top: 0;
+  left:0 ;
+
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  background: radial-gradient(circle at var(--x) var(--y),
+   #ffeeaa30 6%, rgba(0,0,0,.985) 10%);
 }
