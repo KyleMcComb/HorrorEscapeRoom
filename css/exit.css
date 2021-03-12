@@ -20,6 +20,7 @@
   right:45%;
   height:10%;
 }
+
 #imageDiv #purpleColour{
   top: 37%;
   right:39%;
@@ -37,19 +38,10 @@
   top: 90%;
   right: 90%;
   height: 6%;
-  background:url('../img/Exit/goldKey.png') no-repeat;
-  background-color:transparent;
-  background-size:100%;
-}
 
-
-#blueKey{
-  width: 6%;
-  top: 90%;
-  right: 2%;
-  height: 6%;
-  background:url('../img/Exit/blueKey.png') no-repeat;
+  background:transparent;
   background-size:100%;
+
 }
 
 #keyPad{
@@ -62,7 +54,7 @@
   top: 90%;
   right: 2%;
   height: 6%;
-  background:url('../img/Exit/keypad.jpg') no-repeat;
+  background:transparent;
   background-size:100%;
 }
 
@@ -71,7 +63,7 @@
   top: 2%;
   right: 45%;
   height: 6%;
-  background:url('../img/Exit/purpleKey.png') no-repeat;
+  background:transparent;
   background-size:100%;
 }
 

@@ -31,7 +31,9 @@ function displayCode(){
   //prompt box stops the java timer, this calculates how long in function and takes it off remaining time
   var startTime = new Date();
   //text to prompt user to enter a code in
-  code = prompt("Enter the code to escape!: " + noKeys);
+  var textForPrompt = 'Enter the code to escape!:'
+  
+  code = prompt(textForPrompt);
   //records end time user has been in function - used to calc full time user spent entering in a code before closing prompt box
   var endTime = new Date();
   //time spent in function
@@ -137,7 +139,7 @@ function displayCode(){
         altTxt = 'Purple Key';
       }else if (colour=='gold'){
         imageToShow = "img/Exit/goldKey.png";
-        captionKey = "The Key has a number - make sure to remember it!"
+        captionKey = "You lift a wooden board and find the Gold Key!"
         altTxt = 'Gold Key';
       }
       //displays close up of image to user
