@@ -85,6 +85,8 @@ else {
   var lineBreak = document.createElement("br");
   var element = document.getElementById("col-left");
   element.appendChild(lineBreak);
+
+    document.getElementById('cellGateButton').style.display = "block";
   }
 }
 
@@ -151,7 +153,7 @@ function safeCode(){
       // Adds note modal button after clicked
       var nModal = document.getElementById("noteModal");
       noteModal.style.display = "block";
-      txt = "<p>You have unlocked the safe and found a sheet of paper and a flash light within it</p>";
+      txt = "<p>You have unlocked the safe and found a note and a flash light within it</p>";
       // Removes button after clicked
       var nButton = document.getElementById("drawerButton");
       drawerButton.style.display = "none";
