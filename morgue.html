@@ -51,10 +51,10 @@
       /* Black w/ opacity */
     }
 
-    #submitButton{
+    #submitButton {
       width: 12%;
       height: 5%;
-      font-size:  1.2em;
+      font-size: 1.2em;
     }
 
     #toolButton1 {
@@ -105,7 +105,7 @@
       height: 150px;
     }
 
-    #chemicalEvent{
+    #chemicalEvent {
       visibility: hidden;
     }
   </style>
@@ -118,10 +118,9 @@
       <h1 class="content">The <span class="redact">Redacted</span> Lab</h1>
     </div>
 
-       <br>
-       <div id="disp" style=
-           "color:green; font-size:18px; font-weight:bold;">
-       </div>
+    <br>
+    <div id="disp" style="color:green; font-size:18px; font-weight:bold;">
+    </div>
 
     <div class="row">
       <div id="col-left">
@@ -130,38 +129,53 @@
         <div id="textDiv">
         </div>
         <br />
-        <form  id="chemicalEvent">
-          <p>Select the first compound:</p>
-          <input type="radio" id="first1" name="compound1">
-          <label>X</label><br>
-          <input type="radio" id="first2" name="compound1" onclick="checkRadio(this.id);">
-          <label>H</label><br>
-          <input type="radio" id="first3" name="compound1">
-          <label>N</label><br />
 
+        <div id="chemicalEvent">
+
+
+          <form>
+            <label for="cars">Choose your first compound:</label>
+            <select name="compound1" id="compound1">
+              <option value="X">X</option>
+              <option id="H" value="H">H</option>
+              <option value="N">N</option>
+            </select>
+            <br> <br>
+
+          </form>
           <br>
 
-          <p>Select the second compound:</p>
-          <input type="radio" id="second1" name="compound2">
-          <label>C</label><br>
-          <input type="radio" id="second2" name="compound2">
-          <label>A</label><br>
-          <input type="radio" id="second3" name="compound2" onclick="checkRadio(this.id);">
-          <label>M</label><br />
 
+          <form>
+            <label for="cars">Choose your second compound:</label>
+            <select name="compound2" id="compound2">
+              <option value="C">C</option>
+              <option value="A">A</option>
+              <option id="M" value="M">M</option>
+            </select>
+            <br> <br>
+
+
+          </form>
           <br>
 
-          <p>Select the third compound:</p>
-          <input type="radio" id="third1" name="compound3">
-          <label>3</label><br>
-          <input type="radio" id="third2" name="compound3" onclick="checkRadio(this.id);">
-          <label>6</label><br>
-          <input type="radio" id="third3" name="compound3">
-          <label>7</label><br>
-          <br />
-          <input type="button" value="Submit" onclick=submitChoice();>
-          <br />
-        </form>
+
+          <form>
+            <label for="cars">Choose your third compound:</label>
+            <select name="compound3" id="compound3">
+              <option value="3">3</option>
+              <option id="six" value="6">6</option>
+              <option value="7">7</option>
+            </select>
+            <br><br>
+            <input type="button" value="Submit" onclick="checkRadio()">
+          </form>
+        </div>
+        <br />
+        <div id="textDiv2">
+
+        </div>
+
       </div>
 
 

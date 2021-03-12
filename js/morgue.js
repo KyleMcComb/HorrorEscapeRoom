@@ -29,15 +29,27 @@ function showSelection() {
 }
 
 
-function checkRadio(id) {
+function checkRadio() {
 
+  if (document.getElementById('H').selected && document.getElementById('M').selected && document.getElementById('six').selected) {
 
-  if (id === 'first2') {
-    compound1IsValid = true;
-  } else if (id === 'second3') {
-    compound2IsValid = true;
-  } else if (id === 'third2') {
-    compound3IsValid = true;
+    var para = document.createElement("p");
+    var text = document.createTextNode('Success! This seems to have made some acid that is more than corossive enough, i can use it to break down the lock in the hallway! better get going!');
+    para.appendChild(text);
+    var element = document.getElementById("textDiv2");
+    element.appendChild(para);
+    lineBreak();
+
+    window.location.href = "hallway.html"
+
+  } else {
+    var para = document.createElement("p");
+    var text = document.createTextNode("This combonation doesn't seem to be what i need, i should try making something to dissolve the lock in the hallway, maybe some acid would do? I should double check the note i found");
+    para.appendChild(text);
+    var element = document.getElementById("textDiv2");
+    element.appendChild(para);
+    lineBreak();
+
   }
 
 }
@@ -48,46 +60,8 @@ function lineBreak() {
   element.appendChild(lineBreak);
 }
 
-function submitChoice() {
-
-  // alert(compound1IsValid);
-  //
-  // alert(compound2IsValid);
-  // alert(compound3IsValid);
-
-  if (compound1IsValid) {
-    if (compound2IsValid) {
-      if (compound3IsValid) {
-        alert('bob');
-      }
-    }
-  }
 
 
-  /*
-   if (document.getElementById('first2').checked) {
-     alert('bob');
-   }*/
-
-
-  /*
-    document.getElementById("disp").innerHTML = document.getElementById("GFG").value +
-      " radio button checked";
-  } else if (document.getElementById('HTML').checked) {
-    document.getElementById("disp").innerHTML = document.getElementById("HTML").value +
-      " radio button checked";
-  } else if (document.getElementById('JS').checked) {
-    document.getElementById("disp").innerHTML = document.getElementById("JS").value +
-      " radio button checked";
-  } else {
-    document.getElementById("disp").innerHTML = "No one selected";
-  }
-  */
-}
-
-function display() {
-  alert('billy');
-}
 
 
 /*
