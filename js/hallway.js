@@ -1,6 +1,15 @@
 var exitDoorClicked = false;
+var acidFound = false;
 
 function onLoad() {
+
+  if (sessionStorage.getItem('acidFound')) {
+    acidFound = true;
+    document.getElementById('windowButton').disabled = true;
+    document.getElementById('sideRoomButton').disabled = true;
+
+  }
+
   var para = document.createElement("p");
   var text = document.createTextNode("[System] You've entered a dark hallway and can see a door at the other end, maybe you should look around for an exit before you are caught and dragged back to your cell");
   para.appendChild(text);
@@ -11,10 +20,6 @@ function onLoad() {
 
 
 function windowClick() {
-
-
-
-
 
   var para = document.createElement("p");
   var text = document.createTextNode('A small window leading outside, try and escape through the window? y for yes, no for no');
@@ -41,12 +46,8 @@ function windowClick() {
       lineBreak();
 
     }
-
-
   });
   lineBreak();
-
-
 }
 
 function sideRoomClick() {
@@ -62,8 +63,8 @@ function sideRoomClick() {
 
 
     document.addEventListener('keydown', function(e) {
-      if (e.keyCode == 89) //key code for 'a'
-          location = 'morgue.html';
+      if (e.keyCode == 89)
+        location = 'morgue.html';
     })
 
   } else {
@@ -75,7 +76,7 @@ function sideRoomClick() {
     lineBreak();
 
     document.addEventListener('keydown', function(e) {
-      if (e.keyCode == 89) //key code for 'a'
+      if (e.keyCode == 89)
         location = 'morgue.html';
     })
   }
@@ -84,15 +85,36 @@ function sideRoomClick() {
 
 function exitClick() {
 
-  exitDoorClicked = true;
-  var para = document.createElement("p");
-  var text = document.createTextNode("A exit but it is barred by a locked steel gate, it looks old, i may be able to break the lock with the right tool");
-  para.appendChild(text);
-  var element = document.getElementById("col-left");
-  element.appendChild(para);
 
-  lineBreak();
+  if (acidFound) {
+
+    var para = document.createElement("p");
+    var text = document.createTextNode("You pour the acid over the lock on the door, it corrodes it and makes it weak enough for you to pull open. Better get out of here! Press y to leave");
+    para.appendChild(text);
+    var element = document.getElementById("col-left");
+    element.appendChild(para);
+    lineBreak();
+
+
+    document.addEventListener('keydown', function(e) {
+      if (e.keyCode == 89)
+        location = 'security.html';
+    })
+
+  } else {
+
+
+    exitDoorClicked = true;
+    var para = document.createElement("p");
+    var text = document.createTextNode("A exit but it is barred by a locked steel gate, it looks old, i may be able to break the lock with the right tool");
+    para.appendChild(text);
+    var element = document.getElementById("col-left");
+    element.appendChild(para);
+
+    lineBreak();
+  }
 }
+
 
 function lineBreak() {
   var lineBreak = document.createElement("br");
@@ -100,18 +122,3 @@ function lineBreak() {
   element.appendChild(lineBreak);
 
 }
-
-
-
-
-
-/*
-function UserInput() {
-  var input = document.createElement("INPUT");
-  input.setAttribute("type", "text");
-  input.setAttribute("value", "Y FOR Yes, N for No");
-  input.setAttribute("id", "Div1");
-  var element = document.getElementById("col-left");
-  element.appendChild(input);
-   lineBreak();
-} */
