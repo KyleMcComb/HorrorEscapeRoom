@@ -13,6 +13,8 @@ function onLoad() {
 }
 */
 
+var keyFound = 0;
+
 function drawerClick(background) {
 
   // Changes image on click
@@ -112,9 +114,11 @@ function compartment2Click() {
   // Removes button after clicked
   var cButton2 = document.getElementById("compartment2Button");
   compartment2Button.style.display = "none";
+  // Adds key
+  keyFound++;
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("That compartment doesn't have anything in it.. look elsewhere.");
+  var text = document.createTextNode("You found a rusty key.. this could be useful.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -245,10 +249,49 @@ function bookshelfClick() {
   element.appendChild(lineBreak);
 }
 
+function openshelfClick(){
+  // Changes image on click
+  image = document.getElementById('background');
+  image.src = "img/Lab/HallwayDoor.jpg";
 
-function openshelfClick() {
-    alert("The bookshelf moves.. Leading to the Hallway.");
+  // Removes button after clicked
+  var osButton = document.getElementById("openshelfButton");
+  openshelfButton.style.display = "none";
+
+  // Adds button after clicked
+  var doButton = document.getElementById("cellDoorButton");
+  cellDoorButton.style.display = "block";
+
+  // Displays text for the user (in left column)
+  var para = document.createElement("p");
+  var text = document.createTextNode("The bookshelf shifts open and you are faced with a locked door leading to a hallway.");
+  para.appendChild(text);
+  var element = document.getElementById("col-left");
+  element.appendChild(para);
+
+  var lineBreak = document.createElement("br");
+  var element = document.getElementById("col-left");
+  element.appendChild(lineBreak);
+}
+
+
+function doorUnlockClick() {
+  if(keyFound == 0){
+    // Displays text for the user (in left column)
+    var para = document.createElement("p");
+    var text = document.createTextNode("It seems you are missing the key for this door!");
+    para.appendChild(text);
+    var element = document.getElementById("col-left");
+    element.appendChild(para);
+
+    var lineBreak = document.createElement("br");
+    var element = document.getElementById("col-left");
+    element.appendChild(lineBreak);
+  }
+  else if(keyFound == 1) {
+    alert("The door unlocks.. Leading to the Hallway.");
     //sessionStorage.setItem("timeleft", 60-timePassed);
     //sessionStorage.setItem("labTime", timePassed);
     window.location.href = 'hallway.html';
+  }
 }

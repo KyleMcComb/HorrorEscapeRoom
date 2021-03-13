@@ -121,6 +121,18 @@
   background: none;
 }
 
+#cellDoorButton {
+  border: none;
+  display: none;
+  width: 15%;
+  top: 38%;
+  right: 57%;
+  height: 22%;
+  position: absolute;
+  cursor: pointer;
+  background: none;
+}
+
 /* The expanded note */
 .modal {
   display: none;
