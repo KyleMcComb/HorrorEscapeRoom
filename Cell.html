@@ -46,52 +46,44 @@
       display: none;
     }
 
-    #compartmentButton {
-      border: 2px solid blue;
-      display: none;
-      width: 12%;
-      top: 45%;
-      right: 57%;
-      height: 21%;
+    #lockPickButton {
+      border: none;
+      display: block;
+      width: 3%;
+      top: 57%;
+      right: 39%;
+      height: 4%;
       position: absolute;
       cursor: pointer;
       background: none;
     }
-
-    #compartment2Button {
-      border: 2px solid green;
-      display: none;
-      width: 30%;
-      top: 72%;
-      right: 14%;
-      height: 28%;
-      position: absolute;
-      cursor: pointer;
-      background: none;
-    }
-
-    #jailBars{
-      width: 6%;
-      top: 90%;
-      right: 90%;
-      height: 6%;
-      background:url('img/Cell/Jail-bars.png') no-repeat;
-      background-size:100%;
-    }
-
 
     #noteModal {
       border: 2px solid red;
       display: none;
       width: 8%;
       height: 15%;
-      top: 80%;
+      top: 83%;
       right: 90%;
       cursor: pointer;
       position: absolute;
       background:url('img/Lab/ClassifiedLore.jpg') no-repeat;
       background-size:100%;
     }
+
+    #lockPickInv {
+      border: 2px solid yellow;
+      display: none;
+      width: 8%;
+      height: 15%;
+      top: 83%;
+      right: 81%;
+      cursor: pointer;
+      position: absolute;
+      background:url('img/Exit/goldKey.png') no-repeat;
+      background-size:100%;
+    }
+
 
     /* The expanded note */
     .modal {
@@ -168,9 +160,11 @@
         <div id="imageDiv">
         <button id="drawerButton" title="drawer" onclick="safeCode();"></button>
         <button id="arrowButton" title="Turn Around" onclick="arrowClick();"></button>
+        <button id="lockPickButton" title="Lock Pick" onclick="LockPickClick();"></button>
         <button id="cellGateButton" title="Locked Cell Gate">  </button>
-        <button id="compartmentButton" title="compartment1" onclick="compartmentClick();"></button>
-        <button id="compartment2Button" title="compartment2" onclick="compartment2Click();"></button>
+        <button id="lockPickInv" title="Lock pick">  </button>
+
+
 
         <!-- The Modal for Extra Note-->
         <button id="noteModal"title = "Note" onclick = "expand()"></button>

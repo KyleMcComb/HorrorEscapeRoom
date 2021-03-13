@@ -13,21 +13,19 @@ function onLoad() {
 var code; //code entered in by user to escape
 var unlocked = false; //
 
-function drawerClick(background) {
+function LockPickClick(background) {
 
-  // Changes image on click
-  image = document.getElementById('background');
-  image.src = "img/Lab/drawercloseup.jpg";
-
-
+  // Adds note modal button after clicked
+  var lModal = document.getElementById("lockPickInv");
+  lockPickInv.style.display = "block";
 
   // Removes button after clicked
-  var dButton = document.getElementById("drawerButton");
-  drawerButton.style.display = "none";
+  var nButton = document.getElementById("lockPickButton");
+  lockPickButton.style.display = "none";
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("You discovered a diary of one of Doctor Friedrich's victims");
+  var text = document.createTextNode("You discovered a lock pick maybe you could use it to unlock the cell gate");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
