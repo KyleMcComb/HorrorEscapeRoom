@@ -67,7 +67,25 @@
   background-size:100%;
 }
 
-.key {
+#wallCode{
+  width: 5%;
+  top: 78%;
+  right: 59%;
+  height: 9%;
+  background:transparent;
+  background-size:100%;
+}
+
+#colouredGlass{
+  width: 19%;
+  top: 35%;
+  right: 39%;
+  height: 12%;
+  background:transparent;
+  background-size:100%;
+}
+
+.roomItem {
   border:none;
   display: block;
 
@@ -121,7 +139,7 @@
   max-width: 700px;
 }
 
-#captionKeypad {
+#captionKeypadDiv {
   margin: auto;
   display: block;
   width: 80%;
@@ -249,4 +267,12 @@
 
   background: radial-gradient(circle at var(--x) var(--y),
    #ffeeaa30 6%, rgba(0,0,0,.985) 10%);
+}
+
+#play{
+  display:none;
+}
+
+audio{
+  display:none;
 }

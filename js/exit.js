@@ -8,21 +8,6 @@ var keyCode=[];
 var keyPadCode = 420;
 const pos = document.documentElement;
 
-        function moveTorch(){
-
-          var test = document.getElementById("imageDiv");
-          var rect = test.getBoundingClientRect();
-
-          var viewportLeft = rect.left;
-          var viewportTop = rect.top;
-
-          var x = event.clientX;     // x co-ord of Window
-          var y = event.clientY;     // y co-ord of Window
-
-          pos.style.setProperty('--x',(x-viewportLeft) + 'px');
-          pos.style.setProperty('--y', (y-viewportTop) + 'px');
-        }
-
 
 //Displays the code to unlock the final door (code=420)
 function displayCode(){
@@ -32,7 +17,7 @@ function displayCode(){
   var startTime = new Date();
   //text to prompt user to enter a code in
   var textForPrompt = 'Enter the code to escape!:'
-  
+
   code = prompt(textForPrompt);
   //records end time user has been in function - used to calc full time user spent entering in a code before closing prompt box
   var endTime = new Date();
@@ -77,8 +62,6 @@ function displayCode(){
 
   }
 
-
-
     function keyFound(keyType){
       //adds Key - used to check if user has collected keys before entering in a code
       noKeys+=1;
@@ -119,6 +102,16 @@ function displayCode(){
       //hides button that displayed key
       x.style.display = "none";
 
+    }
+
+    function wallCode(){
+      var txt = "[System]: You have found a number on the wall: 420, the number of Dr Friedrich's victims. I wonder could this be a code for something?<br>";
+      document.getElementById('gameText').innerHTML += txt;
+    }
+
+    function colouredGlass(){
+      var txt = "[System]: You have found coloured glass Gold, Blue, Purple - maybe this is a clue to Dr Friedrich's puzzle.<br>";
+      document.getElementById('gameText').innerHTML += txt;
     }
 
     //Expand the key image
@@ -179,9 +172,11 @@ function displayCode(){
         //keypad entering in the Code
         function enterKeyCode(btnPressed){
           if(btnPressed == '0' || btnPressed == '1' || btnPressed == '2' || btnPressed == '3' || btnPressed=='4' || btnPressed== '5' || btnPressed == '6' || btnPressed =='7' || btnPressed =='8' || btnPressed== '9'){
+            document.getElementById('userEntry').innerHTML +=btnPressed;
             keyCode.push(Number(btnPressed));
           }else if(btnPressed=='submit'){
             // var keyPadCode = 420; - CORRECT CODE
+            document.getElementById('userEntry').innerHTML= "";
             var userEnter="";
             var lenCodeEnter = keyCode.length;
             for(i=0;i<lenCodeEnter;i++){
@@ -190,20 +185,20 @@ function displayCode(){
             }
 
             if(lenCodeEnter>3 || lenCodeEnter<3){
-                    document.getElementById("captionKeypad").innerHTML += "<p>the code should be 3 numbers! Try Again!</p>";
+              playSound('error');
+                    document.getElementById("captionKeypad").innerHTML = "Enter the 3 Digit Code!<p>the code should be 3 numbers! Try Again!</p>";
                     keyCode = [];
             }else if (lenCodeEnter==3  && userEnter!=keyPadCode){
-              document.getElementById("captionKeypad").innerHTML += "<p>Wrong code! Try again (hint: Look at the walls)</p>";
+              playSound('error');
+              document.getElementById("captionKeypad").innerHTML = "Enter the 3 Digit Code!<p>Wrong code! Try again (hint: Look at the walls)</p>";
             }else if (lenCodeEnter==3  && userEnter==keyPadCode){
+             playSound('correct');
              document.getElementById('keyPad').style.display="none";
              closeKey('lockModal');
              keyFound('blue');
             }
           }
         }
-
-
-
 
         function moveTorch(){
           var pos = document.documentElement;
@@ -220,3 +215,16 @@ function displayCode(){
           pos.style.setProperty('--x',(x-viewportLeft) + 'px');
           pos.style.setProperty('--y', (y-viewportTop) + 'px');
         }
+
+function playSound(errorWin){
+  let sound;
+  if(errorWin =='error'){
+    sound = document.getElementById('error')
+  }else{
+     sound = document.getElementById('correct')
+  }
+
+  let play = document.getElementById('play')
+
+  sound.play();
+}

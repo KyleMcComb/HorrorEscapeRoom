@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="css/exit.css" type="text/css" />
 
         <script src="js/exit.js"></script>
-        <script src="js/global.js"></script>
+        <!--<script src="js/global.js"></script>-->
 
     </head>
     <body>
@@ -20,6 +20,16 @@
         <p id="timer"></p>
         <div id="gameText">
         </div>
+        <!--
+        <audio controls>
+          <source src="audio/Exit/win.wav" type="audio/ogg">
+            Your browser does not support the audio element.
+          </audio> -->
+          <button type="button" class="soundBtn" id="play" onclick="playSound();"></button>
+          <audio id="correct" class="soundBtn" src="audio/Exit/win.wav">
+          <audio id="error" class="soundBtn" src="audio/Exit/error.wav">
+
+
       </div>
       <div id="col-right">
         <h2 id="roomName">Final Room</h2>
@@ -28,14 +38,13 @@
         <!--Holds the image of the room and buttons/clickable items in room -->
         <div id="imageDiv" onmousemove="moveTorch();">
           <div id="light"></div>
-
-
           <button id="exitButton" onclick="displayCode();"></button>
 
-          <button title="Gold Key button" class="key" id="goldKey" onclick="keyFound('gold');"></button>
-          <button title= "Purple Key button"class="key" id="purpleKey" onclick="keyFound('purple');"></button>
-          <button title ="Keypad" class="key" id="keyPad" onclick="expandKeypad();"></button>
-
+          <button title="Gold, Blue, Purple glass" class="roomItem" id="colouredGlass" onclick="colouredGlass();"></button>
+          <button title="420" class="roomItem" id="wallCode" onclick="wallCode();"></button>
+          <button title="Gold Key button" class="roomItem" id="goldKey" onclick="keyFound('gold');"></button>
+          <button title= "Purple Key button"class="roomItem" id="purpleKey" onclick="keyFound('purple');"></button>
+          <button title ="Keypad" class="roomItem" id="keyPad" onclick="expandKeypad();"></button>
 
           <img id="img_ID" src="img/Exit/exitRoom2.png"  width="100%" alt="Exit room Image" />
         </div>
@@ -68,8 +77,13 @@
 
             <img id="expandedKeypad">
   </div>
-  <div id="captionKeypad"></div>
+  <div id="captionKeypadDiv">
+    <p>You have entered: <span id="userEntry"></span></p>
+    <p id="captionKeypad"></p>
+  </div>
 </div>
+
+
       </div>
     </div>
   </div>
