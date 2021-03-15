@@ -76,6 +76,15 @@
   background-size:100%;
 }
 
+#wallNote{
+  width: 10%;
+  top: 36%;
+  right: 14%;
+  height: 15%;
+  background:transparent;
+  background-size:100%;
+}
+
 #colouredGlass{
   width: 19%;
   top: 35%;
@@ -83,6 +92,15 @@
   height: 12%;
   background:transparent;
   background-size:100%;
+}
+
+#imageDivKeys{
+  margin: auto;
+  display: block;
+  width: 60%;
+  right: 50%;
+  justify-content: center;
+  max-width: 700px;
 }
 
 .roomItem {
@@ -119,7 +137,7 @@
 
 
 /* Caption of Modal Image */
-#caption {
+#captionKey {
   margin: auto;
   display: block;
   width: 80%;
@@ -133,7 +151,7 @@
 #expandedKey{
   margin: auto;
   display: block;
-  width: 80%;
+  width: 100%;
   right: 50%;
   justify-content: center;
   max-width: 700px;

@@ -17,16 +17,23 @@
 
         if(winGame=="win"){
           document.getElementById("doctor").src = "img/EndScreen/Surgeon-Win.jpg";
+
+          var gameText = document.getElementById('gameStats');
+
+          var cellTime = sessionStorage.getItem("cellTime");
+          gameText.innerHTML = '<p>Time in Cell Room:' +cellTime + ' seconds</p>';
+          var labTime = sessionStorage.getItem("labTime");
+          gameText.innerHTML += '<p>Time in Laboratory Room:' +labTime + ' seconds</p>';
+          var hallwayTime = sessionStorage.getItem("hallwayTime");
+          gameText.innerHTML = '<p>Time in Hallway Room:' +hallwayTime + ' seconds</p>';
+          var securityTime =   sessionStorage.getItem("securityTime");
+          gameText.innerHTML = '<p>Time in Security Room:' +securityTime + ' seconds</p>';
+          var exitTime = sessionStorage.getItem("exitTime");
+          gameText.innerHTML = '<p>Time in Final Room:' +exitTime + ' seconds</p>';
+
         }else{
           document.getElementById("doctor").src="img/EndScreen/Surgeon-Lose.jpg";
         }
-
-        var exitTime = sessionStorage.getItem("exitTime");
-        var securityTime =   sessionStorage.getItem("securityTime");
-        var labTime = sessionStorage.getItem("labTime");
-        document.getElementById('timeInExit').innerHTML = 'Time in exit room: ' + exitTime + ' seconds';
-        document.getElementById('timeInSecurity').innerHTML = 'Time in security room: ' + securityTime + ' seconds';
-        document.getElementById('timeInLab').innerHTML = 'Time in laboratory room: ' + labTime + ' seconds';
       }
     </script>
   </head>
@@ -40,9 +47,7 @@
   <div class="row">
     <div id="col-left">
       <h2 id="change">Game Text Section</h2>
-      <p id="timeInExit"></p>
-      <p id="timeInSecurity"></p>
-      <p id="timeinLab"></p>
+      <div id="gameStats"></div>
     </div>
     <div id="col-right">
       <h2 id="roomName">Stats/End Page</h2>

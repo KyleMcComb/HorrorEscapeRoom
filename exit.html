@@ -18,7 +18,9 @@
     <div class="row">
       <div id="col-left">
         <p id="timer"></p>
+        <p id="keys"></p>
         <div id="gameText">
+
         </div>
         <!--
         <audio controls>
@@ -29,11 +31,9 @@
           <audio id="correct" class="soundBtn" src="audio/Exit/win.wav">
           <audio id="error" class="soundBtn" src="audio/Exit/error.wav">
 
-
       </div>
       <div id="col-right">
         <h2 id="roomName">Final Room</h2>
-
 
         <!--Holds the image of the room and buttons/clickable items in room -->
         <div id="imageDiv" onmousemove="moveTorch();">
@@ -41,48 +41,55 @@
           <button id="exitButton" onclick="displayCode();"></button>
 
           <button title="Gold, Blue, Purple glass" class="roomItem" id="colouredGlass" onclick="colouredGlass();"></button>
+          <button title="a note" class="roomItem" id="wallNote" onclick="wallNote();"></button>
           <button title="420" class="roomItem" id="wallCode" onclick="wallCode();"></button>
           <button title="Gold Key button" class="roomItem" id="goldKey" onclick="keyFound('gold');"></button>
-          <button title= "Purple Key button"class="roomItem" id="purpleKey" onclick="keyFound('purple');"></button>
+          <button title= "Purple Key button"class="roomItem" id="purpleKey" onclick="purpleKeyCode();"></button>
           <button title ="Keypad" class="roomItem" id="keyPad" onclick="expandKeypad();"></button>
 
           <img id="img_ID" src="img/Exit/exitRoom2.png"  width="100%" alt="Exit room Image" />
         </div>
 
         <!-- The Modal for Keys -->
-        <div id="myModal" class="modal">
+        <div id="keyModal" class="modal">
           <span class="close" onclick = "closeKey('key')">&times;</span>
-          <div id="imageDivKeypad">
+          <div id="imageDivKeys">
               <img id="expandedKey">
           </div>
           <img id="expandedKey">
-          <div id="caption"></div>
+          <div id="captionKey" class="captionModal"></div>
         </div>
 
         <!-- The Modal for Keypad -->
-        <div id="lockModal" class="modal">
-          <span class="close" onclick = "closeKey('lockModal')">&times;</span>
-          <div id="imageDivKeypad">
-            <button class="number" id="nine" title = "nine" onclick = "enterKeyCode('9');"></button>
-            <button class="number" id="eight" title = "eight" onclick = "enterKeyCode('8');"></button>
-            <button class="number" id="seven" title = "seven" onclick = "enterKeyCode('7');"></button>
-            <button class="number" id="six" title = "six" onclick = "enterKeyCode('6');"></button>
-            <button class="number" id="five" title = "five" onclick = "enterKeyCode('5');"></button>
-            <button class="number" id="four" title = "four" onclick = "enterKeyCode('4');"></button>
-            <button class="number" id="three" title = "three" onclick = "enterKeyCode('3');"></button>
-            <button class="number" id="two" title = "two" onclick = "enterKeyCode('2');"></button>
-            <button class="number" id="one" title = "one" onclick = "enterKeyCode('1');"></button>
-            <button class="number" id="zero" title = "zero" onclick = "enterKeyCode('0');"></button>
-            <button class="number" id="enterbtn" title = "Enter Button" onclick = "enterKeyCode('submit');">Submit</button>
+          <div id="lockModal" class="modal">
+            <span class="close" onclick = "closeKey('lockModal')">&times;</span>
+            <div id="imageDivKeypad">
+              <button class="number" id="nine" title = "nine" onclick = "enterKeyCode('9');"></button>
+              <button class="number" id="eight" title = "eight" onclick = "enterKeyCode('8');"></button>
+              <button class="number" id="seven" title = "seven" onclick = "enterKeyCode('7');"></button>
+              <button class="number" id="six" title = "six" onclick = "enterKeyCode('6');"></button>
+              <button class="number" id="five" title = "five" onclick = "enterKeyCode('5');"></button>
+              <button class="number" id="four" title = "four" onclick = "enterKeyCode('4');"></button>
+              <button class="number" id="three" title = "three" onclick = "enterKeyCode('3');"></button>
+              <button class="number" id="two" title = "two" onclick = "enterKeyCode('2');"></button>
+              <button class="number" id="one" title = "one" onclick = "enterKeyCode('1');"></button>
+              <button class="number" id="zero" title = "zero" onclick = "enterKeyCode('0');"></button>
+              <button class="number" id="enterbtn" title = "Enter Button" onclick = "enterKeyCode('submit');">Submit</button>
 
-            <img id="expandedKeypad">
-  </div>
-  <div id="captionKeypadDiv">
-    <p>You have entered: <span id="userEntry"></span></p>
-    <p id="captionKeypad"></p>
-  </div>
-</div>
+              <img id="expandedKeypad">
+    </div>
+    <div id="captionKeypadDiv">
+      <p>You have entered: <span id="userEntry"></span></p>
+      <p id="captionKeypad"></p>
+    </div>
+      </div>
 
+
+      <div id="noteModal" class="modal">
+        <span class="close" onclick = "closeKey('note')">&times;</span>
+        <img id="expandedKey" src = "img/Exit/note1.png" alt="note with a code 872">
+        <div id="noteCaption"></div>
+      </div>
 
       </div>
     </div>
