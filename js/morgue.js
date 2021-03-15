@@ -12,7 +12,7 @@ function showSelection() {
 
   if (noteFound === true) {
     var para = document.createElement("p");
-    var text = document.createTextNode('These seem to be the chemicals Dr Friedrich mentioned in his note, i should be able to make something useful to use on the dorr in the hall way. The note said something about acid and a key.');
+    var text = document.createTextNode('These seem to be the chemicals Dr Friedrich mentioned in his note, i should be able to make something useful to use on the gate in the hallway. The note said something about acid and a key.');
     para.appendChild(text);
     var element = document.getElementById("textDiv");
     element.appendChild(para);
@@ -49,9 +49,6 @@ function checkRadio() {
         window.location.href = "hallway.html"
     })
 
-
-
-
   } else {
     var acidFound = true;
     var para = document.createElement("p");
@@ -76,7 +73,7 @@ function expandNote() {
   noteFound = true;
   document.getElementById("myModalDiv").style.display = "block";
   document.getElementById("expandedNote").src = "img/Morgue/ChemicalNote.jpg";
-  document.getElementById("caption").innerHTML = "An old note belongning to Dr Friedrich, he seems to have mentioned some sort of cyper on it";
+  document.getElementById("caption").innerHTML = "An old note belongning to Dr Friedrich, he seems to have mentioned some sort of cipher on it";
 }
 
 function closeNote() {
