@@ -21,15 +21,15 @@
           var gameText = document.getElementById('gameStats');
 
           var cellTime = sessionStorage.getItem("cellTime");
-          gameText.innerHTML = '<p>Time in Cell Room:' +cellTime + ' seconds</p>';
+          gameText.innerHTML = '<p>Time in Cell Room: ' +cellTime + ' seconds</p>';
           var labTime = sessionStorage.getItem("labTime");
-          gameText.innerHTML += '<p>Time in Laboratory Room:' +labTime + ' seconds</p>';
+          gameText.innerHTML += '<p>Time in Laboratory Room: ' +labTime + ' seconds</p>';
           var hallwayTime = sessionStorage.getItem("hallwayTime");
-          gameText.innerHTML = '<p>Time in Hallway Room:' +hallwayTime + ' seconds</p>';
+          gameText.innerHTML += '<p>Time in Hallway Room: ' +hallwayTime + ' seconds</p>';
           var securityTime =   sessionStorage.getItem("securityTime");
-          gameText.innerHTML = '<p>Time in Security Room:' +securityTime + ' seconds</p>';
+          gameText.innerHTML += '<p>Time in Security Room: ' +securityTime + ' seconds</p>';
           var exitTime = sessionStorage.getItem("exitTime");
-          gameText.innerHTML = '<p>Time in Final Room:' +exitTime + ' seconds</p>';
+          gameText.innerHTML += '<p>Time in Final Room: ' +exitTime + ' seconds</p>';
 
         }else{
           document.getElementById("doctor").src="img/EndScreen/Surgeon-Lose.jpg";

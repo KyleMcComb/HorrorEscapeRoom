@@ -2,6 +2,7 @@
   var cluesFound = 1;
   var cluesText = " <br> -Clues found(" + cluesFound + "/3) Part of the door unlocks-";
   var wiresFixed = false;
+
   //When the wires are clicked
   function wiresClick(){
     var wiresButton = document.getElementById("leftWire");
@@ -43,8 +44,8 @@
 
       writeText("You have escaped the security room!","");
       alert("You have escaped the security room");
-      sessionStorage.setItem("timeleft", 60-timePassed);
       sessionStorage.setItem("securityTime", timePassed);
+      sessionStorage.setItem("timeleft", 60-timePassed);
       window.location.href = "exit.html";
     }
     else if(cluesFound == 2){

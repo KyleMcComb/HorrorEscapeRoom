@@ -10,34 +10,11 @@
   background:none;
 }
 
-#imageDiv .colour{
-  position:absolute;
-  opacity:0.4;
-}
-
-#imageDiv #blueColour{
-  top: 37%;
-  right:45%;
-  height:10%;
-}
-
-#imageDiv #purpleColour{
-  top: 37%;
-  right:39%;
-  height:10%;
-}
-#imageDiv #goldColour{
-  top: 37%;
-  right:51%;
-  height:10%;
-}
-
-
 #goldKey{
-  width: 6%;
-  top: 90%;
-  right: 90%;
-  height: 6%;
+  width: 9%;
+  top: 81%;
+  right: 83%;
+  height: 17%;
 
   background:transparent;
   background-size:100%;
@@ -45,15 +22,14 @@
 }
 
 #keyPad{
-  border:none;
   display: block;
   position: absolute;
   cursor: pointer;
   background-size:100%;
-  width: 6%;
-  top: 90%;
+  width: 10%;
+  top: 85%;
   right: 2%;
-  height: 6%;
+  height: 10%;
   background:transparent;
   background-size:100%;
 }
@@ -261,7 +237,7 @@
 #expandedKeypad {
   margin: auto;
   display: block;
-  height: 10%;
+  height: 5%;
   right: 50%;
   justify-content: center;
 }
@@ -269,7 +245,7 @@
 #imageDivKeypad{
   margin:auto;
   justify-content: center;
-  width:30%;
+  width:20%;
   position:relative;
 }
 

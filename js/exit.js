@@ -1,4 +1,4 @@
-var timePassed = 0; //record how long the user spent in this room (seconds)
+//var timePassed = 0; //record how long the user spent in this room (seconds)
 var code; //code entered in by user to escape
 
 var noKeys = 0; //used to check user has collected keys before escpaing
@@ -9,7 +9,6 @@ var keyPadCode = 420; // correct keypad code
 var exitRoomCode = 420;
 var codePurpleKey = 872;
 const pos = document.documentElement; //document used for torch
-
 
 //Displays the code to unlock the final door
 function displayCode() {
@@ -42,6 +41,7 @@ function displayCode() {
       var winGame = "win";
       sessionStorage.setItem("winGame", winGame);
       window.location.href = 'endScreen.html';
+
     } else if (noKeys < 3) {
       txt = "[System]: Hmm.. Looks like theres 3 locks, make sure to collect the keys before escaping!";
     } else {
@@ -133,16 +133,18 @@ function keyFound(keyType) {
       break;
   }
   //Tells user how many keys left to find/next steps
+  var complete="";
   if (noKeys == 1) {
     txt += ' 1/3 Keys found! Keep Searching! </p><br>';
   } else if (noKeys == 2) {
     txt += ' 2/3 Keys found! Keep Searching! </p><br>';
   } else {
     txt += '3/3 Keys found! All keys have been found, I can hear Dr Friedrich getting close! Better escape soon! </p><br>';
+    complete += '<ul><li>The Blue key has the number 2 on it</li><li>The Purple key has the number 0 on it</li><li>The Gold key has the number 4 on it</li></ul>';
   }
   //displays output to gameText area
-  document.getElementById('gameText').innerHTML += txt;
-  document.getElementById('keys').innerHTML = 'You have found '+noKeys + '/3 keys so far!<br><br>';
+  document.getElementById('gameText').innerHTML += complete;
+  document.getElementById('keys').innerHTML = txt;
   //hides button that displayed key
   x.style.display = "none";
 
@@ -231,7 +233,6 @@ function closeKey(closeModal) {
   } else if (closeModal == 'note') {
     document.getElementById('noteModal').style.display = "none";
   }
-
 }
 
 function moveTorch() {
