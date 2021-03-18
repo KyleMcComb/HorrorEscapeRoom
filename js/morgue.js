@@ -12,7 +12,7 @@ function showSelection() {
 
   if (noteFound === true) {
     var para = document.createElement("p");
-    var text = document.createTextNode('These seem to be the chemicals Dr Friedrich mentioned in his note,, each bottle has a letter on it with the word "RIGHT" written on it, strange. I should be able to make something useful to use on the gate in the hallway. Maybe the note I found earlier could help here...');
+    var text = document.createTextNode('These seem to be the chemicals Dr Friedrich mentioned in his note, each bottle has a letter on it with the word "RIGHT" written on it, strange. I should be able to make something useful to use on the gate in the hallway. Maybe the note I found earlier could help here...');
     para.appendChild(text);
     var element = document.getElementById("textDiv");
     element.appendChild(para);
