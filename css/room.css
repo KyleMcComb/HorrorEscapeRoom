@@ -33,6 +33,7 @@ body {
 #col-right img {
   width: 100%;
   margin-left: 1%;
+  border-radius: 3%;
 }
 
 #col-right {

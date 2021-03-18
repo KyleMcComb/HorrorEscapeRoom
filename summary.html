@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+  <html>
+
+  <head>
+    <title>The Redacted Laboratory</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/room.css" type ="text/css" />
+    <script src="js/summary.js"></script>
+
+    <style type="text/css">
+
+    </style>
+
+    <style type="text/css">
+      table, th,td {
+        border:solid white 1px;
+        border-collapse: collapse;
+        padding:2%;
+      }
+
+      table{
+        width:100%;
+      }
+    </style>
+
+  </head>
+
+  <body onload="gameMode();">
+    <div id="wrapper">
+
+        <div id="head">
+          <h1 class="content">THE <span class="redact">REDACTED</span> LAB</h1>
+        </div>
+  <div class="row">
+    <div id="col-left">
+      <h2 id="change">Game Text Section</h2>
+      <br />
+      <div id="gameStats">
+        <ul id="roomTimes"></ul>
+
+        <table id="stats">
+          <tr>
+            <th>Room</th>
+            <th>Time (in secs)</th>
+          </tr>
+        </table>
+
+        <br />
+        <button onclick="restart();">RESTART</button>
+        <!--NEED TO ADD CLEAR SESSION STORAGE -->
+        <!--NEED TO ADD CLEAR TIMERS FOR EACH ROOM -->
+      </div>
+    </div>
+    <div id="col-right">
+      <h2 id="roomName">Stats/End Page</h2>
+      <img id="doctor" />
+  </div>
+</div>
+</body>
+
+  </html>

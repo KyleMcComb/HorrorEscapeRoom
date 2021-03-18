@@ -36,11 +36,11 @@ function displayCode() {
     if (code == null || code == "") {
       txt = "[System]:User cancelled the prompt.";
       //checks for correct entering in of code AND the user has collected all 3 keys before moving on
-    } else if (code == exitRoomCode && noKeys == 3) {
+    } else if (code == 420 && noKeys) {
       //saves the gamePlay to win to get Win Doctor picture and correct stats
       var winGame = "win";
       sessionStorage.setItem("winGame", winGame);
-      window.location.href = 'endScreen.html';
+      window.location.href = 'summary.html';
 
     } else if (noKeys < 3) {
       txt = "[System]: Hmm.. Looks like theres 3 locks, make sure to collect the keys before escaping!";
