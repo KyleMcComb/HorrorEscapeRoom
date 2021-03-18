@@ -20,6 +20,7 @@ body {
 
 .row {
   display: flex;
+  content: :center;
 }
 
 #col-left {
@@ -40,7 +41,6 @@ body {
   width: 70%;
   float: left;
   padding: 2%;
-  text-align: center;
 }
 
 a {
