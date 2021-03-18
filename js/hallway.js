@@ -2,6 +2,9 @@ var exitDoorClicked = false;
 var acidFound = false;
 
 function onLoad() {
+  let ambienceAudio = getElementById('ambienceAudio');
+
+  ambienceAudio.play();
 
   if (sessionStorage.getItem('acidFound')) {
     acidFound = true;
