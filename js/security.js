@@ -174,16 +174,18 @@
     }
 
 
-    //Torch attempt
-    function moveTorch(event){
-      var torch = document.getElementsByClassName("torch")[0];
-      if(event.target.id == "leftWire" ) {
-        torch.style.clipPath = `circle(80px at 270px 160px)`;
-      }
-      else if(event.target.className =="close"){
+    function moveTorch() {
+      var pos = document.documentElement;
 
-      }
-      else{
-      torch.style.clipPath = `circle(80px at ${event.offsetX}px ${event.offsetY}px)`;
-    }
+      var test = document.getElementById("wiresImage");
+      var rect = test.getBoundingClientRect();
+
+      var viewportLeft = rect.left;
+      var viewportTop = rect.top;
+
+      var x = event.clientX; // x co-ord of Window
+      var y = event.clientY; // y co-ord of Window
+
+      pos.style.setProperty('--x', (x - viewportLeft) + 'px');
+      pos.style.setProperty('--y', (y - viewportTop) + 'px');
     }

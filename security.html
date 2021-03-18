@@ -33,6 +33,7 @@
         <h2 id="roomName">Security</h2>
 
         <div id="imageDiv">
+
           <button id="wiresbutton" title="Electrical Wires" onclick="expandWires();"></button>
           <button id="doorbutton" title="Exit Door" onclick="exit();"></button>
           <button id="firstbutton" title="Press Button 1" onclick="unlock(1);"></button>
@@ -54,15 +55,18 @@
           <div id="wiresModal" class="wiresClass">
 
 
-            <div id="expandedWires" onmousemove="moveTorch(event)">
+          <div id="wiresImage"onmousemove="moveTorch(event)">
+            <div id="light"></div>
+            <button id="leftWire" class="booton" title="Loose Wire" onclick="wiresClick();"></button>
+            <img id="img_ID" src="img/Security/Wires.png"  width="100%" alt="Wires Image" />
+
+          </div>
+
               <span class="close" onclick="closeNote()">&times;</span>
+              <div id="captionWires"><p>
+                HELLO
+              </p></div>
 
-              <div class="torch">
-                <button id="leftWire" class="booton" title="Loose Wire" onclick="wiresClick();"></button>
-              </div>
-            </div>
-
-            <div id="captionWires"></div>
           </div>
 
         </div>

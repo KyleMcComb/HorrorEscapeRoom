@@ -10,6 +10,8 @@ var exitRoomCode = 420;
 var codePurpleKey = 872;
 const pos = document.documentElement; //document used for torch
 
+sessionStorage.setItem("exitTime", 0);
+
 //Displays the code to unlock the final door
 function displayCode() {
   //records time spent in function as timer stops when prompt box is open

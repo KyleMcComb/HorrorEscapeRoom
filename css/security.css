@@ -1,4 +1,16 @@
 
+#light {
+  position: absolute;
+  top: 0;
+  left:0 ;
+
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  background: radial-gradient(circle at var(--x) var(--y),
+   #ffeeaa30 6%, rgba(0,0,0,.985) 10%);
+}
 
 #head {
   height: 150px;
@@ -262,4 +274,8 @@
 #leftWire:hover,
 #leftWire:focus {
   border: 2px solid black;
+}
+
+#wiresImage{
+  width:50%;
 }
