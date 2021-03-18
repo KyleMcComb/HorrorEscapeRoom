@@ -157,7 +157,7 @@
     //Expand the note image
     function expandWires(){
       document.getElementById("wiresModal").style.display = "block";
-      document.getElementById("expandedWires").src = "img/Security/WiresTransparent.png";
+      moveTorch(event);
       if (wiresFixed){
         document.getElementById("captionWires").innerHTML = "Is there anything else I can do here?... <br> Is that a keypad?";
       }
@@ -186,6 +186,6 @@
       var x = event.clientX; // x co-ord of Window
       var y = event.clientY; // y co-ord of Window
 
-      pos.style.setProperty('--x', (x - viewportLeft) + 'px');
-      pos.style.setProperty('--y', (y - viewportTop) + 'px');
+      pos.style.setProperty('--x', (x) + 'px');
+      pos.style.setProperty('--y', (y) + 'px');
     }
