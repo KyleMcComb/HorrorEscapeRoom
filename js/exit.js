@@ -107,6 +107,7 @@ function purpleSubmit() {
 
 //Key found - opens modal
 function keyFound(keyType) {
+  playSound('correct');
   //adds Key - used to check if user has collected keys before entering in a code
   noKeys += 1;
   var x;
@@ -215,7 +216,7 @@ function enterKeyCode(btnPressed) {
       playSound('error');
       document.getElementById("captionKeypad").innerHTML = "Enter the 3 Digit Code!<p>Wrong code! Try again (hint: Look at the walls)</p>";
     } else if (lenCodeEnter == 3 && userEnter == keyPadCode) {
-      playSound('correct');
+
       document.getElementById('keyPad').style.display = "none";
       closeKey('lockModal');
       keyFound('blue');

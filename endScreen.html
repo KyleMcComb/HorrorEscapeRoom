@@ -18,24 +18,37 @@
         if(winGame=="win"){
           document.getElementById("doctor").src = "img/EndScreen/Surgeon-Win.jpg";
 
-          var gameText = document.getElementById('gameStats');
+          var gameText = document.getElementById('roomTimes');
 
           var cellTime = sessionStorage.getItem("cellTime");
-          gameText.innerHTML = '<p>Time in Cell Room: ' +cellTime + ' seconds</p>';
+          gameText.innerHTML = '<li>Time in Cell Room: ' +cellTime + ' seconds</li>';
           var labTime = sessionStorage.getItem("labTime");
-          gameText.innerHTML += '<p>Time in Laboratory Room: ' +labTime + ' seconds</p>';
+          gameText.innerHTML += '<li>Time in Laboratory Room: ' +labTime + ' seconds</li>';
           var hallwayTime = sessionStorage.getItem("hallwayTime");
-          gameText.innerHTML += '<p>Time in Hallway Room: ' +hallwayTime + ' seconds</p>';
+          gameText.innerHTML += '<li>Time in Hallway Room: ' +hallwayTime + ' seconds</li>';
           var securityTime =   sessionStorage.getItem("securityTime");
-          gameText.innerHTML += '<p>Time in Security Room: ' +securityTime + ' seconds</p>';
+          gameText.innerHTML += '<li>Time in Security Room: ' +securityTime + ' seconds</li>';
           var exitTime = sessionStorage.getItem("exitTime");
-          gameText.innerHTML += '<p>Time in Final Room: ' +exitTime + ' seconds</p>';
+          gameText.innerHTML += '<li>Time in Final Room: ' +exitTime + ' seconds</li>';
 
         }else{
           document.getElementById("doctor").src="img/EndScreen/Surgeon-Lose.jpg";
         }
       }
     </script>
+
+    <style type="text/css">
+      table, th,td {
+        border:solid white 1px;
+        border-collapse: collapse;
+        padding:2%;
+      }
+
+      table{
+        width:100%;
+      }
+
+    </style>
   </head>
 
   <body onload="gameMode();">
@@ -47,7 +60,22 @@
   <div class="row">
     <div id="col-left">
       <h2 id="change">Game Text Section</h2>
-      <div id="gameStats"></div>
+      <br />
+      <div id="gameStats">
+        <ul id="roomTimes"></ul>
+
+        <table id="stats">
+          <tr>
+            <th>Room</th>
+            <th>Time (in secs)</th>
+          </tr>
+        </table>
+
+        <br />
+        <button>RESTART</button>
+        <!--NEED TO ADD CLEAR SESSION STORAGE -->
+        <!--NEED TO ADD CLEAR TIMERS FOR EACH ROOM -->
+      </div>
     </div>
     <div id="col-right">
       <h2 id="roomName">Stats/End Page</h2>
