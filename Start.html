@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Redacted Lab - Laboratory</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="css/room.css" type="text/css" />
+  <link rel="stylesheet" href="css/lab.css" type="text/css" />
+  <link rel="stylesheet" href="css/start.css" type="text/css" />
+  <script src="js/start.js"></script>
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="head">
+      <h1 class="content">THE <span class="redact">REDACTED</span> LAB</h1>
+    </div>
+
+    <div class="row">
+      <div id="col-left2">
+        <div class="form">
+          <form>
+            <label for="subjectName">Subject Name: </label><br>
+            <input type="text" id="subject" name="subject"><br>
+          </form>
+          <form>
+            <label for="cTrait">Character Trait: </label><br>
+            <input list="traits" name="Character Traits">
+            <datalist id="traits">
+              <option id = "intelligent" value="Intelligent">
+              <option id = "cautious" value="Cautious">
+              <option id = "courageous" value="Courageous">
+            </datalist>
+          </form>
+          <input type="submit" onclick="saveData();" value="Submit"/>
+        </div>
+      </div>
+
+      <div id="col-right">
+        <h2 id="roomName">Start</h2>
+        <div id="imageDiv">
+          <img id="background" src="img/Lab/lab1.jpg" alt="Laboratory"/>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

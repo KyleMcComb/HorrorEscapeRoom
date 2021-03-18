@@ -1,18 +1,9 @@
 /*
-function onLoad() {
-  var para = document.createElement("p");
-  var text = document.createTextNode("You've entered the domain of Doctor Friedrich. You better find an escape soon or meet the same fate as the rest of the subjects.");
-  para.appendChild(text);
-  var element = document.getElementById("col-left");
-  element.appendChild(para);
-
-
-  var lineBreak = document.createElement("br");
-  var element = document.getElementById("col-left");
-  element.appendChild(lineBreak);
-}
+var name = sessionStorage.getItem("labSubject", nameInput);
+var trait = sessionStorage.getItem("labTrait", text);
 */
-
+var name = sessionStorage.getItem("labSubject", nameInput);
+sessionStorage.getItem("labTraits", text);
 var keyFound = 0;
 
 function drawerClick(background) {
@@ -68,7 +59,7 @@ function noteClick(background) {
   compartment2Button.style.display = "none";
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("It appears you have found some important documents.");
+  var text = document.createTextNode("It appears " + name + " has found some important documents.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
