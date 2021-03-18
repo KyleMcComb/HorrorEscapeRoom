@@ -1,5 +1,6 @@
 function restart(){
   sessionStorage.clear();
+  window.location.href = 'index.html';
 }
 
 function gameMode(){
