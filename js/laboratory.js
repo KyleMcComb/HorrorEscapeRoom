@@ -113,7 +113,7 @@ function compartment2Click() {
   var cButton2 = document.getElementById("compartment2Button");
   compartment2Button.style.display = "none";
   // Adds key
-  keyFound++;
+  keyFound=1;
   // Displays text for the user (in left column)
   var para = document.createElement("p");
   var text = document.createTextNode("You found a rusty key.. this could be useful.");
@@ -287,7 +287,7 @@ function doorUnlockClick() {
     element.appendChild(lineBreak);
   }
   else if(keyFound == 1) {
-    alert("The door unlocks.. Leading to the Hallway.");
+    //alert("The door unlocks.. Leading to the Hallway.");
     //sessionStorage.setItem("timeleft", 60-timePassed);
     //sessionStorage.setItem("labTime", timePassed);
     window.location.href = 'hallway.html';

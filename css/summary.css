@@ -22,3 +22,12 @@ table, th,td {
 table{
   width:100%;
 }
+
+#restart{
+  height: 5vh;
+
+  margin: auto;
+  display: block;
+
+  justify-content: center;
+}

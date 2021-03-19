@@ -6,7 +6,7 @@ function restart(){
     sessionStorage.setItem(rooms[x], 0);
   }
   //sessionStorage.setItem("exitTime", 0);
-  window.location.href = 'index.html';
+  window.location.href = 'Start.html';
 }
 
 function gameMode(){
@@ -26,7 +26,7 @@ function gameMode(){
   var hallwayTime = sessionStorage.getItem("hallwayTime");
   var securityTime =   sessionStorage.getItem("securityTime");
   var exitTime = sessionStorage.getItem("exitTime");
-
+  var subjectName = sessionStorage.getItem("subject");
 
   var tbl = document.getElementById('stats');
   var rows = tbl.rows.length;
