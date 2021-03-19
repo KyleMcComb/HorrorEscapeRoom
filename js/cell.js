@@ -146,7 +146,7 @@ function safeCode(){
     //checks if the user has entered in a code or not
     if (code == null || code == "") {
       txt = "[System]:User cancelled the prompt.";
-      //checks for correct entering in of code AND the user has collected all 3 keys before moving on
+      //checks for correct code which is 7412
     } else if(code=="7412"){
       // Adds note modal button after clicked
       var nModal = document.getElementById("noteModal");
@@ -169,3 +169,48 @@ function safeCode(){
   document.getElementById("gameText").innerHTML += txt + ' <br><br>' + timeSpent;
 
   }
+
+// dhasudihasiudh iuhsdiu hasdh ahsdiu hasiud shd iuhfiuadhsfiuhasdg asdg a
+  const fill = document.getElementById("lockPickInv");
+const empties = document.getElementById("cellGateButton");
+
+// Fill listeners
+fill.addEventListener('dragstart', dragStart);
+fill.addEventListener('dragend', dragEnd);
+
+// Loop through empty boxes and add listeners
+for (const empty of empties) {
+  empty.addEventListener('dragover', dragOver);
+  empty.addEventListener('dragenter', dragEnter);
+  empty.addEventListener('dragleave', dragLeave);
+  empty.addEventListener('drop', dragDrop);
+}
+
+// Drag Functions
+
+function dragStart() {
+  this.className += ' hold';
+  setTimeout(() => (this.className = 'invisible'), 0);
+}
+
+function dragEnd() {
+  this.className = 'fill';
+}
+
+function dragOver(e) {
+  e.preventDefault();
+}
+
+function dragEnter(e) {
+  e.preventDefault();
+  this.className += ' hovered';
+}
+
+function dragLeave() {
+  this.className = 'empty';
+}
+
+function dragDrop() {
+  this.className = 'empty';
+  this.append(fill);
+}
