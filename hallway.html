@@ -9,149 +9,10 @@
   <title>Redacted Lab - Hallway</title>
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <link rel="stylesheet" href="css/room.css" type="text/css" />
+  <link rel="stylesheet" href="css/hallway.css" type="text/css" />
 
   <script src="js/hallway.js"></script>
 
-  <style type="text/css">
-    #windowButton {
-      display: block;
-      width: 4%;
-      top: 5%;
-      right: 22%;
-      height: 32%;
-      position: absolute;
-      cursor: pointer;
-      background: none;
-    }
-
-    #exitDoorButton {
-      display: block;
-      width: 10%;
-      top: 38%;
-      right: 42%;
-      height: 19%;
-      position: absolute;
-      cursor: pointer;
-      background: none;
-    }
-
-    #sideRoomButton {
-      display: block;
-      width: 6%;
-      top: 15%;
-      left: 22%;
-      height: 62%;
-      position: absolute;
-      cursor: pointer;
-      background: none;
-    }
-
-    .close {
-      position: absolute;
-      top: 15px;
-      right: 35px;
-      color: #f1f1f1;
-      font-size: 40px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: #bbb;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    /* The expanded note */
-    .modal {
-      display: none;
-      /* Hidden by default */
-      position: fixed;
-      /* Stay in place */
-      z-index: 1;
-      /* Sit on top */
-      padding-top: 100px;
-      /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%;
-      /* Full width */
-      height: 100%;
-      /* Full height */
-      overflow: auto;
-      /* Enable scroll if needed */
-      background-color: rgb(0, 0, 0);
-      /* Fallback color */
-      background-color: rgba(0, 0, 0, 0.9);
-      /* Black w/ opacity */
-    }
-
-    #submitButton {
-      width: 12%;
-      height: 5%;
-      font-size: 1.2em;
-    }
-
-    #toolButton1 {
-      display: block;
-      width: 7%;
-      top: 50%;
-      left: 16%;
-      height: 7%;
-      position: absolute;
-      cursor: pointer;
-      background: none;
-      display: none;
-    }
-
-    #noteButton {
-      display: block;
-      width: 10%;
-      top: 65%;
-      left: 15%;
-      height: 5%;
-      position: absolute;
-      cursor: pointer;
-      background: none;
-      display: none;
-    }
-
-    #noteButton:hover {
-      border: 2px solid black;
-    }
-
-    #expandedNote {
-      margin: auto;
-      width: 80%;
-      right: 50%;
-      justify-content: center;
-      max-width: 700px;
-      border-radius: 7%;
-      border: 1px red ridge;
-
-    }
-
-    #caption {
-      margin: auto;
-      display: block;
-      width: 80%;
-      max-width: 700px;
-      text-align: center;
-      color: #ccc;
-      padding: 10px 0;
-      height: 150px;
-    }
-
-    #chemicalEvent {
-      display: none;
-    }
-
-  </style>
-
-  <script>
-
-  </script>
 
 </head>
 
@@ -203,7 +64,7 @@
               <option value="7">7</option>
             </select>
             <br><br>
-            <input type="button" value="Submit" onclick="checkRadio()">
+            <input type="button" value="Submit" onclick="checkSelections()">
           </form>
             <br />
         </div>
