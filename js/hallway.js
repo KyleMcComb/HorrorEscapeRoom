@@ -107,7 +107,7 @@ function loadMorgue() {
   document.getElementById('exitDoorButton').style.display = 'none';
 
 // enables morgue buttons
-  document.getElementById('toolButton1').style.display = 'block';
+  document.getElementById('chemicalButton').style.display = 'block';
   document.getElementById('noteButton').style.display = 'block';
 }
 
@@ -201,7 +201,7 @@ function checkSelections() {
       document.getElementById('roomName').innerHTML = 'Hallway';
       document.getElementById('chemicalEvent').display = 'none';
       document.getElementById('exitDoorButton').style.display = 'block';
-      document.getElementById('toolButton1').style.display = 'none';
+      document.getElementById('chemicalButton').style.display = 'none';
       document.getElementById('noteButton').style.display = 'none';
     })
 
