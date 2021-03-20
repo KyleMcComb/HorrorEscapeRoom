@@ -73,6 +73,10 @@ else {
   var nButton = document.getElementById("cellGateButton");
   cellGateButton.style.display = "block";
 
+  // Adds cell lock button after clicked
+  var nButton = document.getElementById("gateLockButton");
+  gateLockButton.style.display = "block";
+
   // Displays text for the user (in left column)
   var para = document.createElement("p");
   var text = document.createTextNode("You turn around to discover you are locked in a cell. The only thing stopping you from getting closer to freedom is a locked cell door");
@@ -85,29 +89,37 @@ else {
   element.appendChild(lineBreak);
 
     document.getElementById('cellGateButton').style.display = "block";
+    document.getElementById('gateLockButton').style.display = "block";
   }
 }
 
-function cellGateClick(background) {
+function gateLockClick(background) {
 
-  // Changes image on click
-  image = document.getElementById('background');
-  image.src = "img/Cell/cellDoorOpen.jpg";
+
   // Removes button after clicked
   var nButton = document.getElementById("arrowButton");
   arrowButton.style.display = "none";
 
-  // Removes drawer button after clicked
-  var nButton = document.getElementById("drawerButton");
-  drawerButton.style.display = "none";
+  // Removes gate Lock button after clicked
+  var nButton = document.getElementById("gateLockButton");
+  gateLockButton.style.display = "none";
+
+  // Removes cell gate button after clicked
+  var nButton = document.getElementById("cellGateButton");
+  cellGateButton.style.display = "none";
+
+  // Removes lock pick inventory button after clicked
+  var nButton = document.getElementById("lockPickInv");
+  lockPickInv.style.display = "none";
 
   // Adds cell door button after clicked
-  var nButton = document.getElementById("noteButton");
-  noteButton.style.display = "block";
+  var nButton = document.getElementById("lockedDoorButton");
+  lockedDoorButton.style.display = "block";
+
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("You turn around to discover you are locked in a cell. The only thing stopping you from getting closer to freedom is a locked cell door");
+  var text = document.createTextNode("You have successfully picked the lock on the cell gate! The only thing stopping you from escaping the cell room is a locked door.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -116,6 +128,37 @@ function cellGateClick(background) {
   var element = document.getElementById("col-left");
   element.appendChild(lineBreak);
 }
+
+function doorContrClick(background) {
+
+
+
+  // Adds cell door button after clicked
+  var nButton = document.getElementById("doorControButtonTri");
+  doorControButtonTri.style.display = "block";
+
+  var nButton = document.getElementById("doorControButtonX");
+  doorControButtonX.style.display = "block";
+
+  var nButton = document.getElementById("doorControButtonSqu");
+  doorControButtonSqu.style.display = "block";
+
+  var nButton = document.getElementById("doorControButtonCir");
+  doorControButtonCir.style.display = "block";
+
+
+  // Displays text for the user (in left column)
+  var para = document.createElement("p");
+  var text = document.createTextNode("You have successfully picked the lock on the cell gate! The only thing stopping you from escaping the cell room is a locked door.");
+  para.appendChild(text);
+  var element = document.getElementById("col-left");
+  element.appendChild(para);
+
+  var lineBreak = document.createElement("br");
+  var element = document.getElementById("col-left");
+  element.appendChild(lineBreak);
+}
+
 
 //When the user clicks on the drawer this method will run which asks for a code then displays the diary
 function safeCode(){
