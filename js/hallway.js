@@ -247,9 +247,16 @@ function expandNote() {
   document.getElementById("myModalDiv").style.display = "block";
   document.getElementById("expandedNote").src = "img/Hall/ChemicalNote.jpg";
   document.getElementById("caption").innerHTML = "An old note belongning to Dr Friedrich, he seems to have mentioned some sort of cipher on it";
+
+  // closes note using escape key
+      document.addEventListener('keydown', function(e) {
+      if (e.key == 'Escape')
+      document.getElementById("myModalDiv").style.display = "none";
+      document.getElementById("wiresModal").style.display = "none";
+      })
 }
 
-// code to close
+// code to close using x button
 function closeNote() {
   document.getElementById("myModalDiv").style.display = "none";
   document.getElementById("wiresModal").style.display = "none";

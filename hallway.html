@@ -5,6 +5,7 @@
  -->
 
 <head>
+
   <source src="audio/Hallway/Ambience.wav" type="audio/mpeg">
   <title>Redacted Lab - Hallway</title>
   <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -35,6 +36,7 @@
               <option value="X">X</option>
               <option id="H" value="H">H</option>
               <option value="N">N</option>
+              <option value="C">C</option>
             </select>
             <br> <br>
 
@@ -48,6 +50,7 @@
               <option value="C">C</option>
               <option value="A">A</option>
               <option id="M" value="M">M</option>
+              <option value="C">C</option>
             </select>
             <br> <br>
 
@@ -62,6 +65,7 @@
               <option value="3">3</option>
               <option id="six" value="6">6</option>
               <option value="7">7</option>
+              <option value="1">1</option>
             </select>
             <br><br>
             <input type="button" value="Submit" onclick="checkSelections()">
@@ -71,19 +75,24 @@
         <br />
       </div>
       <div id="col-right">
+        <audio controls id="audio" autoplay loop >
+        <source src="audio/Hallway/Ambience.wav" type="audio/mpeg">
+        </audio>
         <h2 id="roomName">Hallway</h2>
+
         <div id="imageDiv">
-          <button id="windowButton" title="Barred window" onclick="windowClick();">Click Me</button>
-          <button id="exitDoorButton" title="A chain and steel door" onclick="exitClick();">Click Me</button>
-          <button id="sideRoomButton" title="Entrance to a side room" onclick="sideRoomClick();">Click Me</button>
+          <button id="windowButton" title="Barred window" onclick="windowClick();"></button>
+          <button id="exitDoorButton" title="A chain and steel door" onclick="exitClick();"></button>
+          <button id="sideRoomButton" title="Entrance to a side room" onclick="sideRoomClick();"></button>
           <button id="chemicalButton" title="A tray of tools and chemicals" onclick="showSelection();"></button>
-          <button id="noteButton" title="Note" onclick="expandNote()"></button>
+          <!-- <button id="cipherNotebutton" title="An open morgue cooler, maybe there is something useful inside " onclick="loadMorgueLocker();"></button> -->
+          <button id="noteButton" title="An old tattered note" onclick="expandNote()"></button>
           <div id="myModalDiv" class="modal">
             <span class="close" onclick="closeNote()">&times;</span>
             <img id="expandedNote">
             <div id="caption"></div>
           </div>
-          <img id="img" src="img/Hall/hallway.png" alt="A dark hallway with one exit and a side room" width="100%" />
+          <img id="img" src="img/Hall/hallway.png" width="100%" />
         </div>
       </div>
 
