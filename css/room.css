@@ -1,3 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+
+*{
+  font-family: 'Lacquer', cursive;
+}
+
+#gameName {
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+#redact {
+  background-color: #C3073F;
+  min-width: 50%;
+  -webkit-transition: background-color 500ms ease-out;
+  -moz-transition: background-color 500ms ease-out;
+  -o-transition: background-color 500ms ease-out;
+  transition: background-color 500ms ease-out;
+}
+
+#gameName:hover #redact {
+  background-color: rgba(0,0,0,0);
+}
+
+
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -11,6 +41,16 @@
   /* the ‘auto’ part positions the #wrapper in the middle of the browser window */
   overflow: auto;
   background-color: #1A1A1D;
+}
+
+.dark-mode  {
+  width: 95%;
+  /* This sets the wrapper to take 95% of the browser window width */
+  margin: 3% auto;
+  /* the ‘auto’ part positions the #wrapper in the middle of the browser window */
+  overflow: auto;
+  background-color: white;
+  border-radius: 2%;
 }
 
 body {
@@ -69,6 +109,13 @@ a {
   font-size: 2em;
 }
 
+#roomName-light {
+  color: black;
+  padding-bottom: 2%;
+  text-align: center;
+  font-size: 2em;
+}
+
 #img {
   display: block;
     border-radius: 8%;
@@ -84,4 +131,9 @@ a {
     width: 100%;
     font-size: 12px;
   }
+}
+
+#colourMode{
+    margin: 1%;
+    position: relative;
 }
