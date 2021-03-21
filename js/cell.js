@@ -131,8 +131,6 @@ function gateLockClick(background) {
 
 function doorContrClick(background) {
 
-
-
   // Adds cell door button after clicked
   var nButton = document.getElementById("doorControButtonTri");
   doorControButtonTri.style.display = "block";
@@ -149,7 +147,7 @@ function doorContrClick(background) {
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("You have successfully picked the lock on the cell gate! The only thing stopping you from escaping the cell room is a locked door.");
+  var text = document.createTextNode("This door appears to be locked! Click on the buttons to the left of this door in the correct order to unlock the door.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
