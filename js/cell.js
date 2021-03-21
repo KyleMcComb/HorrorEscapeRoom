@@ -95,7 +95,6 @@ else {
 
 function gateLockClick(background) {
 
-
   // Removes button after clicked
   var nButton = document.getElementById("arrowButton");
   arrowButton.style.display = "none";
@@ -115,7 +114,6 @@ function gateLockClick(background) {
   // Adds cell door button after clicked
   var nButton = document.getElementById("lockedDoorButton");
   lockedDoorButton.style.display = "block";
-
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
