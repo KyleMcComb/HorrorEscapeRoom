@@ -131,6 +131,10 @@ function gateLockClick(background) {
 
 function doorContrClick(background) {
 
+  // Remove locked door button
+  var nButton = document.getElementById("lockedDoorButton");
+  lockedDoorButton.style.display = "none";
+
   // Adds cell door button after clicked
   var nButton = document.getElementById("doorControButtonTri");
   doorControButtonTri.style.display = "block";
@@ -157,6 +161,18 @@ function doorContrClick(background) {
   element.appendChild(lineBreak);
 }
 
+function doorOpenClick(background) {
+
+  // Remove open door button
+  var nButton = document.getElementById("openDoorButton");
+  openDoorButton.style.display = "none";
+
+  alert("You have escaped the Cells Room!");
+  sessionStorage.setItem("cellTime", timePassed);
+  sessionStorage.setItem("timeleft", 60-timePassed);
+  window.location.href = "laboratory.html";
+
+}
 
 //When the user clicks on the drawer this method will run which asks for a code then displays the diary
 function safeCode(){
@@ -211,8 +227,45 @@ function safeCode(){
 
   }
 
+  function combinationSuccess(background) {
+
+    // Adds open door button after clicked
+    var nButton = document.getElementById("openDoorButton");
+    openDoorButton.style.display = "block";
+
+    // Changes image on click
+    image = document.getElementById('background');
+    image.src = "img/Cell/CellRoomsDoorOpen.png";
+
+    // removes cell door buttons after clicked
+    var nButton = document.getElementById("doorControButtonTri");
+    doorControButtonTri.style.display = "none";
+
+    var nButton = document.getElementById("doorControButtonX");
+    doorControButtonX.style.display = "none";
+
+    var nButton = document.getElementById("doorControButtonSqu");
+    doorControButtonSqu.style.display = "none";
+
+    var nButton = document.getElementById("doorControButtonCir");
+    doorControButtonCir.style.display = "none";
+
+
+    // Displays text for the user (in left column)
+    var para = document.createElement("p");
+    var text = document.createTextNode("You have successfully entered the correct combination!");
+    para.appendChild(text);
+    var element = document.getElementById("col-left");
+    element.appendChild(para);
+
+    var lineBreak = document.createElement("br");
+    var element = document.getElementById("col-left");
+    element.appendChild(lineBreak);
+  }
+
+
 // dhasudihasiudh iuhsdiu hasdh ahsdiu hasiud shd iuhfiuadhsfiuhasdg asdg a
-  const fill = document.getElementById("lockPickInv");
+const fill = document.getElementById("lockPickInv");
 const empties = document.getElementById("cellGateButton");
 
 // Fill listeners
