@@ -9,8 +9,8 @@ form {
 input[type=submit] {
   background-color: grey;
   /* Height and Width of button */
-  width: 309px;
-  height: 35px;
+  width: 19.3125em;
+  height: 2.1875em;
   border-radius: 10px;
   display: inline-block;
   margin-top: 2em;
@@ -18,14 +18,17 @@ input[type=submit] {
   margin-right: 2%;
   margin-bottom: 2%;
   border: solid #C3073F 0.5px;
+  width: 50%;
 }
 
 form input{
+    display: inline-block;
     font-size: 1.5em;
     background-color: grey;
     border: solid #C3073F 2.5px;
     border-radius: 10px;
-    padding-left: 10px;
+    padding-left: 5%;
+    width:100%;
 }
 
 #col-left2 {
