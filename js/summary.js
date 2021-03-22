@@ -5,6 +5,7 @@ function restart(){
   for(x=0; x<5; x++){
     sessionStorage.setItem(rooms[x], 0);
   }
+    sessionStorage.setItem("timeleft", 0);
   //sessionStorage.setItem("exitTime", 0);
   window.location.href = 'Start.html';
 }
