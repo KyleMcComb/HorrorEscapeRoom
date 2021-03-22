@@ -5,5 +5,5 @@ function saveData() {
   sessionStorage.setItem("subject", nameInput);
   sessionStorage.setItem("traits", text);
 
-  window.location.href = 'laboratory.html';
+  window.location.href = 'Cell.html';
 }
