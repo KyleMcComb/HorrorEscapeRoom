@@ -2,20 +2,21 @@ form {
   display: inline-block;
   margin-top: 1em;
   text-align: center;
-  margin-right: 60px;
-  margin-bottom: 15px;
+  margin-right: 2%;
+  margin-bottom: 2%;
 }
 
 input[type=submit] {
   background-color: grey;
+  /* Height and Width of button */
   width: 309px;
   height: 35px;
   border-radius: 10px;
   display: inline-block;
   margin-top: 2em;
   text-align: center;
-  margin-right: 60px;
-  margin-bottom: 30px;
+  margin-right: 2%;
+  margin-bottom: 2%;
   border: solid #C3073F 0.5px;
 }
 
