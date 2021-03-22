@@ -288,8 +288,8 @@ function doorUnlockClick() {
   }
   else if(keyFound == 1) {
     //alert("The door unlocks.. Leading to the Hallway.");
-    //sessionStorage.setItem("timeleft", 60-timePassed);
-    //sessionStorage.setItem("labTime", timePassed);
+    sessionStorage.setItem("timeleft", 60-timePassed);
+    sessionStorage.setItem("labTime", timePassed);
     window.location.href = 'hallway.html';
   }
 }
