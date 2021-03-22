@@ -256,6 +256,69 @@ function safeCode(){
     element.appendChild(lineBreak);
   }
 
+  //Unlock 3 passcode lock
+  var buttonsPressed = 0;
+  var lockCode = "1432";
+  var enteredCode = "";
+    function unlock(number){
+
+      //Make buttons disappear when pressed
+      switch(number){
+        case 1:
+          document.getElementById("doorControButtonTri").style.display="none";
+          enteredCode += number;
+          buttonsPressed++;
+          break;
+        case 2:
+          document.getElementById("doorControButtonSqu").style.display="none";
+          enteredCode += number;
+          buttonsPressed++;
+          break;
+        case 3:
+          document.getElementById("doorControButtonCir").style.display="none";
+          enteredCode += number;
+          buttonsPressed++;
+          break;
+        case 4:
+          document.getElementById("doorControButtonX").style.display="none";
+          enteredCode += number;
+          buttonsPressed++;
+          break;
+        default:
+          alert("Error in switch of button locks");
+          break;
+      }
+
+
+      writeText("Button " + number + " pressed...","");
+      //Reset if its been pressed 3 times
+      if(buttonsPressed >= 4){
+        //Correct order of button press
+
+        if(enteredCode == lockCode){
+          doorContrClick();
+          }
+
+            //Hide buttons
+            document.getElementById("doorControButtonTri").style.display="none";
+            document.getElementById("doorControButtonSqu").style.display="none";
+            document.getElementById("doorControButtonCir").style.display="none";
+            document.getElementById("doorControButtonX").style.display="none";
+
+            writeText("It seems that the buttons were pressed in the correct order... ",cluesText)
+          }
+          else{ //Incorrect order of button press
+
+            writeText("Buttons were pressed in the wrong order. No locks were disabled","");
+            document.getElementById("doorControButtonTri").style.display="initial";
+            document.getElementById("doorControButtonSqu").style.display="initial";
+            document.getElementById("doorControButtonCir").style.display="initial";
+            document.getElementById("doorControButtonX").style.display="initial";
+          }
+          enteredCode = "";
+          buttonsPressed = 0;
+        }
+
 
 // dhasudihasiudh iuhsdiu hasdh ahsdiu hasiud shd iuhfiuadhsfiuhasdg asdg a
 const fill = document.getElementById("lockPickInv");
