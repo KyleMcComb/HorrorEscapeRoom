@@ -6,7 +6,7 @@ var txt; //text to output to user
 
 var keyCode = []; //user enters in keypad to rerieve blue key
 var keyPadCode = 420; // correct keypad code
-var exitRoomCode = 420;
+var exitRoomCode = 935;
 var codePurpleKey = 872;
 const pos = document.documentElement; //document used for torch
 
@@ -143,7 +143,7 @@ function keyFound(keyType) {
     txt += ' 2/3 Keys found! Keep Searching! </p><br>';
   } else {
     txt += '3/3 Keys found! All keys have been found, I can hear Dr Friedrich getting close! Better escape soon! </p><br>';
-    complete += '<ul><li>The Blue key has the number 2 on it</li><li>The Purple key has the number 0 on it</li><li>The Gold key has the number 4 on it</li></ul>';
+    complete += '<ul><li>The Blue key has the number 3 on it</li><li>The Purple key has the number 5 on it</li><li>The Gold key has the number 9 on it</li></ul>';
   }
   //displays output to gameText area
   document.getElementById('gameText').innerHTML += complete;
@@ -162,17 +162,17 @@ function expand(colour) {
   var captionKey = "";
   //depends on which key button has been pressed
   if (colour == 'blue') {
-    imageToShow = "img/Exit/blueKey.png";
+    imageToShow = "img/Exit/BlueKey3.png";
     captionKey = "You search the safe and find a blue key! The Key has a number - make sure to remember it!"
-    altTxt = 'Blue Key';
+    altTxt = 'Blue Key - number 3';
   } else if (colour == 'purple') {
-    imageToShow = "img/Exit/purpleKey.png";
+    imageToShow = "img/Exit/PurpleKey5.png";
     captionKey = "The Key has a number - make sure to remember it!"
-    altTxt = 'Purple Key';
+    altTxt = 'Purple Key - number 5';
   } else if (colour == 'gold') {
-    imageToShow = "img/Exit/goldKey.png";
+    imageToShow = "img/Exit/GoldKey9.png";
     captionKey = "You lift a wooden board and find the Gold Key!"
-    altTxt = 'Gold Key';
+    altTxt = 'Gold Key - number 9';
   }
   //displays close up of image to user
   //displays modal div
