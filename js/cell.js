@@ -38,7 +38,7 @@ function LockPickClick(background) {
 //Expand the note image
 function expand(){
   document.getElementById("myModal").style.display = "block";
-  document.getElementById("expandedNote").src = "img/Lab/ClassifiedLore.jpg";
+  document.getElementById("expandedNote").src = "img/Cell/victimsDiary.png";
   document.getElementById("caption").innerHTML = "Dr Friedlich's victims diary";
 }
 
