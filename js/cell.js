@@ -218,11 +218,6 @@ function safeCode(){
       txt = "<p>[System]:That code is incorrect - Hint: Look around the room</p>";
     }
   }
-  //REMOVE PART OF LATER
-  //Outputs to the user the txt in the 'GameText' area
-  //timeSpent - records how long a person was in the prompt box
-  document.getElementById("gameText").innerHTML += txt + ' <br><br>' + timeSpent;
-
   }
 
   function combinationSuccess(background) {

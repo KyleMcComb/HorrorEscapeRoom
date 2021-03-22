@@ -12,6 +12,7 @@ function restart(){
 function gameMode(){
   var winGame = sessionStorage.getItem("winGame");
   var roomName = document.getElementById('roomName');
+  sessionStorage.setItem("timePassed", 0);
 
   if(winGame=="win"){
     document.getElementById("doctor").src = "img/EndScreen/Surgeon-Win.jpg";
