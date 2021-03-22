@@ -127,7 +127,10 @@ function exitClick() {
         // ask for user input using listener and load next room
         document.addEventListener('keydown', function (e) {
             if (e.keyCode == 89)
+            sessionStorage.setItem("timeleft", 60-timePassed);
+            sessionStorage.setItem("hallwayTime", timePassed);
                 location = 'security.html';
+
         })
 
     } else {
