@@ -1,17 +1,11 @@
-/*
-var name = sessionStorage.getItem("labSubject", nameInput);
-var trait = sessionStorage.getItem("labTrait", text);
-
-var name = sessionStorage.getItem("labSubject", nameInput);
-sessionStorage.getItem("labTraits", text);
-
-var nameInput = sessionStorage.getItem("subject");
-*/
-
-const nameInput = sessionStorage.getItem("subject");
-document.getElementById("subjectResult").innerHTML = nameInput;
-
 var keyFound = 0;
+
+document.addEventListener('click', musicPlay);
+function musicPlay() {
+    var amb = new Audio('audio/Lab/Ambience.mp3');
+    amb.play();
+    document.removeEventListener('click', musicPlay);
+}
 
 function drawerClick(background) {
 
@@ -66,7 +60,7 @@ function noteClick(background) {
   compartment2Button.style.display = "none";
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("It appears " + nameInput + " has found some important documents.");
+  var text = document.createTextNode("It appears you have found some important documents.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -78,6 +72,11 @@ function noteClick(background) {
 
 //Expand the note image
 function expand(){
+
+  // create pageTurn audio object and play it
+  var pageTurn = new Audio('audio/Lab/pageTurn.mp3');
+  pageTurn.play();
+
   document.getElementById("myModal").style.display = "block";
   document.getElementById("expandedNote").src = "img/Lab/ClassifiedLore.jpg";
   document.getElementById("caption").innerHTML = "Dr Friedlich's Lore";
@@ -86,6 +85,11 @@ function expand(){
 
 // When the user clicks on <span> (x), close the note
 function closeNote() {
+
+  // create bookClose audio object and play it
+  var bookClose = new Audio('audio/Lab/bookClose.mp3');
+  bookClose.play();
+
   document.getElementById("myModal").style.display = "none";
 
 }
@@ -108,6 +112,10 @@ function compartmentClick() {
 }
 
 function compartment2Click() {
+
+  // create keyPickup audio object and play it
+  var keyPickup = new Audio('audio/Lab/keyPickup.mp3');
+  keyPickup.play();
 
   // Removes button after clicked
   var cButton2 = document.getElementById("compartment2Button");
@@ -248,6 +256,11 @@ function bookshelfClick() {
 }
 
 function openshelfClick(){
+
+  // create bookshelfMove audio object and play it
+  var bookshelfMove = new Audio('audio/Lab/bookshelfMove.mp3');
+  bookshelfMove.play();
+
   // Changes image on click
   image = document.getElementById('background');
   image.src = "img/Lab/HallwayDoor.jpg";
@@ -287,7 +300,6 @@ function doorUnlockClick() {
     element.appendChild(lineBreak);
   }
   else if(keyFound == 1) {
-    //alert("The door unlocks.. Leading to the Hallway.");
     sessionStorage.setItem("timeleft", 60-timePassed);
     sessionStorage.setItem("labTime", timePassed);
     window.location.href = 'hallway.html';
