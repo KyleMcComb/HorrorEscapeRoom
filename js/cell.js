@@ -55,6 +55,13 @@ if (unlocked == false){
   // Displays text for the user (in left column)
   var para = document.createElement("p");
 var text = document.createTextNode("Make sure you look around the room fully before turning around.");
+para.appendChild(text);
+var element = document.getElementById("col-left");
+element.appendChild(para);
+
+var lineBreak = document.createElement("br");
+var element = document.getElementById("col-left");
+element.appendChild(lineBreak);
 }
 else {
 
@@ -200,13 +207,35 @@ function safeCode(){
   } else{
     //checks if the user has entered in a code or not
     if (code == null || code == "") {
-      txt = "[System]:User cancelled the prompt.";
+
+      // Displays text for the user (in left column)
+      var para = document.createElement("p");
+      var text = document.createTextNode("[System]:User cancelled the prompt.");
+      para.appendChild(text);
+      var element = document.getElementById("col-left");
+      element.appendChild(para);
+
+      var lineBreak = document.createElement("br");
+      var element = document.getElementById("col-left");
+      element.appendChild(lineBreak);
+
       //checks for correct code which is 7412
     } else if(code=="7412"){
       // Adds note modal button after clicked
       var nModal = document.getElementById("noteModal");
       noteModal.style.display = "block";
-      txt = "<p>You have unlocked the safe and found a note and a flash light within it</p>";
+
+      // Displays text for the user (in left column)
+      var para = document.createElement("p");
+      var text = document.createTextNode("You have unlocked the safe and found a note and a flash light within it.");
+      para.appendChild(text);
+      var element = document.getElementById("col-left");
+      element.appendChild(para);
+
+      var lineBreak = document.createElement("br");
+      var element = document.getElementById("col-left");
+      element.appendChild(lineBreak);
+
       // Removes button after clicked
       var nButton = document.getElementById("drawerButton");
       drawerButton.style.display = "none";
@@ -215,7 +244,18 @@ function safeCode(){
     //else the user is told the code is incorrect
   }
   else {
-      txt = "<p>[System]:That code is incorrect - Hint: Look around the room</p>";
+
+      // Displays text for the user (in left column)
+      var para = document.createElement("p");
+      var text = document.createTextNode("[System]:That code is incorrect - Hint: Look around the room.");
+      para.appendChild(text);
+      var element = document.getElementById("col-left");
+      element.appendChild(para);
+
+      var lineBreak = document.createElement("br");
+      var element = document.getElementById("col-left");
+      element.appendChild(lineBreak);
+
     }
   }
   }
