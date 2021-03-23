@@ -116,6 +116,11 @@ function loadMorgue() {
 function exitClick() {
     // if the acid has been found in morgue run this
     if (acidFound) {
+
+      // create gateOpening audio object and play it
+      var gateOpening = new Audio('audio/Hallway/gateOpening.wav');
+      gateOpening.play();
+
         // print some text
         var para = document.createElement("p");
         var text = document.createTextNode("You pour the acid over the lock on the door, it corrodes it and makes it weak enough for you to pull open. Better get out of here! Press y to leave");
@@ -134,6 +139,10 @@ function exitClick() {
         })
 
     } else {
+
+        var gateLocked = new Audio('audio/Hallway/gateLocked.mp3');
+        gateLocked.play();
+
         // if acid has not been gotten print some text
         exitDoorClicked = true;
         var para = document.createElement("p");
@@ -188,6 +197,11 @@ function checkSelections() {
 
     // if the selection is correct print Success and run code to go back to hallway
     if (document.getElementById('H').selected && document.getElementById('M').selected && document.getElementById('six').selected) {
+
+        // create acidAudio audio object and play it
+        var acidAudio = new Audio('audio/Hallway/acidSuccess.wav');
+        acidAudio.play();
+
         acidFound = true;
         var para = document.createElement("p");
         var text = document.createTextNode('Success! This seems to have made some acid that is more than corossive enough, i can use it to break down the lock in the hallway! better get going! Hit Y to go back to the Hallway');
