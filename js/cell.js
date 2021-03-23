@@ -298,7 +298,7 @@ function safeCode(){
 
   //Unlock 3 passcode lock
   var buttonsPressed = 0;
-  var lockCode = "1432";
+  var lockCode = "1234";
   var enteredCode = "";
     function unlock(number){
 
@@ -345,8 +345,8 @@ function safeCode(){
         //Correct order of button press
 
         if(enteredCode == lockCode){
-          doorContrClick();
-          }
+          combinationSuccess();
+
 
             //Hide buttons
             document.getElementById("doorControButtonTri").style.display="none";
@@ -389,7 +389,7 @@ function safeCode(){
           enteredCode = "";
           buttonsPressed = 0;
         }
-
+}
 
 // dhasudihasiudh iuhsdiu hasdh ahsdiu hasiud shd iuhfiuadhsfiuhasdg asdg a
 const fill = document.getElementById("lockPickInv");
