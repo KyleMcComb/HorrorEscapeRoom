@@ -329,8 +329,17 @@ function safeCode(){
           break;
       }
 
+      // Displays text for the user (in left column)
+      var para = document.createElement("p");
+      var text = document.createTextNode("Button " + number + " pressed...","");
+      para.appendChild(text);
+      var element = document.getElementById("col-left");
+      element.appendChild(para);
 
-      writeText("Button " + number + " pressed...","");
+      var lineBreak = document.createElement("br");
+      var element = document.getElementById("col-left");
+      element.appendChild(lineBreak);
+
       //Reset if its been pressed 3 times
       if(buttonsPressed >= 4){
         //Correct order of button press
@@ -345,11 +354,33 @@ function safeCode(){
             document.getElementById("doorControButtonCir").style.display="none";
             document.getElementById("doorControButtonX").style.display="none";
 
-            writeText("It seems that the buttons were pressed in the correct order... ",cluesText)
+            // Displays text for the user (in left column)
+            var para = document.createElement("p");
+            var text = document.createTextNode("It seems that the buttons were pressed in the correct order...");
+            para.appendChild(text);
+            var element = document.getElementById("col-left");
+            element.appendChild(para);
+
+            var lineBreak = document.createElement("br");
+            var element = document.getElementById("col-left");
+            element.appendChild(lineBreak);
+
+
           }
           else{ //Incorrect order of button press
 
-            writeText("Buttons were pressed in the wrong order. No locks were disabled","");
+            // Displays text for the user (in left column)
+            var para = document.createElement("p");
+            var text = document.createTextNode("Buttons were pressed in the wrong order. No locks were disabled");
+            para.appendChild(text);
+            var element = document.getElementById("col-left");
+            element.appendChild(para);
+
+            var lineBreak = document.createElement("br");
+            var element = document.getElementById("col-left");
+            element.appendChild(lineBreak);
+
+
             document.getElementById("doorControButtonTri").style.display="initial";
             document.getElementById("doorControButtonSqu").style.display="initial";
             document.getElementById("doorControButtonCir").style.display="initial";
