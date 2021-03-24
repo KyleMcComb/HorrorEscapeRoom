@@ -1,10 +1,11 @@
 function restart(){
-  //sessionStorage.clear();
-  var rooms = ['cellTime', 'labTime','hallwayTime','securityTime','exitTime'];
-  //sets timers to 0 so user can start again with new times being set
-  for(x=0; x<5; x++){
-    sessionStorage.setItem(rooms[x], 0);
-  }
+
+  sessionStorage.setItem("cellTime", 0);
+  sessionStorage.setItem("labTime", 0);
+  sessionStorage.setItem("hallwayTime", 0);
+  sessionStorage.setItem("securityTime", 0);
+  sessionStorage.setItem("exitTime", 0);
+
     sessionStorage.setItem("timeleft", 0);
   //sessionStorage.setItem("exitTime", 0);
   window.location.href = 'Start.html';
