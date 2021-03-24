@@ -12,8 +12,10 @@ function onLoad() {
 }
 var code; //code entered in by user to escape
 var unlocked = false; //
+var lockPickFound = false;
 
 function LockPickClick(background) {
+  lockPickFound = true;
 
   // Adds note modal button after clicked
   var lModal = document.getElementById("lockPickInv");
@@ -51,7 +53,7 @@ function closeNote() {
 
 function arrowClick(background) {
 
-if (unlocked == false){
+if (unlocked == false || lockPickFound == false){
   // Displays text for the user (in left column)
   var para = document.createElement("p");
 var text = document.createTextNode("Make sure you look around the room fully before turning around.");
