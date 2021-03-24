@@ -196,7 +196,6 @@ function safeCode(){
 
   timeSpent = timeSpent/1000;
   timer-=timeSpent;
-  sessionStorage.setItem("exitTime", timePassed);
 
   if(timer<=0){
     //If the time is up - brings user to the end screen to show stats

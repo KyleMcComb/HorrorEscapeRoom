@@ -6,8 +6,7 @@ function restart(){
   sessionStorage.setItem("securityTime", 0);
   sessionStorage.setItem("exitTime", 0);
 
-    sessionStorage.setItem("timeleft", 0);
-  //sessionStorage.setItem("exitTime", 0);
+  sessionStorage.setItem("timeleft", 0);
   window.location.href = 'Start.html';
 }
 

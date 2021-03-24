@@ -1,5 +1,5 @@
 //TIMER BUT ANDREW WAY
-var timer = 60;
+var timer;
 var timedEvent;
 var timePassed = 0;
 

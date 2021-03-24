@@ -11,7 +11,6 @@ var codePurpleKey = 872;
 const pos = document.documentElement; //document used for torch
 var timeOut;
 
-sessionStorage.setItem("exitTime", 0);
 
 //Displays the code to unlock the final door
 function displayCode() {
@@ -69,6 +68,7 @@ function wallCode() {
 }
 
 function wallNote() {
+  playSound('noteWhisper');
   var txt = "[System]: You have found a note - maybe there is a code. <br><br>";
   document.getElementById('gameText').innerHTML += txt;
 
@@ -240,10 +240,19 @@ function closeKey(closeModal) {
     keyCode = [];
   } else if (closeModal == 'note') {
     document.getElementById('noteModal').style.display = "none";
+
   }
 }
 
+var firstMove = 0;
+
 function moveTorch() {
+  if(firstMove ==0){
+    let sound =  document.getElementById('ambient');
+  }
+  firstMove = 1;
+
+
   var pos = document.documentElement;
 
   var test = document.getElementById("imageDiv");
@@ -269,6 +278,10 @@ function playSound(soundToPlay) {
     sound = document.getElementById('openDoor');
   } else if (soundToPlay =='keypadClick'){
     sound = document.getElementById('keypadClick');
+  }else if (soundToPlay =='noteWhisper'){
+    sound = document.getElementById('noteWhisper');
+  }else if (soundToPlay == 'ambient'){
+
   }
 
   let play = document.getElementById('play')
