@@ -9,6 +9,7 @@ var keyPadCode = 420; // correct keypad code
 var exitRoomCode = 935;
 var codePurpleKey = 872;
 const pos = document.documentElement; //document used for torch
+var timeOut;
 
 sessionStorage.setItem("exitTime", 0);
 
@@ -36,20 +37,28 @@ function displayCode() {
     sessionStorage.setItem("winGame", winGame);
   } else {
     if (code == null || code == "") {
+      playSound('error');
       txt = "[System]:User cancelled the prompt.";
       //checks for correct entering in of code AND the user has collected all 3 keys before moving on
-    } else if (code == exitRoomCode && noKeys) {
-      //saves the gamePlay to win to get Win Doctor picture and correct stats
+    } else if (code == exitRoomCode && noKeys==3) {
+      playSound('openDoor');
       var winGame = "win";
       sessionStorage.setItem("winGame", winGame);
-      window.location.href = 'summary.html';
+      timeOut = setTimeout(summaryPage, 3000);
+      //saves the gamePlay to win to get Win Doctor picture and correct stats
 
     } else if (noKeys < 3) {
+      playSound('error');
       txt = "[System]: Hmm.. Looks like theres 3 locks, make sure to collect the keys before escaping!";
     } else {
+      playSound('error');
       txt = "<p>[System]:That code is incorrect</p>";
     }
   }
+}
+
+function summaryPage(){
+  window.location.href = 'summary.html';
 }
 
 //tells user code on wall as hint
@@ -104,7 +113,7 @@ function purpleSubmit() {
 
 //Key found - opens modal
 function keyFound(keyType) {
-  playSound('correct');
+  playSound('key');
   //adds Key - used to check if user has collected keys before entering in a code
   noKeys += 1;
   var x;
@@ -195,6 +204,7 @@ function enterKeyCode(btnPressed) {
   if (btnPressed == '0' || btnPressed == '1' || btnPressed == '2' || btnPressed == '3' || btnPressed == '4' || btnPressed == '5' || btnPressed == '6' || btnPressed == '7' || btnPressed == '8' || btnPressed == '9') {
     document.getElementById('userEntry').innerHTML += btnPressed;
     keyCode.push(Number(btnPressed));
+    playSound('keypadClick');
   } else if (btnPressed == 'submit') {
     // var keyPadCode = 420; - CORRECT CODE
     document.getElementById('userEntry').innerHTML = "";
@@ -249,15 +259,41 @@ function moveTorch() {
   pos.style.setProperty('--y', (y - viewportTop) + 'px');
 }
 
-function playSound(errorWin) {
+function playSound(soundToPlay) {
   let sound;
-  if (errorWin == 'error') {
-    sound = document.getElementById('error')
-  } else {
-    sound = document.getElementById('correct')
+  if (soundToPlay == 'error') {
+    sound = document.getElementById('keypadError');
+  } else if(soundToPlay =='key') {
+    sound = document.getElementById('keyFound');
+  } else  if(soundToPlay =='openDoor'){
+    sound = document.getElementById('openDoor');
+  } else if (soundToPlay =='keypadClick'){
+    sound = document.getElementById('keypadClick');
   }
 
   let play = document.getElementById('play')
 
   sound.play();
+}
+
+function exitTheme(){
+  //var items = document.getElementsByClass('roomItem');
+  var btn1 = document.getElementById('exitButton');
+  if (btn1.style.borderColor == 'red') {
+    btn1.style.border = 'none';
+    document.getElementById('light').display="none";
+  }else{
+    btn1.style.border = 'solid red 2px';
+    document.getElementById('light').display="none";
+  }
+  /*
+  document.getElementById('exitButton').style.border = "solid red 2px";
+  document.getElementById('goldKey').style.border= "solid red 2px";
+  document.getElementById('purpleKey').style.border = "solid red 2px";
+/*
+
+  document.getElementById('wallNote').style.border = "solid red 2px";
+  document.getElementById('wallCode').style.border = "solid red 2px";
+  document.getElementById('light').remove();*/
+toggleColours();
 }

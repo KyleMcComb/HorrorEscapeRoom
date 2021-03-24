@@ -29,9 +29,13 @@
           </audio> -->
           <button type="button" class="soundBtn" id="play" onclick="playSound();"></button>
           <!-- KEY FOUND SOUND: https://freesound.org/people/Mativve/sounds/391539/ -->
+          <audio id="keyFound" class="soundBtn" src="audio/Exit/keyFound.wav">
           <!-- KEYPAD WRONG CODE SOUND: https://freesound.org/people/Autistic%20Lucario/sounds/142608/ -->
-          <audio id="correct" class="soundBtn" src="audio/Exit/win.wav">
-          <audio id="error" class="soundBtn" src="audio/Exit/error.wav">
+          <audio id="keypadError" class="soundBtn" src="audio/Exit/keypadError.wav">
+          <!-- KEYPAD CLICK SOUND:  https://freesound.org/people/brnck/sounds/257357/-->
+          <audio id="keypadClick" class="soundBtn" src="audio/Exit/keypadClick.wav">
+          <!-- DOOR OPEN SOUND:  https://freesound.org/people/kokopetiyot/sounds/413249/-->
+          <audio id="openDoor" class="soundBtn" src="audio/Exit/doorOpen.wav">
 
       </div>
       <div id="col-right">
@@ -102,6 +106,10 @@
 
       </div>
     </div>
+
+    <div id="footer">
+   <button id="colourMode" onclick=" exitTheme();">Toggle Theme</button>
+   </div>
   </div>
 
 </body>
