@@ -71,6 +71,19 @@
   display: none;
 }
 
+#gateLockButton{
+  border: none;
+  position: absolute;
+  cursor: pointer;
+  width: 18%;
+  top: 52%;
+  right: 38%;
+  height: 29%;
+  background:none;
+  background-size: 100%;
+  display: none;
+}
+
 
 #doorControButtonCir {
   border: none;
@@ -203,7 +216,3 @@
   text-decoration: none;
   cursor: pointer;
 }
-
-
-
-
