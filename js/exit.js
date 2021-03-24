@@ -244,14 +244,8 @@ function closeKey(closeModal) {
   }
 }
 
-var firstMove = 0;
 
 function moveTorch() {
-  if(firstMove ==0){
-    let sound =  document.getElementById('ambient');
-  }
-  firstMove = 1;
-
 
   var pos = document.documentElement;
 
