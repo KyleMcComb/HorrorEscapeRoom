@@ -31,45 +31,62 @@ function gameMode(){
   var subjectName = sessionStorage.getItem("subject");
 
   var tbl = document.getElementById('stats');
+
   var rows = tbl.rows.length;
 
   if(cellTime!=0 && cellTime!=null){
+    tbl.style.display="block";
+
     var row = tbl.insertRow(rows);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     cell1.innerHTML = "Cell Time";
     cell2.innerHTML = cellTime;
-  }
-  rows = tbl.rows.length;
-  if(labTime!=0 && labTime!=null){
-    var row = tbl.insertRow(rows);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    cell1.innerHTML = "Lab Time";
-    cell2.innerHTML = labTime;
-  }
-  rows = tbl.rows.length;
-  if(hallwayTime!=0 && hallwayTime!=null){
-    var row = tbl.insertRow(rows);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    cell1.innerHTML = "Hallway/Morgue Time";
-    cell2.innerHTML = hallwayTime;
-  }
-  rows = tbl.rows.length;
-  if(securityTime!=0 && securityTime!=null){
-    var row = tbl.insertRow(rows);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    cell1.innerHTML = "Security Time";
-    cell2.innerHTML = securityTime;
-  }
-  rows = tbl.rows.length;
-  if(exitTime!=0 && exitTime!=null){
-    var row = tbl.insertRow(rows);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    cell1.innerHTML = "Exit Time";
-    cell2.innerHTML = exitTime;
+
+    rows = tbl.rows.length;
+    if(labTime!=0 && labTime!=null){
+      var row = tbl.insertRow(rows);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      cell1.innerHTML = "Lab Time";
+      cell2.innerHTML = labTime;
+
+      rows = tbl.rows.length;
+      if(hallwayTime!=0 && hallwayTime!=null){
+        var row = tbl.insertRow(rows);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = "Hallway/Morgue Time";
+        cell2.innerHTML = hallwayTime;
+
+        rows = tbl.rows.length;
+        if(securityTime!=0 && securityTime!=null){
+          var row = tbl.insertRow(rows);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          cell1.innerHTML = "Security Time";
+          cell2.innerHTML = securityTime;
+          rows = tbl.rows.length;
+
+          if(exitTime!=0 && exitTime!=null){
+            var row = tbl.insertRow(rows);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            cell1.innerHTML = "Exit Time";
+            cell2.innerHTML = exitTime;
+          }else{
+            document.getElementById('noTimes').innerHTML="You lost in the Final Room!"
+          }
+        }else{
+          document.getElementById('noTimes').innerHTML="You lost in Security (4th Room)!"
+        }
+      }else{
+        document.getElementById('noTimes').innerHTML="You lost in the Hallway (3rd Room)!"
+      }
+    }else{
+      document.getElementById('noTimes').innerHTML="You lost in the Laboratory (2nd Room)!"
+    }
+  }else{
+    document.getElementById('noTimes').innerHTML="You lost in the Cell (1st Room)!"
   }
 }

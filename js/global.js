@@ -3,8 +3,6 @@ var timer;
 var timedEvent;
 var timePassed = 0;
 
-
-
 timer = 60 + Number(sessionStorage.getItem("timeleft"));
 
 

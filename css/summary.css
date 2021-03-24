@@ -12,15 +12,22 @@
 img{
   text-align:center;
 }
-
-table, th,td {
+table th{
+  width:70%;
+}
+th,td {
   border:solid white 1px;
   border-collapse: collapse;
   padding:2%;
 }
 
 table{
+  border-collapse: collapse;
   width:100%;
+}
+
+#stats{
+  display: none;
 }
 
 #restart{
