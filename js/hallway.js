@@ -8,10 +8,11 @@ var compound3IsValid = false;
 
 
 
+
 // runs on page load, prints text to the game text div
 function onLoad() {
   var para = document.createElement("p");
-  var text = document.createTextNode("[System] You've entered a dark hallway and can see a door at the other end, maybe you should look around for an exit before you are caught and dragged back to your cell " +  playerName);
+  var text = document.createTextNode("[System] You've entered a dark hallway and can see a door at the other end, maybe you should look around for an exit before you are caught and dragged back to your cell " + playerName + "!");
   para.appendChild(text);
   var element = document.getElementById("gameDialog");
   element.appendChild(para);
@@ -42,7 +43,7 @@ function sideRoomClick() {
   // if the exit door has already been interacted with run this
   if (exitDoorClicked === true) {
     var para = document.createElement("p");
-    var text = document.createTextNode("[System] A dark hallway that leads somewhere, there may be another exit down here " +  playerName + "?" + ", or a tool to break the lock on the steel door you found earlier. Enter the hallway? y for yes");
+    var text = document.createTextNode("[System] A dark hallway that leads somewhere, there may be another exit down here " + playerName + "?" + ", or a tool to break the lock on the steel door you found earlier. Enter the hallway? y for yes");
     para.appendChild(text);
     var element = document.getElementById("gameDialog");
     element.appendChild(para);
@@ -52,13 +53,16 @@ function sideRoomClick() {
     document.addEventListener('keydown', function(e) {
       //  if (e.keyCode == 89)
       loadMorgue();
+      morgueIntro();
+    }, {
+      once: true
     })
 
   }
   // else run this if exit door has not been interacted with
   else {
     var para = document.createElement("p");
-    var text = document.createTextNode("[System] A dark hallway that leads somewhere, maybe there you could find another exit down here " +  playerName + "?" + "Enter the hallway? y for yes");
+    var text = document.createTextNode("[System] A dark hallway that leads somewhere, maybe there you could find another exit down here " + playerName + "?" + "Enter the hallway? y for yes");
     para.appendChild(text);
     var element = document.getElementById("gameDialog");
     element.appendChild(para);
@@ -67,9 +71,12 @@ function sideRoomClick() {
     document.addEventListener('keydown', function(e) {
       //  if (e.keyCode == 89)
       loadMorgue();
+      morgueIntro();
+    }, {
+      once: true
     })
-  }
 
+  }
 }
 
 // method called when the user clicks on the side door and loads morgue
@@ -77,9 +84,9 @@ function loadMorgue() {
   // chnages image to morgue
   var image = document.getElementById('img');
   image.src = 'img/Hall/Morgue.png';
-
   // changes room name
   document.getElementById('roomName').innerHTML = 'Morgue';
+
   // disables hallway buttons
   document.getElementById('windowButton').style.display = 'none';
   document.getElementById('sideRoomButton').style.display = 'none';
@@ -102,7 +109,7 @@ function exitClick() {
 
     // print some text
     var para = document.createElement("p");
-    var text = document.createTextNode("[System] You pour the acid over the lock on the door, it corrodes it and makes it weak enough for you to pull open." + "well done " +  playerName + ", Better get out of here! Press y to leave");
+    var text = document.createTextNode("[System] You pour the acid over the lock on the door, it corrodes it and makes it weak enough for you to pull open." + "well done " + playerName + ", Better get out of here! Press y to leave");
     para.appendChild(text);
     var element = document.getElementById("chemicalEvent");
     element.appendChild(para);
@@ -133,19 +140,24 @@ function exitClick() {
     para.appendChild(text);
     var element = document.getElementById("gameDialog");
     element.appendChild(para);
-
     lineBreak();
   }
 }
 
 
+
+
+
+
 // prints morgue intro text when morgue loads
 function morgueIntro() {
+  morgueIntro= function(){};
   var para = document.createElement("p");
   var text = document.createTextNode('[System]The hallway lead you to a morgue, this must be where Dr Friedrich disposes of his subjects. Maybe you should look around ' + playerName + ', for anything to help me unlock the gate in the hallway');
   para.appendChild(text);
   var element = document.getElementById("gameDialog");
-
+  element.appendChild(para);
+  lineBreak();
 }
 
 
