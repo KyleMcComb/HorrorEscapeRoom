@@ -18,11 +18,9 @@ function gameMode(){
   if(winGame=="win"){
     document.getElementById("doctor").src = "img/EndScreen/Surgeon-Win.jpg";
     roomName.innerHTML = 'You Won!';
-    playSound();
   }else{
     document.getElementById("doctor").src="img/EndScreen/Surgeon-Lose.jpg";
       roomName.innerHTML = 'You Lost!';
-      playSound();
   }
 
   var cellTime = sessionStorage.getItem("cellTime");

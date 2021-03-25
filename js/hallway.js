@@ -24,22 +24,27 @@ function onLoad() {
 function windowClick() {
     // prints some text
     var para = document.createElement("p");
-    var text = document.createTextNode('A small window leading outside, try and escape through the window? y for yes, no for no');
+    var text = document.createTextNode('A small window with some bars on the outside, try and escape through the window? y for yes');
     para.appendChild(text);
     var element = document.getElementById("gameText");
     element.appendChild(para);
     lineBreak();
+    var windowClick = new Audio('audio/Hallway/window.mp3');
+    windowClick.play();
 
     // checks if y or n key is pressed
     document.body.addEventListener("keydown", function (event) {
         // if y run this
         if (event.keyCode == 89) {
+
+
             var para = document.createElement("p");
-            var text = document.createTextNode("[System] You attempt to escape through the window but find that the gap is too small and the drop to far, better keep looking");
+            var text = document.createTextNode("[System] You attempt to escape through the window and shake the bars loose but find that the gap is too small and the drop to far, better keep looking");
             para.appendChild(text);
             var element = document.getElementById("gameText");
             element.appendChild(para);
             document.getElementById('windowButton').style.display = 'none';
+
             lineBreak();
             // else run this
         } else {
@@ -53,7 +58,10 @@ function windowClick() {
             lineBreak();
 
         }
+
+
     });
+
     lineBreak();
 }
 
@@ -233,7 +241,7 @@ function checkSelections() {
         para.appendChild(text);
         var element = document.getElementById("chemicalEvent");
         element.appendChild(para);
-        lineBreak();
+        lineBreakChemical();
 
 
 
@@ -262,8 +270,12 @@ function lineBreakChemical() {
     element.appendChild(lineBreak);
 }
 
-// code is run when the note buttin in morrgue is clicked
+// code is run when the note buttin in morgue is clicked
 function expandNote() {
+
+    var noteOpen = new Audio('audio/Hallway/noteOpen.mp3');
+    noteOpen.play();
+
     noteFound = true;
     document.getElementById("myModalDiv").style.display = "block";
     document.getElementById("expandedNote").src = "img/Hall/ChemicalNote.jpg";
@@ -272,13 +284,20 @@ function expandNote() {
     // closes note using escape key
     document.addEventListener('keydown', function (e) {
         if (e.key == 'Escape')
+            var noteOpen = new Audio('audio/Hallway/noteOpen.mp3');
+            noteOpen.play();
             document.getElementById("myModalDiv").style.display = "none";
-        document.getElementById("wiresModal").style.display = "none";
+            document.getElementById("wiresModal").style.display = "none";
+
     })
 }
 
 // code to close using x button
 function closeNote() {
+
+    var noteOpen = new Audio('audio/Hallway/noteOpen.mp3');
+    noteOpen.play();
+
     document.getElementById("myModalDiv").style.display = "none";
     document.getElementById("wiresModal").style.display = "none";
 }

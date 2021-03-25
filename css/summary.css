@@ -40,6 +40,10 @@ table{
   justify-content: center;
 }
 
-.soundBtn{
+#play{
+  display:none;
+}
+
+audio{
   display:none;
 }
