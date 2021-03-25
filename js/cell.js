@@ -302,30 +302,30 @@ function safeCode(){
 
   //Unlock 3 passcode lock
   var buttonsPressed = 0;
-  var lockCode = "1234";
+  var lockCode = "TriangleCircleSquareCross";
   var enteredCode = "";
-    function unlock(number){
+    function combinationDoorUnlock(symbol){
 
       //Make buttons disappear when pressed
-      switch(number){
-        case 1:
+      switch(symbol){
+        case "Triangle" :
           document.getElementById("doorControButtonTri").style.display="none";
-          enteredCode += number;
+          enteredCode += symbol;
           buttonsPressed++;
           break;
-        case 2:
+        case "Circle":
           document.getElementById("doorControButtonSqu").style.display="none";
-          enteredCode += number;
+          enteredCode += symbol;
           buttonsPressed++;
           break;
-        case 3:
+        case "Square":
           document.getElementById("doorControButtonCir").style.display="none";
-          enteredCode += number;
+          enteredCode += symbol;
           buttonsPressed++;
           break;
-        case 4:
+        case "Cross":
           document.getElementById("doorControButtonX").style.display="none";
-          enteredCode += number;
+          enteredCode += symbol;
           buttonsPressed++;
           break;
         default:
@@ -335,7 +335,7 @@ function safeCode(){
 
       // Displays text for the user (in left column)
       var para = document.createElement("p");
-      var text = document.createTextNode("Button " + number + " pressed...","");
+      var text = document.createTextNode(symbol + " button pressed...","");
       para.appendChild(text);
       var element = document.getElementById("col-left");
       element.appendChild(para);
@@ -351,24 +351,11 @@ function safeCode(){
         if(enteredCode == lockCode){
           combinationSuccess();
 
-
             //Hide buttons
             document.getElementById("doorControButtonTri").style.display="none";
             document.getElementById("doorControButtonSqu").style.display="none";
             document.getElementById("doorControButtonCir").style.display="none";
             document.getElementById("doorControButtonX").style.display="none";
-
-            // Displays text for the user (in left column)
-            var para = document.createElement("p");
-            var text = document.createTextNode("It seems that the buttons were pressed in the correct order...");
-            para.appendChild(text);
-            var element = document.getElementById("col-left");
-            element.appendChild(para);
-
-            var lineBreak = document.createElement("br");
-            var element = document.getElementById("col-left");
-            element.appendChild(lineBreak);
-
 
           }
           else{ //Incorrect order of button press
