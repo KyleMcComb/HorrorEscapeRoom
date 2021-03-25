@@ -13,12 +13,30 @@ function restart(){
 function gameMode(){
   var winGame = sessionStorage.getItem("winGame");
   var roomName = document.getElementById('roomName');
+  var traitOutput = document.getElementById('trait');
   sessionStorage.setItem("timePassed", 0);
   var playerName = sessionStorage.getItem("subject");
+  var trait = sessionStorage.getItem("traits");
 
   if(winGame=="win"){
     document.getElementById("doctor").src = "img/EndScreen/Surgeon-Win.jpg";
-    roomName.innerHTML = 'You Won! Well done ' + playerName + "! ";
+    roomName.innerHTML = 'You Won!';
+    traitOutput.innerHTML = 'Well done ' + playerName + '. You won thanks to your incredible display of ';
+
+    switch(trait) {
+      case 'intelligent':
+        traitOutput.innerHTML += "intelligence.";
+      break;
+      case 'cautious':
+        traitOutput.innerHTML += "cautiousness.";
+      break;
+      case 'courageous':
+        traitOutput.innerHTML += "courage.";
+      break;
+      default:
+      traitOutput.innerHTML +='wit';
+    }
+
   }else{
     document.getElementById("doctor").src="img/EndScreen/Surgeon-Lose.jpg";
       roomName.innerHTML = 'You Lost! Better luck next time ' + playerName + "!";
