@@ -173,14 +173,13 @@ function doorOpenClick(background) {
   // Remove open door button
   var nButton = document.getElementById("openDoorButton");
   openDoorButton.style.display = "none";
-
-  alert("You have escaped the Cells Room!");
   sessionStorage.setItem("cellTime", timePassed);
   if(timePassed>60){
     sessionStorage.setItem("timeleft", 0);
   } else{
     sessionStorage.setItem("timeleft", 60-timePassed);
   }
+  alert("You have escaped the Cells Room!");
   window.location.href = "laboratory.html";
 
 }

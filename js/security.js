@@ -43,13 +43,13 @@
     if(cluesFound == 3){
 
       writeText("You have escaped the security room!","");
-      alert("You have escaped the security room");
       sessionStorage.setItem("securityTime", timePassed);
       if(timePassed>60){
         sessionStorage.setItem("timeleft", 0);
       } else{
         sessionStorage.setItem("timeleft", 60-timePassed);
       }
+      alert("You have escaped the security room");
       window.location.href = "exit.html";
     }
     else if(cluesFound == 2){
