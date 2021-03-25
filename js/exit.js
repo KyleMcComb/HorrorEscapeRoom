@@ -284,11 +284,11 @@ function playSound(soundToPlay) {
 function exitTheme(){
   //var items = document.getElementsByClass('roomItem');
   var btn1 = document.getElementById('exitButton');
-  if (btn1.style.borderColor == 'red') {
+  if (btn1.style.borderColor == 'white') {
     btn1.style.border = 'none';
     document.getElementById('light').display="none";
   }else{
-    btn1.style.border = 'solid red 2px';
+    btn1.style.border = 'solid white 2px';
     document.getElementById('light').display="none";
   }
   /*

@@ -281,3 +281,9 @@ ul {
 #play{
   display:none;
 }
+
+#controlAudio {
+  position: absolute;
+  right: 4%;
+  width: 7%;
+}

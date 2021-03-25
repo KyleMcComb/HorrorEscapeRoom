@@ -17,10 +17,7 @@
     <div class="row">
       <div id="col-left">
         <p>Time Left: <span id="timer"></span> seconds</p><br />
-        <audio controls id="controlAudio" autoplay loop>
-          <source src="audio/Exit/ambient.wav" type="audio/wav">
-            Your browser does not support the audio element.
-          </audio>
+
         <p id="keys"></p>
         <div id="gameText">
 
@@ -43,10 +40,12 @@
 
       </div>
       <div id="col-right">
+        <audio controls id="controlAudio" autoplay loop>
+          <source src="audio/Exit/ambient.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
 
         <h2 id="roomName">Final Room</h2>
-
-
         <!--Holds the image of the room and buttons/clickable items in room -->
         <div id="imageDiv" onmousemove="moveTorch();">
           <div id="light"></div>

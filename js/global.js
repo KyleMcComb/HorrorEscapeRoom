@@ -3,6 +3,7 @@ var timer;
 var timedEvent;
 var timePassed = 0;
 timer = 60 + Number(sessionStorage.getItem("timeleft"));
+var playerName = sessionStorage.getItem("subject");
 
 window.addEventListener('load', function() {
   timedEvent = setInterval(countdown, 1000);

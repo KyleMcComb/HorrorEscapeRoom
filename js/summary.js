@@ -14,13 +14,14 @@ function gameMode(){
   var winGame = sessionStorage.getItem("winGame");
   var roomName = document.getElementById('roomName');
   sessionStorage.setItem("timePassed", 0);
+  var playerName = sessionStorage.getItem("subject");
 
   if(winGame=="win"){
     document.getElementById("doctor").src = "img/EndScreen/Surgeon-Win.jpg";
-    roomName.innerHTML = 'You Won!';
+    roomName.innerHTML = 'You Won! Well done ' + playerName + "! ";
   }else{
     document.getElementById("doctor").src="img/EndScreen/Surgeon-Lose.jpg";
-      roomName.innerHTML = 'You Lost!';
+      roomName.innerHTML = 'You Lost! Better luck next time ' + playerName + "!";
   }
 
   var cellTime = sessionStorage.getItem("cellTime");
