@@ -1,15 +1,12 @@
-//TIMER BUT ANDREW WAY
+//TIMER
 var timer;
 var timedEvent;
 var timePassed = 0;
-
 timer = 60 + Number(sessionStorage.getItem("timeleft"));
-
 
 window.addEventListener('load', function() {
   timedEvent = setInterval(countdown, 1000);
 });
-
 
 function stopTimer() {
   //used to clear timer.
@@ -35,7 +32,6 @@ function countdown() {
     //LINK TO NEXT PAGE - TIME UP - END SCREEN
     window.location.href = 'summary.html';
   }
-
 }
 
 // code to toggle colors depending on color theme selected

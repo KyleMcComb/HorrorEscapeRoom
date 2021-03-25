@@ -300,7 +300,11 @@ function doorUnlockClick() {
     element.appendChild(lineBreak);
   }
   else if(keyFound == 1) {
-    sessionStorage.setItem("timeleft", 60-timePassed);
+    if(timePassed>60){
+      sessionStorage.setItem("timeleft", 0);
+    } else{
+      sessionStorage.setItem("timeleft", 60-timePassed);
+    }
     sessionStorage.setItem("labTime", timePassed);
     window.location.href = 'hallway.html';
   }

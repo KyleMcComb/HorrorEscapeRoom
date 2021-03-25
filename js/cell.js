@@ -176,7 +176,11 @@ function doorOpenClick(background) {
 
   alert("You have escaped the Cells Room!");
   sessionStorage.setItem("cellTime", timePassed);
-  sessionStorage.setItem("timeleft", 60-timePassed);
+  if(timePassed>60){
+    sessionStorage.setItem("timeleft", 0);
+  } else{
+    sessionStorage.setItem("timeleft", 60-timePassed);
+  }
   window.location.href = "laboratory.html";
 
 }
