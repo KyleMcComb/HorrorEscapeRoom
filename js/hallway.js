@@ -11,9 +11,9 @@ var compound3IsValid = false;
 // runs on page load, prints text to the game text div
 function onLoad() {
   var para = document.createElement("p");
-  var text = document.createTextNode("[System] You've entered a dark hallway and can see a door at the other end, maybe you should look around for an exit before you are caught and dragged back to your cell");
+  var text = document.createTextNode("[System] You've entered a dark hallway and can see a door at the other end, maybe you should look around for an exit before you are caught and dragged back to your cell " +  playerName);
   para.appendChild(text);
-  var element = document.getElementById("gameText");
+  var element = document.getElementById("gameDialog");
   element.appendChild(para);
   lineBreak();
 }
@@ -23,12 +23,12 @@ function onLoad() {
 // runs whne the window in the hallway is clicked
 function windowClick() {
 
-    var windowClick = new Audio('audio/Hallway/window.mp3');
-    windowClick.play();
+  var windowClick = new Audio('audio/Hallway/window.mp3');
+  windowClick.play();
   var para = document.createElement("p");
   var text = document.createTextNode("[System] You attempt to escape through the window and shake the bars loose but find that the gap is too small and the drop to far, better keep looking");
   para.appendChild(text);
-  var element = document.getElementById("gameText");
+  var element = document.getElementById("gameDialog");
   element.appendChild(para);
   document.getElementById('windowButton').style.display = 'none';
   lineBreak();
@@ -42,9 +42,9 @@ function sideRoomClick() {
   // if the exit door has already been interacted with run this
   if (exitDoorClicked === true) {
     var para = document.createElement("p");
-    var text = document.createTextNode("[System] A dark hallway that leads somewhere, there may be another exit down there, or a tool to break the lock on the steel door I found earlier. Enter the hallway? y for yes");
+    var text = document.createTextNode("[System] A dark hallway that leads somewhere, there may be another exit down here " +  playerName + "?" + ", or a tool to break the lock on the steel door you found earlier. Enter the hallway? y for yes");
     para.appendChild(text);
-    var element = document.getElementById("gameText");
+    var element = document.getElementById("gameDialog");
     element.appendChild(para);
     lineBreak();
 
@@ -58,9 +58,9 @@ function sideRoomClick() {
   // else run this if exit door has not been interacted with
   else {
     var para = document.createElement("p");
-    var text = document.createTextNode("[System] A dark hallway that leads somewhere, maybe there is another exit down here? Enter the hallway? y for yes");
+    var text = document.createTextNode("[System] A dark hallway that leads somewhere, maybe there you could find another exit down here " +  playerName + "?" + "Enter the hallway? y for yes");
     para.appendChild(text);
-    var element = document.getElementById("gameText");
+    var element = document.getElementById("gameDialog");
     element.appendChild(para);
     lineBreak();
 
@@ -102,7 +102,7 @@ function exitClick() {
 
     // print some text
     var para = document.createElement("p");
-    var text = document.createTextNode("You pour the acid over the lock on the door, it corrodes it and makes it weak enough for you to pull open. Better get out of here! Press y to leave");
+    var text = document.createTextNode("[System] You pour the acid over the lock on the door, it corrodes it and makes it weak enough for you to pull open." + "well done " +  playerName + ", Better get out of here! Press y to leave");
     para.appendChild(text);
     var element = document.getElementById("chemicalEvent");
     element.appendChild(para);
@@ -131,7 +131,7 @@ function exitClick() {
     var para = document.createElement("p");
     var text = document.createTextNode("A exit but it is barred by a locked steel gate, it looks old, i may be able to break the lock with the right tool");
     para.appendChild(text);
-    var element = document.getElementById("gameText");
+    var element = document.getElementById("gameDialog");
     element.appendChild(para);
 
     lineBreak();
@@ -142,9 +142,9 @@ function exitClick() {
 // prints morgue intro text when morgue loads
 function morgueIntro() {
   var para = document.createElement("p");
-  var text = document.createTextNode('The hallway lead you to a morgue, this must be where Dr Friedrich disposes of his subjects. Maybe i should look around for anything to help me unlock the gate in the hallway');
+  var text = document.createTextNode('[System]The hallway lead you to a morgue, this must be where Dr Friedrich disposes of his subjects. Maybe you should look around ' + playerName + ', for anything to help me unlock the gate in the hallway');
   para.appendChild(text);
-  var element = document.getElementById("gameText");
+  var element = document.getElementById("gameDialog");
 
 }
 
@@ -162,7 +162,7 @@ function showSelection() {
     var para = document.createElement("p");
     var text = document.createTextNode('These seem to be the chemicals Dr Friedrich mentioned in his note, each bottle has a letter on it with the word "RIGHT" written on it, strange. I should be able to make something useful to use on the gate in the hallway. Maybe the note I found earlier could help here...');
     para.appendChild(text);
-    var element = document.getElementById("gameText");
+    var element = document.getElementById("gameDialog");
     element.appendChild(para);
     lineBreak();
     document.getElementById('chemicalEvent').style.display = 'block';
@@ -172,9 +172,9 @@ function showSelection() {
     var chemicals = new Audio('audio/Hallway/chemicalFindNoNote.mp3');
     chemicals.play();
     var para = document.createElement("p");
-    var text = document.createTextNode('You find a tray of what seems like chemicals, although they are not labeled in any obvious way that you can see, just a letter or number on the front of each bottle and the word "RIGHT", maybe there is a cluse somehwere.');
+    var text = document.createTextNode('You find a tray of what seems like chemicals, although they are not labeled in any obvious way that you can see, just a letter or number on the front of each bottle and the word "RIGHT", maybe there is a clues somehwere.');
     para.appendChild(text);
-    var element = document.getElementById("gameText");
+    var element = document.getElementById("gameDialog");
     element.appendChild(para);
     lineBreak();
   }
@@ -192,7 +192,7 @@ function checkSelections() {
 
     acidFound = true;
     var para = document.createElement("p");
-    var text = document.createTextNode('Success! This seems to have made some acid that is more than corossive enough, i can use it to break down the lock in the hallway! better get going! Hit Y to go back to the Hallway');
+    var text = document.createTextNode('[System] Success! This seems to have made some acid that is more than corossive enough, you can use it to break down the lock in the hallway ' + playerName + '! Better get going! Hit Y to go back to the Hallway');
     para.appendChild(text);
     var element = document.getElementById("chemicalEvent");
     element.appendChild(para);
@@ -224,10 +224,10 @@ function checkSelections() {
   }
 }
 
-// method that prints a line break where called to the gameText div
+// method that prints a line break where called to the gameDialog div
 function lineBreak() {
   var lineBreak = document.createElement("br");
-  var element = document.getElementById("gameText");
+  var element = document.getElementById("gameDialog");
   element.appendChild(lineBreak);
 
 }
