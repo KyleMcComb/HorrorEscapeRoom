@@ -18,9 +18,11 @@ function gameMode(){
   if(winGame=="win"){
     document.getElementById("doctor").src = "img/EndScreen/Surgeon-Win.jpg";
     roomName.innerHTML = 'You Won!';
+    playSound();
   }else{
     document.getElementById("doctor").src="img/EndScreen/Surgeon-Lose.jpg";
       roomName.innerHTML = 'You Lost!';
+      playSound();
   }
 
   var cellTime = sessionStorage.getItem("cellTime");
@@ -89,4 +91,18 @@ function gameMode(){
   }else{
     document.getElementById('noTimes').innerHTML="You lost in the Cell (1st Room)!"
   }
+}
+
+function playSound() {
+  let sound;
+  var winGame = sessionStorage.getItem("winGame");
+  if(winGame=="win"){
+sound = document.getElementById('youWin');
+  }else{
+    sound = document.getElementById('youLose');
+  }
+
+  let play = document.getElementById('play')
+
+  sound.play();
 }

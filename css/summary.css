@@ -11,6 +11,7 @@
 
 img{
   text-align:center;
+  cursor: pointer;
 }
 table th{
   width:70%;
@@ -37,4 +38,8 @@ table{
   display: block;
 
   justify-content: center;
+}
+
+.soundBtn{
+  display:none;
 }

@@ -274,8 +274,6 @@ function playSound(soundToPlay) {
     sound = document.getElementById('keypadClick');
   }else if (soundToPlay =='noteWhisper'){
     sound = document.getElementById('noteWhisper');
-  }else if (soundToPlay == 'ambient'){
-
   }
 
   let play = document.getElementById('play')

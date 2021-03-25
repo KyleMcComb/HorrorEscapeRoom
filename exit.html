@@ -5,7 +5,6 @@
         <link rel="stylesheet" href="css/style.css" type="text/css" />
         <link rel="stylesheet" href="css/room.css" type ="text/css" />
         <link rel="stylesheet" href="css/exit.css" type="text/css" />
-
         <script src="js/exit.js"></script>
         <script src="js/global.js"></script>
 
@@ -18,18 +17,16 @@
     <div class="row">
       <div id="col-left">
         <p>Time Left: <span id="timer"></span> seconds</p><br />
+        <audio controls id="controlAudio" autoplay loop>
+          <source src="audio/Exit/ambient.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
         <p id="keys"></p>
         <div id="gameText">
 
         </div>
-        <!--
-        <audio controls>
-          <source src="audio/Exit/win.wav" type="audio/ogg">
-            Your browser does not support the audio element.
-          </audio> -->
-          <button type="button" class="soundBtn" id="play"></button>
 
-          <audio id="ambient" class="soundBtn" src="audio/Exit/ambient.wav">
+          <button type="button" class="soundBtn" id="play"></button>
 
           <!-- KEY FOUND SOUND: https://freesound.org/people/Mativve/sounds/391539/ -->
           <audio id="keyFound" class="soundBtn" src="audio/Exit/keyFound.wav">
@@ -46,7 +43,9 @@
 
       </div>
       <div id="col-right">
+
         <h2 id="roomName">Final Room</h2>
+
 
         <!--Holds the image of the room and buttons/clickable items in room -->
         <div id="imageDiv" onmousemove="moveTorch();">
