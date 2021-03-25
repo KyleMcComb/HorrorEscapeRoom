@@ -302,7 +302,7 @@ function safeCode(){
 
   //Unlock 3 passcode lock
   var buttonsPressed = 0;
-  var lockCode = "TriangleCircleSquareCross";
+  var lockCode = "TriangleSquareCircleCross";
   var enteredCode = "";
     function combinationDoorUnlock(symbol){
 
@@ -314,12 +314,12 @@ function safeCode(){
           buttonsPressed++;
           break;
         case "Circle":
-          document.getElementById("doorControButtonSqu").style.display="none";
+          document.getElementById("doorControButtonCir").style.display="none";
           enteredCode += symbol;
           buttonsPressed++;
           break;
         case "Square":
-          document.getElementById("doorControButtonCir").style.display="none";
+          document.getElementById("doorControButtonSqu").style.display="none";
           enteredCode += symbol;
           buttonsPressed++;
           break;
