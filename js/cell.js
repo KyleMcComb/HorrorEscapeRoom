@@ -10,6 +10,15 @@ function onLoad() {
   var element = document.getElementById("col-left");
   element.appendChild(lineBreak);
 }
+
+document.addEventListener('click', musicPlay);
+function musicPlay() {
+    var amb = new Audio('audio/Cell/cellAmbience.mp3');
+    amb.play();
+    document.removeEventListener('click', musicPlay);
+}
+
+
 var code; //code entered in by user to escape
 var unlocked = false; //
 var lockPickFound = false;
