@@ -62,7 +62,7 @@ function sideRoomClick() {
   // else run this if exit door has not been interacted with
   else {
     var para = document.createElement("p");
-    var text = document.createTextNode("[System] A dark hallway that leads somewhere, maybe there you could find another exit down here " + playerName + "?" + "Enter the hallway? y for yes");
+    var text = document.createTextNode("[System] A dark hallway that leads somewhere, maybe there you could find another exit down here " + playerName + "?" + " Enter the hallway? y for yes");
     para.appendChild(text);
     var element = document.getElementById("gameDialog");
     element.appendChild(para);
