@@ -115,7 +115,7 @@ function gateLockClick(background) {
 
   // create gateOpening audio object and play it
   var gateOpening = new Audio('audio/Cell/gateOpen.wav');
-  paper.play();
+  gateOpening.play();
 
   // Removes button after clicked
   var nButton = document.getElementById("arrowButton");
