@@ -8,7 +8,8 @@
     var wiresButton = document.getElementById("leftWire");
     wiresButton.style.display = "none";
     cluesFound++;
-
+    var electricSound = new Audio('audio/Security/wires.wav');
+    electricSound.play();
     //Switch to display diffferent door mechanism unlock message depending on clues found
     switch (cluesFound) {
 
@@ -107,6 +108,8 @@
 
           if(enteredCode == lockCode){
             cluesFound++;
+            var mechSound = new Audio('audio/Security/doorMech.wav');
+            mechSound.play();
             //Switch to display diffferent door mechanism unlock message depending on clues found
             switch (cluesFound) {
               case 1:
@@ -146,6 +149,9 @@
 
     //Expand the note image
     function expand(){
+      var paperSound = new Audio('audio/Security/note.wav');
+      paperSound.play();
+
       document.getElementById("myModal").style.display = "block";
       document.getElementById("expandedNote").src = "img/Security/BloodNoteForTim.jpg";
       document.getElementById("caption").innerHTML = "Dr Friedlich's Notes";
