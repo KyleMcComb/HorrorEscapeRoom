@@ -104,6 +104,10 @@ else {
 
 function gateLockClick(background) {
 
+  // create gateOpening audio object and play it
+  var gateOpening = new Audio('audio/Cell/gateOpen.wav');
+  gateOpening.play();
+
   // Removes button after clicked
   var nButton = document.getElementById("arrowButton");
   arrowButton.style.display = "none";
@@ -137,6 +141,10 @@ function gateLockClick(background) {
 }
 
 function doorContrClick(background) {
+
+  // create metalDoorClick audio object and play it
+  var metalDoorClick = new Audio('audio/Cell/doorLockedClick.flac');
+  metalDoorClick.play();
 
   // Remove locked door button
   var nButton = document.getElementById("lockedDoorButton");
@@ -225,6 +233,11 @@ function safeCode(){
 
       //checks for correct code which is 7412
     } else if(code=="7412"){
+
+      // create safeopening audio object and play it
+      var safeopening = new Audio('audio/Cell/safeOpen.flac');
+      safeopening.play();
+
       // Adds note modal button after clicked
       var nModal = document.getElementById("noteModal");
       noteModal.style.display = "block";
@@ -249,6 +262,10 @@ function safeCode(){
   }
   else {
 
+      // create combinationWrongSound audio object and play it
+      var combinationWrongSound = new Audio('audio/Cell/combinationWrong.mp3');
+      combinationWrongSound.play();
+
       // Displays text for the user (in left column)
       var para = document.createElement("p");
       var text = document.createTextNode("[System]:That code is incorrect - Hint: Look around the room.");
@@ -265,6 +282,10 @@ function safeCode(){
   }
 
   function combinationSuccess(background) {
+
+    // create doorOpen audio object and play it
+    var doorOpen = new Audio('audio/Cell/doorOpening.wav');
+    doorOpen.play();
 
     // Adds open door button after clicked
     var nButton = document.getElementById("openDoorButton");
@@ -306,27 +327,34 @@ function safeCode(){
   var enteredCode = "";
     function combinationDoorUnlock(symbol){
 
+      // create combinationClickSound audio object and play it
+      var combinationClickSound = new Audio('audio/Cell/combinationClick.wav');
+
       //Make buttons disappear when pressed
       switch(symbol){
         case "Triangle" :
           document.getElementById("doorControButtonTri").style.display="none";
           enteredCode += symbol;
           buttonsPressed++;
+          combinationClickSound.play();
           break;
         case "Circle":
           document.getElementById("doorControButtonCir").style.display="none";
           enteredCode += symbol;
           buttonsPressed++;
+          combinationClickSound.play();
           break;
         case "Square":
           document.getElementById("doorControButtonSqu").style.display="none";
           enteredCode += symbol;
           buttonsPressed++;
+          combinationClickSound.play();
           break;
         case "Cross":
           document.getElementById("doorControButtonX").style.display="none";
           enteredCode += symbol;
           buttonsPressed++;
+          combinationClickSound.play();
           break;
         default:
           alert("Error in switch of button locks");
@@ -359,6 +387,10 @@ function safeCode(){
 
           }
           else{ //Incorrect order of button press
+
+            // create combinationWrongSound audio object and play it
+            var combinationWrongSound = new Audio('audio/Cell/combinationWrong.mp3');
+            combinationWrongSound.play();
 
             // Displays text for the user (in left column)
             var para = document.createElement("p");
