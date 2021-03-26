@@ -127,13 +127,15 @@
 #lockPickButton {
   border: none;
   display: block;
-  width: 3%;
-  top: 57%;
-  right: 39%;
-  height: 4%;
+  width: 6%;
+  top: 67%;
+  right: 32%;
+  height: 5%;
   position: absolute;
   cursor: pointer;
-  background: none;
+  background: url('../img/Cell/lockPickimg.png') no-repeat;
+  background-size: 100%;
+
 }
 
 #noteModal {
