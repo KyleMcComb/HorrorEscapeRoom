@@ -33,38 +33,35 @@
 
         <h2 id="roomName">Security</h2>
 
-        <div id="imageDiv">
+        <div id="imageDiv" >
+
+          <div id="wiresImage" onmousemove="moveTorch(event)">
 
           <button id="wiresbutton" title="Electrical Wires" onclick="expandWires();"></button>
           <button id="doorbutton" title="Exit Door" onclick="exit();"></button>
           <button id="firstbutton" title="Press Button 1" onclick="unlock(1);"></button>
           <button id="secondbutton" title="Press Button 2" onclick="unlock(2);"></button>
           <button id="thirdbutton" title="Press Button 3" onclick="unlock(3);"></button>
+          <button id="noteModal" title="Note" onclick="expand()"></button>
 
-          <img class="securityRoom" src="img/Security/ControlRoom (WIP).jpg" alt="ControlRoom" usemap="#wires" width=100%>
+          <img id = "roomImg" src="img/Security/ControlRoom (WIP).jpg" alt="ControlRoom" usemap="#wires" >
+
+
+
+
+
+            <div id="light"></div>
+            <button id="leftWire" class="booton" title="Loose Wire" onclick="wiresClick();"></button>
+          </div>
+
 
 
           <!-- The Modal for Extra Note-->
-          <button id="noteModal" title="Note" onclick="expand()"></button>
           <div id="myModal" class="modal">
             <span class="noteClose" onclick="closeNote()">&times;</span>
             <img id="expandedNote">
             <div id="caption"></div>
           </div>
-
-          <!-- The Modal for Wires -->
-          <div id="wiresModal" class="wiresClass">
-
-          <div id="wiresImage" onmousemove="moveTorch(event)">
-            <div id="light"></div>
-            <button id="leftWire" class="booton" title="Loose Wire" onclick="wiresClick();"></button>
-            <img id="img_ID" src="img/Security/Wires.png"  width="100%" alt="Wires Image" />
-          </div>
-
-              <span class="close" onclick="closeNote()">&times;</span>
-
-              <div id="captionWires">
-              </div>
 
           </div>
 

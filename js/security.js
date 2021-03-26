@@ -2,6 +2,7 @@
   var cluesFound = 1;
   var cluesText = " <br> -Clues found(" + cluesFound + "/3) Part of the door unlocks-";
   var wiresFixed = false;
+  var light ="on";
 
   //When the wires are clicked
   function wiresClick(){
@@ -10,6 +11,7 @@
     cluesFound++;
     var electricSound = new Audio('audio/Security/wires.wav');
     electricSound.play();
+
     //Switch to display diffferent door mechanism unlock message depending on clues found
     switch (cluesFound) {
 
@@ -166,14 +168,24 @@
 
     //Expand the note image
     function expandWires(){
-      document.getElementById("wiresModal").style.display = "block";
-      moveTorch(event);
-      if (wiresFixed){
-        document.getElementById("captionWires").innerHTML = "Is there anything else I can do here?... <br> Is that a keypad?";
-      }
-      else{
-        document.getElementById("captionWires").innerHTML = "The left wire seems to be loose. Maybe I can reconnect them somehow...";
-      }
+
+      var image = document.getElementById("roomImg");
+      image.src="img/Security/Wires.png";
+      //image.Width = "600px";
+      //room = "wires";
+
+
+      //Hide all bootons
+      document.getElementById("wiresbutton").style.display = "none";
+      document.getElementById("doorbutton").style.display = "none";
+      document.getElementById("firstbutton").style.display = "none";
+      document.getElementById("secondbutton").style.display = "none";
+      document.getElementById("thirdbutton").style.display = "none";
+
+      //Show Wires Elements
+      document.getElementById("leftWire").style.display = "block";
+
+      //moveTorch(event);
 
     }
 
@@ -187,7 +199,7 @@
     function moveTorch() {
       var pos = document.documentElement;
 
-      var test = document.getElementById("wiresImage");
+      var test = document.getElementById("imageDiv");
       var rect = test.getBoundingClientRect();
 
       var viewportLeft = rect.left;
@@ -196,6 +208,32 @@
       var x = event.clientX; // x co-ord of Window
       var y = event.clientY; // y co-ord of Window
 
-      pos.style.setProperty('--x', (x) + 'px');
-      pos.style.setProperty('--y', (y) + 'px');
+      pos.style.setProperty('--x', (x - viewportLeft) + 'px');
+      pos.style.setProperty('--y', (y - viewportTop) + 'px');
+
+      if(light == "on"){
+        light = "off";
+
+        var fuse = new audio("audio/Security/fuseSound");
+        fuse.play();
+
+      }
+      // var pos = document.documentElement;
+      //
+      // var test = document.getElementById("wiresImage");
+      // var rect = test.getBoundingClientRect();
+      //
+      //
+      // var viewportLeft = rect.left;
+      // var viewportTop = rect.top;
+      //
+      // var x = event.clientX; // x co-ord of Window
+      // var y = event.clientY; // y co-ord of Window
+      //
+      // //Offsets for torch
+      // var offsetY = test.clientHeight/1.98;
+      // var offsetX = test.clientWidth/1.91;
+      //
+      // pos.style.setProperty('--x', (x - offsetX) + 'px');
+      // pos.style.setProperty('--y', (y - offsetY) + 'px');
     }
