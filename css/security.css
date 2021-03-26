@@ -15,7 +15,7 @@ body{
 #light {
   position: absolute;
   top: 0;
-  left:0 ;
+  left:1% ;
 
   width: 100%;
   height: 100%;
@@ -219,11 +219,12 @@ body{
   border: 0px solid black;
   width: 3.5%;
   height: 5%;
-  top: 25%;
-  right: 52%;
+  top: 34%;
+  right: 56%;
   position: absolute;
   cursor: pointer;
   background: none;
+  display:none;
 }
 
 /*Left wire button to fix it*/
@@ -234,9 +235,6 @@ body{
 
 #roomImg{
   width: 100%;
-  height: 600px;
-}
-
-#wiresImage{
+  height: 80%;
   display: block;
 }
