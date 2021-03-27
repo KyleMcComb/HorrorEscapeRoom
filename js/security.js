@@ -5,6 +5,7 @@
   var light ="on";
   var torch = false;
   var currentClues;
+  var first = true;
 //Ambience
   document.addEventListener('click', musicPlay);
   function musicPlay() {
@@ -147,7 +148,6 @@
                 break;
             }
 
-
             //Hide buttons
             document.getElementById("firstbutton").style.display="none";
             document.getElementById("secondbutton").style.display="none";
@@ -195,6 +195,8 @@
       var boxSound = new Audio("audio/Security/wiresBox.wav");
       boxSound.play();
 
+      writeText("An electrical cabinet. That wire seems to be loose... ","")
+
       var image = document.getElementById("roomImg");
       image.src="img/Security/Wires.png";
       //image.Width = "600px";
@@ -225,6 +227,11 @@
 
     function moveTorch() {
       if(torch){
+
+        if(first){
+          writeText("It seems like the power went off... I'll have to use my torch for now","")
+        }
+        first = false;
       document.getElementById("light").style.display="block";
 
 
