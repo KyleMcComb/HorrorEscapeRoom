@@ -52,6 +52,8 @@
 
   //When the exit door is clicked
   function exit(){
+    var lockedSound = new Audio('audio/Security/doorLocked.wav');
+
     if(cluesFound == 3){
 
       writeText("You have escaped the security room!","");
@@ -66,12 +68,15 @@
     }
     else if(cluesFound == 2){
       writeText("Door still seems to be locked <br> 2/3 Locks are disabled","");
+      lockedSound.play();
     }
     else if(cluesFound == 1){
       writeText("Door still seems to be locked <br> 1/3 Locks are disabled","");
+      lockedSound.play();
     }
     else if(cluesFound == 0){
       writeText("The door seems to have a 3 layer lock. <br> 0/3 Locks are disabled","");
+      lockedSound.play();
     }
   }
 
@@ -213,6 +218,10 @@
     function moveTorch() {
       if(torch){
       document.getElementById("light").style.display="block";
+
+
+      //Show buttons when torch on
+      document.getElementById("wiresbutton").style.display="block";
 
       var pos = document.documentElement;
 
