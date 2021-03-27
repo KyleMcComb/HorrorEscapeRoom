@@ -4,7 +4,7 @@
   var wiresFixed = false;
   var light ="on";
   var torch = false;
-
+  var currentClues;
 //Ambience
   document.addEventListener('click', musicPlay);
   function musicPlay() {
@@ -21,9 +21,10 @@
     var electricSound = new Audio('audio/Security/wires.wav');
     electricSound.play();
 
+    doorbutton.style.display = "block";
+
     //Switch to display diffferent door mechanism unlock message depending on clues found
     switch (cluesFound) {
-
       case 1:
         cluesText = " <br> -Clues found(" + cluesFound + "/3) 1 of the door's locks have been disabled-";
         break;
@@ -38,10 +39,9 @@
         break;
     }
         wiresFixed = true;
-        document.getElementById("captionWires").innerHTML = "<p> You have reconnected the loose wire " + cluesText + "</p>";
-        document.getElementById("captionWires").innerHTML += "Is there anything else I can do here?... <br> Is that a keypad?";
         writeText('You have reconnected the loose wire',cluesText);
-
+        var mechSound = new Audio('audio/Security/doorMech.wav');
+        mechSound.play();
   }
 
   //Function to output text in the game speech part
@@ -69,14 +69,17 @@
     else if(cluesFound == 2){
       writeText("Door still seems to be locked <br> 2/3 Locks are disabled","");
       lockedSound.play();
+      doorbutton.style.display = "none";
     }
     else if(cluesFound == 1){
       writeText("Door still seems to be locked <br> 1/3 Locks are disabled","");
       lockedSound.play();
+      doorbutton.style.display = "none";
     }
     else if(cluesFound == 0){
       writeText("The door seems to have a 3 layer lock. <br> 0/3 Locks are disabled","");
       lockedSound.play();
+      doorbutton.style.display = "none";
     }
   }
 
@@ -150,6 +153,7 @@
             document.getElementById("secondbutton").style.display="none";
             document.getElementById("thirdbutton").style.display="none";
 
+            doorbutton.style.display = "block";
             writeText("It seems that the buttons were pressed in the correct order... ",cluesText)
           }
           else{ //Incorrect order of button press
@@ -186,6 +190,10 @@
 
     //Expand the note image
     function expandWires(){
+
+      currentClues = cluesFound;
+      var boxSound = new Audio("audio/Security/wiresBox.wav");
+      boxSound.play();
 
       var image = document.getElementById("roomImg");
       image.src="img/Security/Wires.png";
@@ -245,22 +253,26 @@
 
       }
     }
-      // var pos = document.documentElement;
-      //
-      // var test = document.getElementById("wiresImage");
-      // var rect = test.getBoundingClientRect();
-      //
-      //
-      // var viewportLeft = rect.left;
-      // var viewportTop = rect.top;
-      //
-      // var x = event.clientX; // x co-ord of Window
-      // var y = event.clientY; // y co-ord of Window
-      //
-      // //Offsets for torch
-      // var offsetY = test.clientHeight/1.98;
-      // var offsetX = test.clientWidth/1.91;
-      //
-      // pos.style.setProperty('--x', (x - offsetX) + 'px');
-      // pos.style.setProperty('--y', (y - offsetY) + 'px');
+    }
+
+
+    function backToSecurity(){
+      var boxSound = new Audio("audio/Security/wiresBox.wav");
+      boxSound.play();
+
+      if(cluesFound > currentClues){
+        doorbutton.style.display = "block";
+      }
+      var image = document.getElementById("roomImg");
+      image.src="img/Security/ControlRoom (WIP).jpg";
+
+      //Show all main buttons
+      document.getElementById("wiresbutton").style.display = "block";
+      document.getElementById("firstbutton").style.display = "block";
+      document.getElementById("secondbutton").style.display = "block";
+      document.getElementById("thirdbutton").style.display = "block";
+
+      //Hide Wires Elements
+      document.getElementById("backButton").style.display = "none";
+      document.getElementById("leftWire").style.display = "none";
     }
