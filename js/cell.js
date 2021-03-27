@@ -272,7 +272,7 @@ function safeCode(){
   else {
 
       // create combinationWrongSound audio object and play it
-      var combinationWrongSound = new Audio('audio/Cell/combinationWrong.mp3');
+      var combinationWrongSound = new Audio('audio/Cell/safeWrong.wav');
       combinationWrongSound.play();
 
       // Displays text for the user (in left column)
