@@ -211,8 +211,10 @@
 
       //Show Wires Elements
       document.getElementById("backButton").style.display = "block";
-      document.getElementById("leftWire").style.display = "block";
+      if(!wiresFixed){
+        document.getElementById("leftWire").style.display = "block";
 
+      }
       //moveTorch(event);
 
     }
@@ -235,9 +237,6 @@
         }
         first = false;
       document.getElementById("light").style.display="block";
-
-
-
 
       var pos = document.documentElement;
 
@@ -275,10 +274,11 @@
       image.src="img/Security/ControlRoom (WIP).jpg";
 
       //Show all main buttons
-      document.getElementById("wiresbutton").style.display = "block";
+
       document.getElementById("firstbutton").style.display = "block";
       document.getElementById("secondbutton").style.display = "block";
       document.getElementById("thirdbutton").style.display = "block";
+      document.getElementById("wiresbutton").style.display = "block";
 
       //Hide Wires Elements
       document.getElementById("backButton").style.display = "none";
