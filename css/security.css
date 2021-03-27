@@ -13,6 +13,7 @@ body{
 }
 
 #light {
+  display: none;
   position: absolute;
   top: 0;
   left:1% ;
@@ -240,6 +241,7 @@ body{
 }
 
 #backButton{
+  display:none;
   border: 0px solid black;
   width: 3.5%;
   height: 5%;

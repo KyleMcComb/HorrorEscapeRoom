@@ -3,6 +3,7 @@
   var cluesText = " <br> -Clues found(" + cluesFound + "/3) Part of the door unlocks-";
   var wiresFixed = false;
   var light ="on";
+  var torch = false;
 
 //Ambience
   document.addEventListener('click', musicPlay);
@@ -10,6 +11,7 @@
       var amb = new Audio('audio/Lab/Ambience.mp3');
       amb.play();
       document.removeEventListener('click', musicPlay);
+      torch = true;
   }
   //When the wires are clicked
   function wiresClick(){
@@ -185,7 +187,6 @@
       //image.Width = "600px";
       //room = "wires";
 
-
       //Hide all bootons
       document.getElementById("wiresbutton").style.display = "none";
       document.getElementById("doorbutton").style.display = "none";
@@ -210,6 +211,9 @@
 
 
     function moveTorch() {
+      if(torch){
+      document.getElementById("light").style.display="block";
+
       var pos = document.documentElement;
 
       var test = document.getElementById("imageDiv");
@@ -231,6 +235,7 @@
         fuseSound.play();
 
       }
+    }
       // var pos = document.documentElement;
       //
       // var test = document.getElementById("wiresImage");
