@@ -238,3 +238,20 @@ body{
   height: 80%;
   display: block;
 }
+
+#backButton{
+  border: 0px solid black;
+  width: 3.5%;
+  height: 5%;
+  top: 1%;
+  right: 95%;
+  position: absolute;
+  cursor: pointer;
+  background: none;
+  color: white;
+}
+
+#backButton:hover{
+  border: 1px solid black;
+
+}

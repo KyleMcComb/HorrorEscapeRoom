@@ -4,6 +4,13 @@
   var wiresFixed = false;
   var light ="on";
 
+//Ambience
+  document.addEventListener('click', musicPlay);
+  function musicPlay() {
+      var amb = new Audio('audio/Lab/Ambience.mp3');
+      amb.play();
+      document.removeEventListener('click', musicPlay);
+  }
   //When the wires are clicked
   function wiresClick(){
     var wiresButton = document.getElementById("leftWire");
@@ -77,6 +84,8 @@
       if((buttonsPressed == 0)&&(firstTime)){
         writeText("There are 3 buttons here. Maybe I need to press them in a certain order...","")
       }
+      var buttonSound= new Audio("audio/Security/button.wav");
+      buttonSound.play();
       firstTime = false;
       //Make buttons disappear when pressed
       switch(number){
@@ -137,6 +146,8 @@
             writeText("It seems that the buttons were pressed in the correct order... ",cluesText)
           }
           else{ //Incorrect order of button press
+            var errorSound = new Audio('audio/Security/error.wav');
+            errorSound.play();
 
             writeText("Buttons were pressed in the wrong order. No locks were disabled","");
             document.getElementById("firstbutton").style.display="initial";
@@ -183,6 +194,7 @@
       document.getElementById("thirdbutton").style.display = "none";
 
       //Show Wires Elements
+      document.getElementById("backButton").style.display = "block";
       document.getElementById("leftWire").style.display = "block";
 
       //moveTorch(event);
@@ -193,6 +205,7 @@
     function closeNote() {
       document.getElementById("myModal").style.display = "none";
       document.getElementById("wiresModal").style.display = "none";
+
     }
 
 
@@ -214,8 +227,8 @@
       if(light == "on"){
         light = "off";
 
-        var fuse = new audio("audio/Security/fuseSound");
-        fuse.play();
+        var fuseSound = new Audio("audio/Security/fuseSound.wav");
+        fuseSound.play();
 
       }
       // var pos = document.documentElement;
