@@ -26,6 +26,10 @@ var lockPickFound = false;
 function LockPickClick(background) {
   lockPickFound = true;
 
+  // create pickupItem audio object and play it
+  var pickupItemSound = new Audio('audio/Cell/pickupItem.wav');
+  pickupItemSound.play();
+
   // Adds note modal button after clicked
   var lModal = document.getElementById("lockPickInv");
   lockPickInv.style.display = "block";
@@ -271,9 +275,9 @@ function safeCode(){
   }
   else {
 
-      // create combinationWrongSound audio object and play it
-      var combinationWrongSound = new Audio('audio/Cell/safeCodeWrong.mp3');
-      combinationWrongSound.play();
+      // create safeCodeWrong audio object and play it
+      var safeCodeWrongSound = new Audio('audio/Cell/safeCodeWrong.mp3');
+      safeCodeWrongSound.play();
 
       // Displays text for the user (in left column)
       var para = document.createElement("p");
