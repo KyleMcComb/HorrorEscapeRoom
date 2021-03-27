@@ -203,11 +203,11 @@
       //room = "wires";
 
       //Hide all bootons
-      document.getElementById("wiresbutton").style.display = "none";
       document.getElementById("doorbutton").style.display = "none";
       document.getElementById("firstbutton").style.display = "none";
       document.getElementById("secondbutton").style.display = "none";
       document.getElementById("thirdbutton").style.display = "none";
+      document.getElementById("wiresbutton").style.display = "none";
 
       //Show Wires Elements
       document.getElementById("backButton").style.display = "block";
@@ -230,13 +230,14 @@
 
         if(first){
           writeText("It seems like the power went off... I'll have to use my torch for now","")
+          //Show buttons when torch on
+          document.getElementById("wiresbutton").style.display="block";
         }
         first = false;
       document.getElementById("light").style.display="block";
 
 
-      //Show buttons when torch on
-      document.getElementById("wiresbutton").style.display="block";
+
 
       var pos = document.documentElement;
 
