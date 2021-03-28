@@ -21,21 +21,29 @@
       <div id="col-left2">
         <div class="form">
           <form>
-            <label for="subjectName">Subject Name: </label><br>
-            <input type="text" id="subject" name="subject"><br>
+            <label for="subjectName">Subject Name: </label><br><br/>
+            <input type="text" id="subject" name="subject">
           </form>
-          <form>
-            <label for="cTrait">Character Trait: </label><br>
+            <!--
             <input list="traits" name="Character Traits">
             <datalist id="traits">
               <option id="intelligent" value="Intelligent">
               <option id="cautious" value="Cautious">
               <option id="courageous" value="Courageous">
             </datalist>
-          </form>
-        </div>
+          </form> -->
+        <form>
+          <label for="cTrait">Character Trait: </label><br><br/>
+          <select name="cTrait" id = "cTrait">
+            <option value = "intelligent">Intelligent</option>
+            <option value = "cautious">Cautious</option>
+            <option value = "courageous">Courageous</option>
+          </select>
+        </form>
+      </div>
         <input type="submit" onclick="saveData();" value="Submit" />
       </div>
+
 
       <div id="col-right">
         <h2 id="roomName">Start</h2>

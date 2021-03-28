@@ -1,9 +1,11 @@
 function saveData() {
   var nameInput = document.getElementById("subject").value;
-  var text = document.getElementById("traits").value;
+  var text = document.getElementById("cTrait").value;
 
   sessionStorage.setItem("subject", nameInput);
-  sessionStorage.setItem("traits", text);
+  sessionStorage.setItem("cTrait", text);
+  /* Used for testing */
+  alert(text);
 
   window.location.href = 'Cell.html';
 }
