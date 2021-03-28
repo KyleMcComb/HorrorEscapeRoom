@@ -103,10 +103,6 @@ function exitClick() {
   // if the acid has been found in morgue run this
   if (acidFound) {
 
-    // create gateOpening audio object and play it
-    var gateOpening = new Audio('audio/Hallway/gateOpening.wav');
-    gateOpening.play();
-
     // print some text
     var para = document.createElement("p");
     var text = document.createTextNode("[System] You pour the acid over the lock on the door, it corrodes it and makes it weak enough for you to pull open." + "well done " + playerName + ", Better get out of here! Press y to leave");
@@ -115,16 +111,28 @@ function exitClick() {
     element.appendChild(para);
     lineBreakChemical();
 
+    // create acidLock audio object and play it
+    var acidLock = new Audio('audio/Hallway/acidLock.mp3');
+    acidLock.play();
+
     // ask for user input using listener and load next room
     document.addEventListener('keydown', function(e) {
       if (e.keyCode == 89)
+      // create gateOpening audio object and play it
+      var gateOpening = new Audio('audio/Hallway/gateOpening.wav');
+      gateOpening.play();
         if (timePassed > 60) {
           sessionStorage.setItem("timeleft", 0);
         } else {
           sessionStorage.setItem("timeleft", 60 - timePassed);
         }
       sessionStorage.setItem("hallwayTime", timePassed);
+      setTimeout(function(){
       location = 'security.html';
+
+    }, 1000);
+
+
 
     })
 
@@ -223,6 +231,10 @@ function checkSelections() {
     })
 
   } else {
+
+    //play puzzle failure sound
+    var acidFailure = new Audio('audio/Hallway/acidFailure.mp3');
+    acidFailure.play();
     // selection was not correct print some text
     var para = document.createElement("p");
     var text = document.createTextNode("This combonation doesn't seem to be what i need, i should try making something to dissolve the lock in the hallway, maybe some acid would do? I should double check the note i found");
