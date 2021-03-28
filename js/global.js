@@ -2,7 +2,7 @@
 var timer;
 var timedEvent;
 var timePassed = 0;
-timer = 120 + Number(sessionStorage.getItem("timeleft"));
+timer = 60 + Number(sessionStorage.getItem("timeleft"));
 var playerName = sessionStorage.getItem("subject");
 
 window.addEventListener('load', function() {
