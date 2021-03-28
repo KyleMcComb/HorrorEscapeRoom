@@ -213,10 +213,7 @@
       document.getElementById("backButton").style.display = "block";
       if(!wiresFixed){
         document.getElementById("leftWire").style.display = "block";
-
       }
-      //moveTorch(event);
-
     }
 
     // When the user clicks on <span> (x), close the note
