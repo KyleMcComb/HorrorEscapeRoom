@@ -55,12 +55,20 @@ function expand(){
   document.getElementById("myModal").style.display = "block";
   document.getElementById("expandedNote").src = "img/Cell/victimsDiary.png";
   document.getElementById("caption").innerHTML = "Dr Friedlich's victims diary";
+
+  // create noteClickSound audio object and play it
+  var noteClickSound = new Audio('audio/Cell/noteClick.wav');
+  noteClickSound.play();
 }
 
 
 // When the user clicks on <span> (x), close the note
 function closeNote() {
   document.getElementById("myModal").style.display = "none";
+
+  // create noteCloseSound audio object and play it
+  var noteCloseSound = new Audio('audio/Cell/noteClick.wav');
+  noteCloseSound.play();
 
 }
 
