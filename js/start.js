@@ -1,11 +1,16 @@
+document.addEventListener('click', musicPlay);
+function musicPlay() {
+    var amb = new Audio('audio/Lab/Ambience.mp3');
+    amb.play();
+    document.removeEventListener('click', musicPlay);
+}
+
 function saveData() {
   var nameInput = document.getElementById("subject").value;
   var text = document.getElementById("cTrait").value;
 
   sessionStorage.setItem("subject", nameInput);
   sessionStorage.setItem("cTrait", text);
-  /* Used for testing */
-  alert("The trait is: " + text);
 
   window.location.href = 'Cell.html';
 }
