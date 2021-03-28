@@ -16,7 +16,7 @@ var timeOut;
 function displayCode() {
   //records time spent in function as timer stops when prompt box is open
   var startTime = new Date();
-  var textForPrompt = 'Enter the code to escape!:'
+  var textForPrompt = 'Enter the code to escape!:';
 
   code = prompt(textForPrompt);
   //records end time user has been in function - used to calc full time user spent entering in a code before closing prompt box
@@ -48,7 +48,7 @@ function displayCode() {
 
     } else if (noKeys < 3) {
       playSound('error');
-      txt = "[System]: Hmm.. Looks like theres 3 locks, make sure to collect the keys before escaping!";
+      txt = '[System]: Hmm..' + playerName + 'looks like theres 3 locks, make sure to collect the keys before escaping!';
     } else {
       playSound('error');
       txt = "<p>[System]:That code is incorrect</p>";
@@ -63,7 +63,7 @@ function summaryPage(){
 //tells user code on wall as hint
 function wallCode() {
   //var txt = "[System]: You have found a note - maybe there is a code. <br><br>";
-  var txt = "[System]: You have found a code on the wall - 420. <br><br>";
+  var txt = '[System]: ' + playerName + ', you have found a code on the wall - 420. <br><br>';
   document.getElementById('gameText').innerHTML += txt;
 }
 
@@ -106,7 +106,7 @@ function purpleSubmit() {
     keyFound('purple');
   }else{
     document.getElementById('gameText').innerHTML += "<p>[System]: Try again - wrong code! Hint: check the walls for notes! </p><br><br>";
-    //purpleKeyCode();
+    playSound('error');
   }
 
 }
@@ -282,23 +282,25 @@ function playSound(soundToPlay) {
 }
 
 function exitTheme(){
-  //var items = document.getElementsByClass('roomItem');
   var btn1 = document.getElementById('exitButton');
   if (btn1.style.borderColor == 'white') {
     btn1.style.border = 'none';
-    document.getElementById('light').display="none";
+    document.getElementById('exitButton').style.border = "none";
+    document.getElementById('goldKey').style.border= "none";
+    document.getElementById('purpleKey').style.border = "none";
+    document.getElementById('keyPad').style.border = "none";
+    document.getElementById('wallCode').style.border = "none";
+    document.getElementById('wallNote').style.border = "none";
+
   }else{
     btn1.style.border = 'solid white 2px';
-    document.getElementById('light').display="none";
+    document.getElementById('exitButton').style.border = "solid white 2px";
+    document.getElementById('goldKey').style.border= "solid white 2px";
+    document.getElementById('purpleKey').style.border = "solid white 2px";
+    document.getElementById('keyPad').style.border = "solid white 2px";
+    document.getElementById('wallCode').style.border = "solid white 2px";
+    document.getElementById('wallNote').style.border = "solid whitie 2px";
   }
-  /*
-  document.getElementById('exitButton').style.border = "solid red 2px";
-  document.getElementById('goldKey').style.border= "solid red 2px";
-  document.getElementById('purpleKey').style.border = "solid red 2px";
-/*
 
-  document.getElementById('wallNote').style.border = "solid red 2px";
-  document.getElementById('wallCode').style.border = "solid red 2px";
-  document.getElementById('light').remove();*/
 toggleColours();
 }

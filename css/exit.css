@@ -47,9 +47,9 @@ ul {
 }
 
 #wallCode{
-  width: 5%;
+  width: 3%;
   top: 78%;
-  right: 59%;
+  right: 60%;
   height: 9%;
   background:transparent;
   background-size:100%;
@@ -247,6 +247,7 @@ ul {
   background-color:white;
   top: 43%;
   right: 20%;
+  font-size:1vw;
 }
 
 #expandedKeypad {

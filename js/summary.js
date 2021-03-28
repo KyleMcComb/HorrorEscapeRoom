@@ -24,13 +24,13 @@ function gameMode(){
     traitOutput.innerHTML = 'Well done ' + playerName + '. You won thanks to your incredible display of ';
 
     switch(trait) {
-      case 'intelligent':
+      case 'Intelligent':
         traitOutput.innerHTML += "intelligence.";
       break;
-      case 'cautious':
+      case 'Cautious':
         traitOutput.innerHTML += "cautiousness.";
       break;
-      case 'courageous':
+      case 'Courageous':
         traitOutput.innerHTML += "courage.";
       break;
       default:
@@ -39,7 +39,7 @@ function gameMode(){
 
   }else{
     document.getElementById("doctor").src="img/EndScreen/Surgeon-Lose.jpg";
-      roomName.innerHTML = 'You Lost! Better luck next time ' + playerName + "!";
+    roomName.innerHTML = 'You Lost! Better luck next time ' + playerName + "!";
   }
 
   var cellTime = sessionStorage.getItem("cellTime");
