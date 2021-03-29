@@ -26,7 +26,7 @@ function drawerClick(background) {
   compartment2Button.style.display = "block";
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("Doctor Friedrich's drawer, search around for some clues.");
+  var text = document.createTextNode("Doctor Friedrich's drawer, I would search for some clues " + playerName + ".");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -60,7 +60,7 @@ function noteClick(background) {
   compartment2Button.style.display = "none";
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("It appears you have found some important documents.");
+  var text = document.createTextNode(playerName + ", you have found some important documents.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -124,7 +124,7 @@ function compartment2Click() {
   keyFound=1;
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("You found a rusty key.. this could be useful.");
+  var text = document.createTextNode(playerName + ", you have found a rusty key.. this could be useful.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -245,7 +245,7 @@ function bookshelfClick() {
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("You stumble across the bookshelf.. A book appears to be loose.");
+  var text = document.createTextNode(playerName + ", you stumble across the bookshelf.. A book appears to be loose.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
