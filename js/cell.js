@@ -342,7 +342,7 @@ function safeCode(){
     element.appendChild(lineBreak);
   }
 
-  //Unlock 3 passcode lock
+  //Symbol combination lock
   var buttonsPressed = 0;
   var lockCode = "TriangleSquareCircleCross";
   var enteredCode = "";
@@ -393,7 +393,7 @@ function safeCode(){
       var element = document.getElementById("col-left");
       element.appendChild(lineBreak);
 
-      //Reset if its been pressed 3 times
+      //Reset if its been pressed 4 times
       if(buttonsPressed >= 4){
         //Correct order of button press
 

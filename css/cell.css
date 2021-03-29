@@ -13,13 +13,14 @@
 #arrowButton {
   border: none;
   display: block;
-  width: 10%;
-  top: 0%;
-  right: -1%;
-  height: 52%;
+  width: 15%;
+  top: 30%;
+  right: 1%;
+  height: 12%;
   position: absolute;
   cursor: pointer;
-  background: none;
+  background:url('../img/Cell/turnAround.png') no-repeat;
+  background-size:100%;
 }
 
 #cellGateButton {
