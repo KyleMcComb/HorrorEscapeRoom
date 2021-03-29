@@ -37,7 +37,7 @@ function displayCode() {
   } else {
     if (code == null || code == "") {
       playSound('error');
-      txt = "[System]:User cancelled the prompt.";
+      txt = '<p>[System]: User cancelled the prompt.</p>';
       //checks for correct entering in of code AND the user has collected all 3 keys before moving on
     } else if (code == exitRoomCode && noKeys==3) {
       playSound('openDoor');
@@ -48,11 +48,14 @@ function displayCode() {
 
     } else if (noKeys < 3) {
       playSound('error');
-      txt = '[System]: Hmm..' + playerName + 'looks like theres 3 locks, make sure to collect the keys before escaping!';
+      txt = '<p>['+playerName+']: Hmm..looks like theres 3 locks, looks like I need 3 keys to escape!</p>';
     } else {
       playSound('error');
-      txt = "<p>[System]:That code is incorrect</p>";
+      txt = '<p style="color:red;">[System]:That code is incorrect.</p>';
     }
+
+    document.getElementById('gameText').innerHTML +=txt + '<br>';
+
   }
 }
 
@@ -63,13 +66,13 @@ function summaryPage(){
 //tells user code on wall as hint
 function wallCode() {
   //var txt = "[System]: You have found a note - maybe there is a code. <br><br>";
-  var txt = '[System]: ' + playerName + ', you have found a code on the wall - 420. <br><br>';
+  var txt = '['+playerName+']: Hmm a code on the wall, maybe its a code for something - 420. <br><br>';
   document.getElementById('gameText').innerHTML += txt;
 }
 
 function wallNote() {
   playSound('noteWhisper');
-  var txt = "[System]: You have found a note - maybe there is a code. <br><br>";
+  var txt = '['+playerName+']: I have found a note - maybe there is a 3 digit code in it. <br><br>';
   document.getElementById('gameText').innerHTML += txt;
 
   //EDIT LATER - WHAT DO YOU WANT TO DO
@@ -83,16 +86,16 @@ function wallNote() {
 
 //used to tell the user coloured glass as alt tag for image mapping wasnt resizable
 function colouredGlass() {
-  var txt = "[System]: You have found coloured glass Gold, Blue, Purple - maybe this is a clue to Dr Friedrich's puzzle.<br>";
+  var txt = '[System]: You have found coloured glass Gold, Blue, Purple - maybe this is a clue to Dr Friedrichs puzzle.<br>';
   document.getElementById('gameText').innerHTML += txt;
 }
 
 function purpleKeyCode() {
   var gameArea = document.getElementById('gameText');
   var txt = "";
-  txt = '<p>Please choose a code to retrieve the purple key</p>';
+  txt = '<p>[System]: Please enter a 3 digit code to retrieve the purple key</p><br>';
   txt += '<label for= "purpleCode">Code: </label>';
-  txt += '<input type= "text" id="purpleCode" name= "purpleCode"></input><input type="submit" value = "Submit" onclick="purpleSubmit();"/>';
+  txt += '<input type= "text" id="purpleCode" name= "purpleCode"></input><input type="submit" value = "Submit" onclick="purpleSubmit();"/><br>';
   gameArea.innerHTML += txt;
 
   //keyFound('purple');
@@ -105,7 +108,7 @@ function purpleSubmit() {
   if(x==codePurpleKey){
     keyFound('purple');
   }else{
-    document.getElementById('gameText').innerHTML += "<p>[System]: Try again - wrong code! Hint: check the walls for notes! </p><br><br>";
+    document.getElementById('gameText').innerHTML += '<p style="color:red;">[System]: Try again - wrong code!</p><br><p> Hint: check the walls for notes! </p><br><br>';
     playSound('error');
   }
 
@@ -122,19 +125,19 @@ function keyFound(keyType) {
       //shows image of gold key close up
       expand('gold');
       x = document.getElementById('goldKey');
-      txt = '<p>[System]: Well done, gold key found!';
+      txt = '<p>['+playerName+']: I have found the gold key!';
       break;
     case 'blue':
       //shows image of blue key close up
       expand('blue');
       x = document.getElementById('blueKey');
-      txt = '<p>[System]: Well done, blue key found!';
+      txt = '<p>['+playerName+']: I have found the blue key found!';
       break;
     case 'purple':
       //shows image of purple key close up
       expand('purple');
       x = document.getElementById('purpleKey');
-      txt = '<p>[System]: Well done, purple key found!';
+      txt = '<p>['+playerName+']: Well done, purple key found!';
       break;
     default:
       break;
@@ -146,8 +149,9 @@ function keyFound(keyType) {
   } else if (noKeys == 2) {
     txt += ' 2/3 Keys found! Keep Searching! </p><br>';
   } else {
-    txt += '3/3 Keys found! All keys have been found, I can hear Dr Friedrich getting close! Better escape soon! </p><br>';
-    complete += '<ul><li>The Blue key has the number 3 on it</li><li>The Purple key has the number 5 on it</li><li>The Gold key has the number 9 on it</li></ul>';
+    txt += '3/3 Keys found!</p><br>';
+    txt += '<p>['+playerName+']I have found all 3 keys! I can hear Dr Friedrich getting close! Better escape soon!</p><br>';
+    complete += '<ul><li>The Blue key has the number 3 on it</li><li>The Purple key has the number 5 on it</li><li>The Gold key has the number 9 on it</li></ul><br>';
   }
   //displays output to gameText area
   document.getElementById('gameText').innerHTML += complete;
@@ -167,15 +171,15 @@ function expand(colour) {
   //depends on which key button has been pressed
   if (colour == 'blue') {
     imageToShow = "img/Exit/BlueKey3.png";
-    captionKey = "You search the safe and find a blue key! The Key has a number - make sure to remember it!"
+    captionKey = "You search the safe and find a blue key! The Key has a number - make sure to remember it!";
     altTxt = 'Blue Key - number 3';
   } else if (colour == 'purple') {
     imageToShow = "img/Exit/PurpleKey5.png";
-    captionKey = "The Key has a number - make sure to remember it!"
+    captionKey = "You open a locked box and find the purple key!";
     altTxt = 'Purple Key - number 5';
   } else if (colour == 'gold') {
     imageToShow = "img/Exit/GoldKey9.png";
-    captionKey = "You lift a wooden board and find the Gold Key!"
+    captionKey = "You lift a wooden board and find the Gold Key!";
     altTxt = 'Gold Key - number 9';
   }
   //displays close up of image to user
@@ -223,7 +227,6 @@ function enterKeyCode(btnPressed) {
       playSound('error');
       document.getElementById("captionKeypad").innerHTML = "Enter the 3 Digit Code!<p>Wrong code! Try again (hint: Look at the walls)</p>";
     } else if (lenCodeEnter == 3 && userEnter == keyPadCode) {
-
       document.getElementById('keyPad').style.display = "none";
       closeKey('lockModal');
       keyFound('blue');
@@ -299,7 +302,7 @@ function exitTheme(){
     document.getElementById('purpleKey').style.border = "solid white 2px";
     document.getElementById('keyPad').style.border = "solid white 2px";
     document.getElementById('wallCode').style.border = "solid white 2px";
-    document.getElementById('wallNote').style.border = "solid whitie 2px";
+    document.getElementById('wallNote').style.border = "solid white 2px";
   }
 
 toggleColours();
