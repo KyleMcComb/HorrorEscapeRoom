@@ -123,6 +123,23 @@ else {
   }
 }
 
+
+function codeClick(background) {
+
+  // Displays text for the user (in left column)
+  var para = document.createElement("p");
+var text = document.createTextNode("You spot a code on the wall: 7412. Mabye this code could be used to unlock the safe.");
+para.appendChild(text);
+var element = document.getElementById("col-left");
+element.appendChild(para);
+
+var lineBreak = document.createElement("br");
+var element = document.getElementById("col-left");
+element.appendChild(lineBreak);
+
+}
+
+
 function gateLockClick(background) {
 
   // create gateOpening audio object and play it
