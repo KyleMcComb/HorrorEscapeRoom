@@ -19,7 +19,7 @@
   height: 12%;
   position: absolute;
   cursor: pointer;
-  background:url('../img/Cell/turnAround.png') no-repeat;
+  background:url('../img/Cell/turnAroundMsg.png') no-repeat;
   background-size:100%;
 }
 
