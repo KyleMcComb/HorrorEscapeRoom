@@ -20,11 +20,12 @@
   <div class="row">
     <div id="col-left">
 
-      <h2 id="change">Game Summary</h2>
+      <h2 id="change">Game Summary</h2><br />
+      <p>Click anywhere on the screen to hear some sounds!</p>
       <br />
 
       <div id="gameStats">
-        <p id="trait"></p>
+        <p id="trait"></p><br />
         <p id="noTimes"></p>
 
         <table id="stats">
@@ -40,18 +41,18 @@
         <!--NEED TO ADD CLEAR TIMERS FOR EACH ROOM -->
         <button type="button" class="soundBtn" id="play"></button>
 
-        <!-- WIN SOUND: -->
-        <audio id="youWin" class="soundBtn" src="audio/Summary/youWinSound.mp3">
+        <!-- WIN SOUND: https://www.zapsplat.com/music/multimedia-processed-male-voice-says-you-win-1/-->
+        <audio id="youWin" class="soundBtn" src="audio/Summary/youWin2.mp3">
 
-        <!-- LOSE SOUND: -->
-        <audio id="youLose" class="soundBtn" src="audio/Summary/youLose.mp3">
+        <!-- LOSE SOUND:https://www.zapsplat.com/music/multimedia-processed-male-voice-says-you-lose/ -->
+        <audio id="youLose" class="soundBtn" src="audio/Summary/youLose2.mp3">
 
         </div>
     </div>
     <div id="col-right">
       <h2 id="roomName"></h2>
       <div id="imageDiv">
-          <img id="doctor" onclick="playSound();"/>
+          <img id="doctor"/>
       </div>
   </div>
 </div>

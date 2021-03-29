@@ -16,7 +16,7 @@ function gameMode(){
   var traitOutput = document.getElementById('trait');
   sessionStorage.setItem("timePassed", 0);
   var playerName = sessionStorage.getItem("subject");
-  var trait = sessionStorage.getItem("traits");
+  var trait = sessionStorage.getItem("cTrait");
 
   if(winGame=="win"){
     document.getElementById("doctor").src = "img/EndScreen/Surgeon-Win.jpg";
@@ -24,13 +24,13 @@ function gameMode(){
     traitOutput.innerHTML = 'Well done ' + playerName + '. You won thanks to your incredible display of ';
 
     switch(trait) {
-      case 'Intelligent':
+      case 'intelligent':
         traitOutput.innerHTML += "intelligence.";
       break;
-      case 'Cautious':
+      case 'cautious':
         traitOutput.innerHTML += "cautiousness.";
       break;
-      case 'Courageous':
+      case 'courageous':
         traitOutput.innerHTML += "courage.";
       break;
       default:
@@ -110,8 +110,7 @@ function gameMode(){
   }
 }
 
-function playSound() {
-  let sound;
+window.addEventListener("click", function(event) {
   var winGame = sessionStorage.getItem("winGame");
   if(winGame=="win"){
 sound = document.getElementById('youWin');
@@ -122,4 +121,4 @@ sound = document.getElementById('youWin');
   let play = document.getElementById('play')
 
   sound.play();
-}
+});
