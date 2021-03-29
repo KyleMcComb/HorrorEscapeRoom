@@ -38,7 +38,7 @@ function gameMode(){
     }
 
   }else{
-    document.getElementById("doctor").src="img/EndScreen/Surgeon-Lose.jpg";
+    document.getElementById("doctor").src="img/EndScreen/Doctor.jpg";
     roomName.innerHTML = 'You Lost! Better luck next time ' + playerName + "!";
   }
 
