@@ -82,21 +82,13 @@ function toggleColours() {
 
   //decides the color of redaction box in the title
   if (gameName.style.color === 'black') {
+    alert('bob');
     document.getElementById("redactID").classList.toggle("redact-black");
     gameName.style.color = '#C3073F';
   } else {
+    alert('bob');
     document.getElementById("redactID").classList.toggle("redact-black");
     gameName.style.color = 'black';
   }
-
-
-
-  //decides the color of the title text
-  // if (gameName.style.color === 'black') {
-  //   gameName.style.color = '#C3073F';
-  // } else {
-  //   gameName.style.color = 'black';
-  // }
-
 
 }
