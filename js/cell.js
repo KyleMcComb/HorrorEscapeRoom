@@ -1,6 +1,6 @@
 function onLoad() {
   var para = document.createElement("p");
-  var text = document.createTextNode("You have just regained consciousness. You find yourself left alone in a cell. You are left badly shaken and confused. You better make an escape soon or become one of Doctor Friedrich's experiments.");
+  var text = document.createTextNode("You have just regained consciousness. You find yourself left alone in a cell. You are left badly shaken and confused. You better make an escape soon or become one of Doctor Friedrich's experiments. Make sure to hover your mouse around the room to find items and puzzles.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -109,7 +109,7 @@ else {
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("You turn around to discover you are locked in a cell. The only thing stopping you from getting closer to freedom is a locked cell door");
+  var text = document.createTextNode("You turn around to discover you are locked in a cell. The only thing stopping you from getting closer to freedom is a locked cell door (Drag and Drop the lock pick onto the cell gate lock)");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -346,6 +346,10 @@ function safeCode(){
     var nButton = document.getElementById("doorControButtonCir");
     doorControButtonCir.style.display = "none";
 
+    // Removes Note
+    var nButton = document.getElementById("noteModal");
+    noteModal.style.display = "none";
+
 
     // Displays text for the user (in left column)
     var para = document.createElement("p");
@@ -464,6 +468,8 @@ event.preventDefault();
 
 function onDrop(event) {
 event.preventDefault();
+gateLockClick();
+
 const id = event.dataTransfer.getData('text');
 
 const draggableElement = document.getElementById(id);
