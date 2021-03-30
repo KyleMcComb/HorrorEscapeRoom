@@ -82,11 +82,9 @@ function toggleColours() {
 
   //decides the color of redaction box in the title
   if (gameName.style.color === 'black') {
-    alert('bob');
     document.getElementById("redactID").classList.toggle("redact-black");
     gameName.style.color = '#C3073F';
   } else {
-    alert('bob');
     document.getElementById("redactID").classList.toggle("redact-black");
     gameName.style.color = 'black';
   }
