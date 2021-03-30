@@ -128,3 +128,22 @@
   right: 4%;
   width: 7%;
 }
+
+#submitButton{
+
+    position: relative;
+    border-radius: 10%;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    box-shadow: 3px 3px #666;
+}
+
+#submitButton:active {
+  background-color: black;
+  color: white;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
