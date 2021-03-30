@@ -85,13 +85,13 @@
 }
 
 #gateLockButton{
-  border: none;
+  border: 1px solid black;
   position: absolute;
   cursor: pointer;
-  width: 18%;
-  top: 52%;
-  right: 38%;
-  height: 29%;
+  width: 6.1%;
+  top: 60%;
+  right: 45%;
+  height: 8%;
   background:none;
   background-size: 100%;
   display: none;

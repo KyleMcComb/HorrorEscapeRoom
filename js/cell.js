@@ -464,6 +464,8 @@ event.preventDefault();
 
 function onDrop(event) {
 event.preventDefault();
+gateLockClick();
+
 const id = event.dataTransfer.getData('text');
 
 const draggableElement = document.getElementById(id);
