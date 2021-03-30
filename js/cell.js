@@ -346,6 +346,10 @@ function safeCode(){
     var nButton = document.getElementById("doorControButtonCir");
     doorControButtonCir.style.display = "none";
 
+    // Removes Note
+    var nButton = document.getElementById("noteModal");
+    noteModal.style.display = "none";
+
 
     // Displays text for the user (in left column)
     var para = document.createElement("p");
