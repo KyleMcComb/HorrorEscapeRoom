@@ -67,7 +67,7 @@ function closeNote() {
   document.getElementById("myModal").style.display = "none";
 
   // create noteCloseSound audio object and play it
-  var noteCloseSound = new Audio('audio/Cell/noteClick.wav');
+  var noteCloseSound = new Audio('audio/Cell/noteClose.wav');
   noteCloseSound.play();
 
 }
