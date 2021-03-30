@@ -452,22 +452,6 @@ function safeCode(){
         }
 }
 
-// dhasudihasiudh iuhsdiu hasdh ahsdiu hasiud shd iuhfiuadhsfiuhasdg asdg a
-const fill = document.getElementById("lockPickInv");
-const empties = document.getElementById("cellGateButton");
-
-// Fill listeners
-fill.addEventListener('dragstart', dragStart);
-fill.addEventListener('dragend', dragEnd);
-
-// Loop through empty boxes and add listeners
-for (const empty of empties) {
-  empty.addEventListener('dragover', dragOver);
-  empty.addEventListener('dragenter', dragEnter);
-  empty.addEventListener('dragleave', dragLeave);
-  empty.addEventListener('drop', dragDrop);
-}
-
 // Drag Functions
 function onDragStart(event) {
   event.dataTransfer.setData('text/plain', event.target.id);

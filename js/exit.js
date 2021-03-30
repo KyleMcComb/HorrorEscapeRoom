@@ -43,6 +43,7 @@ function displayCode() {
       playSound('openDoor');
       var winGame = "win";
       sessionStorage.setItem("winGame", winGame);
+      timer = timer +3;
       timeOut = setTimeout(summaryPage, 3000);
       //saves the gamePlay to win to get Win Doctor picture and correct stats
 
