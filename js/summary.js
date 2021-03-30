@@ -19,7 +19,7 @@ function gameMode(){
   var trait = sessionStorage.getItem("cTrait");
 
   if(winGame=="win"){
-    document.getElementById("doctor").src = "img/EndScreen/Surgeon-Win.jpg";
+    document.getElementById("doctor").src = "img/Summary/Surgeon-Win.jpg";
     roomName.innerHTML = 'You Won!';
     traitOutput.innerHTML = 'Well done ' + playerName + '. You won thanks to your incredible display of ';
 
@@ -38,7 +38,7 @@ function gameMode(){
     }
 
   }else{
-    document.getElementById("doctor").src="img/EndScreen/Doctor.jpg";
+    document.getElementById("doctor").src="img/Summary/Doctor.jpg";
     roomName.innerHTML = 'You Lost! Better luck next time ' + playerName + "!";
   }
 
