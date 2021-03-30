@@ -469,30 +469,29 @@ for (const empty of empties) {
 }
 
 // Drag Functions
-
-function dragStart() {
-  this.className += ' hold';
-  setTimeout(() => (this.className = 'invisible'), 0);
+function onDragStart(event) {
+  event.dataTransfer.setData('text/plain', event.target.id);
+  event.currentTarget.style.backgroundColor = '#E7E0B6';
 }
 
-function dragEnd() {
-  this.className = 'fill';
+function onDragOver(event) {
+event.preventDefault();
 }
 
-function dragOver(e) {
-  e.preventDefault();
-}
+function onDrop(event) {
+event.preventDefault();
+const id = event.dataTransfer.getData('text');
 
-function dragEnter(e) {
-  e.preventDefault();
-  this.className += ' hovered';
-}
+const draggableElement = document.getElementById(id);
+const dropzone = event.target;
 
-function dragLeave() {
-  this.className = 'empty';
-}
+dropzone.appendChild(draggableElement);
+draggableElement.style.backgroundColor = "#C2E8BA";
 
-function dragDrop() {
-  this.className = 'empty';
-  this.append(fill);
+event.dataTransfer.clearData();
+
+document.getElementById('lockPickInv').style.top = '50%';
+document.getElementById('lockPickInv').style.right = '50%';
+document.getElementById('lockPickInv').style.height = '4vh';
+document.getElementById('lockPickInv').style.width = '10vh';
 }

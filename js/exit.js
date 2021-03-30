@@ -97,8 +97,6 @@ function purpleKeyCode() {
   txt += '<label for= "purpleCode">Code: </label>';
   txt += '<input type= "text" id="purpleCode" name= "purpleCode"></input><input type="submit" value = "Submit" onclick="purpleSubmit();"/><br>';
   gameArea.innerHTML += txt;
-
-  //keyFound('purple');
 }
 
 function purpleSubmit() {

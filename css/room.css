@@ -68,6 +68,8 @@ body {
   padding: 2%;
   color: white;
   border-right: 3px solid #6f2232;
+  overflow: auto;
+  height:100vh;
 }
 
 #col-right img {

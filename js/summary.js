@@ -93,6 +93,10 @@ function gameMode(){
             var cell2 = row.insertCell(1);
             cell1.innerHTML = "Exit Time";
             cell2.innerHTML = exitTime;
+
+            var totalTimeTaken = Number(cellTime)+Number(labTime)+Number(hallwayTime)+ Number(securityTime)+Number(exitTime) + ' seconds';
+            document.getElementById('totalTime').innerHTML = 'The total time you took was: ' + totalTimeTaken;
+
           }else{
             document.getElementById('noTimes').innerHTML="You lost in the Final Room!"
           }
