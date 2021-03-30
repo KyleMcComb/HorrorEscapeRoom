@@ -8,7 +8,7 @@
 
   <source src="audio/Hallway/Ambience.wav" type="audio/mpeg">
   <title>Redacted Lab - Hallway</title>
-//  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
   <link rel="stylesheet" href="css/room.css" type="text/css" />
   <link rel="stylesheet" href="css/hallway.css" type="text/css" />
 
@@ -25,63 +25,21 @@
       <h1 id="gameName" class="content">The <span id="" class="redact">Redacted</span> Lab</h1>
     </div>
     <div class="row">
+
       <div id="col-left">
         <p>Time Left: <span id="timer"></span> seconds</p><br />
-        <div id="gameDialog">
-
-        </div>
-
-        <div id="chemicalEvent">
-          <form>
-            <label for="cars">Choose your first compound:</label>
-            <select name="compound1" id="compound1">
-              <option value="X">X</option>
-              <option id="H" value="H">H</option>
-              <option value="N">N</option>
-              <option value="C">C</option>
-            </select>
-            <br> <br>
-
-          </form>
-          <br>
 
 
-          <form>
-            <label for="cars">Choose your second compound:</label>
-            <select name="compound2" id="compound2">
-              <option value="C">C</option>
-              <option value="A">A</option>
-              <option id="M" value="M">M</option>
-              <option value="C">C</option>
-            </select>
-            <br> <br>
-
-
-          </form>
-          <br>
-
-
-          <form>
-            <label for="cars">Choose your third compound:</label>
-            <select name="compound3" id="compound3">
-              <option value="3">3</option>
-              <option id="six" value="6">6</option>
-              <option value="7">7</option>
-              <option value="1">1</option>
-            </select>
-            <br><br>
-            <input type="button" value="Submit" onclick="checkSelections()">
-          </form>
-            <br />
-        </div>
         <div id="gameText">
 
         </div>
+
         <br />
+
       </div>
       <div id="col-right">
-        <audio controls id="audio" autoplay loop >
-        <source src="audio/Hallway/Ambience.wav" type="audio/mpeg">
+        <audio controls id="audio" autoplay loop>
+          <source src="audio/Hallway/Ambience.wav" type="audio/mpeg">
         </audio>
         <h2 id="roomName">Hallway</h2>
 
@@ -104,8 +62,8 @@
     </div>
 
     <div id="footer">
-   <button id="colourMode" onclick="toggleColours();">Toggle Theme</button>
-   </div>
+      <button id="colourMode" onclick="toggleColours();">Toggle Theme</button>
+    </div>
   </div>
 
 </body>
