@@ -42,9 +42,7 @@ function toggleColours() {
   var colLeft = document.getElementById('col-left');
   var headBorder = document.getElementById('head');
   var colLeftBorder = document.getElementById('col-left');
-  var redact = document.getElementById('redact');
   var gameName = document.getElementById('gameName');
-  var theme = document.getElementById('colourMode');
 
   //decides what color the background is
   if (wrapper.style.backgroundColor === 'white') {
@@ -83,18 +81,22 @@ function toggleColours() {
   }
 
   //decides the color of redaction box in the title
-  if (redact.style.backgroundColor === 'black') {
-    redact.style.backgroundColor = '#C3073F';
-  } else {
-    redact.style.backgroundColor = 'black';
-  }
-
-  //decides the color of the tilt text
   if (gameName.style.color === 'black') {
+    document.getElementById("redactID").classList.toggle("redact-black");
     gameName.style.color = '#C3073F';
   } else {
+    document.getElementById("redactID").classList.toggle("redact-black");
     gameName.style.color = 'black';
   }
+
+
+
+  //decides the color of the title text
+  // if (gameName.style.color === 'black') {
+  //   gameName.style.color = '#C3073F';
+  // } else {
+  //   gameName.style.color = 'black';
+  // }
 
 
 }
