@@ -1,3 +1,4 @@
+//restart - sets al session storage times to 0
 function restart(){
 
   sessionStorage.setItem("cellTime", 0);
@@ -10,10 +11,14 @@ function restart(){
   window.location.href = 'Start.html';
 }
 
+//indicates the game stats to be displayed to the user
 function gameMode(){
+  //gets the personalisation of user data
   var winGame = sessionStorage.getItem("winGame");
+  //used for win/lose to be displayed
   var roomName = document.getElementById('roomName');
   var traitOutput = document.getElementById('trait');
+  //resets time passed
   sessionStorage.setItem("timePassed", 0);
   var playerName = sessionStorage.getItem("subject");
   var trait = sessionStorage.getItem("cTrait");
@@ -23,6 +28,7 @@ function gameMode(){
     roomName.innerHTML = 'You Won!';
     traitOutput.innerHTML = 'Well done ' + playerName + '. You won thanks to your incredible display of ';
 
+    //outputs user's selected trait for personalisation
     switch(trait) {
       case 'intelligent':
         traitOutput.innerHTML += "intelligence.";
@@ -42,6 +48,7 @@ function gameMode(){
     roomName.innerHTML = 'You Lost! Better luck next time ' + playerName + "!";
   }
 
+  //gets times spent in each room from the session storage
   var cellTime = sessionStorage.getItem("cellTime");
   var labTime = sessionStorage.getItem("labTime");
   var hallwayTime = sessionStorage.getItem("hallwayTime");
@@ -53,9 +60,14 @@ function gameMode(){
 
   var rows = tbl.rows.length;
 
+  //checks through each time spent in roomItem
+  //checks if null or 0 - then user has died in that room - output which room they died inspect
+  //it will display the user's time spent in the rooms before as they must complete the first room to get to the second (etc)
   if(cellTime!=0 && cellTime!=null){
+    //if user has passed the first room the table is displayed to the user
     tbl.style.display="block";
 
+    //inserts data via rows into the table to be displayed
     var row = tbl.insertRow(rows);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
@@ -114,10 +126,11 @@ function gameMode(){
   }
 }
 
+//Event listener so user can click on the screen and sound is played to indicate win/lose.
 window.addEventListener("click", function(event) {
   var winGame = sessionStorage.getItem("winGame");
   if(winGame=="win"){
-sound = document.getElementById('youWin');
+    sound = document.getElementById('youWin');
   }else{
     sound = document.getElementById('youLose');
   }
