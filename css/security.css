@@ -263,3 +263,12 @@ body{
   overflow: scroll;
   max-height: 1000px;
 }
+
+#passcodeLock {
+    top: 6.5%;
+    right: 38%;
+    position: absolute;
+    height: 6.2%;
+    width: 13.5%;
+    font-size:200%;
+}

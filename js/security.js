@@ -3,9 +3,10 @@
   var cluesFound = 1;
   var cluesText = " <br> -Clues found(" + cluesFound + "/3) Part of the door unlocks-";
 
-  //Clues  fixed boolean
+  //Clues fixed boolean
   var wiresFixed = false;
   var comboLock = false;
+  var passcode = false;
 
   var light ="on";
   var torch = false;
@@ -315,4 +316,36 @@
       //Hide Wires Elements
       document.getElementById("backButton").style.display = "none";
       document.getElementById("leftWire").style.display = "none";
+    }
+
+    function passwordEntered(){
+      var textbox = document.getElementById("passcodeLock");
+      var currentPassword = textbox.value.toUpperCase();
+
+      if (currentPassword.length >= 3 && passcode == false){
+        passcode = true;
+        if(currentPassword.toUpperCase().trim() == "MEL"){
+          passcode = true;
+          cluesFound++;
+
+          textbox.readOnly = true;
+          switch (cluesFound) {
+            case 1:
+              cluesText = " <br> -Clues found(" + cluesFound + "/3) 1 of the door's locks have been disabled-";
+              break;
+            case 2:
+              cluesText = " <br> -Clues found(" + cluesFound + "/3) You hear another mechanism shifting behind the wall...-";
+              break;
+            case 3:
+              cluesText = " <br> -Clues found(" + cluesFound + "/3) The last lock has been disabled-";
+              break;
+            default:
+              alert("Error in clues found switch JS password Entered");
+              break;
+          }
+
+          writeText('<span style = color:#538b01; font-weight:bold;> ['+  playerName +'] </span>' + "That password was correct...", cluesText);
+        }
+      }
+
     }
