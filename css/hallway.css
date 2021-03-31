@@ -67,11 +67,11 @@
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-#submitButton {
+/* #submitButton {
   width: 12%;
   height: 5%;
   font-size: 1.2em;
-}
+} */
 
 #chemicalButton {
   width: 7%;
@@ -127,4 +127,23 @@
   position: absolute;
   right: 4%;
   width: 7%;
+}
+
+#submitButton{
+
+    position: relative;
+    border-radius: 10%;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    box-shadow: 3px 3px #666;
+}
+
+#submitButton:active {
+  background-color: black;
+  color: white;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
 }

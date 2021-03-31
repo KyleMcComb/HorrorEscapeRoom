@@ -15,7 +15,7 @@
 <body onload="onLoad(); arrowClick();">
   <div id="wrapper">
     <div id="head">
-      <h1 class="content">THE <span class="redact">REDACTED</span> LAB</h1>
+        <h1 class="content" id="gameName">THE <span id="redactID" class="redact">REDACTED</span> LAB</h1>
     </div>
 
     <div class="row">
@@ -32,15 +32,15 @@
         <button id="arrowButton" title="Turn Around" onclick="arrowClick();"></button>
         <button id="lockPickButton" title="Lock Pick" onclick="LockPickClick();"></button>
         <button id="cellGateButton" title="Locked Cell Gate">  </button>
-        <button id="gateLockButton" title="Cell Gate Lock" onclick ="gateLockClick();"></button>
+        <button id="gateLockButton" title="Cell Gate Lock" ondragover='onDragOver(event);' ondrop='onDrop(event);'></button>
         <button id="lockedDoorButton" title="Locked Door" onclick ="doorContrClick();"></button>
         <button id="doorControButtonTri" title="Triangle" onclick ="combinationDoorUnlock('Triangle');"></button>
         <button id="doorControButtonSqu" title="Square" onclick ="combinationDoorUnlock('Square');"></button>
         <button id="doorControButtonCir" title="Circle" onclick ="combinationDoorUnlock('Circle');"></button>
         <button id="doorControButtonX" title="Cross" onclick ="combinationDoorUnlock('Cross');"></button>
-        <button id="lockPickInv" title="Lock pick" draggable="true">  </button>
+        <button id="lockPickInv" title="Lock pick" draggable="true" ondragstart='onDragStart(event);'>  </button>
         <button id="openDoorButton" title="Escape Cells Room" onclick ="doorOpenClick();"></button>
-        <button id="codeDisplay" title="7412"></button>
+        <button id="codeDisplay" title="7412" onclick="codeClick();"></button>
 
 
         <!-- The Modal for Extra Note-->
@@ -55,6 +55,9 @@
         </div>
       </div>
 
+    </div>
+    <div id="footer">
+      <button id="colourMode" onclick="toggleColours();">Toggle Theme</button>
     </div>
   </div>
 </body>

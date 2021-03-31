@@ -9,7 +9,7 @@ window.addEventListener('load', function() {
   timedEvent = setInterval(countdown, 1000);
 });
 
-function stopTimer() {
+function stopTimer() {1
   //used to clear timer.
   clearInterval(myTimer);
 }
@@ -42,9 +42,9 @@ function toggleColours() {
   var colLeft = document.getElementById('col-left');
   var headBorder = document.getElementById('head');
   var colLeftBorder = document.getElementById('col-left');
-  var redact = document.getElementById('redact');
   var gameName = document.getElementById('gameName');
-  var theme = document.getElementById('colourMode');
+
+
 
   //decides what color the background is
   if (wrapper.style.backgroundColor === 'white') {
@@ -54,47 +54,51 @@ function toggleColours() {
     wrapper.style.backgroundColor = 'white';
   }
 
-  //decides the color of the room name text
+  //decides the color of the elements chnaged when toggle is clicked
   if (roomName.style.color === 'black') {
     roomName.style.color = 'white';
-  } else {
-    roomName.style.color = 'black';
-  }
-
-  //decides the color of the text in the left col
-  if (colLeft.style.color === 'black') {
     colLeft.style.color = 'white';
-  } else {
-    colLeft.style.color = 'black';
-  }
-  //decides the color of headers border
-  if (headBorder.style.borderColor === 'black') {
     headBorder.style.borderColor = '#6f2232';
-
-  } else {
-    headBorder.style.borderColor = 'black';
-  }
-
-  //decides the color of left cols border
-  if (colLeftBorder.style.borderColor === 'black') {
     colLeftBorder.style.borderColor = '#6f2232';
-  } else {
-    colLeftBorder.style.borderColor = 'black';
-  }
-
-  //decides the color of redaction box in the title
-  if (redact.style.backgroundColor === 'black') {
-    redact.style.backgroundColor = '#C3073F';
-  } else {
-    redact.style.backgroundColor = 'black';
-  }
-
-  //decides the color of the tilt text
-  if (gameName.style.color === 'black') {
+    document.getElementById("redactID").classList.toggle("redact-black");
     gameName.style.color = '#C3073F';
   } else {
+    roomName.style.color = 'black';
+    colLeft.style.color = 'black';
+    headBorder.style.borderColor = 'black';
+    colLeftBorder.style.borderColor = 'black';
+    document.getElementById("redactID").classList.toggle("redact-black");
     gameName.style.color = 'black';
   }
 
+  // //decides the color of the text in the left col
+  // if (colLeft.style.color === 'black') {
+  //   colLeft.style.color = 'white';
+  // } else {
+  //   colLeft.style.color = 'black';
+  // }
+  // //decides the color of headers border
+  // if (headBorder.style.borderColor === 'black') {
+  //   headBorder.style.borderColor = '#6f2232';
+  //
+  // } else {
+  //   headBorder.style.borderColor = 'black';
+  // }
+  //
+  // //decides the color of left cols border
+  // if (colLeftBorder.style.borderColor === 'black') {
+  //   colLeftBorder.style.borderColor = '#6f2232';
+  // } else {
+  //   colLeftBorder.style.borderColor = 'black';
+  // }
+
+  //decides the color of redaction box in the title and the color of the title text
+  // if (gameName.style.color === 'black') {
+  //   document.getElementById("redactID").classList.toggle("redact-black");
+  //   gameName.style.color = '#C3073F';
+  // } else {
+  //   document.getElementById("redactID").classList.toggle("redact-black");
+  //   gameName.style.color = 'black';
+  // }
 
 }

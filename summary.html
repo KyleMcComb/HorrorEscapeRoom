@@ -7,24 +7,25 @@
     <link rel="stylesheet" href="css/room.css" type ="text/css" />
     <link rel="stylesheet" href="css/summary.css" type ="text/css" />
     <script src="js/summary.js"></script>
+    <script src="js/global.js"></script>
 
 
   </head>
 
   <body onload="gameMode();">
     <div id="wrapper">
-
         <div id="head">
-          <h1 class="content">THE <span class="redact">REDACTED</span> LAB</h1>
+          <h1 class="content" id="gameName">THE <span id="redactID" class="redact">REDACTED</span> LAB</h1>
         </div>
   <div class="row">
     <div id="col-left">
 
-      <h2 id="change">Game Summary</h2>
+      <h2 id="change">Game Summary</h2><br />
+      <p>Click anywhere on the screen to hear some sounds!</p>
       <br />
 
       <div id="gameStats">
-        <p id="trait"></p>
+        <p id="trait"></p><br />
         <p id="noTimes"></p>
 
         <table id="stats">
@@ -33,6 +34,8 @@
             <th>Time (in secs)</th>
           </tr>
         </table>
+        <br />
+        <p id="totalTime"></p>
 
         <br />
         <button id="restart" onclick="restart();">RESTART</button>
@@ -40,20 +43,23 @@
         <!--NEED TO ADD CLEAR TIMERS FOR EACH ROOM -->
         <button type="button" class="soundBtn" id="play"></button>
 
-        <!-- WIN SOUND: -->
-        <audio id="youWin" class="soundBtn" src="audio/Summary/youWinSound.mp3">
+        <!-- WIN SOUND: https://www.zapsplat.com/music/multimedia-processed-male-voice-says-you-win-1/-->
+        <audio id="youWin" class="soundBtn" src="audio/Summary/youWin2.mp3">
 
-        <!-- LOSE SOUND: -->
-        <audio id="youLose" class="soundBtn" src="audio/Summary/youLose.mp3">
+        <!-- LOSE SOUND:https://www.zapsplat.com/music/multimedia-processed-male-voice-says-you-lose/ -->
+        <audio id="youLose" class="soundBtn" src="audio/Summary/youLose2.mp3">
 
         </div>
     </div>
     <div id="col-right">
       <h2 id="roomName"></h2>
       <div id="imageDiv">
-          <img id="doctor" onclick="playSound();"/>
+          <img id="doctor"/>
       </div>
   </div>
+</div>
+<div id="footer">
+  <button id="colourMode" onclick="toggleColours();">Toggle Theme</button>
 </div>
 </body>
 

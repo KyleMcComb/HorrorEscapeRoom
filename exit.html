@@ -12,7 +12,7 @@
     <body>
       <div id="wrapper">
         <div id="head">
-          <h1 class="content">THE <span class="redact">REDACTED</span> LAB</h1>
+          <h1 class="content" id="gameName">THE <span id="redactID" class="redact">REDACTED</span> LAB</h1>
         </div>
     <div class="row">
       <div id="col-left">
@@ -31,17 +31,16 @@
           <audio id="keypadError" class="soundBtn" src="audio/Exit/keypadError.wav">
           <!-- KEYPAD CLICK SOUND:  https://freesound.org/people/brnck/sounds/257357/-->
           <audio id="keypadClick" class="soundBtn" src="audio/Exit/keypadClick.wav">
-
           <!-- WHISPER SOUND:  https://freesound.org/people/brnck/sounds/257357/-->
           <audio id="noteWhisper" class="soundBtn" src="audio/Exit/noteWhisper.mp3">
-
           <!-- DOOR OPEN SOUND:  https://freesound.org/people/kokopetiyot/sounds/413249/-->
           <audio id="openDoor" class="soundBtn" src="audio/Exit/doorOpen.wav">
 
       </div>
       <div id="col-right">
+        <!-- AMBIENCE:  https://www.zapsplat.com/music/musical-horror-ambience-bed-dark-and-sinister-droning-atmosphere-with-choir-ahhs-shrills-and-evolving-tones/-->
         <audio controls id="controlAudio" autoplay loop>
-          <source src="audio/Exit/ambient.wav" type="audio/wav">
+          <source src="audio/Exit/ambience2.mp3" type="audio/mp3">
             Your browser does not support the audio element.
           </audio>
 

@@ -13,13 +13,14 @@
 #arrowButton {
   border: none;
   display: block;
-  width: 10%;
-  top: 0%;
-  right: -1%;
-  height: 52%;
+  width: 15%;
+  top: 30%;
+  right: 1%;
+  height: 12%;
   position: absolute;
   cursor: pointer;
-  background: none;
+  background:url('../img/Cell/turnAroundMsg.png') no-repeat;
+  background-size:100%;
 }
 
 #cellGateButton {
@@ -84,13 +85,13 @@
 }
 
 #gateLockButton{
-  border: none;
+  border: 1px solid black;
   position: absolute;
   cursor: pointer;
-  width: 18%;
-  top: 52%;
-  right: 38%;
-  height: 29%;
+  width: 6.1%;
+  top: 60%;
+  right: 45%;
+  height: 8%;
   background:none;
   background-size: 100%;
   display: none;

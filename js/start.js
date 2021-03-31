@@ -6,6 +6,13 @@ function musicPlay() {
 }
 
 function saveData() {
+
+  if(document.getElementById("subject").value.length == 0)
+  {
+    alert('You must enter a subject name');
+  }
+  else{
+
   var nameInput = document.getElementById("subject").value;
   var text = document.getElementById("cTrait").value;
 
@@ -13,4 +20,6 @@ function saveData() {
   sessionStorage.setItem("cTrait", text);
 
   window.location.href = 'Cell.html';
+}
+
 }

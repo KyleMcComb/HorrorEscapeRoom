@@ -1,6 +1,6 @@
 function onLoad() {
   var para = document.createElement("p");
-  var text = document.createTextNode("You have just regained consciousness. You find yourself left alone in a cell. You are left badly shaken and confused. You better make an escape soon or become one of Doctor Friedrich's experiments.");
+  var text = document.createTextNode("You have just regained consciousness. You find yourself left alone in a cell. You are left badly shaken and confused. You better make an escape soon or become one of Doctor Friedrich's experiments. Make sure to hover your mouse around the room to find items and puzzles.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -67,7 +67,7 @@ function closeNote() {
   document.getElementById("myModal").style.display = "none";
 
   // create noteCloseSound audio object and play it
-  var noteCloseSound = new Audio('audio/Cell/noteClick.wav');
+  var noteCloseSound = new Audio('audio/Cell/noteClose.wav');
   noteCloseSound.play();
 
 }
@@ -109,7 +109,7 @@ else {
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("You turn around to discover you are locked in a cell. The only thing stopping you from getting closer to freedom is a locked cell door");
+  var text = document.createTextNode("You turn around to discover you are locked in a cell. The only thing stopping you from getting closer to freedom is a locked cell door (Drag and Drop the lock pick onto the cell gate lock)");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -122,6 +122,23 @@ else {
     document.getElementById('gateLockButton').style.display = "block";
   }
 }
+
+
+function codeClick(background) {
+
+  // Displays text for the user (in left column)
+  var para = document.createElement("p");
+var text = document.createTextNode("You spot a code on the wall: 7412. Mabye this code could be used to unlock the safe.");
+para.appendChild(text);
+var element = document.getElementById("col-left");
+element.appendChild(para);
+
+var lineBreak = document.createElement("br");
+var element = document.getElementById("col-left");
+element.appendChild(lineBreak);
+
+}
+
 
 function gateLockClick(background) {
 
@@ -329,6 +346,10 @@ function safeCode(){
     var nButton = document.getElementById("doorControButtonCir");
     doorControButtonCir.style.display = "none";
 
+    // Removes Note
+    var nButton = document.getElementById("noteModal");
+    noteModal.style.display = "none";
+
 
     // Displays text for the user (in left column)
     var para = document.createElement("p");
@@ -342,7 +363,7 @@ function safeCode(){
     element.appendChild(lineBreak);
   }
 
-  //Unlock 3 passcode lock
+  //Symbol combination lock
   var buttonsPressed = 0;
   var lockCode = "TriangleSquareCircleCross";
   var enteredCode = "";
@@ -393,7 +414,7 @@ function safeCode(){
       var element = document.getElementById("col-left");
       element.appendChild(lineBreak);
 
-      //Reset if its been pressed 3 times
+      //Reset if its been pressed 4 times
       if(buttonsPressed >= 4){
         //Correct order of button press
 
@@ -435,47 +456,32 @@ function safeCode(){
         }
 }
 
-// dhasudihasiudh iuhsdiu hasdh ahsdiu hasiud shd iuhfiuadhsfiuhasdg asdg a
-const fill = document.getElementById("lockPickInv");
-const empties = document.getElementById("cellGateButton");
-
-// Fill listeners
-fill.addEventListener('dragstart', dragStart);
-fill.addEventListener('dragend', dragEnd);
-
-// Loop through empty boxes and add listeners
-for (const empty of empties) {
-  empty.addEventListener('dragover', dragOver);
-  empty.addEventListener('dragenter', dragEnter);
-  empty.addEventListener('dragleave', dragLeave);
-  empty.addEventListener('drop', dragDrop);
-}
-
 // Drag Functions
-
-function dragStart() {
-  this.className += ' hold';
-  setTimeout(() => (this.className = 'invisible'), 0);
+function onDragStart(event) {
+  event.dataTransfer.setData('text/plain', event.target.id);
+  event.currentTarget.style.backgroundColor = '#E7E0B6';
 }
 
-function dragEnd() {
-  this.className = 'fill';
+function onDragOver(event) {
+event.preventDefault();
 }
 
-function dragOver(e) {
-  e.preventDefault();
-}
+function onDrop(event) {
+event.preventDefault();
+gateLockClick();
 
-function dragEnter(e) {
-  e.preventDefault();
-  this.className += ' hovered';
-}
+const id = event.dataTransfer.getData('text');
 
-function dragLeave() {
-  this.className = 'empty';
-}
+const draggableElement = document.getElementById(id);
+const dropzone = event.target;
 
-function dragDrop() {
-  this.className = 'empty';
-  this.append(fill);
+dropzone.appendChild(draggableElement);
+draggableElement.style.backgroundColor = "#C2E8BA";
+
+event.dataTransfer.clearData();
+
+document.getElementById('lockPickInv').style.top = '50%';
+document.getElementById('lockPickInv').style.right = '50%';
+document.getElementById('lockPickInv').style.height = '4vh';
+document.getElementById('lockPickInv').style.width = '10vh';
 }

@@ -33,11 +33,24 @@ table{
 
 #restart{
   height: 5vh;
-
   margin: auto;
   display: block;
-
   justify-content: center;
+
+  border-radius: 10%;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  box-shadow: 3px 3px #666;
+}
+
+#restart:active {
+  background-color: black;
+  color: white;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
 }
 
 #play{
