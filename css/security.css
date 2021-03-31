@@ -1,6 +1,7 @@
 body{
   overflow: hidden;
 }
+
 #myModal #expandedNote{
   right: 50%;
   justify-content: center;
@@ -255,12 +256,11 @@ body{
 }
 
 #backButton:hover{
-  border: 1px solid black;
-
-}
+  border: 1px solid black;}
 
 #col-left{
   overflow: scroll;
+  overflow-x: hidden;
   max-height: 1000px;
 }
 
@@ -271,4 +271,6 @@ body{
     height: 6.2%;
     width: 13.5%;
     font-size:200%;
+    display: none;
+    background-color: grey;
 }

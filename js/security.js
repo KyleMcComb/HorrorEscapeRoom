@@ -1,6 +1,6 @@
   //Game text variables
   var gameDialog = "<p> Seems like this is the room Dr Friedrich used this room to monitor his subjects </p>";
-  var cluesFound = 1;
+  var cluesFound = 0;
   var cluesText = " <br> -Clues found(" + cluesFound + "/3) Part of the door unlocks-";
 
   //Clues fixed boolean
@@ -71,7 +71,7 @@
   function exit(){
     var lockedSound = new Audio('audio/Security/doorLocked.wav');
 
-    if(cluesFound == 3){
+    if(cluesFound >= 3){
 
       writeText("You have escaped the security room!","");
       sessionStorage.setItem("securityTime", timePassed);
@@ -242,6 +242,7 @@
 
       //Show Wires Elements
       document.getElementById("backButton").style.display = "block";
+      document.getElementById("passcodeLock").style.display = "block";
       if(!wiresFixed){
         document.getElementById("leftWire").style.display = "block";
       }
@@ -291,6 +292,7 @@
     }
 
 
+    //When returning from wires back to main room
     function backToSecurity(){
       var boxSound = new Audio("audio/Security/wiresBox.wav");
       boxSound.play();
@@ -316,8 +318,10 @@
       //Hide Wires Elements
       document.getElementById("backButton").style.display = "none";
       document.getElementById("leftWire").style.display = "none";
+      document.getElementById("passcodeLock").style.display="none";
     }
 
+    //Everytime a key is entered in passcode
     function passwordEntered(){
       var textbox = document.getElementById("passcodeLock");
       var currentPassword = textbox.value.toUpperCase();
@@ -344,8 +348,23 @@
               break;
           }
 
+          //Play door noise and display correct message
           writeText('<span style = color:#538b01; font-weight:bold;> ['+  playerName +'] </span>' + "That password was correct...", cluesText);
+          var mechSound = new Audio('audio/Security/doorMech.wav');
+          mechSound.play();
+        }
+        //When the password is incorrect
+        else{
+          //Clear Textbox
+          textbox.Value = "";
+
+          //Play error sound
+
+          //Output wrong password
+          writeText('<span style = color:#538b01; font-weight:bold;> ['+  playerName +'] </span>' + "That password was incorrect. Maybe there is a clue somewhere...", "");
+
         }
       }
+
 
     }
