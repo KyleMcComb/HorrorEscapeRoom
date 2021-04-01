@@ -319,6 +319,64 @@ function safeCode(){
   }
   }
 
+  function safeCode() {
+    var gameArea = document.getElementById('col-left');
+    var txt = "";
+    txt = '<p>[System]: Please enter a 4 digit code to unlock the safe</p><br>';
+    txt += '<label for= "safeCode">Code: </label>';
+    txt += '<input type= "text" id="SafeCode" name= "SafeCode"></input><input type="submit" value = "Submit" onclick="safeSubmit();"/><br>';
+    gameArea.innerHTML += txt;
+  }
+
+  function safeSubmit() {
+    //document.getElementById('gameText').innerHTML = "Hi Olivia";
+    var x = document.getElementById("SafeCode").value;
+    document.getElementById('gameText').innerHTML = "";
+    if(x=="7412"){
+      // create safeopening audio object and play it
+      var safeopening = new Audio('audio/Cell/safeOpen.flac');
+      safeopening.play();
+
+      // Adds note modal button after clicked
+      var nModal = document.getElementById("noteModal");
+      noteModal.style.display = "block";
+
+      // Displays text for the user (in left column)
+      var para = document.createElement("p");
+      var text = document.createTextNode("You have unlocked the safe and found a note and a flash light within it.");
+      para.appendChild(text);
+      var element = document.getElementById("col-left");
+      element.appendChild(para);
+
+      var lineBreak = document.createElement("br");
+      var element = document.getElementById("col-left");
+      element.appendChild(lineBreak);
+
+      // Removes button after clicked
+      var nButton = document.getElementById("drawerButton");
+      drawerButton.style.display = "none";
+
+      unlocked = true;
+    //else the user is told the code is incorrect
+    }else{
+      // create safeCodeWrong audio object and play it
+      var safeCodeWrongSound = new Audio('audio/Cell/safeCodeWrong.mp3');
+      safeCodeWrongSound.play();
+
+      // Displays text for the user (in left column)
+      var para = document.createElement("p");
+      var text = document.createTextNode("[System]:That code is incorrect - Hint: Look around the room.");
+      para.appendChild(text);
+      var element = document.getElementById("col-left");
+      element.appendChild(para);
+
+      var lineBreak = document.createElement("br");
+      var element = document.getElementById("col-left");
+      element.appendChild(lineBreak);
+    }
+
+  }
+
   function combinationSuccess(background) {
 
     // create doorOpen audio object and play it
