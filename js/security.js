@@ -13,6 +13,8 @@
   var currentClues;
   var first = true;
   var wrongTimes = 0;
+  var colour = 0 //0 = dark 1 = light
+
   //Player name
   var playerName = sessionStorage.getItem("subject");
 //Ambience
@@ -22,6 +24,7 @@
       amb.play();
       document.removeEventListener('click', musicPlay);
       torch = true;
+
   }
   //When the wires are clicked
   function wiresClick(){
@@ -258,7 +261,7 @@
       if(torch){
 
         if(first){
-          writeText("It seems like the power went off... I'll have to use my torch for now","")
+          writeText('<span style = font-weight:bold;> ['+  playerName +'] </span>'+"It seems like the power went off... I'll have to use my torch for now","")
           //Show buttons when torch on
           document.getElementById("wiresbutton").style.display="block";
         }
@@ -366,6 +369,32 @@
 
         }
       }
+  }
 
-
+  //Change button border to be easier to see once toggle theme is entered
+  function buttonBorder(){
+    if(colour == 0){
+      colour = 1;
+      document.getElementById("firstbutton").style.border = "black 1px solid";
+      document.getElementById("secondbutton").style.border = "black 1px solid";
+      document.getElementById("thirdbutton").style.border = "black 1px solid";
+      document.getElementById("wiresbutton").style.border = "black 1px solid";
+      document.getElementById("noteModal").style.border = "black 1px solid";
+      document.getElementById("backButton").style.border = "black 1px solid";
+      document.getElementById("leftWire").style.border = "black 1px solid";
+      document.getElementById("passcodeLock").style.border = "black 1px solid";
+      document.getElementById("doorbutton").style.border = "black 1px solid";
     }
+    else{
+      colour = 0;
+      document.getElementById("firstbutton").style.border = "none";
+      document.getElementById("secondbutton").style.border = "none";
+      document.getElementById("thirdbutton").style.border = "none";
+      document.getElementById("wiresbutton").style.border = "none";
+      document.getElementById("noteModal").style.border = "none";
+      document.getElementById("backButton").style.border = "none";
+      document.getElementById("leftWire").style.border = "none";
+      document.getElementById("passcodeLock").style.border = "none";
+      document.getElementById("doorbutton").style.border = "none";
+    }
+  }
