@@ -54,7 +54,7 @@ function toggleColours() {
     wrapper.style.backgroundColor = 'white';
   }
 
-  //decides the color of the elements chnaged when toggle is clicked
+  //decides the color of the elements changed when toggle is clicked
   if (roomName.style.color === 'black') {
     roomName.style.color = 'white';
     colLeft.style.color = 'white';
