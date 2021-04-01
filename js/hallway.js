@@ -353,24 +353,26 @@ function lineBreakChemical() {
 
 // code is run when the note buttin in morgue is clicked
 function expandNote() {
-
   var noteOpen = new Audio('audio/Hallway/noteOpen.mp3');
   noteOpen.play();
 
   noteFound = true;
+
   document.getElementById("myModalDiv").style.display = "block";
   document.getElementById("expandedNote").src = "img/Hall/ChemicalNote.jpg";
   document.getElementById("caption").innerHTML = "An old note belongning to Dr Friedrich, he seems to have mentioned some sort of cipher on it";
 
+  var isblock = document.getElementById("myModalDiv");
+
   // closes note using escape key
   document.addEventListener('keydown', function(e) {
-    if (e.key == 'Escape')
-      var noteOpen = new Audio('audio/Hallway/noteOpen.mp3');
+    if (e.key == 'Escape' && isblock.style.display === "block")
+    var noteOpen = new Audio('audio/Hallway/noteOpen.mp3');
     noteOpen.play();
     document.getElementById("myModalDiv").style.display = "none";
     document.getElementById("wiresModal").style.display = "none";
-
   })
+
 }
 
 // code to close using x button
