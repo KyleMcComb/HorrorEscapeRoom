@@ -179,7 +179,7 @@ function showSelection() {
     var chemicals = new Audio('audio/Hallway/chemicalFindNoNote.mp3');
     chemicals.play();
     var para = document.createElement("p");
-    var text = document.createTextNode('These seem to be the chemicals Dr Friedrich mentioned in his note, each bottle has a letter on it with the word "RIGHT" written on it, strange. I should be able to make something useful to use on the gate in the hallway. Maybe the note I found earlier could help here...');
+    var text = document.createTextNode('These seem to be the chemicals Dr Friedrich mentioned in his note, each bottle has a letter on it with the word "RIGHT" written on it, strange. I should be able to make something useful to use on the gate in the hallway. Maybe the note I found earlier could help here, it said something about acid that may be useful...');
     para.appendChild(text);
     var element = document.getElementById("gameText");
     element.appendChild(para);
@@ -272,7 +272,7 @@ lineBreak();
     var chemicals = new Audio('audio/Hallway/chemicalFindNoNote.mp3');
     chemicals.play();
     var para = document.createElement("p");
-    var text = document.createTextNode('You find a tray of what seems like chemicals, although they are not labeled in any obvious way that you can see, just a letter or number on the front of each bottle and the word "RIGHT", maybe there is a clues somehwere.');
+    var text = document.createTextNode('You find a tray of what seems like chemicals, although they are not labeled in any obvious way that you can see, just a letter or number on the front of each bottle and the word "RIGHT", maybe there is a clue somehwere that can help me tell which cehmical is which.');
     para.appendChild(text);
     var element = document.getElementById("gameText");
     element.appendChild(para);
@@ -318,7 +318,7 @@ function checkSelections() {
     acidFailure.play();
     // selection was not correct print some text
     var para = document.createElement("p");
-    var text = document.createTextNode("This combonation doesn't seem to be what i need, i should try making something to dissolve the lock in the hallway, maybe some acid would do? I should double check the note i found");
+    var text = document.createTextNode("This combonation doesn't seem to be what i need, i should try making something to dissolve the lock in the hallway, maybe some acid would do? I should double check the note i found, it mentioned acid and some sort of key");
     para.appendChild(text);
     var element = document.getElementById("gameText");
     element.appendChild(para);
