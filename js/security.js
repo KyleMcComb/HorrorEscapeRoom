@@ -50,7 +50,7 @@
     }
         wiresFixed = true;
 
-        writeText('<span style = color:#538b01; font-weight:bold;> [' +  playerName +'] </span>' +'The wire seems to be reconnected properly',cluesText);
+        writeText('<span style = font-weight:bold;> [' +  playerName +'] </span>' +'The wire seems to be reconnected properly',cluesText);
         var mechSound = new Audio('audio/Security/doorMech.wav');
         mechSound.play();
   }
@@ -62,7 +62,7 @@
     }
     else{
       gameDialog = document.getElementById('gameText').innerHTML;
-      gameDialog += "<p> <br>"+ text + "<span style = color:red;>" + cluesText+ "</span>" + "</p>";
+      gameDialog += "<p> <br>"+ text + "<span style = font-weight: bold;>" + cluesText+ "</span>" + "</p>";
       document.getElementById('gameText').innerHTML = (gameDialog);
     }
   }
@@ -84,17 +84,17 @@
       window.location.href = "exit.html";
     }
     else if(cluesFound == 2){
-      writeText('<span style = color:#538b01; font-weight:bold;> [' +  playerName +'] </span>' + "Door still seems to be locked <br> 2/3 Locks are disabled","");
+      writeText('<span style = font-weight:bold;> [' +  playerName +'] </span>' + "Door still seems to be locked <br> 2/3 Locks are disabled","");
       lockedSound.play();
       doorbutton.style.display = "none";
     }
     else if(cluesFound == 1){
-      writeText('<span style = color:#538b01; font-weight:bold;> [' +  playerName +'] </span>' + "Door still seems to be locked <br> 1/3 Locks are disabled","");
+      writeText('<span style = font-weight:bold;> [' +  playerName +'] </span>' + "Door still seems to be locked <br> 1/3 Locks are disabled","");
       lockedSound.play();
       doorbutton.style.display = "none";
     }
     else if(cluesFound == 0){
-      writeText('<span style = color:#538b01; font-weight:bold;> [' +  playerName +'] </span>' + "The door seems to have a 3 layer lock. <br> 0/3 Locks are disabled","");
+      writeText('<span style = font-weight:bold;> [' +  playerName +'] </span>' + "The door seems to have a 3 layer lock. <br> 0/3 Locks are disabled","");
       lockedSound.play();
       doorbutton.style.display = "none";
     }
@@ -346,7 +346,7 @@
               break;
           }
           //Play door noise and display correct message
-          writeText('<span style = color:#538b01; font-weight:bold;> ['+  playerName +'] </span>' + "That password was correct...", cluesText);
+          writeText('<span style = font-weight:bold;> ['+  playerName +'] </span>' + "That password was correct...", cluesText);
           var mechSound = new Audio('audio/Security/doorMech.wav');
           mechSound.play();
         }
@@ -363,7 +363,7 @@
           //Output wrong password only once every square number
           if(isSquare){
             if(Math.sqrt(wrongTimes)%2 === 1)
-            writeText('<span style = color:#538b01; font-weight:bold;> ['+  playerName +'] </span>' + "That password was incorrect. Maybe there is a clue somewhere...", "");
+            writeText('<span style = font-weight:bold;> ['+  playerName +'] </span>' + "That password was incorrect. Maybe there is a clue somewhere...", "");
           }
 
         }
