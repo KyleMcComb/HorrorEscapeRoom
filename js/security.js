@@ -110,7 +110,7 @@
 
       //Prompt for buttons to be pressed in an order
       if((buttonsPressed == 0)&&(firstTime)){
-        writeText('<span style = color:#538b01; font-weight:bold;> [' +  playerName +'] </span>' + "There are 3 buttons here. Maybe I need to press them in a certain order...","")
+        writeText('<span style = font-weight:bold;> [' +  playerName +'] </span>' + "There are 3 buttons here. Maybe I need to press them in a certain order...","")
       }
       //Remove repetitive button presses text
       if(buttonsPressed ==0){
@@ -143,7 +143,7 @@
 
 
 
-      writeText('<span style = color:#538b01; font-weight:bold;> [' +  playerName +'] </span>' + "Presses Button " + number + "...","");
+      writeText('<span style = font-weight:bold;> [' +  playerName +'] </span>' + "Presses Button " + number + "...","");
       //Reset if its been pressed 3 times
       if(buttonsPressed >= 3){
         //Correct order of button press
@@ -176,7 +176,7 @@
 
             doorbutton.style.display = "block";
 
-            var correctButtonText = '<span style = color:#538b01; font-weight:bold;> [' +  playerName +'] </span>' + "It seems that the buttons were pressed in the correct order... ";
+            var correctButtonText = '<span style = font-weight:bold;> [' +  playerName +'] </span>' + "It seems that the buttons were pressed in the correct order... ";
             gameTextWithoutButtons += "<p> <br>" + correctButtonText + "</p>";
             gameDialog = gameTextWithoutButtons;
             writeText("","");
@@ -186,7 +186,7 @@
             var errorSound = new Audio('audio/Security/error.wav');
             errorSound.play();
 
-            var wrongButtonText = '<span style = color:#538b01; font-weight:bold;> ['+  playerName +'] </span>' + "Seems like I pressed the buttons in the wrong order. Maybe there is a clue somewhere... ";
+            var wrongButtonText = '<span style = font-weight:bold;> ['+  playerName +'] </span>' + "Seems like I pressed the buttons in the wrong order. Maybe there is a clue somewhere... ";
             gameTextWithoutButtons += "<p> <br>" + wrongButtonText + "</p>";
             gameDialog = gameTextWithoutButtons;
             writeText("","");
@@ -225,7 +225,7 @@
       var boxSound = new Audio("audio/Security/wiresBox.wav");
       boxSound.play();
 
-      writeText('<span style = color:#538b01; font-weight:bold;> ['+  playerName +'] </span>' + "An electrical cabinet. That wire seems to be loose... ","")
+      writeText('<span style = font-weight:bold;> ['+  playerName +'] </span>' + "An electrical cabinet. That wire seems to be loose... ","")
 
       var image = document.getElementById("roomImg");
       image.src="img/Security/Wires.png";
