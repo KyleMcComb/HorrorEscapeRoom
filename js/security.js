@@ -31,8 +31,6 @@
     var electricSound = new Audio('audio/Security/wires.wav');
     electricSound.play();
 
-    doorbutton.style.display = "block";
-
     //Switch to display diffferent door mechanism unlock message depending on clues found
     switch (cluesFound) {
       case 1:

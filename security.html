@@ -34,9 +34,9 @@
         <h2 id="roomName">Security</h2>
 
         <div id="imageDiv">
-
           <div id="wiresImage" onmousemove="moveTorch(event)">
 
+            <button id="backButton" title="Back" onclick="backToSecurity();">Back</button>
             <button id="wiresbutton" title="Electrical Wires" onclick="expandWires();"></button>
             <button id="doorbutton" title="Exit Door" onclick="exit();"></button>
             <button id="firstbutton" title="Press Button 1" onclick="unlock(1);"></button>
@@ -48,7 +48,7 @@
 
             <!-- Wires room -->
             <button id="leftWire" class="booton" title="Loose Wire" onclick="wiresClick();"></button>
-            <button id="backButton" title="Back" onclick="backToSecurity();">Back</button>
+
 
             <input id="passcodeLock" type="text" onkeyup="passwordEntered();">
 
