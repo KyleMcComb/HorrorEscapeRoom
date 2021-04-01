@@ -12,7 +12,7 @@
   var torch = false;
   var currentClues;
   var first = true;
-
+  var wrongTimes = 0;
   //Player name
   var playerName = sessionStorage.getItem("subject");
 //Ambience
@@ -325,9 +325,7 @@
     function passwordEntered(){
       var textbox = document.getElementById("passcodeLock");
       var currentPassword = textbox.value.toUpperCase();
-
       if (currentPassword.length >= 3 && passcode == false){
-        passcode = true;
         if(currentPassword.toUpperCase().trim() == "MEL"){
           passcode = true;
           cluesFound++;
@@ -347,7 +345,6 @@
               alert("Error in clues found switch JS password Entered");
               break;
           }
-
           //Play door noise and display correct message
           writeText('<span style = color:#538b01; font-weight:bold;> ['+  playerName +'] </span>' + "That password was correct...", cluesText);
           var mechSound = new Audio('audio/Security/doorMech.wav');
@@ -356,12 +353,18 @@
         //When the password is incorrect
         else{
           //Clear Textbox
-          textbox.Value = "";
-
+          textbox.value = "";
+          wrongTimes++;
           //Play error sound
+          var errorSound = new Audio('audio/Security/error.wav');
+          errorSound.play();
+          var isSquare = Number.isInteger(Math.sqrt(wrongTimes));
 
-          //Output wrong password
-          writeText('<span style = color:#538b01; font-weight:bold;> ['+  playerName +'] </span>' + "That password was incorrect. Maybe there is a clue somewhere...", "");
+          //Output wrong password only once every square number
+          if(isSquare){
+            if(Math.sqrt(wrongTimes)%2 === 1)
+            writeText('<span style = color:#538b01; font-weight:bold;> ['+  playerName +'] </span>' + "That password was incorrect. Maybe there is a clue somewhere...", "");
+          }
 
         }
       }
