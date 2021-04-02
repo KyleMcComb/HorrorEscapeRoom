@@ -322,7 +322,8 @@ function safeCode(){
   function safeCode() {
     var gameArea = document.getElementById('col-left');
     var txt = "";
-    txt = '<p>[System]: Please enter a 4 digit code to unlock the safe</p><br>';
+
+    txt = '<p>[System]: You found a locked safe box - Please enter a 4 digit code to unlock it</p><br>';
     txt += '<label for= "safeCode">Code: </label>';
     txt += '<input type= "text" id="SafeCode" name= "SafeCode"></input><input type="submit" value = "Submit" onclick="safeSubmit();"/><br>';
     gameArea.innerHTML += txt + "<br>";
