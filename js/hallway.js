@@ -260,8 +260,9 @@ function showSelection() {
     var submit = document.createElement("BUTTON");
     submit.id = "submitButton";
     submit.innerHTML = "Submit";
+    submit.title = 'Submit button';
     element.appendChild(submit);
-
+    lineBreak();
 
     // attach on click event to button
     document.getElementById("submitButton").addEventListener("click", checkSelections);
@@ -322,7 +323,7 @@ function checkSelections() {
     para.appendChild(text);
     var element = document.getElementById("gameText");
     element.appendChild(para);
-    lineBreakChemical();
+    lineBreak();
 
 
 
@@ -343,13 +344,6 @@ function lineBreak() {
 //   var element = document.getElementById("gameText");
 //   element.appendChild(lineBreak);
 // }
-
-// method that prints a line break where called to the chemicalEvent div
-function lineBreakChemical() {
-  var lineBreak = document.createElement("br");
-  var element = document.getElementById("chemicalEvent");
-  element.appendChild(lineBreak);
-}
 
 // code is run when the note buttin in morgue is clicked
 function expandNote() {

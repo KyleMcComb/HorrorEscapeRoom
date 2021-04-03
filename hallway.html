@@ -5,7 +5,6 @@
  -->
 
 <head>
-
   <source src="audio/Hallway/Ambience.wav" type="audio/mpeg">
   <title>Redacted Lab - Hallway</title>
   <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -15,34 +14,25 @@
   <script src="js/hallway.js"></script>
   <script src="js/global.js"></script>
 
-
 </head>
 
 <body onload="onLoad();">
-
   <div id="wrapper">
     <div id="head">
       <h1 class="content" id="gameName">THE <span id="redactID" class="redact">REDACTED</span> LAB</h1>
     </div>
     <div class="row">
-
       <div id="col-left">
         <p>Time Left: <span id="timer"></span> seconds</p><br />
-
-
         <div id="gameText">
-
         </div>
-
         <br />
-
       </div>
       <div id="col-right">
         <audio controls id="audio" autoplay loop>
           <source src="audio/Hallway/Ambience.wav" type="audio/mpeg">
         </audio>
         <h2 id="roomName">Hallway</h2>
-
         <div id="imageDiv">
           <button id="windowButton" title="A barred window leading outside" onclick="windowClick();"></button>
           <button id="exitDoorButton" title="A chain and steel door leading to an exit from the hallway" onclick="exitClick();"></button>
@@ -58,9 +48,7 @@
           <img id="img" src="img/Hall/hallway.png" alt="A dark hallway with a gate leading to an exit at one end, a window on the right leading outside, and a path leading to a corridor on the left" width="100%" />
         </div>
       </div>
-
     </div>
-
     <div id="footer">
       <button id="colourMode" onclick="toggleColours();">Toggle Theme</button>
     </div>
