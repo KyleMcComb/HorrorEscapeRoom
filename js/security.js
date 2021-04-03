@@ -20,7 +20,7 @@
 //Ambience
   document.addEventListener('click', musicPlay);
   function musicPlay() {
-      var amb = new Audio('audio/Lab/Ambience.mp3');
+      var amb = new Audio('audio/Security/ambience.mp3');
       amb.play();
       document.removeEventListener('click', musicPlay);
       torch = true;
