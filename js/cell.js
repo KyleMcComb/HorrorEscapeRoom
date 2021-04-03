@@ -1,6 +1,6 @@
 function onLoad() {
   var para = document.createElement("p");
-  var text = document.createTextNode("You have just regained consciousness. You find yourself left alone in a cell. You are left badly shaken and confused. You better make an escape soon or become one of Doctor Friedrich's experiments. Make sure to hover your mouse around the room to find items and puzzles.");
+  var text = document.createTextNode("["+playerName+"] You have just regained consciousness. You find yourself left alone in a cell. You are left badly shaken and confused. You better make an escape soon or become one of Doctor Friedrich's experiments. Make sure to hover your mouse around the room to find items and puzzles.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
