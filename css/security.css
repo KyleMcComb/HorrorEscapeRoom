@@ -10,6 +10,17 @@
   margin-right: auto;
 }
 
+#melModal #expandedMel{
+  right: 50%;
+  justify-content: center;
+  max-width: 700px;
+
+  width:50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #light {
   display: none;
   position: absolute;
@@ -134,6 +145,22 @@
   border: 2px solid black;
 }
 
+#melModalButton {
+    border: 0px solid black;
+    width: 12.5%;
+    height: 14%;
+    top: 11%;
+    right: 85.5%;
+    position: absolute;
+    cursor: pointer;
+    background: none;
+    display: none;
+}
+
+#melModalButton:hover {
+  border: 2px solid black;
+}
+
 /* The expanded note */
 .modal {
   display: none;
@@ -158,6 +185,7 @@
   /* Black w/ opacity */
 }
 
+
 /* Caption of Modal Image */
 #caption {
   margin: auto;
@@ -170,9 +198,21 @@
   height: 150px;
 }
 
-#expandedNote {
+/* Caption of Modal Image */
+#melCaption {
   margin: auto;
   display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+#expandedMel {
+  margin: auto;
+  display: none;
   width: 80%;
   right: 50%;
   justify-content: center;
@@ -214,6 +254,36 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+/* The Close Button */
+.noteClose {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.melClose:hover,
+.melClose:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* The Close Button */
+.melClose {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
 /*Left wire button to fix it*/
 #leftWire {
   border: 0px solid black;

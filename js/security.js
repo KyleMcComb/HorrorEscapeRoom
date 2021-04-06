@@ -213,11 +213,26 @@
       document.getElementById("caption").innerHTML = "Dr Friedlich's Notes";
     }
 
+    //Expand the note image
+    function expandMel(){
+      var paperSound = new Audio('audio/Security/note.wav');
+      paperSound.play();
+
+      document.getElementById("melModal").style.display = "block";
+      document.getElementById("expandedMel").src = "img/Security/MelNote.png";
+      document.getElementById("melCaption").innerHTML = "Mel...";
+    }
+
 
     // When the user clicks on <span> (x), close the note
     function closeNote() {
       document.getElementById("myModal").style.display = "none";
-      document.getElementById("wiresModal").style.display = "none";
+      document.getElementById("melModal").style.display = "none";
+    }
+
+    // When the user clicks on <span> (x), close the note
+    function closeMel() {
+      document.getElementById("melModal").style.display = "none";
     }
 
     //Expand the note image
@@ -245,6 +260,7 @@
       //Show Wires Elements
       document.getElementById("backButton").style.display = "block";
       document.getElementById("passcodeLock").style.display = "block";
+      document.getElementById("melModalButton").style.display="block";
       if(!wiresFixed){
         document.getElementById("leftWire").style.display = "block";
       }
@@ -321,6 +337,8 @@
       document.getElementById("backButton").style.display = "none";
       document.getElementById("leftWire").style.display = "none";
       document.getElementById("passcodeLock").style.display="none";
+      document.getElementById("melModalButton").style.display="none";
+
     }
 
     //Everytime a key is entered in passcode
@@ -385,6 +403,7 @@
       document.getElementById("leftWire").style.border = "black 1px solid";
       document.getElementById("passcodeLock").style.border = "black 1px solid";
       document.getElementById("doorbutton").style.border = "black 1px solid";
+      document.getElementById("melModalButton").style.border = "black 1px solid";
     }
     else{
       colour = 0;
@@ -397,5 +416,7 @@
       document.getElementById("leftWire").style.border = "none";
       document.getElementById("passcodeLock").style.border = "none";
       document.getElementById("doorbutton").style.border = "none";
+      document.getElementById("melModalButton").style.border = "none";
+
     }
   }

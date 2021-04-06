@@ -43,12 +43,12 @@
             <button id="secondbutton" title="Press Button 2" onclick="unlock(2);"></button>
             <button id="thirdbutton" title="Press Button 3" onclick="unlock(3);"></button>
             <button id="noteModal" title="Note" onclick="expand()"></button>
+            <button id="melModalButton" title="Note" onclick="expandMel()"></button>
+
 
             <img id="roomImg" src="img/Security/ControlRoom (WIP).jpg" alt="ControlRoom" usemap="#wires">
-
             <!-- Wires room -->
             <button id="leftWire" class="booton" title="Loose Wire" onclick="wiresClick();"></button>
-
 
             <input id="passcodeLock" type="text" onkeyup="passwordEntered();">
 
@@ -62,6 +62,13 @@
             <span class="noteClose" onclick="closeNote()">&times;</span>
             <img id="expandedNote">
             <div id="caption"></div>
+          </div>
+
+          <!-- The Modal for Mel's Note-->
+          <div id="melModal" class="modal">
+            <span class="melClose" onclick="closeMel()">&times;</span>
+            <img id="expandedMel">
+            <div id="melCaption"></div>
           </div>
 
         </div>
