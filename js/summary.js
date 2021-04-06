@@ -44,6 +44,22 @@ function gameMode(){
     }
 
   }else{
+
+    //outputs user's selected trait for personalisation
+    switch(trait) {
+      case 'intelligent':
+        traitOutput.innerHTML += "Thinking through all the possibilities has costed you too much time.";
+      break;
+      case 'cautious':
+        traitOutput.innerHTML += "Being too cautious has costed too much of your time.";
+      break;
+      case 'courageous':
+        traitOutput.innerHTML += "You were courageous but the lack of forward planning costed you time you couldn't afford to lose.";
+      break;
+      default:
+      traitOutput.innerHTML +='wit';
+    }
+
     document.getElementById("doctor").src="img/Summary/Doctor.jpg";
     roomName.innerHTML = 'You Lost! Better luck next time ' + playerName + "!";
   }
