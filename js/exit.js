@@ -44,6 +44,7 @@ function displayCode() {
       var winGame = "win";
       sessionStorage.setItem("winGame", winGame);
       timer = timer +3;
+      stopTimer();
       timeOut = setTimeout(summaryPage, 3000);
       //saves the gamePlay to win to get Win Doctor picture and correct stats
 
@@ -69,6 +70,8 @@ function wallCode() {
   //var txt = "[System]: You have found a note - maybe there is a code. <br><br>";
   var txt = '['+playerName+']: Hmm a code on the wall, maybe its a code for something - 420. <br><br>';
   document.getElementById('gameText').innerHTML += txt;
+
+  document.getElementById('wallCode').style.display = 'none';
 }
 
 function wallNote() {

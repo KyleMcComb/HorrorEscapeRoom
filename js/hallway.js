@@ -127,8 +127,8 @@ function exitClick() {
       }
       sessionStorage.setItem("hallwayTime", timePassed);
       setTimeout(function() {
+        stopTimer();
         location = 'security.html';
-
       }, 1000);
 
 

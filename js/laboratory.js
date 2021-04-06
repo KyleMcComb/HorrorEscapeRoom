@@ -306,6 +306,7 @@ function doorUnlockClick() {
       sessionStorage.setItem("timeleft", 60-timePassed);
     }
     sessionStorage.setItem("labTime", timePassed);
+    stopTimer();
     window.location.href = 'hallway.html';
   }
 }

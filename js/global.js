@@ -9,9 +9,9 @@ window.addEventListener('load', function() {
   timedEvent = setInterval(countdown, 1000);
 });
 
-function stopTimer() {1
+function stopTimer() {
   //used to clear timer.
-  clearInterval(myTimer);
+  clearInterval(timedEvent);
 }
 
 function countdown() {
@@ -28,6 +28,7 @@ function countdown() {
   } else {
     //Stops timer, game over - display end screen
     var winGame = "no";
+    stopTimer();
     sessionStorage.setItem("winGame", winGame);
 
     //LINK TO NEXT PAGE - TIME UP - END SCREEN
