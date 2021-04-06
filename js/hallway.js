@@ -7,7 +7,13 @@ var compound2Isvalid = false;
 var compound3IsValid = false;
 
 
-
+document.addEventListener('click', musicPlay);
+function musicPlay() {
+    var amb = new Audio('audio/Hallway/ambience.mp3');
+    amb.play();
+    amb.loop();
+    document.removeEventListener('click', musicPlay);
+}
 
 // runs on page load, prints text to the game text div
 function onLoad() {
