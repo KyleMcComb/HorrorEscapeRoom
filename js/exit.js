@@ -13,6 +13,7 @@ var timeOut;
 
 document.addEventListener('click', musicPlay);
 function musicPlay() {
+  // AMBIENCE:  https://www.zapsplat.com/music/musical-horror-ambience-bed-dark-and-sinister-droning-atmosphere-with-choir-ahhs-shrills-and-evolving-tones
     var amb = new Audio('audio/Exit/ambience2.mp3');
     amb.play();
     document.removeEventListener('click', musicPlay);
@@ -32,16 +33,7 @@ function displayCode() {
 
   timeSpent = timeSpent / 1000;
   timer -= timeSpent;
-  sessionStorage.setItem("exitTime", timePassed);
 
-  if (timer <= 0) {
-    //If the time is up - brings user to the end screen to show stats
-    window.location.href = 'endScreen.html';
-    //This variable is use to decide which image of the doctor to display
-    var winGame = "lose";
-    //sets gamePlay to lose to display correct doctor picture and Stats
-    sessionStorage.setItem("winGame", winGame);
-  } else {
     if (code == null || code == "") {
       playSound('error');
       txt = '<p>[System]: User cancelled the prompt.</p>';
@@ -54,7 +46,6 @@ function displayCode() {
       stopTimer();
       timeOut = setTimeout(summaryPage, 3000);
       //saves the gamePlay to win to get Win Doctor picture and correct stats
-
     } else if (noKeys < 3) {
       playSound('error');
       txt = '<p>['+playerName+']: Hmm..looks like theres 3 locks, looks like I need 3 keys to escape!</p>';
@@ -65,7 +56,6 @@ function displayCode() {
 
     document.getElementById('gameText').innerHTML +=txt + '<br>';
 
-  }
 }
 
 function summaryPage(){

@@ -155,3 +155,19 @@ window.addEventListener("click", function(event) {
 
   sound.play();
 });
+/*
+
+function summaryTheme(){
+toggleColours();
+
+var x = document.getElementById("stats");
+var tr = x.getElementsByTagName("tr");
+
+ for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    td.style.borderColor = "red";
+    td = tr[i].getElementsByTagName("td")[1];
+    td.style.borderColor = "red";
+  }
+
+}*/
