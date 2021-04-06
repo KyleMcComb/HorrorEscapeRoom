@@ -11,6 +11,13 @@ var codePurpleKey = 872;
 const pos = document.documentElement; //document used for torch
 var timeOut;
 
+document.addEventListener('click', musicPlay);
+function musicPlay() {
+    var amb = new Audio('audio/Exit/ambience2.mp3');
+    amb.play();
+    document.removeEventListener('click', musicPlay);
+}
+
 
 //Displays the code to unlock the final door
 function displayCode() {
@@ -254,8 +261,8 @@ function moveTorch() {
 
   var pos = document.documentElement;
 
-  var test = document.getElementById("imageDiv");
-  var rect = test.getBoundingClientRect();
+  var webPage = document.getElementById("imageDiv");
+  var rect = webPage.getBoundingClientRect();
 
   var viewportLeft = rect.left;
   var viewportTop = rect.top;

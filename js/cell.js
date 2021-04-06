@@ -358,7 +358,7 @@ function safeCode(){
       var nButton = document.getElementById("drawerButton");
       drawerButton.style.display = "none";
 
-
+      document.getElementById.innerHTML = "";
 
       unlocked = true;
     //else the user is told the code is incorrect

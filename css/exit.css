@@ -85,13 +85,12 @@ ul {
 .roomItem {
   border:none;
   display: block;
-
   position: absolute;
   cursor: pointer;
   background-size:100%;
 }
 
-/* The expanded note */
+/* The expanded modals */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */

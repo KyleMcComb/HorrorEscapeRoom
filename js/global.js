@@ -6,7 +6,9 @@ timer = 60 + Number(sessionStorage.getItem("timeleft"));
 var playerName = sessionStorage.getItem("subject");
 
 window.addEventListener('load', function() {
-  timedEvent = setInterval(countdown, 1000);
+  if (!(document.URL.includes("Start.html"))) {
+    timedEvent = setInterval(countdown, 1000);
+  } 
 });
 
 function stopTimer() {
