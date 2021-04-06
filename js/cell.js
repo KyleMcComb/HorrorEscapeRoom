@@ -40,7 +40,7 @@ function LockPickClick(background) {
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("You discovered a lock pick maybe you could use it to unlock the cell gate");
+  var text = document.createTextNode("["+playerName+"] You discovered a lock pick maybe you could use it to unlock the cell gate");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -77,7 +77,7 @@ function arrowClick(background) {
 if (unlocked == false || lockPickFound == false){
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-var text = document.createTextNode("Make sure you look around the room fully before turning around.");
+var text = document.createTextNode("[Make sure you look around the room fully before turning around.");
 para.appendChild(text);
 var element = document.getElementById("col-left");
 element.appendChild(para);
@@ -109,7 +109,7 @@ else {
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("You turn around to discover you are locked in a cell. The only thing stopping you from getting closer to freedom is a locked cell door (Drag and Drop the lock pick onto the cell gate lock)");
+  var text = document.createTextNode("["+playerName+"] You turn around to discover you are locked in a cell. The only thing stopping you from getting closer to freedom is a locked cell door (Drag and Drop the lock pick onto the cell gate lock)");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -128,7 +128,7 @@ function codeClick(background) {
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-var text = document.createTextNode("You spot a code on the wall: 7412. Mabye this code could be used to unlock the safe.");
+var text = document.createTextNode("["+playerName+"] You spot a code on the wall: 7412. Mabye this code could be used to unlock the safe.");
 para.appendChild(text);
 var element = document.getElementById("col-left");
 element.appendChild(para);
@@ -168,7 +168,7 @@ function gateLockClick(background) {
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("You have successfully picked the lock on the cell gate! The only thing stopping you from escaping the cell room is a locked door.");
+  var text = document.createTextNode("["+playerName+"] You have successfully picked the lock on the cell gate! The only thing stopping you from escaping the cell room is a locked door.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -226,7 +226,6 @@ function doorOpenClick(background) {
     sessionStorage.setItem("timeleft", 60-timePassed);
   }
   alert("You have escaped the Cells Room!");
-  stopTimer();
   window.location.href = "laboratory.html";
 
 }
@@ -238,7 +237,7 @@ function safeCode(){
   //prompt box stops the java timer, this calculates how long in function and takes it off remaining time
   var startTime = new Date();
   //text to prompt user to enter a code in
-  code = prompt("You found a locked safe box - Enter the 4 digit code to open it!: ");
+  code = prompt("["+playerName+"] You found a locked safe box - Enter the 4 digit code to open it!: ");
   //records end time user has been in function - used to calc full time user spent entering in a code before closing prompt box
   var endTime = new Date();
   //time spent in function
@@ -283,7 +282,7 @@ function safeCode(){
 
       // Displays text for the user (in left column)
       var para = document.createElement("p");
-      var text = document.createTextNode("You have unlocked the safe and found a note and a flash light within it.");
+      var text = document.createTextNode("["+playerName+"] You have unlocked the safe and found a note and a flash light within it.");
       para.appendChild(text);
       var element = document.getElementById("col-left");
       element.appendChild(para);
@@ -324,14 +323,18 @@ function safeCode(){
     var gameArea = document.getElementById('col-left');
     var txt = "";
 
+    // Removes button after clicked
+    var nButton = document.getElementById("drawerButton");
+    drawerButton.style.display = "none";
+
     txt = '<p>[System]: You found a locked safe box - Please enter a 4 digit code to unlock it</p><br>';
-    txt += '<label for= "SafeCode" id="codeLabel">Code: </label>';
-    txt += '<input type= "text" id="SafeCode" name= "SafeCode"></input><input type="submit" value = "Submit" id ="submitCode" onclick="safeSubmit();"/><br>';
+    txt += '<label for= "safeCode">Code: </label>';
+    txt += '<input type= "text" id="SafeCode" name= "SafeCode"></input><input type="submit" value = "Submit" onclick="safeSubmit();"/><br>';
     gameArea.innerHTML += txt + "<br>";
   }
 
   function safeSubmit() {
-    //document.getElementById('gameText').innerHTML = "Hi Olivia";
+
     var x = document.getElementById("SafeCode").value;
     document.getElementById('gameText').innerHTML = "";
     if(x=="7412"){
@@ -345,7 +348,7 @@ function safeCode(){
 
       // Displays text for the user (in left column)
       var para = document.createElement("p");
-      var text = document.createTextNode("You have unlocked the safe and found a note and a flash light within it.");
+      var text = document.createTextNode("["+playerName+"] You have unlocked the safe and found a note and a flash light within it.");
       para.appendChild(text);
       var element = document.getElementById("col-left");
       element.appendChild(para);
@@ -358,10 +361,8 @@ function safeCode(){
       var nButton = document.getElementById("drawerButton");
       drawerButton.style.display = "none";
 
-      document.getElementById.innerHTML = "";
-      document.getElementById("SafeCode").remove();
-      document.getElementById("codeLabel").remove();
-      document.getElementById("submitCode").remove();
+
+
       unlocked = true;
     //else the user is told the code is incorrect
     }else{
@@ -417,7 +418,7 @@ function safeCode(){
 
     // Displays text for the user (in left column)
     var para = document.createElement("p");
-    var text = document.createTextNode("You have successfully entered the correct combination!");
+    var text = document.createTextNode("["+playerName+"] You have successfully entered the correct combination!");
     para.appendChild(text);
     var element = document.getElementById("col-left");
     element.appendChild(para);
