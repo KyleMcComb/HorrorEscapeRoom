@@ -26,7 +26,7 @@ form input{
     display: inline-block;
     font-size: 1.23em;
     background-color: grey;
-    border: solid #C3073F 2.5px;
+    border: solid #C3073F 2px;
     border-radius: 10px;
     padding-left: 5%;
     width: 10em;
@@ -37,9 +37,14 @@ form input{
   display: inline-block;
   font-size: 1.25em;
   background-color: grey;
-  border: solid #C3073F 2.5px;
+  border: solid #C3073F 2px;
   border-radius: 10px;
   width: 10em;
+}
+
+#video{
+  border: solid #C3073F 2px;
+  border-radius: 10px;
 }
 
 #col-left {
