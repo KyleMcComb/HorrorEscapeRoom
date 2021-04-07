@@ -228,7 +228,7 @@ function doorOpenClick(background) {
   } else{
     sessionStorage.setItem("timeleft", 60-timePassed);
   }
-  alert("You have escaped the Cells Room!");
+
   window.location.href = "laboratory.html";
 }
 
