@@ -328,8 +328,8 @@ function safeCode(){
     drawerButton.style.display = "none";
 
     txt = '<p>[System]: You found a locked safe box - Please enter a 4 digit code to unlock it</p><br>';
-    txt += '<label for= "safeCode">Code: </label>';
-    txt += '<input type= "text" id="SafeCode" name= "SafeCode"></input><input type="submit" value = "Submit" onclick="safeSubmit();"/><br>';
+    txt += '<label for= "safeCode" id="codeLabel" >Code: </label>';
+    txt += '<input type= "text" id="SafeCode" name= "SafeCode"></input><input type="submit" value = "Submit" id = "submitCode" onclick="safeSubmit();"/><br>';
     gameArea.innerHTML += txt + "<br>";
   }
 
@@ -361,7 +361,9 @@ function safeCode(){
       var nButton = document.getElementById("drawerButton");
       drawerButton.style.display = "none";
 
-
+      document.getElementById("SafeCode").remove();
+      document.getElementById("codeLabel").remove();
+      document.getElementById("submitCode").remove();
 
       unlocked = true;
     //else the user is told the code is incorrect
