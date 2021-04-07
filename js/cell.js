@@ -1,3 +1,4 @@
+// onLoad method that displays game text and plays ambience sound when room loads
 function onLoad() {
   var para = document.createElement("p");
   var text = document.createTextNode("["+playerName+"] You have just regained consciousness. You find yourself left alone in a cell. You are left badly shaken and confused. You better make an escape soon or become one of Doctor Friedrich's experiments. Make sure to hover your mouse around the room to find items and puzzles.");
@@ -10,7 +11,7 @@ function onLoad() {
   var element = document.getElementById("col-left");
   element.appendChild(lineBreak);
 }
-
+// Plays ambience music when user clicks on page
 document.addEventListener('click', musicPlay);
 function musicPlay() {
     var amb = new Audio('audio/Cell/cellAmbience.mp3');
@@ -18,11 +19,11 @@ function musicPlay() {
     document.removeEventListener('click', musicPlay);
 }
 
+var code; //lock safe code entered in by user to unlock safe 7412
+var unlocked = false; //boolean checking if the safe has been unlocked
+var lockPickFound = false; //boolean checking if the user collected the lock pick
 
-var code; //code entered in by user to escape
-var unlocked = false; //
-var lockPickFound = false;
-
+// Lock pick click method that plays a sound and displays game text when the user clicks on the lock pick
 function LockPickClick(background) {
   lockPickFound = true;
 
@@ -72,8 +73,9 @@ function closeNote() {
 
 }
 
+// arrow Click method that checks if the user has completed the room and if they have change the room layout and room image
 function arrowClick(background) {
-
+// If statement to check if the user hasn't completed the room
 if (unlocked == false || lockPickFound == false){
   // Displays text for the user (in left column)
   var para = document.createElement("p");
@@ -86,7 +88,7 @@ var lineBreak = document.createElement("br");
 var element = document.getElementById("col-left");
 element.appendChild(lineBreak);
 }
-else {
+else { // else if the user completed the room then change the room layout and image
 
   // Changes image on click
   image = document.getElementById('background');
@@ -123,7 +125,7 @@ else {
   }
 }
 
-
+// codeClick method that displays the code in the game text for accessibility
 function codeClick(background) {
 
   // Displays text for the user (in left column)
@@ -139,8 +141,8 @@ element.appendChild(lineBreak);
 
 }
 
-
-function gateLockClick(background) {
+//  gateLockPicked method that unlocks the gate and loads the next rooms puzzles
+function gateLockPicked(background) {
 
   // create gateOpening audio object and play it
   var gateOpening = new Audio('audio/Cell/gateOpen.wav');
@@ -177,7 +179,7 @@ function gateLockClick(background) {
   var element = document.getElementById("col-left");
   element.appendChild(lineBreak);
 }
-
+// doorContrClick method that plays a sound and displays the combination button when user clicks on door
 function doorContrClick(background) {
 
   // create metalDoorClick audio object and play it
@@ -188,7 +190,7 @@ function doorContrClick(background) {
   var nButton = document.getElementById("lockedDoorButton");
   lockedDoorButton.style.display = "none";
 
-  // Adds cell door button after clicked
+  // Adds combination buttons after clicked
   var nButton = document.getElementById("doorControButtonTri");
   doorControButtonTri.style.display = "block";
 
@@ -214,6 +216,7 @@ function doorContrClick(background) {
   element.appendChild(lineBreak);
 }
 
+// Method that moves the user onto the next room and records the time to be carried over
 function doorOpenClick(background) {
 
   // Remove open door button
@@ -227,9 +230,9 @@ function doorOpenClick(background) {
   }
   alert("You have escaped the Cells Room!");
   window.location.href = "laboratory.html";
-
 }
 
+  // safeCode method that displays a insert box and a message for the user to enter in the 4 digit safe code
   function safeCode() {
     var gameArea = document.getElementById('col-left');
     var txt = "";
@@ -244,10 +247,12 @@ function doorOpenClick(background) {
     gameArea.innerHTML += txt + "<br>";
   }
 
+// Once the user submits this method is called to check if the user entered in the correct code
   function safeSubmit() {
 
     var x = document.getElementById("SafeCode").value;
     document.getElementById('gameText').innerHTML = "";
+    //If the user enteres in the correct code
     if(x=="7412"){
       // create safeopening audio object and play it
       var safeopening = new Audio('audio/Cell/safeOpen.flac');
@@ -272,10 +277,11 @@ function doorOpenClick(background) {
       var nButton = document.getElementById("drawerButton");
       drawerButton.style.display = "none";
 
+      // removes the insert box and message
       document.getElementById("SafeCode").remove();
       document.getElementById("codeLabel").remove();
       document.getElementById("submitCode").remove();
-
+      // sets unlocked boolean to true
       unlocked = true;
     //else the user is told the code is incorrect
     }else{
@@ -297,6 +303,7 @@ function doorOpenClick(background) {
 
   }
 
+  // combination success method that removes the buttons and changes the background image and displays a method once called
   function combinationSuccess(background) {
 
     // create doorOpen audio object and play it
@@ -307,11 +314,11 @@ function doorOpenClick(background) {
     var nButton = document.getElementById("openDoorButton");
     openDoorButton.style.display = "block";
 
-    // Changes image on click
+    // Changes background image
     image = document.getElementById('background');
     image.src = "img/Cell/CellRoomsDoorOpen.png";
 
-    // removes cell door buttons after clicked
+    // removes combination buttons
     var nButton = document.getElementById("doorControButtonTri");
     doorControButtonTri.style.display = "none";
 
@@ -324,10 +331,9 @@ function doorOpenClick(background) {
     var nButton = document.getElementById("doorControButtonCir");
     doorControButtonCir.style.display = "none";
 
-    // Removes Note
+    // Removes victims dairy
     var nButton = document.getElementById("noteModal");
     noteModal.style.display = "none";
-
 
     // Displays text for the user (in left column)
     var para = document.createElement("p");
@@ -341,7 +347,7 @@ function doorOpenClick(background) {
     element.appendChild(lineBreak);
   }
 
-  //Symbol combination lock
+  //Symbol combination lock method
   var buttonsPressed = 0;
   var lockCode = "TriangleSquareCircleCross";
   var enteredCode = "";
@@ -350,7 +356,7 @@ function doorOpenClick(background) {
       // create combinationClickSound audio object and play it
       var combinationClickSound = new Audio('audio/Cell/combinationClick.wav');
 
-      //Make buttons disappear when pressed
+      //Make buttons disappear when pressed and play sound and record pressed button
       switch(symbol){
         case "Triangle" :
           document.getElementById("doorControButtonTri").style.display="none";
@@ -377,7 +383,7 @@ function doorOpenClick(background) {
           combinationClickSound.play();
           break;
         default:
-          alert("Error in switch of button locks");
+          alert("Error in combination button locks");
           break;
       }
 
@@ -392,12 +398,12 @@ function doorOpenClick(background) {
       var element = document.getElementById("col-left");
       element.appendChild(lineBreak);
 
-      //Reset if its been pressed 4 times
+      //Reset if all 4 buttons have been pressed
       if(buttonsPressed >= 4){
         //Correct order of button press
-
         if(enteredCode == lockCode){
-          combinationSuccess();
+           // Call the combinationSuccess method
+           combinationSuccess();
 
             //Hide buttons
             document.getElementById("doorControButtonTri").style.display="none";
@@ -423,12 +429,13 @@ function doorOpenClick(background) {
             var element = document.getElementById("col-left");
             element.appendChild(lineBreak);
 
-
+            // Loads the buttons back again
             document.getElementById("doorControButtonTri").style.display="initial";
             document.getElementById("doorControButtonSqu").style.display="initial";
             document.getElementById("doorControButtonCir").style.display="initial";
             document.getElementById("doorControButtonX").style.display="initial";
           }
+          // Reset the values
           enteredCode = "";
           buttonsPressed = 0;
         }
@@ -446,7 +453,7 @@ event.preventDefault();
 
 function onDrop(event) {
 event.preventDefault();
-gateLockClick();
+gateLockPicked();
 
 const id = event.dataTransfer.getData('text');
 
