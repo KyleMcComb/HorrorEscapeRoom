@@ -214,7 +214,10 @@ function noteBackClick() {
   forwardButton.style.display = "block";
   // Removes button after clicked
   var nbButton = document.getElementById("noteBackButton");
-  noteBackButton.style.display = "none";
+  noteBackButton.style.display = "none"
+  // Removes button after clicked
+  var bsButton = document.getElementById("bookshelfButton");
+  bookshelfButton.style.display = "none";
   // Displays text for the user (in left column)
   var para = document.createElement("p");
   var text = document.createTextNode("You go back to the Notes.");
