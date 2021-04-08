@@ -17,12 +17,20 @@ function musicPlay() {
 
 // runs on page load, prints text to the game text div
 function onLoad() {
+
   var para = document.createElement("p");
-  var text = document.createTextNode("[System] You've entered a dark hallway and can see a door at the other end, maybe you should look around for an exit before you are caught and dragged back to your cell " + playerName + "!");
+  var text = document.createTextNode("[System] You've entered a dark hallway and can see a door at the other end, maybe you should look around for an exit before you are caught and dragged back to your cell ");
+  var span = document.createElement("SPAN");
+  span.style.fontWeight = 'bold';
+  var player = document.createTextNode( playerName);
   para.appendChild(text);
+  para.appendChild(span);
   var element = document.getElementById("gameText");
   element.appendChild(para);
+  span.appendChild(player);
   lineBreak();
+
+
 }
 
 
@@ -48,12 +56,20 @@ function sideRoomClick() {
 
   // if the exit door has already been interacted with run this
   if (exitDoorClicked === true) {
+
     var para = document.createElement("p");
-    var text = document.createTextNode("[System] A dark hallway that leads somewhere, there may be another exit down here " + playerName + "?" + ", or a tool to break the lock on the steel door you found earlier. Enter the hallway? y for yes");
+    var text = document.createTextNode("[System] A dark hallway that leads somewhere, maybe there you could find another exit down here. Enter the hallway? press y to enter the hallway ");
+    var span = document.createElement("SPAN");
+    span.style.fontWeight = 'bold';
+    var player = document.createTextNode( playerName);
     para.appendChild(text);
+    para.appendChild(span);
     var element = document.getElementById("gameText");
     element.appendChild(para);
+    span.appendChild(player);
     lineBreak();
+
+
 
     // listener for user to key press and enter morgue
     document.addEventListener('keydown', function(e) {
@@ -67,12 +83,19 @@ function sideRoomClick() {
   }
   // else run this if exit door has not been interacted with
   else {
+
     var para = document.createElement("p");
-    var text = document.createTextNode("[System] A dark hallway that leads somewhere, maybe there you could find another exit down here " + playerName + "?" + " Enter the hallway? y for yes");
+    var text = document.createTextNode("[System] A dark hallway that leads somewhere, maybe there you could find another exit down here Enter the hallway? press y to enter the hallway " );
+    var span = document.createElement("SPAN");
+    span.style.fontWeight = 'bold';
+    var player = document.createTextNode( playerName);
     para.appendChild(text);
+    para.appendChild(span);
     var element = document.getElementById("gameText");
     element.appendChild(para);
+    span.appendChild(player);
     lineBreak();
+
 
     document.addEventListener('keydown', function(e) {
       //  if (e.keyCode == 89)
@@ -110,11 +133,18 @@ function exitClick() {
   if (acidFound) {
     // print some text
     var para = document.createElement("p");
-    var text = document.createTextNode("[System] You pour the acid over the lock on the door, it corrodes it and makes it weak enough for you to pull open." + "well done " + playerName + ", Better get out of here! Press y to leave");
+    var text = document.createTextNode('[System] You pour the acid over the lock on the door, it corrodes it and makes it weak enough for you to pull open, Better get out of here quickly ');
+    var span = document.createElement("SPAN");
+    span.style.fontWeight = 'bold';
+    var player = document.createTextNode( playerName);
     para.appendChild(text);
+    para.appendChild(span);
     var element = document.getElementById("gameText");
     element.appendChild(para);
+    span.appendChild(player);
     lineBreak();
+
+
 
     // create acidLock audio object and play it
     var acidLock = new Audio('audio/Hallway/acidLock.mp3');
@@ -149,7 +179,7 @@ function exitClick() {
     // if acid has not been gotten print some text
     exitDoorClicked = true;
     var para = document.createElement("p");
-    var text = document.createTextNode("A exit but it is barred by a locked steel gate, it looks old, i may be able to break the lock with the right tool");
+    var text = document.createTextNode("A exit but it is barred by a locked steel gate, it looks old, I may be able to break the lock with the right tool");
     para.appendChild(text);
     var element = document.getElementById("gameText");
     element.appendChild(para);
@@ -166,10 +196,15 @@ function exitClick() {
 function morgueIntro() {
   morgueIntro = function() {};
   var para = document.createElement("p");
-  var text = document.createTextNode('[System]The hallway lead you to a morgue, this must be where Dr Friedrich disposes of his subjects. Maybe you should look around ' + playerName + ', for anything to help me unlock the gate in the hallway');
+  var text = document.createTextNode('[System]The hallway lead you to a morgue, this must be where Dr Friedrich disposes of his subjects. Maybe you should look around, for anything to help you unlock the gate in the hallway ');
+  var span = document.createElement("SPAN");
+  span.style.fontWeight = 'bold';
+  var player = document.createTextNode( playerName);
   para.appendChild(text);
+  para.appendChild(span);
   var element = document.getElementById("gameText");
   element.appendChild(para);
+  span.appendChild(player);
   lineBreak();
 }
 
@@ -300,11 +335,15 @@ function checkSelections() {
 
     acidFound = true;
     var para = document.createElement("p");
-    var text = document.createTextNode('[System] Success! This seems to have made some acid that is more than corossive enough, you can use it to break down the lock in the hallway ' + playerName + '! Better get going! Hit Y to go back to the Hallway');
+    var text = document.createTextNode('[System] Success! This seems to have made some acid that is more than corossive enough, you can use it to break down the lock in the hallway, better get going! Hit y to go back to the Hallway ');
+    var span = document.createElement("SPAN");
+    span.style.fontWeight = 'bold';
+    var player = document.createTextNode( playerName);
     para.appendChild(text);
+    para.appendChild(span);
     var element = document.getElementById("gameText");
     element.appendChild(para);
-
+    span.appendChild(player);
     lineBreak();
 
     document.addEventListener('keydown', function(e) {
@@ -325,7 +364,7 @@ function checkSelections() {
     acidFailure.play();
     // selection was not correct print some text
     var para = document.createElement("p");
-    var text = document.createTextNode("This combonation doesn't seem to be what i need, i should try making something to dissolve the lock in the hallway, maybe some acid would do? I should double check the note i found, it mentioned acid and some sort of key");
+    var text = document.createTextNode("This combonation doesn't seem to be what I need, I should try making something to dissolve the lock in the hallway, maybe some acid would do? I should double check the note I found, it mentioned acid and some sort of key");
     para.appendChild(text);
     var element = document.getElementById("gameText");
     element.appendChild(para);
