@@ -24,7 +24,6 @@ function countdown() {
   if (timer == 30 || (timer > 29 && timer < 30)) {
     document.getElementById('gameText').innerHTML += '<p>[System]: You hear a creek of floor boards, Dr Friedrich is getting closer, better hurry up!</p><br><br>';
     document.getElementById('timer').innerHTML = timer;
-    //EDIT LATER? - used to display timer to gametext area
   } else if (timer > 0 && timer != 30) {
     document.getElementById('timer').innerHTML = timer;
   } else {
