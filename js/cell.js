@@ -223,12 +223,13 @@ function doorOpenClick(background) {
   var nButton = document.getElementById("openDoorButton");
   openDoorButton.style.display = "none";
   sessionStorage.setItem("cellTime", timePassed);
+
   if(timePassed>60){
     sessionStorage.setItem("timeleft", 0);
   } else{
     sessionStorage.setItem("timeleft", 60-timePassed);
   }
-
+stopTimer();
   window.location.href = "laboratory.html";
 }
 
