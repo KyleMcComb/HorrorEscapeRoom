@@ -79,7 +79,7 @@ function arrowClick(background) {
 if (unlocked == false || lockPickFound == false){
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-var text = document.createTextNode("[Make sure you look around the room fully before turning around.");
+var text = document.createTextNode("Make sure you look around the room fully before turning around.");
 para.appendChild(text);
 var element = document.getElementById("col-left");
 element.appendChild(para);
