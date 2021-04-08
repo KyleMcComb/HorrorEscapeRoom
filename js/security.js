@@ -26,6 +26,7 @@
       torch = true;
 
   }
+
   //When the wires are clicked
   function wiresClick(){
     var wiresButton = document.getElementById("leftWire");
@@ -384,6 +385,7 @@
             if(Math.sqrt(wrongTimes)%2 === 1)
             writeText('<span style = font-weight:bold;> ['+  playerName +'] </span>' + "That password was incorrect. Maybe there is a clue somewhere...", "");
           }
+
 
         }
       }
