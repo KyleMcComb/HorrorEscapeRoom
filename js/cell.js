@@ -1,15 +1,17 @@
 // onLoad method that displays game text and plays ambience sound when room loads
 function onLoad() {
+
   var para = document.createElement("p");
-  var text = document.createTextNode("["+playerName+"] You have just regained consciousness. You find yourself left alone in a cell. You are left badly shaken and confused. You better make an escape soon or become one of Doctor Friedrich's experiments. Make sure to hover your mouse around the room to find items and puzzles.");
+  var text = document.createTextNode("[System] You have just regained consciousness. You find yourself left alone in a cell. You are left badly shaken and confused. You better make an escape soon or become one of Doctor Friedrich's experiments. Make sure to hover your mouse around the room to find items and puzzles. ");
+  var span = document.createElement("SPAN");
+  span.style.fontWeight = 'bold';
+  var player = document.createTextNode('['+playerName+']');
   para.appendChild(text);
+  para.appendChild(span);
   var element = document.getElementById("col-left");
   element.appendChild(para);
-
-
-  var lineBreak = document.createElement("br");
-  var element = document.getElementById("col-left");
-  element.appendChild(lineBreak);
+  span.appendChild(player);
+  lineBreak();
 }
 // Plays ambience music when user clicks on page
 document.addEventListener('click', musicPlay);
@@ -22,6 +24,13 @@ function musicPlay() {
 var code; //lock safe code entered in by user to unlock safe 7412
 var unlocked = false; //boolean checking if the safe has been unlocked
 var lockPickFound = false; //boolean checking if the user collected the lock pick
+
+// method that prints a line break where called to the gameText div
+function lineBreak() {
+  var lineBreak = document.createElement("br");
+  var element = document.getElementById("col-left");
+  element.appendChild(lineBreak);
+}
 
 // Lock pick click method that plays a sound and displays game text when the user clicks on the lock pick
 function LockPickClick(background) {
@@ -41,7 +50,7 @@ function LockPickClick(background) {
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("["+playerName+"] You discovered a lock pick maybe you could use it to unlock the cell gate");
+  var text = document.createTextNode("You discovered a lock pick maybe you could use it to unlock the cell gate");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -111,7 +120,7 @@ else { // else if the user completed the room then change the room layout and im
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("["+playerName+"] You turn around to discover you are locked in a cell. The only thing stopping you from getting closer to freedom is a locked cell door (Drag and Drop the lock pick onto the cell gate lock)");
+  var text = document.createTextNode("You turn around to discover you are locked in a cell. The only thing stopping you from getting closer to freedom is a locked cell door (Drag and Drop the lock pick onto the cell gate lock)");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -130,7 +139,7 @@ function codeClick(background) {
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-var text = document.createTextNode("["+playerName+"] You spot a code on the wall: 7412. Mabye this code could be used to unlock the safe.");
+var text = document.createTextNode("You spot a code on the wall: 7412. Mabye this code could be used to unlock the safe.");
 para.appendChild(text);
 var element = document.getElementById("col-left");
 element.appendChild(para);
@@ -170,7 +179,7 @@ function gateLockPicked(background) {
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("["+playerName+"] You have successfully picked the lock on the cell gate! The only thing stopping you from escaping the cell room is a locked door.");
+  var text = document.createTextNode("You have successfully picked the lock on the cell gate! The only thing stopping you from escaping the cell room is a locked door.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -223,13 +232,13 @@ function doorOpenClick(background) {
   var nButton = document.getElementById("openDoorButton");
   openDoorButton.style.display = "none";
   sessionStorage.setItem("cellTime", timePassed);
-
   if(timePassed>60){
     sessionStorage.setItem("timeleft", 0);
   } else{
     sessionStorage.setItem("timeleft", 60-timePassed);
   }
-stopTimer();
+
+  stopTimer();
   window.location.href = "laboratory.html";
 }
 
@@ -265,7 +274,7 @@ stopTimer();
 
       // Displays text for the user (in left column)
       var para = document.createElement("p");
-      var text = document.createTextNode("["+playerName+"] You have unlocked the safe and found a note and a flash light within it.");
+      var text = document.createTextNode("You have unlocked the safe and found a note and a flash light within it.");
       para.appendChild(text);
       var element = document.getElementById("col-left");
       element.appendChild(para);
@@ -338,7 +347,7 @@ stopTimer();
 
     // Displays text for the user (in left column)
     var para = document.createElement("p");
-    var text = document.createTextNode("["+playerName+"] You have successfully entered the correct combination!");
+    var text = document.createTextNode("You have successfully entered the correct combination!");
     para.appendChild(text);
     var element = document.getElementById("col-left");
     element.appendChild(para);
