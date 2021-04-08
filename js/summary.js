@@ -103,7 +103,7 @@ function gameMode(){
         var row = tbl.insertRow(rows);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
-        cell1.innerHTML = "Hallway/Morgue Time";
+        cell1.innerHTML = "Hallway Time";
         cell2.innerHTML = hallwayTime;
 
         rows = tbl.rows.length;
