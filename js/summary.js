@@ -24,7 +24,7 @@ function gameMode(){
   var trait = sessionStorage.getItem("cTrait");
 
   if(winGame=="win"){
-    document.getElementById("doctor").src = "img/Summary/Surgeon-Win.jpg";
+    document.getElementById("doctor").src = "img/Summary/YouWinExit.jpg";
     roomName.innerHTML = 'You Won!';
     traitOutput.innerHTML = 'Well done ' + playerName + '. You won thanks to your incredible display of ';
 
