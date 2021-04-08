@@ -22,7 +22,7 @@ function onLoad() {
   var text = document.createTextNode("[System] You've entered a dark hallway and can see a door at the other end, maybe you should look around for an exit before you are caught and dragged back to your cell ");
   var span = document.createElement("SPAN");
   span.style.fontWeight = 'bold';
-  var player = document.createTextNode( playerName);
+  var player = document.createTextNode('['+playerName+']');
   para.appendChild(text);
   para.appendChild(span);
   var element = document.getElementById("gameText");
@@ -61,7 +61,7 @@ function sideRoomClick() {
     var text = document.createTextNode("[System] A dark hallway that leads somewhere, maybe there you could find another exit down here. Enter the hallway? press y to enter the hallway ");
     var span = document.createElement("SPAN");
     span.style.fontWeight = 'bold';
-    var player = document.createTextNode( playerName);
+    var player = document.createTextNode('['+playerName+']');
     para.appendChild(text);
     para.appendChild(span);
     var element = document.getElementById("gameText");
@@ -88,7 +88,7 @@ function sideRoomClick() {
     var text = document.createTextNode("[System] A dark hallway that leads somewhere, maybe there you could find another exit down here Enter the hallway? press y to enter the hallway " );
     var span = document.createElement("SPAN");
     span.style.fontWeight = 'bold';
-    var player = document.createTextNode( playerName);
+    var player = document.createTextNode('['+playerName+']');
     para.appendChild(text);
     para.appendChild(span);
     var element = document.getElementById("gameText");
@@ -136,7 +136,7 @@ function exitClick() {
     var text = document.createTextNode('[System] You pour the acid over the lock on the door, it corrodes it and makes it weak enough for you to pull open, Better get out of here quickly ');
     var span = document.createElement("SPAN");
     span.style.fontWeight = 'bold';
-    var player = document.createTextNode( playerName);
+    var player = document.createTextNode('['+playerName+']');
     para.appendChild(text);
     para.appendChild(span);
     var element = document.getElementById("gameText");
@@ -199,7 +199,7 @@ function morgueIntro() {
   var text = document.createTextNode('[System]The hallway lead you to a morgue, this must be where Dr Friedrich disposes of his subjects. Maybe you should look around, for anything to help you unlock the gate in the hallway ');
   var span = document.createElement("SPAN");
   span.style.fontWeight = 'bold';
-  var player = document.createTextNode( playerName);
+  var player = document.createTextNode( '['+playerName+']');
   para.appendChild(text);
   para.appendChild(span);
   var element = document.getElementById("gameText");
@@ -338,7 +338,7 @@ function checkSelections() {
     var text = document.createTextNode('[System] Success! This seems to have made some acid that is more than corossive enough, you can use it to break down the lock in the hallway, better get going! Hit y to go back to the Hallway ');
     var span = document.createElement("SPAN");
     span.style.fontWeight = 'bold';
-    var player = document.createTextNode( playerName);
+    var player = document.createTextNode('['+ playerName+']');
     para.appendChild(text);
     para.appendChild(span);
     var element = document.getElementById("gameText");
