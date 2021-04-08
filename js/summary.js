@@ -26,7 +26,7 @@ function gameMode(){
   if(winGame=="win"){
     document.getElementById("doctor").src = "img/Summary/YouWinExit.jpg";
     roomName.innerHTML = 'You Won!';
-    traitOutput.innerHTML = 'Well done ' + playerName + '. You won thanks to your incredible display of ';
+    traitOutput.innerHTML = 'Well done <span class="player"' + playerName + '</span>. You won thanks to your incredible display of ';
 
     //outputs user's selected trait for personalisation
     switch(trait) {
@@ -61,7 +61,7 @@ function gameMode(){
     }
 
     document.getElementById("doctor").src="img/Summary/Doctor.jpg";
-    roomName.innerHTML = 'You Lost! Better luck next time ' + playerName + "!";
+    roomName.innerHTML = 'You Lost! Better luck next time <span class="player"' + playerName + '</span>!';
   }
 
   //gets times spent in each room from the session storage
