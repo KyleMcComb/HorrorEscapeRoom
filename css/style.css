@@ -28,8 +28,6 @@
   background-color: rgba(0,0,0,0);
 }
 
-
-
 .content-black {
   overflow: hidden;
   text-align: center;
@@ -52,4 +50,8 @@
 
 .content-black:hover .redact-black {
   background-color: rgba(0,0,0,0);
+}
+
+.player {
+  font-weight: bold;
 }

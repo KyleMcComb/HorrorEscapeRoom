@@ -42,16 +42,17 @@ function displayCode() {
       playSound('openDoor');
       var winGame = "win";
       sessionStorage.setItem("winGame", winGame);
+      sessionStorage.setItem("exitTime", timePassed);
       timer = timer +3;
       stopTimer();
       timeOut = setTimeout(summaryPage, 3000);
       //saves the gamePlay to win to get Win Doctor picture and correct stats
     } else if (noKeys < 3) {
       playSound('error');
-      txt = '<p>['+playerName+']: Hmm..looks like theres 3 locks, looks like I need 3 keys to escape!</p>';
+      txt = '<p>[<span class="player">' + playerName + '</span>]: Hmm..looks like theres 3 locks, looks like I need 3 keys to escape!</p>';
     } else {
       playSound('error');
-      txt = '<p style="color:red;">[System]:That code is incorrect.</p>';
+      txt = '<p>[System]:That code is incorrect.</p>';
     }
 
     document.getElementById('gameText').innerHTML +=txt + '<br>';
@@ -65,7 +66,7 @@ function summaryPage(){
 //tells user code on wall as hint
 function wallCode() {
   //var txt = "[System]: You have found a note - maybe there is a code. <br><br>";
-  var txt = '['+playerName+']: Hmm a code on the wall, maybe its a code for something - 420. <br><br>';
+  var txt = '[<span class="player">' + playerName + '</span>]: Hmm a code on the wall, maybe its a code for something - 420. <br><br>';
   document.getElementById('gameText').innerHTML += txt;
 
   document.getElementById('wallCode').style.display = 'none';
@@ -73,7 +74,7 @@ function wallCode() {
 
 function wallNote() {
   playSound('noteWhisper');
-  var txt = '['+playerName+']: I have found a note - maybe there is a 3 digit code in it. <br><br>';
+  var txt = '[<span class="player">' + playerName + '</span>]: I have found a note - maybe there is a 3 digit code in it. <br><br>';
   document.getElementById('gameText').innerHTML += txt;
 
   //EDIT LATER - WHAT DO YOU WANT TO DO
@@ -87,7 +88,7 @@ function wallNote() {
 
 //used to tell the user coloured glass as alt tag for image mapping wasnt resizable
 function colouredGlass() {
-  var txt = '[System]: You have found coloured glass Gold, Blue, Purple - maybe this is a clue to Dr Friedrichs puzzle.<br>';
+  var txt = '[<span class="player">' + playerName + '</span>]: I have found coloured glass Gold, Blue, Purple - maybe this is a clue to Dr Friedrichs puzzle.<br>';
   document.getElementById('gameText').innerHTML += txt;
 }
 
@@ -107,7 +108,7 @@ function purpleSubmit() {
   if(x==codePurpleKey){
     keyFound('purple');
   }else{
-    document.getElementById('gameText').innerHTML += '<p style="color:red;">[System]: Try again - wrong code!</p><br><p> Hint: check the walls for notes! </p><br><br>';
+    document.getElementById('gameText').innerHTML += '<p>[System]: Try again - wrong code!</p><br><p> Hint: check the walls for notes! </p><br><br>';
     playSound('error');
   }
 
@@ -124,19 +125,19 @@ function keyFound(keyType) {
       //shows image of gold key close up
       expand('gold');
       x = document.getElementById('goldKey');
-      txt = '<p>['+playerName+']: I have found the gold key!';
+      txt = '<p>[<span class="player">' + playerName + '</span>]: I have found the gold key!';
       break;
     case 'blue':
       //shows image of blue key close up
       expand('blue');
       x = document.getElementById('blueKey');
-      txt = '<p>['+playerName+']: I have found the blue key found!';
+      txt = '<p>[<span class="player">' + playerName + '</span>]: I have found the blue key found!';
       break;
     case 'purple':
       //shows image of purple key close up
       expand('purple');
       x = document.getElementById('purpleKey');
-      txt = '<p>['+playerName+']: Well done, purple key found!';
+      txt = '<p>[<span class="player">' + playerName + '</span>]: I have found the purple key found!';
       break;
     default:
       break;
@@ -149,7 +150,7 @@ function keyFound(keyType) {
     txt += ' 2/3 Keys found! Keep Searching! </p><br>';
   } else {
     txt += '3/3 Keys found!</p><br>';
-    txt += '<p>['+playerName+']I have found all 3 keys! I can hear Dr Friedrich getting close! Better escape soon!</p><br>';
+    txt += '<p>[<span class="player">' + playerName + '</span>]I have found all 3 keys! I can hear Dr Friedrich getting close! Better escape soon!</p><br>';
     complete += '<ul><li>The Blue key has the number 3 on it</li><li>The Purple key has the number 5 on it</li><li>The Gold key has the number 9 on it</li></ul><br>';
   }
   //displays output to gameText area
