@@ -57,7 +57,7 @@ function gameMode(){
         traitOutput.innerHTML += "You were courageous but the lack of forward planning costed you time you couldn't afford to lose.";
       break;
       default:
-      traitOutput.innerHTML +='wit';
+      traitOutput.innerHTML +='You have lost due your wit';
     }
 
     document.getElementById("doctor").src="img/Summary/Doctor.jpg";
