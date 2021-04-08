@@ -81,7 +81,6 @@
       } else{
         sessionStorage.setItem("timeleft", 60-timePassed);
       }
-      alert("You have escaped the security room");
       stopTimer();
       window.location.href = "exit.html";
     }
