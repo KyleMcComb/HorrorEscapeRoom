@@ -26,10 +26,15 @@ function drawerClick(background) {
   compartment2Button.style.display = "block";
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("Doctor Friedrich's drawer, I would search for some clues " + playerName + ".");
+  var text = document.createTextNode("[System] Doctor Friedrich's drawer, I would search for some clues ");
+  var span = document.createElement("SPAN");
+  span.style.fontWeight = 'bold';
+  var player = document.createTextNode("["+playerName+"]");
   para.appendChild(text);
+  para.appendChild(span);
   var element = document.getElementById("col-left");
   element.appendChild(para);
+  span.appendChild(player);
 
   var lineBreak = document.createElement("br");
   var element = document.getElementById("col-left");
@@ -60,10 +65,15 @@ function noteClick(background) {
   compartment2Button.style.display = "none";
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode(playerName + ", you have found some important documents.");
+  var text = document.createTextNode("[System] you have found some important documents ");
+  var span = document.createElement("SPAN");
+  span.style.fontWeight = 'bold';
+  var player = document.createTextNode("["+playerName+"]");
   para.appendChild(text);
+  para.appendChild(span);
   var element = document.getElementById("col-left");
   element.appendChild(para);
+  span.appendChild(player);
 
   var lineBreak = document.createElement("br");
   var element = document.getElementById("col-left");
@@ -101,10 +111,15 @@ function compartmentClick() {
   compartmentButton.style.display = "none";
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("That compartment just contains experiment diagrams.. look elsewhere.");
+  var text = document.createTextNode("[System] That compartment just contains experiment diagrams.. look elsewhere ");
+  var span = document.createElement("SPAN");
+  span.style.fontWeight = 'bold';
+  var player = document.createTextNode("["+playerName+"]");
   para.appendChild(text);
+  para.appendChild(span);
   var element = document.getElementById("col-left");
   element.appendChild(para);
+  span.appendChild(player);
 
   var lineBreak = document.createElement("br");
   var element = document.getElementById("col-left");
@@ -122,12 +137,18 @@ function compartment2Click() {
   compartment2Button.style.display = "none";
   // Adds key
   keyFound=1;
+
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode(playerName + ", you have found a rusty key.. this could be useful.");
+  var text = document.createTextNode("[System] you have found a rusty key.. this could be useful ");
+  var span = document.createElement("SPAN");
+  span.style.fontWeight = 'bold';
+  var player = document.createTextNode("["+playerName+"]");
   para.appendChild(text);
+  para.appendChild(span);
   var element = document.getElementById("col-left");
   element.appendChild(para);
+  span.appendChild(player);
 
   var lineBreak = document.createElement("br");
   var element = document.getElementById("col-left");
@@ -153,12 +174,18 @@ function forwardClick() {
   // Adds button after clicked
   var bsButton = document.getElementById("bookshelfButton");
   bookshelfButton.style.display = "block";
+
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("You turn around and see no way out... or so you think.");
+  var text = document.createTextNode("[System] You turn around and see no way out... or so you think. I would investigate ");
+  var span = document.createElement("SPAN");
+  span.style.fontWeight = 'bold';
+  var player = document.createTextNode("["+playerName+"]");
   para.appendChild(text);
+  para.appendChild(span);
   var element = document.getElementById("col-left");
   element.appendChild(para);
+  span.appendChild(player);
 
   var lineBreak = document.createElement("br");
   var element = document.getElementById("col-left");
@@ -189,7 +216,7 @@ function backClick() {
   compartment2Button.style.display = "block";
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("You go back to the drawers incase you missed something.");
+  var text = document.createTextNode("[System] You go back to the drawers incase you missed something.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -220,7 +247,7 @@ function noteBackClick() {
   bookshelfButton.style.display = "none";
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("You go back to the Notes.");
+  var text = document.createTextNode("[System] You go back to the Notes.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -248,10 +275,15 @@ function bookshelfClick() {
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode(playerName + ", you stumble across the bookshelf.. A book appears to be loose.");
+  var text = document.createTextNode("[System] you stumble across the bookshelf.. A book appears to be loose ");
+  var span = document.createElement("SPAN");
+  span.style.fontWeight = 'bold';
+  var player = document.createTextNode("["+playerName+"]");
   para.appendChild(text);
+  para.appendChild(span);
   var element = document.getElementById("col-left");
   element.appendChild(para);
+  span.appendChild(player);
 
   var lineBreak = document.createElement("br");
   var element = document.getElementById("col-left");
@@ -278,7 +310,7 @@ function openshelfClick(){
 
   // Displays text for the user (in left column)
   var para = document.createElement("p");
-  var text = document.createTextNode("The bookshelf shifts open and you are faced with a locked door leading to a hallway.");
+  var text = document.createTextNode("[System] The bookshelf shifts open and you are faced with a locked door leading to a hallway.");
   para.appendChild(text);
   var element = document.getElementById("col-left");
   element.appendChild(para);
@@ -291,12 +323,18 @@ function openshelfClick(){
 
 function doorUnlockClick() {
   if(keyFound == 0){
+
     // Displays text for the user (in left column)
     var para = document.createElement("p");
-    var text = document.createTextNode("It seems you are missing the key for this door!");
+    var text = document.createTextNode("[System] It seems you are missing the key for this door ");
+    var span = document.createElement("SPAN");
+    span.style.fontWeight = 'bold';
+    var player = document.createTextNode("["+playerName+"]!");
     para.appendChild(text);
+    para.appendChild(span);
     var element = document.getElementById("col-left");
     element.appendChild(para);
+    span.appendChild(player);
 
     var lineBreak = document.createElement("br");
     var element = document.getElementById("col-left");
