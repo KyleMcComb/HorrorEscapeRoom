@@ -196,7 +196,7 @@ function exitClick() {
 function morgueIntro() {
   morgueIntro = function() {};
   var para = document.createElement("p");
-  var text = document.createTextNode('[System]The hallway lead you to a morgue, this must be where Dr Friedrich disposes of his subjects. Maybe you should look around, for anything to help you unlock the gate in the hallway ');
+  var text = document.createTextNode('[System] The hallway lead you to a morgue, this must be where Dr Friedrich disposes of his subjects. Maybe you should look around, for anything to help you unlock the gate in the hallway ');
   var span = document.createElement("SPAN");
   span.style.fontWeight = 'bold';
   var player = document.createTextNode( '['+playerName+']');
@@ -391,13 +391,6 @@ function lineBreak() {
 
 }
 
-// // method that prints a line break where called to the gameText div
-// function lineBreak() {
-//   var lineBreak = document.createElement("br");
-//   var element = document.getElementById("gameText");
-//   element.appendChild(lineBreak);
-// }
-
 // code is run when the note buttin in morgue is clicked
 function expandNote() {
   var noteOpen = new Audio('audio/Hallway/noteOpen.mp3');
@@ -431,68 +424,3 @@ function closeNote() {
   document.getElementById("myModalDiv").style.display = "none";
   document.getElementById("wiresModal").style.display = "none";
 }
-
-
-// function toggleColours() {
-//     var wrapper = document.getElementById('wrapper');
-//     var roomName = document.getElementById('roomName');
-//     var colLeft = document.getElementById('col-left');
-//     var headBorder = document.getElementById('head');
-//     var colLeftBorder = document.getElementById('col-left');
-//     var redact = document.getElementById('redact');
-//     var gameName = document.getElementById('gameName');
-//
-//     //decides what color the background is
-//     if (wrapper.style.backgroundColor === 'white') {
-//
-//         wrapper.style.backgroundColor = '#1A1A1D';
-//     } else {
-//         wrapper.style.backgroundColor = 'white';
-//     }
-//
-//     //decides the color of the room name text
-//     if (roomName.style.color === 'black') {
-//         roomName.style.color = 'white';
-//     } else {
-//         roomName.style.color = 'black';
-//     }
-//
-//     //decides the color of the text in the left col
-//     if (colLeft.style.color === 'black') {
-//         colLeft.style.color = 'white';
-//     } else {
-//         colLeft.style.color = 'black';
-//     }
-//       //decides the color of headers border
-//     if (headBorder.style.borderColor === 'black') {
-//         headBorder.style.borderColor = '#6f2232';
-//
-//     } else {
-//         headBorder.style.borderColor = 'black';
-//     }
-//
-//       //decides the color of left cols border
-//     if (colLeftBorder.style.borderColor === 'black') {
-//         colLeftBorder.style.borderColor = '#6f2232';
-//     } else {
-//         colLeftBorder.style.borderColor = 'black';
-//     }
-//
-//     //decides the color of redaction box in the title
-//     if(redact.style.backgroundColor === 'black'){
-//        redact.style.backgroundColor = '#C3073F';
-//        }
-//        else{
-//        redact.style.backgroundColor = 'black';
-//        }
-//
-//     //decides the color of the tilt text
-//     if(gameName.style.color === 'black'){
-//         gameName.style.color =  '#C3073F';
-//        }
-//        else{
-//        gameName.style.color = 'black';
-//        }
-//
-//
-// }

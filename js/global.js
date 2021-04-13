@@ -78,34 +78,4 @@ function toggleColours() {
     gameName.style.color = 'black';
   }
 
-  // //decides the color of the text in the left col
-  // if (colLeft.style.color === 'black') {
-  //   colLeft.style.color = 'white';
-  // } else {
-  //   colLeft.style.color = 'black';
-  // }
-  // //decides the color of headers border
-  // if (headBorder.style.borderColor === 'black') {
-  //   headBorder.style.borderColor = '#6f2232';
-  //
-  // } else {
-  //   headBorder.style.borderColor = 'black';
-  // }
-  //
-  // //decides the color of left cols border
-  // if (colLeftBorder.style.borderColor === 'black') {
-  //   colLeftBorder.style.borderColor = '#6f2232';
-  // } else {
-  //   colLeftBorder.style.borderColor = 'black';
-  // }
-
-  //decides the color of redaction box in the title and the color of the title text
-  // if (gameName.style.color === 'black') {
-  //   document.getElementById("redactID").classList.toggle("redact-black");
-  //   gameName.style.color = '#C3073F';
-  // } else {
-  //   document.getElementById("redactID").classList.toggle("redact-black");
-  //   gameName.style.color = 'black';
-  // }
-
 }
