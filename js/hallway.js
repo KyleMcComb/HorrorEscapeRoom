@@ -247,6 +247,8 @@ function showSelection() {
       selectList1.appendChild(option);
     }
 
+
+
     lineBreak();
     lineBreak();
 
@@ -325,25 +327,31 @@ lineBreak();
 // checks if the chemical compunds chosen by the player are correct when they hit the submit button
 function checkSelections() {
 
-  // if the selection is correct print Success and run code to go back to hallway
-  if (document.getElementById('H').selected && document.getElementById('M').selected && document.getElementById('6').selected) {
+   var select1 = document.getElementById('compound1');
+   var select2 = document.getElementById('compound2');
+   var select3 = document.getElementById('compound3');
 
-    lineBreak();
+  // if the selection is correct print Success and run code to go back to hallway
+  if (select1.options[compound1.selectedIndex].text == 'H' && select2.options[compound2.selectedIndex].text == 'M' && select3.options[compound3.selectedIndex].text == '6') {
+
     // create acidAudio audio object and play it
     var acidAudio = new Audio('audio/Hallway/acidSuccess.wav');
     acidAudio.play();
 
     acidFound = true;
-    var para = document.createElement("p");
-    var text = document.createTextNode('[System] Success! This seems to have made some acid that is more than corossive enough, you can use it to break down the lock in the hallway, better get going! Hit y to go back to the Hallway ');
-    var span = document.createElement("SPAN");
-    span.style.fontWeight = 'bold';
-    var player = document.createTextNode('['+ playerName+']');
-    para.appendChild(text);
-    para.appendChild(span);
-    var element = document.getElementById("gameText");
-    element.appendChild(para);
-    span.appendChild(player);
+
+  //  document.getElementById('gameText').innerHTML += '[System] Success! This seems to have made some acid that is more than corossive enough, you can use it to break down the lock in the hallway, better get going! Hit y to go back to the Hallway';
+
+     var para = document.createElement("p");
+     var text = document.createTextNode('[System] Success! This seems to have made some acid that is more than corossive enough, you can use it to break down the lock in the hallway, better get going! Hit y to go back to the Hallway ');
+     var span = document.createElement("SPAN");
+     span.style.fontWeight = 'bold';
+     var player = document.createTextNode('['+ playerName+']');
+     para.appendChild(text);
+     para.appendChild(span);
+     var element = document.getElementById("gameText");
+     element.appendChild(para);
+     span.appendChild(player);
     lineBreak();
 
     document.addEventListener('keydown', function(e) {
