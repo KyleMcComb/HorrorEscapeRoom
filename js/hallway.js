@@ -9,9 +9,13 @@ var compound3IsValid = false;
 
 document.addEventListener('click', musicPlay);
 function musicPlay() {
+
+    // create amb audio object and play it
+    //AMBIENCE AUDIO SOURCE: https://freesound.org/people/klankbeeld/sounds/173418/
     var amb = new Audio('audio/Hallway/ambience.mp3');
     amb.play();
     amb.loop();
+
     document.removeEventListener('click', musicPlay);
 }
 
@@ -38,8 +42,11 @@ function onLoad() {
 // runs whne the window in the hallway is clicked
 function windowClick() {
 
+  //create windowClick audio object and play it
+  //WINDOW CLICK AUDIO SOURCE: https://www.zapsplat.com/music/chained-locked-industrial-metal-gate-attempt-to-open-movement-version-3/
   var windowClick = new Audio('audio/Hallway/window.mp3');
   windowClick.play();
+
   var para = document.createElement("p");
   var text = document.createTextNode("[System] You attempt to escape through the window and shake the bars loose but find that the gap is too small and the drop to far, better keep looking");
   para.appendChild(text);
@@ -112,6 +119,7 @@ function sideRoomClick() {
 function loadMorgue() {
   // chnages image to morgue
   var image = document.getElementById('img');
+  // MORGUE IMAGE SOURCE: https://www.freepik.com/free-photo/abandoned-morgue-psychiatric-hospital_5600089.htm
   image.src = 'img/Hall/Morgue.png';
   // changes room name
   document.getElementById('roomName').innerHTML = 'Morgue';
@@ -147,6 +155,7 @@ function exitClick() {
 
 
     // create acidLock audio object and play it
+    //ACID LOCK AUDIO SOURCE: https://www.zapsplat.com/music/acid-burn-sizzle-1-2/
     var acidLock = new Audio('audio/Hallway/acidLock.mp3');
     acidLock.play();
 
@@ -173,6 +182,8 @@ function exitClick() {
 
   } else {
 
+    //create gateLocked audio object and play it
+    //GATE LOCKED SOUND SOURCE: https://www.zapsplat.com/music/chained-locked-industrial-metal-gate-attempt-to-open-movement-version-1/
     var gateLocked = new Audio('audio/Hallway/gateLocked.mp3');
     gateLocked.play();
 
@@ -217,8 +228,11 @@ function showSelection() {
 
   if (noteFound === true) {
 
+    // create chemicals audio object and play it
+    // CHEMICAL FIND NO NOTE SOUND SOURCE: https://www.zapsplat.com/music/beer-bottles-slide-into-each-other-2/
     var chemicals = new Audio('audio/Hallway/chemicalFindNoNote.mp3');
     chemicals.play();
+
     var para = document.createElement("p");
     var text = document.createTextNode('These seem to be the chemicals Dr Friedrich mentioned in his note, each bottle has a letter on it with the word "RIGHT" written on it, strange. I should be able to make something useful to use on the gate in the hallway. Maybe the note I found earlier could help here, it said something about acid that may be useful...');
     para.appendChild(text);
@@ -313,10 +327,14 @@ function showSelection() {
 lineBreak();
 
   } else {
+
+    // create chemicals audio object and play it
+    // CHEMICAL FIND NO NOTE SOUND SOURCE: https://www.zapsplat.com/music/beer-bottles-slide-into-each-other-2/
     var chemicals = new Audio('audio/Hallway/chemicalFindNoNote.mp3');
     chemicals.play();
+
     var para = document.createElement("p");
-    var text = document.createTextNode('You find a tray of what seems like chemicals, although they are not labeled in any obvious way that you can see, just a letter or number on the front of each bottle and the word "RIGHT", maybe there is a clue somehwere that can help me tell which cehmical is which.');
+    var text = document.createTextNode('You find a tray of what seems like chemicals, although they are not labeled in any obvious way that you can see, just a letter or number on the front of each bottle and the word "RIGHT", maybe there is a clue somehwere that can help me tell which chemical is which.');
     para.appendChild(text);
     var element = document.getElementById("gameText");
     element.appendChild(para);
@@ -335,12 +353,11 @@ function checkSelections() {
   if (select1.options[compound1.selectedIndex].text == 'H' && select2.options[compound2.selectedIndex].text == 'M' && select3.options[compound3.selectedIndex].text == '6') {
 
     // create acidAudio audio object and play it
+    // ACID PUZZLE SUCCESS SOUND SOURCE: https://freesound.org/people/spookymodem/sounds/202094/
     var acidAudio = new Audio('audio/Hallway/acidSuccess.wav');
     acidAudio.play();
 
     acidFound = true;
-
-  //  document.getElementById('gameText').innerHTML += '[System] Success! This seems to have made some acid that is more than corossive enough, you can use it to break down the lock in the hallway, better get going! Hit y to go back to the Hallway';
 
      var para = document.createElement("p");
      var text = document.createTextNode('[System] Success! This seems to have made some acid that is more than corossive enough, you can use it to break down the lock in the hallway, better get going! Hit y to go back to the Hallway ');
@@ -352,10 +369,11 @@ function checkSelections() {
      var element = document.getElementById("gameText");
      element.appendChild(para);
      span.appendChild(player);
-    lineBreak();
+     lineBreak();
 
     document.addEventListener('keydown', function(e) {
       var image = document.getElementById('img');
+      // HALLWAY IMAGE SORUCE: https://pixabay.com/photos/gang-dark-gloomy-creepy-lost-776297/
       image.src = 'img/Hall/Hallway.png';
       document.getElementById('roomName').innerHTML = 'Hallway';
       document.getElementById('exitDoorButton').style.display = 'block';
@@ -368,6 +386,7 @@ function checkSelections() {
   } else {
 
     //play puzzle failure sound
+    // ACID PUZZLE FAILURE SOUND SOURCE: https://www.soundjay.com/button/sounds/button-18.mp3
     var acidFailure = new Audio('audio/Hallway/acidFailure.mp3');
     acidFailure.play();
     // selection was not correct print some text
@@ -393,12 +412,14 @@ function lineBreak() {
 
 // code is run when the note buttin in morgue is clicked
 function expandNote() {
+    // NOTE SOUND SOURCE: https://www.zapsplat.com/music/a4-paper-notepad-thin-page-turn-6/
   var noteOpen = new Audio('audio/Hallway/noteOpen.mp3');
   noteOpen.play();
 
   noteFound = true;
 
   document.getElementById("myModalDiv").style.display = "block";
+  // NOTE IMAGE SOURCE: https://www.pexels.com/photo/empty-brown-canvas-235985/
   document.getElementById("expandedNote").src = "img/Hall/ChemicalNote.jpg";
   document.getElementById("caption").innerHTML = "An old note belongning to Dr Friedrich, he seems to have mentioned some sort of cipher on it";
 
@@ -407,6 +428,7 @@ function expandNote() {
   // closes note using escape key
   document.addEventListener('keydown', function(e) {
     if (e.key == 'Escape' && isblock.style.display === "block")
+    // NOTE SOUND SOURCE: https://www.zapsplat.com/music/a4-paper-notepad-thin-page-turn-6/
     var noteOpen = new Audio('audio/Hallway/noteOpen.mp3');
     noteOpen.play();
     document.getElementById("myModalDiv").style.display = "none";
@@ -418,6 +440,7 @@ function expandNote() {
 // code to close using x button
 function closeNote() {
 
+  // NOTE SOUND SOURCE: https://www.zapsplat.com/music/a4-paper-notepad-thin-page-turn-6/
   var noteOpen = new Audio('audio/Hallway/noteOpen.mp3');
   noteOpen.play();
 
