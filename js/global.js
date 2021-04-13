@@ -38,7 +38,7 @@ function countdown() {
     sessionStorage.setItem("winGame", winGame);
 
     //LINK TO NEXT PAGE - TIME UP - END SCREEN
-  //  window.location.href = 'summary.html';
+    window.location.href = 'summary.html';
   }
 }
 
