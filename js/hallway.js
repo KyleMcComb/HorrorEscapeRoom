@@ -120,7 +120,7 @@ function loadMorgue() {
   // chnages image to morgue
   var image = document.getElementById('img');
   // MORGUE IMAGE SOURCE: https://www.freepik.com/free-photo/abandoned-morgue-psychiatric-hospital_5600089.htm
-  image.src = 'img/Hall/Morgue.png';
+  image.src = 'images/Hall/Morgue.png';
   // changes room name
   document.getElementById('roomName').innerHTML = 'Morgue';
 
@@ -374,7 +374,7 @@ function checkSelections() {
     document.addEventListener('keydown', function(e) {
       var image = document.getElementById('img');
       // HALLWAY IMAGE SORUCE: https://pixabay.com/photos/gang-dark-gloomy-creepy-lost-776297/
-      image.src = 'img/Hall/Hallway.png';
+      image.src = 'images/Hall/Hallway.png';
       document.getElementById('roomName').innerHTML = 'Hallway';
       document.getElementById('exitDoorButton').style.display = 'block';
       document.getElementById('chemicalButton').style.display = 'none';
@@ -420,7 +420,7 @@ function expandNote() {
 
   document.getElementById("myModalDiv").style.display = "block";
   // NOTE IMAGE SOURCE: https://www.pexels.com/photo/empty-brown-canvas-235985/
-  document.getElementById("expandedNote").src = "img/Hall/ChemicalNote.jpg";
+  document.getElementById("expandedNote").src = "images/Hall/ChemicalNote.jpg";
   document.getElementById("caption").innerHTML = "An old note belongning to Dr Friedrich, he seems to have mentioned some sort of cipher on it";
 
   var isblock = document.getElementById("myModalDiv");

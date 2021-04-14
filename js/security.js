@@ -209,7 +209,7 @@
       paperSound.play();
 
       document.getElementById("myModal").style.display = "block";
-      document.getElementById("expandedNote").src = "img/Security/BloodNoteForTim.jpg";
+      document.getElementById("expandedNote").src = "images/Security/BloodNoteForTim.jpg";
       document.getElementById("caption").innerHTML = "Dr Friedlich's Notes";
     }
 
@@ -219,7 +219,7 @@
       paperSound.play();
 
       document.getElementById("melModal").style.display = "block";
-      document.getElementById("expandedMel").src = "img/Security/MelNote.png";
+      document.getElementById("expandedMel").src = "images/Security/MelNote.png";
       document.getElementById("melCaption").innerHTML = "Mel...";
     }
 
@@ -245,7 +245,7 @@
       writeText('<span style = font-weight:bold;> ['+  playerName +'] </span>' + "An electrical cabinet. That wire seems to be loose... ","")
 
       var image = document.getElementById("roomImg");
-      image.src="img/Security/Wires.png";
+      image.src="images/Security/Wires.png";
       //image.Width = "600px";
       //room = "wires";
 
@@ -319,7 +319,7 @@
         doorbutton.style.display = "block";
       }
       var image = document.getElementById("roomImg");
-      image.src="img/Security/ControlRoom (WIP).jpg";
+      image.src="images/Security/ControlRoom (WIP).jpg";
 
       //Show all main buttons
 

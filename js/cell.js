@@ -65,7 +65,7 @@ function LockPickClick(background) {
 //Expand the note image
 function expand(){
   document.getElementById("myModal").style.display = "block";
-  document.getElementById("expandedNote").src = "img/Cell/victimsDiary.png";
+  document.getElementById("expandedNote").src = "images/Cell/victimsDiary.png";
   document.getElementById("caption").innerHTML = "Dr Friedlich's victims diary";
 
   // create noteClickSound audio object and play it
@@ -103,7 +103,7 @@ else { // else if the user completed the room then change the room layout and im
 
   // Changes image on click
   image = document.getElementById('background');
-  image.src = "img/Cell/cellDoorOpen.jpg";
+  image.src = "images/Cell/cellDoorOpen.jpg";
   // Removes button after clicked
   var nButton = document.getElementById("arrowButton");
   arrowButton.style.display = "none";
@@ -333,7 +333,7 @@ function doorOpenClick(background) {
 
     // Changes background image
     image = document.getElementById('background');
-    image.src = "img/Cell/CellRoomsDoorOpen.png";
+    image.src = "images/Cell/CellRoomsDoorOpen.png";
 
     // removes combination buttons
     var nButton = document.getElementById("doorControButtonTri");

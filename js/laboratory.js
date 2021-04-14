@@ -11,7 +11,7 @@ function drawerClick(background) {
 
   // Changes image on click
   image = document.getElementById('background');
-  image.src = "img/Lab/drawercloseup.jpg";
+  image.src = "images/Lab/drawercloseup.jpg";
   // Removes button after clicked
   var dButton = document.getElementById("drawerButton");
   drawerButton.style.display = "none";
@@ -45,7 +45,7 @@ function noteClick(background) {
 
   // Changes image on click
   image = document.getElementById('background');
-  image.src = "img/Lab/lab_note.jpg";
+  image.src = "images/Lab/lab_note.jpg";
   // Adds note modal button after clicked
   var nModal = document.getElementById("noteModal");
   noteModal.style.display = "block";
@@ -88,7 +88,7 @@ function expand(){
   pageTurn.play();
 
   document.getElementById("myModal").style.display = "block";
-  document.getElementById("expandedNote").src = "img/Lab/ClassifiedLore.jpg";
+  document.getElementById("expandedNote").src = "images/Lab/ClassifiedLore.jpg";
   document.getElementById("caption").innerHTML = "Dr Friedlich's Lore";
 }
 
@@ -158,7 +158,7 @@ function compartment2Click() {
 function forwardClick() {
   // Changes image on click
   image = document.getElementById('background');
-  image.src = "img/Lab/lab2.jpg";
+  image.src = "images/Lab/lab2.jpg";
   // Removes button after clicked
   var bButton = document.getElementById("backButton");
   backButton.style.display = "none";
@@ -195,7 +195,7 @@ function forwardClick() {
 function backClick() {
   // Changes image on click
   image = document.getElementById('background');
-  image.src = "img/Lab/drawercloseup.jpg";
+  image.src = "images/Lab/drawercloseup.jpg";
   // Removes button after clicked
   var fButton = document.getElementById("forwardButton");
   forwardButton.style.display = "none";
@@ -229,7 +229,7 @@ function backClick() {
 function noteBackClick() {
   // Changes image on click
   image = document.getElementById('background');
-  image.src = "img/Lab/lab_note.jpg";
+  image.src = "images/Lab/lab_note.jpg";
   // Adds note modal button after clicked
   var nModal = document.getElementById("noteModal");
   noteModal.style.display = "block";
@@ -260,7 +260,7 @@ function noteBackClick() {
 function bookshelfClick() {
   // Changes image on click
   image = document.getElementById('background');
-  image.src = "img/Lab/closeup_bookshelf.jpg";
+  image.src = "images/Lab/closeup_bookshelf.jpg";
   // Removes button when clicked
   var bsButton = document.getElementById("bookshelfButton");
   bookshelfButton.style.display = "none";
@@ -298,7 +298,7 @@ function openshelfClick(){
 
   // Changes image on click
   image = document.getElementById('background');
-  image.src = "img/Lab/HallwayDoor.jpg";
+  image.src = "images/Lab/HallwayDoor.jpg";
 
   // Removes button after clicked
   var osButton = document.getElementById("openshelfButton");

@@ -171,15 +171,15 @@ function expand(colour) {
   var captionKey = "";
   //depends on which key button has been pressed
   if (colour == 'blue') {
-    imageToShow = "img/Exit/BlueKey3.png";
+    imageToShow = "images/Exit/BlueKey3.png";
     captionKey = "You search the safe and find a blue key! The Key has a number - make sure to remember it!";
     altTxt = 'Blue Key - number 3';
   } else if (colour == 'purple') {
-    imageToShow = "img/Exit/PurpleKey5.png";
+    imageToShow = "images/Exit/PurpleKey5.png";
     captionKey = "You open a locked box and find the purple key!";
     altTxt = 'Purple Key - number 5';
   } else if (colour == 'gold') {
-    imageToShow = "img/Exit/GoldKey9.png";
+    imageToShow = "images/Exit/GoldKey9.png";
     captionKey = "You lift a wooden board and find the Gold Key!";
     altTxt = 'Gold Key - number 9';
   }
@@ -198,7 +198,7 @@ function expand(colour) {
 //Expand the keypad image
 function expandKeypad() {
   document.getElementById("lockModal").style.display = "block";
-  document.getElementById("expandedKeypad").src = "img/Exit/keypad.jpg";
+  document.getElementById("expandedKeypad").src = "images/Exit/keypad.jpg";
   document.getElementById("expandedKeypad").alt = "KeyPad";
   document.getElementById("expandedKeypad").style.height = '50%';
   document.getElementById("captionKeypad").innerHTML = "Enter the 3 Digit Code!";
