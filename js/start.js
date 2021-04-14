@@ -19,7 +19,7 @@ function saveData() {
   sessionStorage.setItem("subject", nameInput);
   sessionStorage.setItem("cTrait", text);
 
-  window.location.href = 'Cell.html';
+  window.location.href = 'cell.html';
 }
 
 }
