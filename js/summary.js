@@ -24,7 +24,7 @@ function gameMode(){
   var trait = sessionStorage.getItem("cTrait");
 
   if(winGame=="win"){
-    document.getElementById("doctor").src = "img/Summary/YouWinExit.jpg";
+    document.getElementById("doctor").src = "images/Summary/YouWinExit.jpg";
     roomName.innerHTML = 'You Won! Well done <span class="player">' + playerName + '</span>!';
     traitOutput.innerHTML = 'Well done <span class="player">' + playerName + '</span>. You won thanks to your incredible display of ';
 
@@ -60,7 +60,7 @@ function gameMode(){
       traitOutput.innerHTML +='You have lost due your wit';
     }
 
-    document.getElementById("doctor").src="img/Summary/Doctor.jpg";
+    document.getElementById("doctor").src="images/Summary/Doctor.jpg";
     roomName.innerHTML = 'You Lost! Better luck next time <span class="player">' + playerName + '</span>!';
   }
 
