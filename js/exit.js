@@ -24,6 +24,7 @@ function musicPlay() {
 function displayCode() {
   //records time spent in function as timer stops when prompt box is open
   var startTime = new Date();
+  txt="";
   var textForPrompt = 'Enter the code to escape!:';
 
   code = prompt(textForPrompt);
