@@ -8,7 +8,7 @@ function restart(){
   sessionStorage.setItem("exitTime", 0);
 
   sessionStorage.setItem("timeleft", 0);
-  window.location.href = 'Start.html';
+  window.location.href = 'start.html';
 }
 
 //indicates the game stats to be displayed to the user
