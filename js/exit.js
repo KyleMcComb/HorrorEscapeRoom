@@ -98,7 +98,7 @@ function purpleKeyCode() {
   var txt = "";
   txt = '<p>[System]: Please enter a 3 digit code to retrieve the purple key</p><br>';
   txt += '<label for= "purpleCode">Code: </label>';
-  txt += '<input type= "text" id="purpleCode" name= "purpleCode"></input><input type="submit" value = "Submit" onclick="purpleSubmit();"/><br>';
+  txt += '<input type= "text" id="purpleCode" size="10" maxlength="3" name= "purpleCode"></input><input type="submit" value = "Submit" onclick="purpleSubmit();"/><br>';
   gameArea.innerHTML += txt;
 }
 

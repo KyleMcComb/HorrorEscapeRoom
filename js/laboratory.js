@@ -91,7 +91,7 @@ function expand(){
 
   document.getElementById("myModal").style.display = "block";
   document.getElementById("expandedNote").src = "images/Lab/ClassifiedLore.jpg";
-  doucment.getElementById("expandedNote").alt = "A classified note that contains the secrets of the Lab.";
+  document.getElementById("expandedNote").alt = "A classified note that contains the secrets of the Lab.";
   document.getElementById("caption").innerHTML = "Dr Friedlich's Lore";
 }
 
