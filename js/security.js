@@ -246,6 +246,7 @@
 
       var image = document.getElementById("roomImg");
       image.src="images/Security/Wires.png";
+      image.alt="Inside the electrical cabinet. Broken wires and a password lock";
       //image.Width = "600px";
       //room = "wires";
 
@@ -320,6 +321,7 @@
       }
       var image = document.getElementById("roomImg");
       image.src="images/Security/ControlRoom (WIP).jpg";
+      image.alt="Main Security Room";
 
       //Show all main buttons
 

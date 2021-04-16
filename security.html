@@ -50,7 +50,7 @@
             <!-- Wires room -->
             <button id="leftWire" class="booton" title="Loose Wire" onclick="wiresClick();"></button>
 
-            <input id="passcodeLock" type="text" onkeyup="passwordEntered();">
+            <input id="passcodeLock" title="3 digit password lock" type="text" onkeyup="passwordEntered();">
 
             <div id="light"></div>
           </div>
@@ -58,14 +58,14 @@
           <!-- The Modal for Extra Note-->
           <div id="myModal" class="modal">
             <span class="noteClose" onclick="closeNote()">&times;</span>
-            <img id="expandedNote">
+            <img id="expandedNote" alt="Bloody note with 1,3,2">
             <div id="caption"></div>
           </div>
 
           <!-- The Modal for Mel's Note-->
           <div id="melModal" class="modal">
             <span class="melClose" onclick="closeMel()">&times;</span>
-            <img id="expandedMel">
+            <img id="expandedMel" alt="Letter to MEL, MEL was mentioned many times">
             <div id="melCaption"></div>
           </div>
 
