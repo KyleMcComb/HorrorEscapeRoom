@@ -423,7 +423,7 @@ function expandNote() {
   document.getElementById("myModalDiv").style.display = "block";
   // NOTE IMAGE SOURCE: https://www.pexels.com/photo/empty-brown-canvas-235985/
   document.getElementById("expandedNote").src = "images/Hall/ChemicalNote.jpg";
-  document.getElementById("expandedNote").alt = 'A old note with chemical formula and a note from Dr Friedrich on it';
+  document.getElementById("expandedNote").alt = "A old note with chemical formula and a note from Dr Friedrich on it, a formula for ACID  is on it with the code 'CH1'";
   document.getElementById("caption").innerHTML = "An old note belongning to Dr Friedrich, he seems to have mentioned some sort of cipher on it";
 
   var isblock = document.getElementById("myModalDiv");
