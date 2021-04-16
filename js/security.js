@@ -316,7 +316,7 @@
       var boxSound = new Audio("audio/Security/wiresBox.wav");
       boxSound.play();
 
-      if((cluesFound > currentClues || (cluesFound = 3)){
+      if((cluesFound > currentClues) || (cluesFound = 3)){
         doorbutton.style.display = "block";
       }
       var image = document.getElementById("roomImg");
