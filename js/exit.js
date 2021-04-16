@@ -14,7 +14,7 @@ var timeOut;
 document.addEventListener('click', musicPlay);
 function musicPlay() {
   // AMBIENCE:  https://www.zapsplat.com/music/musical-horror-ambience-bed-dark-and-sinister-droning-atmosphere-with-choir-ahhs-shrills-and-evolving-tones
-    var amb = new Audio('audio/Exit/ambience2.mp3');
+    var amb = new Audio('audio/Exit/ambience.mp3');
     amb.play();
     document.removeEventListener('click', musicPlay);
 }
